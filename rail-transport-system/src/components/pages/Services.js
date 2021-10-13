@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import TrainServices from '../TrainServices';
+import TrainServices from '../Services/TrainServices';
 
 function Services() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import TrainSection from '../TrainSection';
+import TrainSection from '../Home/TrainSection';
 
 function Home(){
     return(

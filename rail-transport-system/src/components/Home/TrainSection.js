@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
-import { Button } from './Button';
-import './TrainSection.css'
+import '../../App.css';
+import { Button } from '../Button/Button';
+import '../Home/TrainSection.css'
 function TrainSection(){
     return(
         <div className='train-container'>
