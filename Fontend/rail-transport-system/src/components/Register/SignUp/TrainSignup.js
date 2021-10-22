@@ -3,7 +3,7 @@ import React from 'react'
 function TrainSignup() {
     return (
         <div>
-            Rapeepat pegtee
+            <h1 align="center">REGISTER</h1>
         </div>
     )
 }
