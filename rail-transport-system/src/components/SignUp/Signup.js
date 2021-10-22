@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React from 'react'
 
-export default memo(function signup() {
-    return ( <
-        div >
-        Your account <
-        /div>
+function Signup() {
+    return (
+        <div align="center">
+            yo
+        </div>
     )
-})
+}
+
+export default Signup;
