@@ -43,8 +43,7 @@ function TrainSignup() {
                 </div>
 
                 <div class="input-box" align="center">
-                    <span class="details">
-                        <h2>DOB</h2></span>
+                    <span class="details"><h2>DOB</h2></span>
                     <input type="text" placeholder="Input your DOB" required></input>
                 </div>
 

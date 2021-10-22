@@ -1,10 +1,10 @@
 
-*{
+/* *{
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans';
 
-}
+} */
 body {
     background: #7f7df9;
 }
@@ -17,21 +17,25 @@ body {
     position: relative;
 }
 .input-box{
-    width: 100%;
-    margin-bottom: 12px;
+    width: 50%;
+    margin-bottom: 10px;
     padding: 15px 40px;
     box-sizing: border-box;
     background: #ebeef1;
     border: 0px;
     outline: none;
-    border-radius: 30px;
+    border-radius: 200px;
 }
-
+.input{
+    h: 50%;
+}
+.container{
+    padding: 15px;
+}
 .button{
     border-radius: 25px; /* Remove borders */
     color: rgb(152, 228, 168); /* Add a text color */
     padding: 10px ; 
-    cursor: pointer;
     text-align: center;
     cursor: pointer;
     size:15px;
