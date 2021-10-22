@@ -39,7 +39,7 @@ function TrainSignup() {
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>Telephone</h2></span>
-                    <input type="text" name="tel" placeholder="Input your Telephone" required></input>
+                    <input class="inputbox" type="text" name="tel" maxlength="10" placeholder="Input your Telephone" required></input>
                 </div>
 
                 <div class="input-box" align="center">
