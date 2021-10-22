@@ -73,7 +73,7 @@ function TrainSignup() {
             <h2>Starting Date</h2>
             <section>
                 <fieldset>
-                    <legend>pickadate.js</legend>
+                    <legend>TrainSignup.js</legend>
                     <div class="field moveindate">
                         <label>Date</label>
                         <input class="datepicker" name="date" type="text" autofocuss></input>
