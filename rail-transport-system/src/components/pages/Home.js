@@ -1,13 +1,16 @@
 import React from 'react';
 import '../../App.css';
+import Cards from '../Card/Cards';
+import Footer from '../Footer(Contact)/Footer';
 import TrainSection from '../Home/TrainSection';
-// import Cards from '../Card/Cards';
+
 
 function Home(){
     return(
         <>
             <TrainSection />
-            
+            <Cards />
+            {/* <Footer /> */}
         </>
     )
 }

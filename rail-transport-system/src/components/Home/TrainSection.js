@@ -6,22 +6,22 @@ import '../Home/TrainSection.css'
 function TrainSection(){
     return(
         <div className='train-container'>
-         <video src="/videos/video-2.mp4" autoPlay loop muted />
+         {/* <video src="/videos/video-2.mp4" autoPlay loop muted /> */}
          <h1>Welcome to Skytrain In Bangkok</h1>
          <h2>กรุงเทพ ชีวิตดี ๆ ที่ลงตัว</h2>
          <li>
-            <Link to='/ticket'>
                     <div className="train-btns">
                             <Button className='btns' 
                             buttonStyle='btn--outline'
-                            buttonSize='btn--large'>
+                            buttonSize='btn--large'
+                            >
+
                                 GET TICKET  <i class="fas fa-ticket-alt" />
                             </Button>
                     </div>
-            </Link>
          </li>
         </div>
     )
 }
 
-export default TrainSection
+export default TrainSection;
