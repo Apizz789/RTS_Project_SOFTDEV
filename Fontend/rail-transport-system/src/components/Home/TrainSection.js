@@ -15,7 +15,6 @@ function TrainSection(){
                             buttonStyle='btn--outline'
                             buttonSize='btn--large'
                             >
-
                                 GET TICKET  <i class="fas fa-ticket-alt" />
                             </Button>
                     </div>
