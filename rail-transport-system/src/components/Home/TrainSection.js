@@ -9,15 +9,17 @@ function TrainSection(){
          <video src="/videos/video-2.mp4" autoPlay loop muted />
          <h1>Welcome to Skytrain In Bangkok</h1>
          <h2>กรุงเทพ ชีวิตดีๆที่ลงตัว</h2>
-         <Link to='/buy-ticket'>
-                <div className="train-btns">
-                        <Button className='btns' buttonStyle='btn--outline'
-                        buttonSize='btn--large'>
-                            BUY TICKET
-                            <i class="fas fa-ticket-alt"></i>
-                        </Button>
+         <li>
+            <Link to='/ticket'>
+                    <div className="train-btns">
+                            <Button className='btns' 
+                            buttonStyle='btn--outline'
+                            buttonSize='btn--large'>
+                                GET TICKET  <i class="fas fa-ticket-alt" />
+                            </Button>
                     </div>
-         </Link>
+            </Link>
+         </li>
         </div>
     )
 }
