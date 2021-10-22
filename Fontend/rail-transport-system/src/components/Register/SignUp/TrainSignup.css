@@ -1,14 +1,42 @@
-.input_box, register_class{
-    display: block;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans';
+
+}
+body {
+    background: #7f7df9;
+}
+.register_class{
+    width: auto;
+    background: #fff;
+    padding: 100px;
+    margin: 100px auto;
+    border-radius: 60px;
+    position: relative;
+}
+.input-box{
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    background: #ebeef1;
+    border: 0px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.button{
+    border-radius: 25px; /* Remove borders */
+    color: rgb(152, 228, 168); /* Add a text color */
+    padding: 10px ; 
+    cursor: pointer;
     text-align: center;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: rgb(95, 142, 241);
-    padding: 14px 20px;
-    border: 2px solid #fff;
-    transition: all 0.3s ease-out;
+    cursor: pointer;
+    size:15px;
+
+}
+.button:hover{
+    background-color: #46a049;
 }
