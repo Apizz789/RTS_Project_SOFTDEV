@@ -1,13 +1,12 @@
 import React from 'react';
 import '../../App.css';
-import Signup from '../SignUp/Signup';
-// import Cards from '../Card/Cards';
+import TrainSignup from '../SignUp/TrainSignup';
+
 
 function Signup(){
     return(
         <>
-            <Signup />
-            
+            <TrainSignup />
         </>
     )
 }
