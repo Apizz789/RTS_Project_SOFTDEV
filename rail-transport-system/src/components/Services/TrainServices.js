@@ -19,4 +19,4 @@ function TrainServices() {
     )
 }
 
-export default TrainServices
+export default TrainServices;
