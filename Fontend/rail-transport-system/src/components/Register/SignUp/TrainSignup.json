@@ -1,0 +1,15 @@
+$(document).ready(function() {
+    $('.datepicker').pickadate({
+      formatSubmit: 'dd-mm-yyyy',
+      min: [1900,01,01],
+      max: [2021,11,17],
+      closeOnSelect: true,
+      closeOnClear: true,
+    });
+  
+    // Autotab
+    $('.date-field').autotab('number');
+    
+    $('.single-date-field').mask('00/00/0000', 
+      {placeholder: "_ _ /_ _ /_ _ _ _"});
+  });

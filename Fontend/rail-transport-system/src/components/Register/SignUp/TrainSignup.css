@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 1rem;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  section {
+    margin: 0 auto 1rem auto;
+  }
+  
+  fieldset {
+    border: none;
+    background: #efefef;
+    margin-bottom: 0.5rem;
+  }
+  
+  legend {
+    text-align: right;
+  }
+  
+  input,
+  select {
+    font-family: 'Roboto', sans-serif;
+    border: solid 1px #89a6bb;
+    padding: 0.5rem;
+    border-radius: 3px;
+    -webkit-appearance: none;
+  }
+  
+  h2 {
+    margin: 3rem 0 1rem;
+  }
+  
+  .date-field {
+    width: 30px;
+    text-align: center;
+    
+    &--year {
+      width: 60px;
+    }
+  }
+  
+  .single-date-field {
+    width: 120px;
+  }
+  
+  .field-inline-block {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;  
+    
+    label {
+      text-align: center;
+    }
+  }
