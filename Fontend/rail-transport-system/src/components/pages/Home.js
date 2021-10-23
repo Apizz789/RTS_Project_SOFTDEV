@@ -10,7 +10,7 @@ function Home(){
         <>
             <TrainSection />
             <Cards />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
