@@ -10,7 +10,7 @@ function TrainSection(){
          <h1>Welcome to Skytrain In Bangkok</h1>
          <h2>กรุงเทพ ชีวิตดี ๆ ที่ลงตัว</h2>
             <div className="train-btns">
-                <Link to='/map'>
+                <Link to='/ticket'>
                     <Button className='btns' 
                         buttonStyle='btn--outline'
                         buttonSize='btn--large'
