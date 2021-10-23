@@ -2,7 +2,7 @@ import React from 'react'
 import '../SignUp/TrainSignup.css';
 function TrainSignup() {
     return (
-        <body>
+        <body className="all">
             <div class="register_class">
                 <div class="Title"><h1 align="center">REGISTRATION</h1></div>
 
