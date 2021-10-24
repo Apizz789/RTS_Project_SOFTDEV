@@ -3,15 +3,16 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
 function TrainSignup() {
-    const [postID, setPostId] = useState(null);
+    // const [postID, setPostId] = useState(null);
     const [Firstname,setFirstname] =useState(null);
     const [Lastname,setLastname] =useState(null);
     const [Username,setUsername] =useState(null);
     const [Password,setPassword] =useState(null);
     const [Tel,setTel] =useState(null);
     const [DOB,setDOB] =useState(null);
+    const [Email,setEmail] =useState(null);
     const [submit,setSubmit] =useState(false);
-    const data = { Firstname, Lastname, Username, Password, Tel, DOB};
+    const data = { Firstname, Lastname, Username, Password, Tel, DOB, Email};
     function getData(val)
     {
         setSubmit(false)
@@ -32,6 +33,9 @@ function TrainSignup() {
         }
         else if (val.target.name === "DOB") {
             setDOB(val.target.value)
+        }
+        else if (val.target.name === "email") {
+            setEmail(val.target.value)
         }
     }
     
@@ -83,7 +87,7 @@ function TrainSignup() {
 
                 <div class="input-box" align="center">
                     <span class="details"><h2>Email</h2></span>
-                    <input type="text" placeholder="Input your DOB" required></input>
+                    <input type="text" name = "email" placeholder="Input your Email" required></input>
                 </div>
 
 
@@ -105,8 +109,8 @@ function TrainSignup() {
                         // console.log(data)
                         
                         axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-                            "email": "asdfgyhj@gmail.com",
-                            "password": "1234567",
+                            "email": Email,
+                            "password": Password,
                             "returnSecureToken": true
                           })
                          .then(response => {console.log(response)})
