@@ -41,7 +41,7 @@ function TrainSignup() {
     
     return (
         <body>
-            <div class="register_class">
+            <div class="register_class" >
                 <div class="Title"><h1 align="center">REGISTRATION</h1></div>
 
                 <div class="input-box" align="center">
@@ -51,8 +51,7 @@ function TrainSignup() {
                 </div>
 
                 <div class="input-box" align="center">
-                    <span class="details">
-                        <h2>Last Name</h2></span>
+                    <span class="details"><h2>Last Name</h2></span>
                     <input class="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
                 </div>
 

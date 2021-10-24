@@ -15,6 +15,7 @@ body {
     margin: 100px auto;
     border-radius: 60px;
     position: relative;
+    text-align: center;
 }
 .input-box{
     width: 50%;
