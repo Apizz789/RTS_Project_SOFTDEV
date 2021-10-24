@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+// import firebase from '../src/utils/firebase.js'
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
+// const db = firebase.firestore();
 function TrainSignup() {
     // const [postID, setPostId] = useState(null);
     const [Firstname,setFirstname] =useState(null);
@@ -37,6 +39,20 @@ function TrainSignup() {
         else if (val.target.name === "email") {
             setEmail(val.target.value)
         }
+    }
+
+    if (submit === true) {
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+                        "email": Email,
+                        "password": Password,
+                        "returnSecureToken": true
+                        })
+                         .then(response => {console.log(response)})
+                         .catch(error => {console.log(error)})   
+
+        // db.collection('user').add({
+        //     Firstname: Firstname,
+        // });           
     }
 
     return (
@@ -104,19 +120,6 @@ function TrainSignup() {
 
         
                 <div className="button" align="center">
-                    {
-                        submit?  
-                        // console.log(Email +" " +Password)
-                        
-                        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-                            "email": Email,
-                            "password": Password,
-                            "returnSecureToken": true
-                          })
-                         .then(response => {console.log(response)})
-                         .catch(error => {console.log(error)})
-                        :null
-                    }
                     <input type="submit" value="Register" onClick={()=>setSubmit(true)}></input>
                     <input type="submit" value="Cancel"></input>
                 </div>

@@ -1,6 +1,7 @@
-import firebase from 'firebase'
+import firebase from "firebase/app";
+import "firebase/firestore";
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI",
     authDomain: "soft-dev-tutorial.firebaseapp.com",
     projectId: "soft-dev-tutorial",
@@ -11,6 +12,5 @@ var firebaseConfig = {
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 export default firebase;

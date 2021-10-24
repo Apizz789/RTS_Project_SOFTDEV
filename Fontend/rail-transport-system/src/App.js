@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from "./firebase";
 import './App.css';
 import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +10,14 @@ import Signup from './components/pages/Signup';
 import Trainmap from './components/Map/Trainmap';
 
 function App() {
+
+  const ref  = firebase.firestore();
+  ref.collection('user').get().then((snapshot)=>{
+    snapshot.forEach(doc=>{
+      console.log(doc.data());
+    });
+  });
+  console.log(ref)
   return (
     <>
     <Router>
