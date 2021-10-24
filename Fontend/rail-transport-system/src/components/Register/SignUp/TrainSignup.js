@@ -47,31 +47,31 @@ function TrainSignup() {
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>First Name</h2></span>
-                    <input type="text" name="fname" placeholder="Input your First Name" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>Last Name</h2></span>
-                    <input type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>User</h2></span>
-                    <input type="text" name="username" placeholder="Input your User" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name="username" placeholder="Input your User" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>Password</h2></span>
-                    <input type="text" name="password" placeholder="Input your Password" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
                     <span class="details">
                         <h2>Repeat Password</h2></span>
-                    <input type="text" name="password" placeholder="Repeat Password" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
@@ -82,12 +82,12 @@ function TrainSignup() {
 
                 <div class="input-box" align="center">
                     <span class="details"><h2>DOB</h2></span>
-                    <input type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
                 </div>
 
                 <div class="input-box" align="center">
                     <span class="details"><h2>Email</h2></span>
-                    <input type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
+                    <input class="inputbox" type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
                 </div>
 
 
