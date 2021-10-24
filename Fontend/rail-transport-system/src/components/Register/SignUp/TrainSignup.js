@@ -40,15 +40,9 @@ function TrainSignup() {
     }
 
     return (
-<<<<<<< Updated upstream
-        <body>
+        
             <div class="register_class" >
                 <div class="Title"><h1 align="center">REGISTRATION</h1></div>
-=======
-        
-            <div className="register_class">
-                <div className="Title"><h1 align="center">REGISTRATION</h1></div>
->>>>>>> Stashed changes
 
                 <div className="input-box" align="center">
                     <span className="details">
@@ -56,16 +50,10 @@ function TrainSignup() {
                     <input class="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={getData}></input>
                 </div>
 
-<<<<<<< Updated upstream
-                <div class="input-box" align="center">
-                    <span class="details"><h2>Last Name</h2></span>
-                    <input class="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
-=======
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Last Name</h2></span>
                     <input type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
->>>>>>> Stashed changes
                 </div>
 
                 <div className="input-box" align="center">
@@ -92,16 +80,6 @@ function TrainSignup() {
                     <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={getData}></input>
                 </div>
 
-<<<<<<< Updated upstream
-                <div class="input-box" align="center">
-                    <span class="details"><h2>DOB</h2></span>
-                    <input class="inputbox" type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
-                </div>
-
-                <div class="input-box" align="center">
-                    <span class="details"><h2>Email</h2></span>
-                    <input class="inputbox" type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
-=======
                 <div className="input-box" align="center">
                     <span className="details"><h2>DOB</h2></span>
                     <input type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
@@ -110,7 +88,6 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details"><h2>Email</h2></span>
                     <input type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
->>>>>>> Stashed changes
                 </div>
 
 
