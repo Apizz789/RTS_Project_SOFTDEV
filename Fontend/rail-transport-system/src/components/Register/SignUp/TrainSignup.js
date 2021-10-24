@@ -2,7 +2,7 @@ import React from 'react'
 import '../SignUp/TrainSignup.css';
 function TrainSignup() {
     return (
-        <body className="all">
+        <body>
             <div class="register_class">
                 <div class="Title"><h1 align="center">REGISTRATION</h1></div>
 
@@ -46,6 +46,12 @@ function TrainSignup() {
                     <span class="details"><h2>DOB</h2></span>
                     <input type="text" placeholder="Input your DOB" required></input>
                 </div>
+
+                <div class="input-box" align="center">
+                    <span class="details"><h2>Email</h2></span>
+                    <input type="text" placeholder="Input your DOB" required></input>
+                </div>
+
 
                 <div class="input-box" align="center">
                     <label class="container">Male
