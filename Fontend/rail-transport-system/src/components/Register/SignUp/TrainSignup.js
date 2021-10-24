@@ -87,7 +87,7 @@ function TrainSignup() {
 
                 <div class="input-box" align="center">
                     <span class="details"><h2>Email</h2></span>
-                    <input type="text" name = "email" placeholder="Input your Email" required></input>
+                    <input type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
                 </div>
 
 
@@ -106,7 +106,7 @@ function TrainSignup() {
                 <div class="button" align="center">
                     {
                         submit?  
-                        // console.log(data)
+                        // console.log(Email +" " +Password)
                         
                         axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
                             "email": Email,
