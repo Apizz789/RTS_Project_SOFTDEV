@@ -38,47 +38,61 @@ function TrainSignup() {
             setEmail(val.target.value)
         }
     }
-    
+
     return (
+<<<<<<< Updated upstream
         <body>
             <div class="register_class" >
                 <div class="Title"><h1 align="center">REGISTRATION</h1></div>
+=======
+        
+            <div className="register_class">
+                <div className="Title"><h1 align="center">REGISTRATION</h1></div>
+>>>>>>> Stashed changes
 
-                <div class="input-box" align="center">
-                    <span class="details">
+                <div className="input-box" align="center">
+                    <span className="details">
                         <h2>First Name</h2></span>
                     <input class="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={getData}></input>
                 </div>
 
+<<<<<<< Updated upstream
                 <div class="input-box" align="center">
                     <span class="details"><h2>Last Name</h2></span>
                     <input class="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
+=======
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Last Name</h2></span>
+                    <input type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
+>>>>>>> Stashed changes
                 </div>
 
-                <div class="input-box" align="center">
-                    <span class="details">
+                <div className="input-box" align="center">
+                    <span className="details">
                         <h2>User</h2></span>
                     <input class="inputbox" type="text" name="username" placeholder="Input your User" required onChange={getData}></input>
                 </div>
 
-                <div class="input-box" align="center">
-                    <span class="details">
+                <div className="input-box" align="center">
+                    <span className="details">
                         <h2>Password</h2></span>
                     <input class="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={getData}></input>
                 </div>
 
-                <div class="input-box" align="center">
-                    <span class="details">
+                <div className="input-box" align="center">
+                    <span className="details">
                         <h2>Repeat Password</h2></span>
                     <input class="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={getData}></input>
                 </div>
 
-                <div class="input-box" align="center">
-                    <span class="details">
+                <div className="input-box" align="center">
+                    <span className="details">
                         <h2>Telephone</h2></span>
-                    <input class="inputbox" type="text" name="tel" maxlength="10" placeholder="Input your Telephone" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={getData}></input>
                 </div>
 
+<<<<<<< Updated upstream
                 <div class="input-box" align="center">
                     <span class="details"><h2>DOB</h2></span>
                     <input class="inputbox" type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
@@ -87,22 +101,32 @@ function TrainSignup() {
                 <div class="input-box" align="center">
                     <span class="details"><h2>Email</h2></span>
                     <input class="inputbox" type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
+=======
+                <div className="input-box" align="center">
+                    <span className="details"><h2>DOB</h2></span>
+                    <input type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details"><h2>Email</h2></span>
+                    <input type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
+>>>>>>> Stashed changes
                 </div>
 
 
-                <div class="input-box" align="center">
-                    <label class="container">Male
-                        <input type="checkbox" checked="checked"></input>
-                        <span class="checkmark"></span>
+                <div className="input-box" align="center">
+                    <label className="container">Male
+                        <input type="checkbox" checked="checked" onChange={()=>{}}></input>
+                        <span className="checkmark"></span>
                     </label>
-                    <label class="container">Female
-                        <input type="checkbox" checked="checked"></input>
-                        <span class="checkmark"></span>
+                    <label className="container">Female
+                        <input type="checkbox" checked="checked" onChange={()=>{}}></input>
+                        <span className="checkmark"></span>
                     </label>
                 </div>
 
         
-                <div class="button" align="center">
+                <div className="button" align="center">
                     {
                         submit?  
                         // console.log(Email +" " +Password)
@@ -124,16 +148,16 @@ function TrainSignup() {
                 <section>
                     <fieldset>
                         <legend>TrainSignup.js</legend>
-                        <div class="field moveindate">
+                        <div className="field moveindate">
                             <label>Date</label>
-                            <input class="datepicker" name="date" type="text" autofocuss></input>
+                            <input className="datepicker" name="date" type="text" autofocuss="10"></input>
                         </div>
                     </fieldset>
                 </section>
 
 
             </div>
-        </body>
+        
 
     )
 

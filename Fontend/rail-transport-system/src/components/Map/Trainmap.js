@@ -30,15 +30,15 @@ export default memo(function Trainmap() {
               <Col>
                 <Row>
                   <Col xs="12" >
-                    <i class="fas fa-check-square"></i>
+                    <i className="fas fa-check-square"></i>
                     ตัวอักษรภาษาอังกฤษแสดงชื่อของสายรถไฟ
                   </Col>
                   <Col xs="12">
-                    <i class="fas fa-check-square"></i>
+                    <i className="fas fa-check-square"></i>
                     หมายเลขสถานีจะแสดงตามสายของรถไฟในแผนที่เส้นทางรถไฟใต้ดิน
                   </Col>
                   <Col xs="12">
-                    <i class="fas fa-check-square"></i>
+                    <i className="fas fa-check-square"></i>
                     หมายเลขสถานีจะล้อมรอบด้วยวงกลมสีซึ่งแสดงถึงสีของสายรถไฟนั้น
                   </Col>
                 </Row>
