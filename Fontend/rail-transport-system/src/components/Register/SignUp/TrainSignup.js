@@ -49,92 +49,95 @@ function TrainSignup() {
     }
 
     return (
-        
-        <div className="register_class" >
-            <div className="Title"><h1 align="center">REGISTRATION</h1></div>
+        <form>
 
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>First Name</h2></span>
-                <input className="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={handleChange}/>
-                {errors.fname && <p className="error">{errors.fname}</p>}
+
+
+            <div className="register_class" >
+                <div className="Title"><h1 align="center">REGISTRATION</h1></div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>First Name</h2></span>
+                    <input className="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={handleChange} />
+                    {errors.fname && <p className="error">{errors.fname}</p>}
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Last Name</h2></span>
+                    <input className="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={handleChange} />
+                    {errors.lname && <p className="error">{errors.lname}</p>}
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Username</h2></span>
+                    <input className="inputbox" type="text" name="username" placeholder="Input your User" required onChange={handleChange} />
+                    {errors.password && <p className="error">{errors.password}</p>}
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Password</h2></span>
+                    <input className="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={handleChange} />
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Repeat Password</h2></span>
+                    <input className="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={handleChange} />
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details">
+                        <h2>Telephone</h2></span>
+                    <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={handleChange} />
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details"><h2>DOB</h2></span>
+                    <input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01" max="2009-12-31" placeholder="dd-mm-yyyy" required onChange={handleChange} />
+
+                </div>
+
+                <div className="input-box" align="center">
+                    <span className="details"><h2>Email</h2></span>
+                    <input className="inputbox" type="text" name="email" placeholder="Input your Email" required onChange={handleChange} />
+                </div>
+
+
+                <div className="input-box" align="center">
+                    <label className="container">Male
+                        <input type="checkbox"  onChange={() => { }} />
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="container">Female
+                        <input type="checkbox"  onChange={() => { }} />
+                        <span className="checkmark"></span>
+                    </label>
+                </div>
+
+
+                <div className="button" align="center">
+                    <input type="submit" value="Register" onClick={handleSubmit} />
+                    <input type="reset" value="Clear" />
+                </div>
+
+                <h2>Starting Date</h2>
+                <section>
+                    <fieldset>
+                        <legend>TrainSignup.js</legend>
+                        <div className="field moveindate">
+                            <label>Date</label>
+                            <input className="datepicker" name="date" type="text" autofocuss="10" />
+                        </div>
+                    </fieldset>
+                </section>
+
+
             </div>
-
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>Last Name</h2></span>
-                <input className="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={handleChange}/>
-                {errors.lname && <p className="error">{errors.lname}</p>}
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>User</h2></span>
-                <input className="inputbox" type="text" name="username" placeholder="Input your User" required onChange={handleChange}/>
-                {errors.password && <p className="error">{errors.password}</p>}
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>Password</h2></span>
-                <input className="inputbox" type="password" name="password" placeholder="Input your Password" required onChange={handleChange}/>
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>Repeat Password</h2></span>
-                <input className="inputbox" type="password" name="password" placeholder="Repeat Password" required onChange={handleChange}/>
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details">
-                    <h2>Telephone</h2></span>
-                <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={handleChange}/>
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details"><h2>DOB</h2></span>
-                <input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01" max="2009-12-31" placeholder="dd-mm-yyyy" required onChange={handleChange}/>
-                
-            </div>
-
-            <div className="input-box" align="center">
-                <span className="details"><h2>Email</h2></span>
-                <input className="inputbox" type="text" name="email" placeholder="Input your Email" required onChange={handleChange}/>
-            </div>
-
-
-            <div className="input-box" align="center">
-                <label className="container">Male
-                    <input type="checkbox" checked="checked" onChange={() => { }}/>
-                    <span className="checkmark"></span>
-                </label>
-                <label className="container">Female
-                    <input type="checkbox" checked="checked" onChange={() => { }}/>
-                    <span className="checkmark"></span>
-                </label>
-            </div>
-
-
-            <div className="button" align="center">
-                <input type="submit" value="Register" onClick={handleSubmit}/>
-                <input type="reset" value="Cancel"/>
-            </div>
-
-            <h2>Starting Date</h2>
-            <section>
-                <fieldset>
-                    <legend>TrainSignup.js</legend>
-                    <div className="field moveindate">
-                        <label>Date</label>
-                        <input className="datepicker" name="date" type="text" autofocuss="10"/>
-                    </div>
-                </fieldset>
-            </section>
-
-
-        </div>
-
+        </form>
 
     )
 
