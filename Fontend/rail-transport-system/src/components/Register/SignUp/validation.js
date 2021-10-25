@@ -1,14 +1,6 @@
 const validation = (values) => {
     let errors={};
 
-    for(const x of values.fname) {
-        for(const sp of special){
-            if (x == sp){
-                
-                break
-            }
-        }
-    }
 
     if(!values.fname){
         errors.fname = "First Name is required"
