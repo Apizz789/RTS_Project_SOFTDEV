@@ -98,7 +98,7 @@ function TrainSignup() {
 
             <div className="input-box" align="center">
                 <span className="details"><h2>DOB</h2></span>
-                <input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01" max="2009-12-31" placeholder="Input your DOB" required onChange={handleChange}/>
+                <input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01" max="2009-12-31" placeholder="dd-mm-yyyy" required onChange={handleChange}/>
                 
             </div>
 

@@ -9,21 +9,23 @@ body {
     background: #7f7df9;
 }
 .register_class{
-    width: auto;
+    width: 1000px;
+    height: 1800px;
     background: #fff;
     padding: 100px;
     margin: 100px auto;
     border-radius: 60px;
     position: relative;
     text-align: center;
+    
 }
 .input-box{
-    width: 50%;
+    width: relative;
     margin-bottom: 10px;
     padding: 15px 40px;
     box-sizing: border-box;
-    background: #ebeef1;
-    border: 0px;
+    background: #f6add2;
+    border: 30px;
     outline: none;
     border-radius: 200px;
 }
@@ -50,3 +52,4 @@ body {
 .button:hover{
     background-color: #46a049;
 }
+
