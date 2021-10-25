@@ -11,6 +11,7 @@ function TrainSignup() {
         lname: "",
         username: "",
         password: "",
+        repeat_password: "",
         tel: "",
         DOB: "",
         email: ""
@@ -73,32 +74,36 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Username</h2></span>
-                    <input className="inputbox" type="text" name="username" placeholder="Input your User" required onChange={handleChange} />
-                    {errors.password && <p className="error">{errors.password}</p>}
+                    <input className="inputbox" type="text" name="username" maxLength="20" placeholder="Input your User" required onChange={handleChange} />
+                    {errors.username && <p className="error">{errors.username}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Password</h2></span>
                     <input className="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={handleChange} />
+                    {errors.password && <p className="error">{errors.password}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Repeat Password</h2></span>
-                    <input className="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={handleChange} />
+                    <input className="inputbox" type="text" name="repeat_password" placeholder="Repeat Password" required onChange={handleChange} />
+                    {errors.repeat_password && <p className="error">{errors.repeat_password}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Telephone</h2></span>
                     <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={handleChange} />
+                    {errors.tel && <p className="error">{errors.tel}</p>}
+                    
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details"><h2>DOB</h2></span>
                     <input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01" max="2009-12-31" placeholder="dd-mm-yyyy" required onChange={handleChange} />
-
+                    {errors.DOB && <p className="error">{errors.DOB}</p>}
                 </div>
 
                 <div className="input-box" align="center">
