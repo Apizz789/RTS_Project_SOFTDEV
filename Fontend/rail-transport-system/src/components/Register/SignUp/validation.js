@@ -56,6 +56,9 @@ const validation = (values) => {
     if(!values.email){
         errors.email = "Email is required"
     }
+    else if(!/\S+@\S+\.\S+/.test(values.email)){
+        errors.email = "Email is invalid"
+    }
 
     return errors;
 }

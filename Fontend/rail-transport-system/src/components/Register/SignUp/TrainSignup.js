@@ -109,6 +109,7 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details"><h2>Email</h2></span>
                     <input className="inputbox" type="text" name="email" placeholder="Input your Email" required onChange={handleChange} />
+                    {errors.email && <p className="error">{errors.email}</p>}
                 </div>
 
 
