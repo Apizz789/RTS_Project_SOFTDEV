@@ -77,13 +77,13 @@ function TrainSignup() {
             <div className="input-box" align="center">
                 <span className="details">
                     <h2>Password</h2></span>
-                <input className="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={handleChange}/>
+                <input className="inputbox" type="password" name="password" placeholder="Input your Password" required onChange={handleChange}/>
             </div>
 
             <div className="input-box" align="center">
                 <span className="details">
                     <h2>Repeat Password</h2></span>
-                <input className="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={handleChange}/>
+                <input className="inputbox" type="password" name="password" placeholder="Repeat Password" required onChange={handleChange}/>
             </div>
 
             <div className="input-box" align="center">
