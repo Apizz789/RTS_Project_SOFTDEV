@@ -1,59 +1,56 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-// import firebase from '../src/utils/firebase.js'
+import validation from "./validation"
+import firebase from 'C:/Users/user/Documents/Github/test-repo/Project_SOFTDEV/Fontend/rail-transport-system/src/firebase.js'
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
-// const db = firebase.firestore();
+const db = firebase.firestore();
 function TrainSignup() {
-    // const [postID, setPostId] = useState(null);
-    const [Firstname,setFirstname] =useState(null);
-    const [Lastname,setLastname] =useState(null);
-    const [Username,setUsername] =useState(null);
-    const [Password,setPassword] =useState(null);
-    const [Tel,setTel] =useState(null);
-    const [DOB,setDOB] =useState(null);
-    const [Email,setEmail] =useState(null);
-    const [submit,setSubmit] =useState(false);
-    const data = { Firstname, Lastname, Username, Password, Tel, DOB, Email};
-    function getData(val)
-    {
-        setSubmit(false)
-        if (val.target.name === "fname") {
-            setFirstname(val.target.value)
-        }
-        else if (val.target.name === "lname") {
-            setLastname(val.target.value)
-        }
-        else if (val.target.name === "username") {
-            setUsername(val.target.value)
-        }
-        else if (val.target.name === "password") {
-            setPassword(val.target.value)
-        }
-        else if (val.target.name === "tel") {
-            setTel(val.target.value)
-        }
-        else if (val.target.name === "DOB") {
-            setDOB(val.target.value)
-        }
-        else if (val.target.name === "email") {
-            setEmail(val.target.value)
-        }
+    const [values, setValues] = useState({
+        fname:"",
+        lname:"",
+        username:"",
+        password:"",
+        tel:"",
+        DOB:"",
+        email:""
+    });
+    const [errors, setErrors] = useState({});
+    
+    const handleChange = (event) => {
+        setValues({
+            ...values,
+            [event.target.name]: event.target.value,
+        });
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setErrors(validation(values));
+
+        // axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+        //                 "email": Email,
+        //                 "password": Password,
+        //                 "returnSecureToken": true
+        //                 })
+        //                  .then(response => {console.log(response)})
+        //                  .catch(error => {console.log(error)})
+        
+        // axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users',{
+        //     "Firstname": Firstname,
+        //     "Lastname": Lastname,
+        //     "Username": Username,
+        //     "Password": Password,
+        //     "Tel": Tel,
+        //     "DOB": DOB,
+        //     "Email": Email
+        //   })
+        //    .then(response => {console.log(response)})
+        //    .catch(error => {console.log(error)}) 
     }
 
-    if (submit === true) {
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-                        "email": Email,
-                        "password": Password,
-                        "returnSecureToken": true
-                        })
-                         .then(response => {console.log(response)})
-                         .catch(error => {console.log(error)})   
-
-        // db.collection('user').add({
-        //     Firstname: Firstname,
-        // });           
-    }
+  
+          
+    
 
     return (
         
@@ -63,47 +60,50 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>First Name</h2></span>
-                    <input className="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="fname" placeholder="Input your First Name" required onChange={handleChange}></input>
+                    {errors.fname && <p className="error">{errors.fname}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Last Name</h2></span>
-                    <input className="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="lname" placeholder="Input your Last Name" required onChange={handleChange}></input>
+                    {errors.lname && <p className="error">{errors.lname}</p>}                
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>User</h2></span>
-                    <input className="inputbox" type="text" name="username" placeholder="Input your User" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="username" placeholder="Input your User" required onChange={handleChange}></input>
+                    {errors.password && <p className="error">{errors.password}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Password</h2></span>
-                    <input className="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="password" placeholder="Input your Password" required onChange={handleChange}></input>
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Repeat Password</h2></span>
-                    <input className="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="password" placeholder="Repeat Password" required onChange={handleChange}></input>
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Telephone</h2></span>
-                    <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name="tel" maxLength="10" placeholder="Input your Telephone" required onChange={handleChange}></input>
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details"><h2>DOB</h2></span>
-                    <input className="inputbox" type="text" name = "DOB" placeholder="Input your DOB" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name = "DOB" placeholder="Input your DOB" required onChange={handleChange}></input>
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details"><h2>Email</h2></span>
-                    <input className="inputbox" type="text" name = "email" placeholder="Input your Email" required onChange={getData}></input>
+                    <input className="inputbox" type="text" name = "email" placeholder="Input your Email" required onChange={handleChange}></input>
                 </div>
 
 
@@ -120,7 +120,7 @@ function TrainSignup() {
 
         
                 <div className="button" align="center">
-                    <input type="submit" value="Register" onClick={()=>setSubmit(true)}></input>
+                    <input type="submit" value="Register" onClick={handleSubmit}></input>
                     <input type="submit" value="Cancel"></input>
                 </div>
 
