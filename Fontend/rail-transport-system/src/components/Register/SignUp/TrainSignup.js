@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import validation from "./validation"
-// import firebase from '../Project_SOFTDEV/Fontend/rail-transport-system/src/firebase.js'
+import firebase from '../../../firebase'
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
 // const db = firebase.firestore();

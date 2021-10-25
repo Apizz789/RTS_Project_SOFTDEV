@@ -2,24 +2,23 @@ const validation = (values) => {
     let errors={};
 
 
+
+    values.fname = values.fname.replace(/\s+/g, '');
     if(!values.fname){
         errors.fname = "First Name is required"
     }
-    else if(!values.fname.match(/^([a-z])+$/i)){
+    else if(!values.fname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
         errors.fname = 'First must be A-Z , a-z'
     }
 
-
-
-
+    values.lname = values.lname.replace(/\s+/g, '');
     if(!values.lname){
         errors.lname = "Last Name is required"
     }
-    else if(!values.lname.match(/^([a-z])+$/i)){
+    else if(!values.lname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
         errors.lname = 'First must be A-Z , a-z'
     }
-
-
+    
     if(!values.username){
         errors.username = "Username is required"
     }
