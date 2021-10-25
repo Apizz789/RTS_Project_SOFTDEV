@@ -48,10 +48,6 @@ function TrainSignup() {
         //    .catch(error => {console.log(error)}) 
     }
 
-
-
-
-
     return (
         
         <div className="register_class" >
@@ -143,5 +139,6 @@ function TrainSignup() {
     )
 
 }
+
 
 export default TrainSignup;
