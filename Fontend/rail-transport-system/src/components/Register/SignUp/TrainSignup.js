@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import validation from "./validation"
-import firebase from 'C:/Users/user/Documents/Github/test-repo/Project_SOFTDEV/Fontend/rail-transport-system/src/firebase.js'
+// import firebase from '../Project_SOFTDEV/Fontend/rail-transport-system/src/firebase.js'
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
-const db = firebase.firestore();
+// const db = firebase.firestore();
 function TrainSignup() {
     const [values, setValues] = useState({
         fname:"",
