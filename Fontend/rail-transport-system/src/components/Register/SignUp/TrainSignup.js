@@ -1,4 +1,4 @@
-import React, { useState, useReducer} from 'react'
+import React, { useState, useReducer } from 'react'
 import axios from 'axios'
 import validation from "./validation"
 
@@ -61,24 +61,24 @@ function TrainSignup() {
         //                  .catch(error => {console.log(error)})
 
         console.log(values.sex)
-        if(Object.keys(errors).length === 0){
-            axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users',{
-            "Firstname": values.fname,
-            "Lastname": values.lname,
-            "Username": values.username,
-            "Password": values.password,
-            "Tel": values.tel,
-            "DOB": values.DOB,
-            "Email": values.email,
-            "Sex": values.sex,
-          })
-           .then(response => {console.log(response)})
-           .catch(error => {console.log(error)})
+        if (Object.keys(errors).length === 0) {
+            axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
+                "Firstname": values.fname,
+                "Lastname": values.lname,
+                "Username": values.username,
+                "Password": values.password,
+                "Tel": values.tel,
+                "DOB": values.DOB,
+                "Email": values.email,
+                "Sex": values.sex,
+            })
+                .then(response => { console.log(response) })
+                .catch(error => { console.log(error) })
         }
     }
 
     // const Checkbox = ({ FemaleCheck, MaleCheck, title = "", checked = false }) => (
-  
+
     //     <input
     //       onChange2={e => {
     //         if (FemaleCheck !== undefined) FemaleCheck(e.target.checked);
@@ -101,19 +101,19 @@ function TrainSignup() {
 
     const Checkbox = ({ fnClick, fnChange, title = "", checked = false }) => (
         <label>
-          <input
-            onClick={e => {
-              if (fnClick !== undefined) fnClick(e.target.checked);
-            }}
-            onChange={e => {
-              if (fnChange !== undefined) fnChange(e.target.checked);
-            }}
-            type="checkbox"
-            checked={checked}
-          />
-          {" Checkbox " + title}
+            <input
+                onClick={e => {
+                    if (fnClick !== undefined) fnClick(e.target.checked);
+                }}
+                onChange={e => {
+                    if (fnChange !== undefined) fnChange(e.target.checked);
+                }}
+                type="checkbox"
+                checked={checked}
+            />
+            {" Checkbox " + title}
         </label>
-      );
+    );
 
 
     return (
@@ -124,16 +124,16 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>First Name</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
+                    <input
+                        className="inputbox"
+                        type="text"
                         name="fname"
-                        maxLength="30" 
-                        placeholder="Input your First Name" 
+                        maxLength="30"
+                        placeholder="Input your First Name"
                         required
-                        value = {values.fname} 
-                        onChange={handleChange} 
-                         
+                        value={values.fname}
+                        onChange={handleChange}
+
                     />
                     {errors.fname && <p className="error">{errors.fname}</p>}
                 </div>
@@ -141,14 +141,14 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Last Name</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
+                    <input
+                        className="inputbox"
+                        type="text"
                         name="lname"
-                        maxLength="30" 
-                        placeholder="Input your Last Name" 
+                        maxLength="30"
+                        placeholder="Input your Last Name"
                         required
-                        value = {values.lname} 
+                        value={values.lname}
                         onChange={handleChange} />
                     {errors.lname && <p className="error">{errors.lname}</p>}
                 </div>
@@ -156,15 +156,15 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Username</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
-                        name="username" 
-                        maxLength="20" 
-                        placeholder="Input your User" 
+                    <input
+                        className="inputbox"
+                        type="text"
+                        name="username"
+                        maxLength="20"
+                        placeholder="Input your User"
                         required
-                        value = {values.username}
-                        onChange={handleChange} 
+                        value={values.username}
+                        onChange={handleChange}
                     />
                     {errors.username && <p className="error">{errors.username}</p>}
                 </div>
@@ -172,14 +172,14 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Password</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
-                        name="password" 
-                        placeholder="Input your Password" 
+                    <input
+                        className="inputbox"
+                        type="text"
+                        name="password"
+                        placeholder="Input your Password"
                         required
-                        value = {values.password}
-                        onChange={handleChange} 
+                        value={values.password}
+                        onChange={handleChange}
                     />
                     {errors.password && <p className="error">{errors.password}</p>}
                 </div>
@@ -187,14 +187,14 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Repeat Password</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
-                        name="repeat_password" 
-                        placeholder="Repeat Password" 
+                    <input
+                        className="inputbox"
+                        type="text"
+                        name="repeat_password"
+                        placeholder="Repeat Password"
                         required
-                        value = {values.repeat_password} 
-                        onChange={handleChange} 
+                        value={values.repeat_password}
+                        onChange={handleChange}
                     />
                     {errors.repeat_password && <p className="error">{errors.repeat_password}</p>}
                 </div>
@@ -202,63 +202,72 @@ function TrainSignup() {
                 <div className="input-box" align="center">
                     <span className="details">
                         <h2>Telephone</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
-                        name="tel" 
-                        maxLength="10" 
-                        placeholder="Input your Telephone" 
+                    <input
+                        className="inputbox"
+                        type="text"
+                        name="tel"
+                        maxLength="10"
+                        placeholder="Input your Telephone"
                         required
-                        value = {values.tel}
-                        onChange={handleChange} 
+                        value={values.tel}
+                        onChange={handleChange}
                     />
                     {errors.tel && <p className="error">{errors.tel}</p>}
-                    
+
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details"><h2>DOB</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="date" 
-                        data-date-inline-picker="true" 
-                        name="DOB" min="1900-01-01" 
-                        max="2009-12-31" 
-                        placeholder="dd-mm-yyyy" 
+                    <input
+                        className="inputbox"
+                        type="date"
+                        data-date-inline-picker="true"
+                        name="DOB" min="1900-01-01"
+                        max="2009-12-31"
+                        placeholder="dd-mm-yyyy"
                         required
                         value={values.DOB}
-                        onChange={handleChange} 
+                        onChange={handleChange}
                     />
                     {errors.DOB && <p className="error">{errors.DOB}</p>}
                 </div>
 
                 <div className="input-box" align="center">
                     <span className="details"><h2>Email</h2></span>
-                    <input 
-                        className="inputbox" 
-                        type="text" 
-                        name="email" 
-                        placeholder="Input your Email" 
+                    <input
+                        className="inputbox"
+                        type="text"
+                        name="email"
+                        placeholder="Input your Email"
                         required
-                        value = {values.email} 
-                        onChange={handleChange} 
+                        value={values.email}
+                        onChange={handleChange}
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
                 </div>
 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1" checked={state.click}/>
+                                <label for="checkbox1"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="" align="center">
 
-                <div className="input-box" align="center">
-
-                    <Checkbox
-                    title="Click"
-                    fnClick={v => setState({ click: v })}
-                    checked={state.click}
+                    <Checkbox class="checkbox1"
+                        title="Click"
+                        fnClick={v => setState({ click: v })}
+                        checked={state.click}
                     />
                     <br />
-                    <Checkbox
-                    title="Change"
-                    fnChange={v => setState({ change: v })}
-                    checked={state.change}
+                    <Checkbox class="checkbox2"
+                        title="Change"
+                        fnChange={v => setState({ change: v })}
+                        checked={state.change}
                     />
                     {/* <label className="container">Male
                     <Checkbox
