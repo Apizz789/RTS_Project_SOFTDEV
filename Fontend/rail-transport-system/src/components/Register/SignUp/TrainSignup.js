@@ -35,8 +35,8 @@ function TrainSignup() {
 
 
     const initialState = {
-        female: false,
-        male: true,
+        change: false,
+        click: false,
     };
 
     const reducer = (state, action) => ({ ...state, ...action });
@@ -52,15 +52,14 @@ function TrainSignup() {
         event.preventDefault()
         setErrors(validation(values));
 
-        // axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-        //                 "email": Email,
-        //                 "password": Password,
-        //                 "returnSecureToken": true
-        //                 })
-        //                  .then(response => {console.log(response)})
-        //                  .catch(error => {console.log(error)})
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+                        "email": values.email,
+                        "password": values.password,
+                        "returnSecureToken": true
+                        })
+                         .then(response => {console.log(response)})
+                         .catch(error => {console.log(error)})
 
-        console.log(values.sex)
         if (Object.keys(errors).length === 0) {
             axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
                 "Firstname": values.fname,
@@ -91,13 +90,13 @@ function TrainSignup() {
     //     />
     // );
 
-    // if (state.male){
-    //     values.sex = "Male"
-    // }
+    if (state.click){
+        values.sex = "Male"
+    }
 
-    // else if (state.female){
-    //     values.sex = "Female"
-    // }
+    if (state.change){
+        values.sex = "Female"
+    }
 
     const Checkbox = ({ fnClick, fnChange, title = "", checked = false }) => (
         <label>
@@ -111,7 +110,7 @@ function TrainSignup() {
                 type="checkbox"
                 checked={checked}
             />
-            {" Checkbox " + title}
+            {title}
         </label>
     );
 
@@ -259,16 +258,22 @@ function TrainSignup() {
                 <div className="" align="center">
 
                     <Checkbox class="checkbox1"
-                        title="Click"
+                        title="Male"
                         fnClick={v => setState({ click: v })}
                         checked={state.click}
                     />
                     <br />
                     <Checkbox class="checkbox2"
-                        title="Change"
+                        title="Female"
                         fnChange={v => setState({ change: v })}
                         checked={state.change}
                     />
+                    {
+                    state.click? null : state.change = false 
+                     }
+                    {
+                      state.change? null : state.click = false
+                    }
                     {/* <label className="container">Male
                     <Checkbox
                     name = "Male"
