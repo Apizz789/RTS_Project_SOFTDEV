@@ -8,7 +8,7 @@ const validation = (values) => {
         errors.fname = "First Name is required"
     }
     else if(!values.fname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
-        errors.fname = 'First must be A-Z , a-z'
+        errors.fname = 'First Name must contains only A-Z , a-z'
     }
 
     values.lname = values.lname.replace(/\s+/g, '');
@@ -16,7 +16,7 @@ const validation = (values) => {
         errors.lname = "Last Name is required"
     }
     else if(!values.lname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
-        errors.lname = 'First must be A-Z , a-z'
+        errors.lname = 'Last Name must contains only A-Z , a-z'
     }
     
     if(!values.username){
@@ -33,6 +33,10 @@ const validation = (values) => {
     else if(values.password.length < 8 || values.password.length > 32){
         errors.password = "Password must length between 8-32 characters"
     }
+    else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
+    {
+        errors.password = "Password must contains A-z, a-z and 0-9 mix together"
+    } 
 
 
     if(values.password != values.repeat_password){
