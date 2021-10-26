@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer} from 'react'
 import axios from 'axios'
 import validation from "./validation"
 
@@ -18,9 +18,29 @@ function TrainSignup() {
         repeat_password: "",
         tel: "",
         DOB: "",
-        email: ""
+        email: "",
+        sex: "",
     });
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({
+        fname: "",
+        lname: "",
+        username: "",
+        password: "",
+        repeat_password: "",
+        tel: "",
+        DOB: "",
+        email: "",
+        sex: "",
+    });
+
+
+    const initialState = {
+        female: false,
+        male: true,
+    };
+
+    const reducer = (state, action) => ({ ...state, ...action });
+    const [state, setState] = useReducer(reducer, initialState);
 
     const handleChange = (event) => {
         setValues({
@@ -40,18 +60,61 @@ function TrainSignup() {
         //                  .then(response => {console.log(response)})
         //                  .catch(error => {console.log(error)})
 
-        axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users',{
+        console.log(values.sex)
+        if(Object.keys(errors).length === 0){
+            axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users',{
             "Firstname": values.fname,
             "Lastname": values.lname,
             "Username": values.username,
             "Password": values.password,
             "Tel": values.tel,
             "DOB": values.DOB,
-            "Email": values.email
+            "Email": values.email,
+            "Sex": values.sex,
           })
            .then(response => {console.log(response)})
-           .catch(error => {console.log(error)}) 
+           .catch(error => {console.log(error)})
+        }
     }
+
+    // const Checkbox = ({ FemaleCheck, MaleCheck, title = "", checked = false }) => (
+  
+    //     <input
+    //       onChange2={e => {
+    //         if (FemaleCheck !== undefined) FemaleCheck(e.target.checked);
+    //       }}
+    //       onChange={e => {
+    //         if (MaleCheck !== undefined) MaleCheck(e.target.checked);
+    //       }}
+    //       type="checkbox"
+    //       checked={checked}
+    //     />
+    // );
+
+    // if (state.male){
+    //     values.sex = "Male"
+    // }
+
+    // else if (state.female){
+    //     values.sex = "Female"
+    // }
+
+    const Checkbox = ({ fnClick, fnChange, title = "", checked = false }) => (
+        <label>
+          <input
+            onClick={e => {
+              if (fnClick !== undefined) fnClick(e.target.checked);
+            }}
+            onChange={e => {
+              if (fnChange !== undefined) fnChange(e.target.checked);
+            }}
+            type="checkbox"
+            checked={checked}
+          />
+          {" Checkbox " + title}
+        </label>
+      );
+
 
     return (
         <form>
@@ -185,14 +248,36 @@ function TrainSignup() {
 
 
                 <div className="input-box" align="center">
-                    <label className="container">Male
-                        <input type="checkbox"  onChange={() => { }} />
+
+                    <Checkbox
+                    title="Click"
+                    fnClick={v => setState({ click: v })}
+                    checked={state.click}
+                    />
+                    <br />
+                    <Checkbox
+                    title="Change"
+                    fnChange={v => setState({ change: v })}
+                    checked={state.change}
+                    />
+                    {/* <label className="container">Male
+                    <Checkbox
+                    name = "Male"
+                    value = {values.sex}
+                    MaleCheck={v => setState({ male: v})}
+                    checked={state.male}
+                    />
                         <span className="checkmark"></span>
                     </label>
                     <label className="container">Female
-                        <input type="checkbox"  onChange={() => { }} />
+                    <Checkbox
+                    name = "Female"
+                    value = {values.sex}
+                    FemaleCheck={v => setState({ female: v})}
+                    checked={state.female}
+                    />
                         <span className="checkmark"></span>
-                    </label>
+                    </label> */}
                 </div>
 
 
