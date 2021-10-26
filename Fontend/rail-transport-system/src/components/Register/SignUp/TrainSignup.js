@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import validation from "./validation"
-import firebase from '../../../firebase'
+
+// import firebase from '../../../firebase'
+// const db = firebase.firestore();
+
 import PropTypes from 'prop-types'
 import '../SignUp/TrainSignup.css';
-const db = firebase.firestore();
+
+
 function TrainSignup() {
     const [values, setValues] = useState({
         fname: "",
@@ -51,9 +55,6 @@ function TrainSignup() {
 
     return (
         <form>
-
-
-
             <div className="register_class" >
                 <div className="Title"><h1 align="center">REGISTRATION</h1></div>
 
@@ -198,7 +199,10 @@ function TrainSignup() {
                 <div className="button" align="center">
                     <input type="submit" value="Register" onClick={handleSubmit} />
                     <input type="reset" value="Clear" />
+                    <a href="../Register/SignIn/TrainSignin"><button>Go To Login</button></a>
                 </div>
+
+
 
                 <h2>Starting Date</h2>
                 <section>
@@ -210,7 +214,6 @@ function TrainSignup() {
                         </div>
                     </fieldset>
                 </section>
-
 
             </div>
         </form>

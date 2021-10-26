@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
 import Signup from './components/pages/Signup';
+import Signin from './components/pages/Signin';
 import Trainmap from './components/Map/Trainmap';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/home' exact  component ={Home} />
         <Route path='/services' exact component ={Services} />
         <Route path='/sign-up' exact component ={Signup} />
+        <Route path='/sign-in' exact component ={Signin} />
         <Route path='/map' exact component ={Trainmap} />
       </Switch>
     </Router>
