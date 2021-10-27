@@ -8,6 +8,9 @@ import Services from './components/pages/Services';
 import Signup from './components/pages/Signup';
 import Signin from './components/pages/Signin';
 import Trainmap from './components/Map/Trainmap';
+import TrainCalculate from './components/Calculate/TrainCalculate';
+import Footer from './components/Footer(Contact)/Footer';
+
 
 function App() {
 
@@ -21,8 +24,11 @@ function App() {
         <Route path='/sign-up' exact component ={Signup} />
         <Route path='/sign-in' exact component ={Signin} />
         <Route path='/map' exact component ={Trainmap} />
+        <Route path='/calculate' exact component ={TrainCalculate} />
       </Switch>
+      <Footer />
     </Router>
+
     </>
   );
 }

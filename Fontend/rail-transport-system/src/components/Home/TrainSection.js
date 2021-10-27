@@ -11,7 +11,7 @@ function TrainSection(){
          <h2>กรุงเทพ ชีวิตดี ๆ ที่ลงตัว</h2>
             <div className="train-btns">
                 <Link to='/ticket'>
-                    <Button className='btns' 
+                    <Button className='btn' 
                         buttonStyle='btn--outline'
                         buttonSize='btn--large'
                     >

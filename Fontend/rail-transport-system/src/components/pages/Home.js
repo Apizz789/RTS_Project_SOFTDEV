@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import Cards from '../Card/Cards';
-import Footer from '../Footer(Contact)/Footer';
 import TrainSection from '../Home/TrainSection';
 
 
@@ -10,7 +9,6 @@ function Home(){
         <>
             <TrainSection />
             <Cards />
-            <Footer />
         </>
     )
 }
