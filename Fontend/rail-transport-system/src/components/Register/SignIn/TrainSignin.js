@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
-import axios from 'axios';
-=======
 import axios from 'axios'
 import validation_signin from "./validation_signin"
->>>>>>> Stashed changes
 
 // import firebase from '../../../firebase';
 import '../SignIn/TrainSignin.css';

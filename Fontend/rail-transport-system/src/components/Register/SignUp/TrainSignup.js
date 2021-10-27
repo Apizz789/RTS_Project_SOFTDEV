@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
-import React, { useState, useReducer } from 'react';
-import axios from 'axios';
-import validation from "./validation";
-=======
 import React, { useState, useReducer } from 'react'; 
 import axios from 'axios'
 import validation_signup from "./validation_signup"
->>>>>>> Stashed changes
 
 // import firebase from '../../../firebase';
 // const db = firebase.firestore();
