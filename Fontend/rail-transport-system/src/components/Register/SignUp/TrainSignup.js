@@ -35,7 +35,7 @@ function TrainSignup() {
 
 
     const initialState = {
-        change: false,
+        change: true,
         click: false,
     };
 
@@ -254,7 +254,7 @@ function TrainSignup() {
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="checkbox">
-                                <input type="checkbox" id="checkbox1" checked={state.click}/>
+                                <input type="checkbox" id="checkbox1" checked={state.click} onChange={()=>{}}/>
                                 <label for="checkbox1"></label>
                             </div>
                         </div>
