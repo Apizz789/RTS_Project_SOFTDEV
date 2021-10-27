@@ -1,11 +1,11 @@
-import React, { useState, useReducer } from 'react'
-import axios from 'axios'
-import validation from "./validation"
+import React, { useState, useReducer } from 'react';
+import axios from 'axios';
+import validation from "./validation";
 
-// import firebase from '../../../firebase'
+// import firebase from '../../../firebase';
 // const db = firebase.firestore();
 
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import '../SignUp/TrainSignup.css';
 
 
@@ -116,7 +116,7 @@ function TrainSignup() {
 
 
     return (
-        <form>
+        <form className="Signup_body">
             <div className="register_class" >
                 <div className="Title"><h1 align="center">REGISTRATION</h1></div>
 

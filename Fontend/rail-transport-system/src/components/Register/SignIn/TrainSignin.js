@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react';
+import axios from 'axios';
 
-// import firebase from '../../../firebase'
+// import firebase from '../../../firebase';
 import '../SignIn/TrainSignin.css';
 
 
@@ -52,7 +52,7 @@ function TrainSignin() {
     }
 
     return (
-        <form>
+        <form className="Signin_body">
             <div className="login_class" >
                 <div className="Title"><h1 align="center">LOGIN</h1></div>
 

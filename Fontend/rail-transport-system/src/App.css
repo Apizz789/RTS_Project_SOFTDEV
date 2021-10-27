@@ -8,7 +8,9 @@
 .home,
 .services,
 .products,
-.sign-up {
+.sign-up,
+.sign-in
+ {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -35,6 +37,15 @@
 }
 
 .sign-up {
+  /* background-image: url('images//rail-transport-system/public/images/img-8.jpg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.sign-in {
   /* background-image: url('images//rail-transport-system/public/images/img-8.jpg'); */
   background-position: center;
   background-size: cover;

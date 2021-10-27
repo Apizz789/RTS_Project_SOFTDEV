@@ -2,10 +2,9 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans';
-
+    font-family: 'PT Sans', sans-serif;
 }
-body {
+.Signin_body {
     background: #7f7df9;
 }
 .register_class{
