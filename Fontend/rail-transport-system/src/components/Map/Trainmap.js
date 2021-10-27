@@ -12,17 +12,17 @@ export default memo(function Trainmap() {
         <Col>BTS,MRT and AIRPORTLINK</Col>
       </Row>
       <Row>
-        <Col><img src='images/mapfull2564.jpg' style={{width: 600,height: 'auto'}}></img></Col>
+        <Col><img src='images/mapfull2564.jpg' style={{width: 600,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img></Col>
         <Col>
           <Col>
               <Col>
-                    <img src='images/BTS.jpg' style={{width: 280,height: 'auto'}}></img>
+                    <img src='images/BTS.jpg' style={{width: 280,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img>
               </Col>
               <Col>
-                    <img src='images/MRT.jpg'style={{width: 280,height: 'auto'}}></img>
+                    <img src='images/MRT.jpg'style={{width: 280,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img>
               </Col>
               <Col>
-                    <img src='images/airlink.jpg' style={{width: 280,height: 'auto'}}></img>
+                    <img src='images/airlink.jpg' style={{width: 280,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img>
               </Col>
           </Col>
           <Col>วิธีดูหมายเลขสถานี</Col>
@@ -54,15 +54,15 @@ export default memo(function Trainmap() {
               </Col>
               <Col xs="7">
                   <Row>
-                      <Col><img src='images/btsgreen.png' style={{width: 150,height: 'auto'}}></img></Col>
+                      <Col><img src='images/btsgreen.png' style={{width: 150,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img></Col>
                       <Col><img src='images/mrtblue.png' style={{width: 150,height: 'auto'}}></img></Col>
                   </Row>
                   <Row>
-                      <Col><img src='images/btsgreenlight.png' style={{width: 150,height: 'auto'}}></img></Col>
+                      <Col><img src='images/btsgreenlight.png' style={{width: 150,height: 'auto'}} draggable="false" dragstart="false"  class="unselectable"></img></Col>
                       <Col><img src='images/mrtpurple.png' style={{width: 150,height: 'auto'}}></img></Col>
                   </Row>
                   <Row>
-                      <Col><img src='images/btsgold.png' style={{width: 150,height: 'auto'}}></img></Col>
+                      <Col><img src='images/btsgold.png' style={{width: 150,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img></Col>
                   </Row>
               </Col>
             </Row>
