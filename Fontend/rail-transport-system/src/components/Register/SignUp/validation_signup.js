@@ -1,4 +1,4 @@
-const validation = (values) => {
+const validation_signup = (values) => {
     let errors={};
 
 
@@ -23,7 +23,7 @@ const validation = (values) => {
         errors.username = "Username is required"
     }
     else if(values.username.length < 8 || values.username.length > 20){
-        errors.username = "Username must length between 8-20 characters"
+        errors.username = "Username length must be between 8-20 characters"
     }
 
 
@@ -31,7 +31,7 @@ const validation = (values) => {
         errors.password = "Password is required"
     }
     else if(values.password.length < 8 || values.password.length > 32){
-        errors.password = "Password must length between 8-32 characters"
+        errors.password = "Password length must be between 8-32 characters"
     }
     // else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
     // {
@@ -66,4 +66,4 @@ const validation = (values) => {
 
     return errors;
 }
-export default validation;
+export default validation_signup;

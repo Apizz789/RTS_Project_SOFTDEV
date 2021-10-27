@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 import React, { useState, useReducer } from 'react';
 import axios from 'axios';
 import validation from "./validation";
+=======
+import React, { useState, useReducer } from 'react'; 
+import axios from 'axios'
+import validation_signup from "./validation_signup"
+>>>>>>> Stashed changes
 
 // import firebase from '../../../firebase';
 // const db = firebase.firestore();
@@ -50,9 +56,13 @@ function TrainSignup() {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        setErrors(validation(values));
+        setErrors(validation_signup(values));
 
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+        
+
+        if (Object.keys(errors).length === 0) {
+            
+            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
                         "email": values.email,
                         "password": values.password,
                         "returnSecureToken": true
@@ -60,7 +70,6 @@ function TrainSignup() {
                          .then(response => {console.log(response)})
                          .catch(error => {console.log(error)})
 
-        if (Object.keys(errors).length === 0) {
             axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
                 "Firstname": values.fname,
                 "Lastname": values.lname,
@@ -176,6 +185,7 @@ function TrainSignup() {
                         type="text"
                         name="password"
                         placeholder="Input your Password"
+                        maxLength="32"
                         required
                         value={values.password}
                         onChange={handleChange}
@@ -191,6 +201,7 @@ function TrainSignup() {
                         type="text"
                         name="repeat_password"
                         placeholder="Repeat Password"
+                        maxLength="32"
                         required
                         value={values.repeat_password}
                         onChange={handleChange}
