@@ -35,8 +35,8 @@ function TrainSignup() {
 
 
     const initialState = {
-        change: true,
-        click: false,
+        change: false,
+        click: true,
     };
 
     const reducer = (state, action) => ({ ...state, ...action });
