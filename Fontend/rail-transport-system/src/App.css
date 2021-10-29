@@ -10,7 +10,8 @@
 .products,
 .sign-up,
 .sign-in,
-.map
+.map,
+.TrainHistory
  {
   display: flex;
   height: 90vh;
@@ -52,6 +53,14 @@
 }
 
 .map{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.TrainHistory{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

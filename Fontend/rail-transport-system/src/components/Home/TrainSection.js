@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import { Button } from '../Button/Button';
+// import { Button } from '../Button/Button';
+import {Button} from 'react-bootstrap';
 import '../Home/TrainSection.css'
 function TrainSection(){
     return(
@@ -11,12 +12,7 @@ function TrainSection(){
          <h2>กรุงเทพ ชีวิตดี ๆ ที่ลงตัว</h2>
             <div className="train-btns">
                 <Link to='/ticket'>
-                    <Button className='btn' 
-                        buttonStyle='btn--outline'
-                        buttonSize='btn--large'
-                    >
-                        GET TICKET  <i className="fas fa-ticket-alt" />
-                    </Button>
+                    <Button variant="outline-dark">GET TICKET  <i className="fas fa-ticket-alt" /></Button>
                 </Link>
             </div>
         </div>

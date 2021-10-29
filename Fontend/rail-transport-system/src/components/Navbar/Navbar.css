@@ -40,7 +40,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 60vw;
+  width: 75vw;
   justify-content: end;
   margin-right: 2rem;
 }
@@ -74,6 +74,8 @@
 .menu-icon {
   display: none;
 }
+
+
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
@@ -154,5 +156,8 @@
     background: rgb(255, 255, 255);
     color: #242424;
     transition: 250ms;
+  }
+  .btn-mobile {
+    display: none;
   }
 }

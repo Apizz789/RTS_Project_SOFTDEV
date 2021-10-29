@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import '../Navbar/Navbar.css';
-import { Button } from '../Button/Button';
+// import { Button } from '../Button/Button';
+import {Button} from 'react-bootstrap';
 
 function Navbar() {
     const [click,setClick]= useState(false);
@@ -25,7 +26,7 @@ function Navbar() {
     window.addEventListener('resize',showButton);
 
     return (
-        <>
+        <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"9999"}}>
           <nav className='navbar'>
             <div className='navbar-container'>
               <Link to='/' className='navbar-logo' onClick={closeMobileMenu}> 
@@ -51,7 +52,7 @@ function Navbar() {
                 </li>
                 <li className='nav-item'>
                   <Link
-                    to='/ticket'
+                    to='/history'
                     className='nav-links'
                     onClick={closeMobileMenu}
                   >
@@ -91,16 +92,16 @@ function Navbar() {
               </ul>
 
               <Link to='/sign-up' className='btn-mobile'>
-                {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+                <Button variant="outline-light">SIGN UP</Button>
               </Link>
 
               <Link to='/sign-in' className='btn-mobile'>
-                {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
+                <Button variant="outline-light">SIGN IN</Button>
               </Link>
 
             </div>
           </nav>
-        </>
+        </div>
     );
 }
 
