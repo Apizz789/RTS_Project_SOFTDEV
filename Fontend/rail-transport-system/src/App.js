@@ -18,6 +18,7 @@ function App() {
     <>
     <Router>
       <Navbar />
+      <br/>
       <Switch>
         <Route path='/' exact  component ={Home} />
         <Route path='/services' exact component ={Services} />
