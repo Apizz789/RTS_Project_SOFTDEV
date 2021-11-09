@@ -4,6 +4,7 @@ import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-
 
 function TrainHistory() {
     const [numberOrder, setNumberOrder] = useState("")
+    const [number, setNumber] = useState("")
     const history = [
         {"numberOrder":"1","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
         {"numberOrder":"2","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
@@ -11,16 +12,21 @@ function TrainHistory() {
         {"numberOrder":"4","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
         {"numberOrder":"5","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"}
     ]
-    const [isSearch, setIsSearch] = useState(false) 
-    
+    const [isSearch, setIsSearch] = useState(false)
+    const [showAll, setShowAll] = useState(true)
+
+
     
     function onClickSearch(event) {
         if(numberOrder === ""){
             setIsSearch(false)
-            alert("Please select a number")
+            alert("กรุณากรอกหมายเลขคำสั่งซื้อ")
+            setShowAll(true)
         }
         else{
             setIsSearch(true)
+            setShowAll(false)
+            setNumber(numberOrder)
         }
     }
     const ShowHistory=history.map((item, index)=>{
@@ -38,7 +44,7 @@ function TrainHistory() {
     });
     const ShowSearch=history.filter((item)=>{
         return (
-            item.numberOrder===numberOrder
+            item.numberOrder===number
         );
     }).map((item)=>{
         return (
@@ -55,36 +61,31 @@ function TrainHistory() {
     
     
     return (
-        <div style={{marginTop:"100px"}}>
+        <div style={{marginTop:"100px",width:"100%"}}>
+            <h1>Rail Transport System</h1>
             <Container>
-                <Row >
-                    <Col xs="8">
-                        <Row>
-                            <Col>
-                                <Form.Control value={numberOrder} onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
-                            </Col>
-                            <Col><Button onClick={onClickSearch}  variant="outline-primary">Search</Button>{' '}</Col>
-                       </Row>
-                        
-                    </Col>
-                </Row>
+                <div  style={{display:"flex",justifyContent:"space-between",width:"45%",margin:"auto"}}>
+                            <Form.Control value={numberOrder}   onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
+                            <Button onClick={onClickSearch}  variant="outline-primary" >Search</Button>
+                </div>
             </Container>
-            <div style={{ borderTop: "5px solid #7f7df9 ", marginTop:  100,width:"100vw"}}></div>
+            <div style={{ borderTop: "5px solid #7f7df9 ", marginTop:  100,width:"100%"}}></div>
             <h2>รายการสั่งซื้อล่าสุด</h2>
-           
-           <Table striped bordered hover size="sm">
+           <Table striped bordered hover>
                 <thead>
                     <tr>
-                    <th>หมายเลขคำสั่งซื้อ</th>
-                    <th>สถานีต้นทาง</th>
-                    <th>สถานีปลายทาง</th>
-                    <th>เวลา</th>
+                        <th>หมายเลขคำสั่งซื้อ</th>
+                        <th>สถานีต้นทาง</th>
+                        <th>สถานีปลายทาง</th>
+                        <th>เวลา</th>
                     </tr>
                 </thead>
-                {isSearch ? ShowSearch:ShowHistory}
+
+                {showAll ? ShowHistory:null}
+                {isSearch ? ShowSearch:null}
+                
                 
             </Table>
-
         </div>
     )
 }
