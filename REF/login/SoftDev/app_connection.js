@@ -1,6 +1,6 @@
 const db=firebase.firestore();
 const table=document.querySelector('#Tb_Show_List')
-db.collection('Connection').where('ID_station1','>','A').where('ID_station1','<','D').get().then((snapshot)=>{
+db.collection('Connection').orderBy('ID_station1','asc').get().then((snapshot)=>{
     //console.log(snapshot.docs); //ดึงส่วน Document มาแสดงใน console
     snapshot.forEach(doc => {
         // console.log(doc.data());
