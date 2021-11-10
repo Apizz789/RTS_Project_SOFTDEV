@@ -1,8 +1,33 @@
+
+import axios from 'axios'
+
+let user_list = []
+
+async function makeGetRequest() {
+
+    const fetchedResult = [];
+    user_list = []
+    const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users');
+    for (let key in res.data) {
+    fetchedResult.unshift(
+        {
+            // ...res.data[key],
+            username: res.data[key].Username,
+            password: res.data[key].Password,
+            id: key
+        }
+    )
+    user_list.push(res.data[key].Username)
+    }
+    // let reversed = user_list.reverse();
+}
+
+makeGetRequest()
+
 const validation_signup = (values) => {
     let errors={};
-
-
-
+    
+    console.log(user_list)
     values.fname = values.fname.replace(/\s+/g, '');
     if(!values.fname){
         errors.fname = "First Name is required"
@@ -18,13 +43,17 @@ const validation_signup = (values) => {
     else if(!values.lname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
         errors.lname = 'Last Name must contains only A-Z , a-z'
     }
-    
+
     if(!values.username){
         errors.username = "Username is required"
     }
     else if(values.username.length < 8 || values.username.length > 20){
         errors.username = "Username length must be between 8-20 characters"
     }
+    else if (Object.values(user_list).includes(values.username)){
+        errors.username = "This Username is already taken."
+    }
+
 
 
     if(!values.password){
