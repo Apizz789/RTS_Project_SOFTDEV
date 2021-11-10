@@ -10,7 +10,15 @@ function TrainHistory() {
         {"numberOrder":"2","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
         {"numberOrder":"3","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
         {"numberOrder":"4","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
-        {"numberOrder":"5","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"}
+        {"numberOrder":"5","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"6","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"7","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"8","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"9","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"10","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"11","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"12","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"},
+        {"numberOrder":"13","departureStation":"พญาไท","lastStation":"ลาดกระบัง","dueDate":"11:11:11"}
     ]
     const [isSearch, setIsSearch] = useState(false)
     const [showAll, setShowAll] = useState(true)
