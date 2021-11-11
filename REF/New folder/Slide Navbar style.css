@@ -8,9 +8,10 @@ body{
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
+
 .Card-Regis{
-	width:1000px;
-	height: 600px;
+	width:1200px;
+	height: 750px;
 	/* background: red; */
 	overflow: hidden;
 	
@@ -19,6 +20,7 @@ body{
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 }
+
 #chk{
 	opacity: 0.5;
 	display: none;
@@ -44,17 +46,30 @@ input{
 	background: #e0dede;
 	justify-content: space-around;
 	display: flex;
-	margin: 20px auto;
+	margin: 15px auto;
 	padding: 10px;
 	border: none;
 	outline: none;
 	border-radius: 5px;
 }
+input{
+		width: 60%;
+		height: 20px;
+		background: #e0dede;
+		justify-content: space-around;
+		display: flex;
+		margin: 15px auto;
+		padding: 10px;
+		border: none;
+		outline: none;
+		border-radius: 5px;
+}
+
 button{
 	width: 30%;
 	height: 40px;
 	margin: 10px auto;
-	justify-content:  space-around;
+	justify-content:  center;
 	display: block;
 	color: #fff;
 	background: #573b8a;
@@ -67,13 +82,34 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
+#cancle{
+	width: 30%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content:  center;
+	display: block;
+	color: #fff;
+	background: #e2347d;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+
+}
+#cancle:hover{
+	background: #8a0346;
+}
 button:hover{
 	background: #6d44b8;
 }
-.login{
+.login{     /*  login menu*/
 	height: 600px;
 	background: rgb(223, 212, 226);
-	border-radius: 60% / 60%;
+	border-radius: 20% ;
 	opacity: 0.45;
 	transform: translateY(-180px);
 	transition: .6s ease-in-out;
@@ -86,7 +122,7 @@ button:hover{
 
 #chk:checked ~ .login{
 	opacity: 1;
-	transform: translateY(-600px);
+	transform: translateY(-700px);
 }
 #chk:checked ~ .login label{
 	
@@ -96,3 +132,21 @@ button:hover{
 	opacity: 0.25;
 	transform: scale(.6);
 }
+img{  
+	height: 200px;  
+	width: 250px;  
+
+	}  
+#left{    
+float: left;
+width:40%; 
+/* padding: 5px;  */
+	}  
+#right{    
+float: right;
+width: 60%;
+/* padding: 5px; */
+}
+#center{
+	float: center;
+}  

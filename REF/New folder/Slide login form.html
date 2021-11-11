@@ -14,7 +14,12 @@
 		<div class="signup">
 			<form>
 				<label for="chk" aria-hidden="true">Sign up</label>
-				<div>
+				<div class="Name-User" id="left">
+					<center><img class="sealImage" alt="Image of Seal" src="P:\GIT\Project_SOFTDEV\REF\New folder\552721.jpg"  width="100" align=""></center>
+					<input id = "fn" type="text" name="FName" placeholder="First name" required="">
+					<input id = "ln" type="text" name="LName" placeholder="Last name" required="">
+				</div>
+				<div class="Info-User" id="right" >
 					<input type="text" name="txt" placeholder="User name" required="">
 					<input type="email" name="email" placeholder="Email" required="">
 					<input type="password" name="pswd" placeholder="Password" required="">
@@ -23,12 +28,11 @@
 					<input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01"
 						max="2009-12-31" placeholder="dd-mm-yyyy" required value={values.DOB} onChange={handleChange} />
 				</div>
-				<div>
-					<img src="REF\New folder\552721.png" alt="User" ></img>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="text" name="txt" placeholder="User name" required="">
-				</div>
 				<button>Sign up</button>
+				
+
+				
+				<button>Cancle</button>
 			</form>
 		</div>
 
