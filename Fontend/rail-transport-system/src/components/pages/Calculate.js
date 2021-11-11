@@ -13,5 +13,4 @@ function Calculate(){
         </>
     )
 }
-
 export default Calculate;
