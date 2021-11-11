@@ -69,7 +69,7 @@ function TrainHistory() {
     
     
     return (
-        <div style={{marginTop:"100px",width:"100%"}}>
+        <div style={{marginTop:"60px",width:"100%"}}>
             <h1>Rail Transport System</h1>
             <Container>
                 <div  style={{display:"flex",justifyContent:"space-between",width:"45%",margin:"auto"}}>

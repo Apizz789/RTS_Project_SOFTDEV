@@ -6,10 +6,12 @@ import Home from './components/pages/Home';
 import Services from './components/pages/Services';
 import Signup from './components/pages/Signup';
 import Signin from './components/pages/Signin';
-import Trainmap from './components/Map/Trainmap';
-import TrainCalculate from './components/Calculate/TrainCalculate';
+import MapTrain from './components/pages/Map';
+import Calculate from './components/pages/Calculate';
 import Footer from './components/Footer(Contact)/Footer';
-import TrainHistory from './components/PurchaseHistory/TrainHistory';
+import History from './components/pages/History';
+import Manual from './components/pages/Manual';
+import Schedule from './components/pages/Schedule';
 
 
 function App() {
@@ -24,11 +26,13 @@ function App() {
         <Route path='/services' exact component ={Services} />
         <Route path='/sign-up' exact component ={Signup} />
         <Route path='/sign-in' exact component ={Signin} />
-        <Route path='/map' exact component ={Trainmap} />
-        <Route path='/calculate' exact component ={TrainCalculate} />
-        <Route path='/history' exact component ={TrainHistory} />
+        <Route path='/map' exact component ={MapTrain} />
+        <Route path='/calculate' exact component ={Calculate} />
+        <Route path='/history' exact component ={History} />
+        <Route path='/manual' exact component ={Manual} />
+        <Route path='/schedule' exact component ={Schedule} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
 
     </>

@@ -13,7 +13,7 @@ function Cards() {
               src='images/img-9.jpg'
               text='BTS MRT AIRPORTLINK'
               label='Rail Transport System'
-              path='/services'
+              path='/schedule'
             />
             <CardItem
               src='images/img-2.jpg'
@@ -27,7 +27,7 @@ function Cards() {
               src='images/img-3.jpg'
               text='ข้อแนะนำเพื่อความปลอดภัย'
               label='ข้อปฏิบัติ,ข้อห้าม'
-              path='/practice'
+              path='/manual'
             />
             <CardItem
               src='images/img-4.jpg'
