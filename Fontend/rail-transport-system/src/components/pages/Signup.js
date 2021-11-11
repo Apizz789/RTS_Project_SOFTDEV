@@ -11,4 +11,4 @@ function Signup(){
     )
 }
 
-export default Signup;
+export default TrainSignup;
