@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Project Soft Dev</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+
+
+
+
+<body>  
+    <div class="container">
+        <h2 align="center">Test Data Firebase</h2>
+        <a>db.collection('Connection').doc('').update({Field:'value'})   ID_station1,ID_station2,Time,cost</a>
+        
+        <table class='tbTrain' id='Tb_Show_List' align="center">
+            <tr>
+                <th>ID1</th>
+                <th>สถานี1</th>
+                <th>ID2</th>
+                <th>สถานี2</th>
+                <th>ราคา</th>
+                <th>เวลา</th>
+            </tr>
+        </table>
+        <!-- <p id="demo"></p> -->
+    </div>
+    <a href="add_connection.html" class="button_add">เพิ่มข้อมูลการเชื่อมต่อ</a>
+    <a href="test_index.html" class="button_add">รายละเอียดสถานี
+    </a>  
+
+
+</body>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI",
+        authDomain: "soft-dev-tutorial.firebaseapp.com",
+        projectId: "soft-dev-tutorial",
+        storageBucket: "soft-dev-tutorial.appspot.com",
+        messagingSenderId: "361405349110",
+        appId: "1:361405349110:web:64ce6526f3570436df80d7",
+        measurementId: "G-KTBP691G7W"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+</script>
+<script src="app_connection.js" charset="utf-8"></script>
+
+
+</html>
