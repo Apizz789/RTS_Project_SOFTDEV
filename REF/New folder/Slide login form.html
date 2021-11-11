@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+
 	<div class="Card-Regis">
 		<input type="checkbox" id="chk" aria-hidden="true">
 
@@ -15,9 +15,12 @@
 			<form>
 				<label for="chk" aria-hidden="true">Sign up</label>
 				<div class="Name-User" id="left">
-					<center><img class="sealImage" alt="Image of Seal" src="P:\GIT\Project_SOFTDEV\REF\New folder\552721.jpg"  width="100" align=""></center>
+					<center><img class="sealImage" alt="Image of Seal" src="P:\GIT\Project_SOFTDEV\REF\New folder\552721.jpg"  width="70" ></center>
 					<input id = "fn" type="text" name="FName" placeholder="First name" required="">
 					<input id = "ln" type="text" name="LName" placeholder="Last name" required="">
+					<input type="checkbox" Check If yes!>
+					<input type="checkbox">
+				
 				</div>
 				<div class="Info-User" id="right" >
 					<input type="text" name="txt" placeholder="User name" required="">
@@ -28,11 +31,12 @@
 					<input className="inputbox" type="date" data-date-inline-picker="true" name="DOB" min="1900-01-01"
 						max="2009-12-31" placeholder="dd-mm-yyyy" required value={values.DOB} onChange={handleChange} />
 				</div>
-				<button>Sign up</button>
 				
+				<div id="right">
+					<button id="cancle"> Cancle</button>
+					<button> Sign up </button>
+				</div>
 
-				
-				<button>Cancle</button>
 			</form>
 		</div>
 
@@ -45,6 +49,6 @@
 			</form>
 		</div>
 	</div>
-</body>
+	
 
 </html>
