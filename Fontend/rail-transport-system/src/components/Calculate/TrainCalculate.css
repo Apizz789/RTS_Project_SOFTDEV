@@ -1,4 +1,4 @@
-.calculate_test{
+/* .calculate_test{
     background-color:rgba(0, 0, 0, 0.2);
     height: 88vh;
     width: 100%;
@@ -12,7 +12,7 @@
 }
 .Bghead{
     display: flex;
-    /* background-image: url(C:\Users\aaimspm\Documents\Soft-dev\project\react\react-train\src\component\Group10.png); */
+    background-image: url(C:\Users\aaimspm\Documents\Soft-dev\project\react\react-train\src\component\Group10.png);
     margin-top: 20px;
     margin-bottom: 20px;
     width: 736px;
@@ -102,4 +102,4 @@
     align-self: center;
     border: 2px solid red;
     color: white;
-}
+} */

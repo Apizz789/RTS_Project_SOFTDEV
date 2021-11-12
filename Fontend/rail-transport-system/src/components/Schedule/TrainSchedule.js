@@ -29,13 +29,13 @@ function TrainSchedule() {
                 src='images/img-3.jpg'
                 text='MRT Blue Line'
                 label='Mass Rapid Transit'
-                url={`${baseUrl}/static/media/MRT%20Blue%20Line.5ec9ea5d.pdf`}
+                url='https://rail-transport-system.netlify.app/doc/MRTBlueLine.pdf'
                 />
                 <CardSchedule
                 src='images/img-4.jpg'
                 text='MRT Purple Line'
                 label='Mass Rapid Transit'
-                url={`${baseUrl}/static/media/MRTPurple.814d5f77.pdf`}
+                url='https://rail-transport-system.netlify.app/doc/MRTPurple.pdf'
                 />
             </ul>
             <h4>S.R.T. Electrified Train Co., Ltd.</h4>
