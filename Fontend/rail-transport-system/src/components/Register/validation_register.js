@@ -93,6 +93,11 @@ const validation_register = (values) => {
         errors.email = "Email is invalid"
     }
 
+    if(!values.sex){
+        errors.sex = "Please Select Your Gender"
+    }
+
+
     return errors;
 }
 export default validation_register;
