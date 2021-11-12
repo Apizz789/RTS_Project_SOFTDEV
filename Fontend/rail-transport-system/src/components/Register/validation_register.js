@@ -40,9 +40,9 @@ const validation_register = (values) => {
     if(!values.lname){
         errors.lname = "Last Name is required"
     }
-    // else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-    //     errors.lname = 'Last Name must contains only A-Z , a-z'
-    // }
+    else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
+        errors.lname = 'Last Name must contains only A-Z , a-z'
+    }
 
     if(!values.username){
         errors.username = "Username is required"
@@ -62,13 +62,15 @@ const validation_register = (values) => {
     else if(values.password.length < 8 || values.password.length > 32){
         errors.password = "Password length must be between 8-32 characters"
     }
-    else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
-    {
-        errors.password = "Password must contains A-z, a-z and 0-9 mix together"
-    } 
+    // else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
+    // {
+    //     errors.password = "Password must contains A-z, a-z and 0-9 mix together"
+    // } 
 
-
-    if(values.password != values.repeat_password){
+    if(!values.repeat_password){
+        errors.repeat_password = "Password is required"
+    }
+    else if(values.password != values.repeat_password){
         errors.repeat_password = "Password Not Match!!"
     }
 
