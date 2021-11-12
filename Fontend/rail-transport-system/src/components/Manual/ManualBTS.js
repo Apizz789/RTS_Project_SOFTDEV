@@ -12,16 +12,25 @@ function ManualBTS() {
                         <ul className='cards__items'>
                             <CardItem
                             src='images/img-9.jpg'
-                            text='BTS Green Line'
+                            text='ห้ามยืนพิงประตู หรือเสา หรือยืนกีดขวางบริเวณประตูไฟฟ้า'
                             label='BTS'
                             path='#'
                             />
                             <CardItem
-                            src='images/img-2.jpg'
-                            text='BTS Gold Line'
+                            src='images/img-9.jpg'
+                            text='ห้ามยึด หรือจับบริเวณยางที่เป็นรอยต่อ ระหว่างขบวนรถไฟฟ้า เพราะอาจเกิดอันตรายได้'
                             label='BTS'
                             path='#'
                             />
+                        </ul>
+                        <ul className='cards__items'>
+                            <CardItem
+                            src='images/img-9.jpg'
+                            text='BTS Green Line'
+                            label='BTS'
+                            path='#'
+                            />
+                            
                         </ul>
                     </div>
                 </div>

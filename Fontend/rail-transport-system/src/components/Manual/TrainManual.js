@@ -7,16 +7,17 @@ import ManualMRT from './ManualMRT'
 function TrainManual() {
     return (
         <div style={{marginTop:"55px",width:"100%"}}>
-            <Tabs defaultActiveKey="profile" className="mb-3">
-                <Tab eventKey="home" title="Home">
+            <Tabs defaultActiveKey="bts" className="mb-3">
+                <Tab eventKey="bts" title="BTS">
                     <ManualBTS/>
                 </Tab>
-                <Tab eventKey="profile" title="Profile">
+                <Tab eventKey="mrt" title="MRT">
                     <ManualMRT/>
                 </Tab>
-                <Tab eventKey="contact" title="Contact">
+                <Tab eventKey="apl" title="APL">
                     <ManualAPL/>
                 </Tab>
+                <Tab eventKey="manaual" title="Manaul Train" disabled></Tab>
             </Tabs>
         </div>
     )
