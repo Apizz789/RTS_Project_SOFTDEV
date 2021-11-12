@@ -12,6 +12,7 @@ import Footer from './components/Footer(Contact)/Footer';
 import History from './components/pages/History';
 import Manual from './components/pages/Manual';
 import Schedule from './components/pages/Schedule';
+import Register from './components/pages/Register';
 
 
 function App() {
@@ -24,15 +25,16 @@ function App() {
       <Switch>
         <Route path='/' exact  component ={Home} />
         <Route path='/services' exact component ={Services} />
-        <Route path='/sign-up' exact component ={Signup} />
-        <Route path='/sign-in' exact component ={Signin} />
+        {/* <Route path='/sign-up' exact component ={Signup} />
+        <Route path='/sign-in' exact component ={Signin} /> */}
         <Route path='/map' exact component ={MapTrain} />
         <Route path='/calculate' exact component ={Calculate} />
         <Route path='/history' exact component ={History} />
         <Route path='/manual' exact component ={Manual} />
         <Route path='/schedule' exact component ={Schedule} />
+        <Route path='/register' exact component ={Register} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
 
     </>

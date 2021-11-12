@@ -68,30 +68,9 @@ function Navbar() {
                     Contact
                   </Link>
                 </li>
-
-                <li>
-                  <Link
-                    to='/sign-up'
-                    className='nav-links-mobile'
-                    onClick={closeMobileMenu}
-                  >
-                    Sign Up
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    to='/sign-in'
-                    className='nav-links-mobile'
-                    onClick={closeMobileMenu}
-                  >
-                    Sign In
-                  </Link>
-                </li>
-
               </ul>
 
-              <Link to='/sign-up' className='btn-mobile'>
+              <Link to='/register' className='btn-mobile'>
                 <Button variant="outline-light">SIGN UP</Button>
               </Link>
 
