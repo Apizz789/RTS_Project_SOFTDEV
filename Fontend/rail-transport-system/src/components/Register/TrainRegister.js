@@ -87,8 +87,7 @@ function TrainRegister() {
                     <center><img className="sealImage" alt="Image of Seal" src="images/New_login/552721.jpg" width={70} /></center>
                     <input id="fn" type="text" name="FName" placeholder="First name" required />
                     <input id="ln" type="text" name="LName" placeholder="Last name" required />
-                    <input type="checkbox" check if yes />
-                    <input type="checkbox" />
+
                     <Form.Check
                         inline
                         label="Male"
