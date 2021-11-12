@@ -40,9 +40,9 @@ const validation_register = (values) => {
     if(!values.lname){
         errors.lname = "Last Name is required"
     }
-    else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-        errors.lname = 'Last Name must contains only A-Z , a-z'
-    }
+    // else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
+    //     errors.lname = 'Last Name must contains only A-Z , a-z'
+    // }
 
     if(!values.username){
         errors.username = "Username is required"
