@@ -39,7 +39,7 @@ function Cards() {
               src='images/img-8.jpg'
               text='จัดทำขึ้นเพื่ออำนวยความสะดวกให้แก่ชีวิตคนภายในกรุงเทพมหานคร'
               label='Rail Transport'
-              path='/contact'
+              path='#'
             />
           </ul>
         </div>

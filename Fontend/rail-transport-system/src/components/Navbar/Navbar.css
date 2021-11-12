@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  margin-top: 0px;
 }
 
 .navbar-container {
@@ -45,7 +46,7 @@
   margin-right: 2rem;
 }
 
-.nav-item {
+.navbar-item{
   height: 80px;
 }
 

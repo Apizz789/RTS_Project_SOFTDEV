@@ -4,7 +4,7 @@ import {Button,Form} from 'react-bootstrap';
 
 function TrainRegister() {
     return (
-        <div className="Body_Regis">
+        <div className="Body_Regis" style={{marginTop:"55px"}}>
                 <title>Slide Navbar</title>
             <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
             <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
