@@ -5,14 +5,14 @@
 }
 
 
-.nav{
-    background-color: aquamarine;
+.navbara{
+    background-color: rgb(18, 136, 97);
     width:100vw;
     height:75px;
 }
 .Bghead{
     display: flex;
-    /* background-image: url(C:\Users\aaimspm\Documents\Soft-dev\project\react\react-train\src\component\Group10.png); */
+    background-image: url(P:\GIT\Project_SOFTDEV\Fontend\rail-transport-system\src\components\Calculate\Group10.png);
     margin-top: 20px;
     margin-bottom: 20px;
     width: 736px;
@@ -33,7 +33,7 @@
     height: 105px;
     margin-top: 0px;
     margin-bottom: 0px;
-    color:white;
+    color:rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
 }
@@ -101,5 +101,5 @@
     line-height: 100%;
     align-self: center;
     border: 2px solid red;
-    color: white;
+    color: rgb(255, 255, 255);
 }
