@@ -32,7 +32,7 @@ const validation_register = (values) => {
     if(!values.fname){
         errors.fname = "First Name is required"
     }
-    else if(!values.fname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
+    else if(!values.fname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
         errors.fname = 'First Name must contains only A-Z , a-z'
     }
 
@@ -40,7 +40,7 @@ const validation_register = (values) => {
     if(!values.lname){
         errors.lname = "Last Name is required"
     }
-    else if(!values.lname.match(/^([A-Z]|[a-z]|[ๅภถุึคตจขชไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝูฎฑธํ๊ณญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]|[ ])+$/i)){
+    else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
         errors.lname = 'Last Name must contains only A-Z , a-z'
     }
 
