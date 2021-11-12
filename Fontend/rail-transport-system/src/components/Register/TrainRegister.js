@@ -107,7 +107,7 @@ function TrainRegister() {
 
                     <input 
                         type="text" 
-                        name="txt" 
+                        name="username" 
                         placeholder="User name" 
                         required 
                         value={values.username}
@@ -125,7 +125,7 @@ function TrainRegister() {
 
                     <input 
                         type="password" 
-                        name="pswd" 
+                        name="password" 
                         placeholder="Password" 
                         required
                         value={values.password}
@@ -134,7 +134,7 @@ function TrainRegister() {
 
                     <input 
                         type="re-password" 
-                        name="repswd" 
+                        name="repeat_password" 
                         placeholder="RE- Password" 
                         required
                         value={values.repeat_password}
