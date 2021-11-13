@@ -57,7 +57,7 @@ function Navbar() {
                 </li>
                 <li className='navbar-item'>
                   <Link
-                    to='/history'
+                    to='/ticket'
                     className='nav-links'
                     onClick={closeMobileMenu}
                     onClick={refreshPage}

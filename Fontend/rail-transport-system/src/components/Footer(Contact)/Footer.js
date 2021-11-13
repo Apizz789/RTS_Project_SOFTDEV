@@ -20,11 +20,12 @@ function Footer() {
             <Link to='/map' onClick={refreshPage}>Map</Link>
             <Link to='/manual' onClick={refreshPage}>ข้อปฏิบัติ</Link>
             <Link to='/calculate' onClick={refreshPage}>Calculate</Link>
-            <Link to='/services' onClick={refreshPage}>Service</Link>
+            <Link to='/services' onClick={refreshPage}>Services</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
+            <a href='https://github.com/Apizz789/Project_SOFTDEV' target='_blank'>Github</a>
           </div>
           <div className='footer-link-items'>
             <h2>Social Media</h2>
