@@ -5,10 +5,10 @@ import validation_register from "./validation_register"
 import validation_signin from "./validation_signin"
 import {Button,Form} from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert'
-var nodemailer = require('nodemailer');
-
+import emailjs from 'emailjs-com'
 
 function TrainRegister() {
+
     const [values, setValues] = useState({
         fname: "",
         lname: "",
@@ -57,35 +57,34 @@ function TrainRegister() {
             });
         }
     }
-    const handleSubmit = (event) => {
-        event.preventDefault()
+    const handleSubmits = () => {
         setErrors(validation_register(values));
         console.log(errors)
         if (!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex) {
             
-            async function main() {
-                // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
-                let transporter = nodemailer.createTransport({
-                 host: 'smtp.gmail.com',
-                 port: 587,
-                 secure: false, // true for 465, false for other ports
-                 auth: { // ข้อมูลการเข้าสู่ระบบ
-                   user: '62010765@kmitl.ac.th', // email user ของเรา
-                   pass: 'Qwertyuio123' // email password
-                 }
-                });
-                // เริ่มทำการส่งอีเมล
-                let info = await transporter.sendMail({
-                from: '"Rail Transport System Authen"' + values.email, // อีเมลผู้ส่ง
-                to: values.email, // อีเมลผู้รับ สามารถกำหนดได้มากกว่า 1 อีเมล โดยขั้นด้วย ,(Comma)
-                subject: 'Hello ✔', // หัวข้ออีเมล
-                text: 'Hello world?', // plain text body
-                html: 'Please confirm your email press this link<br><a href = "pornhub.com" class="add" >Hello world?</a><br><br>ขอบคุณสำหรับการใช้บริการ' // html body
-                });
-                // log ข้อมูลการส่งว่าส่งได้-ไม่ได้
-                console.log('Message sent: %s', info.messageId);
-                }
-                main().catch(console.error);
+            // async function main() {
+            //     // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
+            //     let transporter = nodemailer.createTransport({
+            //      host: 'smtp.gmail.com',
+            //      port: 587,
+            //      secure: false, // true for 465, false for other ports
+            //      auth: { // ข้อมูลการเข้าสู่ระบบ
+            //        user: '62010765@kmitl.ac.th', // email user ของเรา
+            //        pass: 'Qwertyuio123' // email password
+            //      }
+            //     });
+            //     // เริ่มทำการส่งอีเมล
+            //     let info = await transporter.sendMail({
+            //     from: '"Rail Transport System Authen"' + values.email, // อีเมลผู้ส่ง
+            //     to: values.email, // อีเมลผู้รับ สามารถกำหนดได้มากกว่า 1 อีเมล โดยขั้นด้วย ,(Comma)
+            //     subject: 'Hello ✔', // หัวข้ออีเมล
+            //     text: 'Hello world?', // plain text body
+            //     html: 'Please confirm your email press this link<br><a href = "pornhub.com" class="add" >Hello world?</a><br><br>ขอบคุณสำหรับการใช้บริการ' // html body
+            //     });
+            //     // log ข้อมูลการส่งว่าส่งได้-ไม่ได้
+            //     console.log('Message sent: %s', info.messageId);
+            //     }
+            //     main().catch(console.error);
 
 
 
@@ -109,7 +108,18 @@ function TrainRegister() {
             })
                 .then(response => { console.log(response) })
                 .catch(error => { console.log(error) })
+
         }
+    }
+    const sendEmail = (event) =>{
+        event.preventDefault();
+        console.log(event.target)
+        emailjs.sendForm('gmail', 'template_k74q3lt', event.target, 'user_uf4z8ASWRLqiA35joJDJd')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
     }
 
     // ********************** - LOG IN - ************************
@@ -229,7 +239,7 @@ function TrainRegister() {
               </div>
             </Alert>
             <div className="signup">
-                <form>
+                <form onSubmit={sendEmail}>
                 <label htmlFor="chk" aria-hidden="true">Sign up</label>
                 <div className="Name-User" id="left">
                     <center><img className="sealImage" alt="Image of Seal" src="images/New_login/552721.jpg" width={70} /></center>
@@ -243,7 +253,7 @@ function TrainRegister() {
                         onChange={handleChange} 
                     />
                     {errors.fname && <p className="error">{errors.fname}</p>}
-                    <div class="alert alert-primary" role="alert">
+                    <div className="alert alert-primary" role="alert">
   This is a primary alert—check it out!
 </div>
                     <input 
@@ -281,6 +291,7 @@ function TrainRegister() {
                     />
                     {errors.sex && <p className="error">{errors.sex}</p>}
                 </div>
+            
                 <div className="Info-User" id="right">
 
                     <input 
@@ -292,7 +303,7 @@ function TrainRegister() {
                         onChange={handleChange}
                     />
                     {errors.username && <p className="error">{errors.username}</p>}
-
+    
                     <input 
                         type="email" 
                         name="email" 
@@ -300,9 +311,10 @@ function TrainRegister() {
                         required
                         value={values.email}
                         onChange={handleChange}
+                        className = "form-control"
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
-
+                
                     <input 
                         type="password" 
                         name="password" 
@@ -348,9 +360,10 @@ function TrainRegister() {
                 </div>
                 <div id="right">
                 <Button variant="outline-danger"onClick={() => setShow(true)} >Cancel</Button>
-                    <Button variant="outline-primary" onClick={handleSubmit}>Sign Up</Button>{' '}
+                    <Button className="btn btn-default" type="submit" value="Submit" onClick={handleSubmits}> Sign Up </Button>
                 </div>
                 </form>
+                
             </div>
             <div className="login">
                 <form>
