@@ -29,7 +29,7 @@ function App() {
       <Navbar />
       <br/>
       <Switch>
-        <Route path='/' exact  component ={Home} />
+        <Route path='/home' exact  component ={Home} />
         <Route path='/services' exact component ={Services} />
         {/* <Route path='/sign-up' exact component ={Signup}Train />
         <Route path='/sign-in' exact component ={Signin} /> */}

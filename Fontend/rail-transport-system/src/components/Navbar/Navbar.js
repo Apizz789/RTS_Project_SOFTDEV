@@ -33,7 +33,7 @@ function Navbar() {
         <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"9999"}}>
           <nav className='navbar'>
             <div className='navbar-container'>
-              <Link to='/' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage}> 
+              <Link to='/home' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage}> 
                 <i className="fas fa-subway"></i>RTS
               </Link>
               <div className='menu-icon' onClick={handleClick}>
