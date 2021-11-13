@@ -5,7 +5,7 @@ import validation_register from "./validation_register"
 import validation_signin from "./validation_signin"
 import {Button,Form} from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert'
-
+var nodemailer = require('nodemailer');
 
 
 function TrainRegister() {
@@ -63,13 +63,39 @@ function TrainRegister() {
         console.log(errors)
         if (!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex) {
             
-            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-                        "email": values.email,
-                        "password": values.password,
-                        "returnSecureToken": true
-                        })
-                         .then(response => {console.log(response)})
-                         .catch(error => {console.log(error)})
+            async function main() {
+                // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
+                let transporter = nodemailer.createTransport({
+                 host: 'smtp.gmail.com',
+                 port: 587,
+                 secure: false, // true for 465, false for other ports
+                 auth: { // ข้อมูลการเข้าสู่ระบบ
+                   user: '62010765@kmitl.ac.th', // email user ของเรา
+                   pass: 'Qwertyuio123' // email password
+                 }
+                });
+                // เริ่มทำการส่งอีเมล
+                let info = await transporter.sendMail({
+                from: '"Rail Transport System Authen"' + values.email, // อีเมลผู้ส่ง
+                to: values.email, // อีเมลผู้รับ สามารถกำหนดได้มากกว่า 1 อีเมล โดยขั้นด้วย ,(Comma)
+                subject: 'Hello ✔', // หัวข้ออีเมล
+                text: 'Hello world?', // plain text body
+                html: 'Please confirm your email press this link<br><a href = "pornhub.com" class="add" >Hello world?</a><br><br>ขอบคุณสำหรับการใช้บริการ' // html body
+                });
+                // log ข้อมูลการส่งว่าส่งได้-ไม่ได้
+                console.log('Message sent: %s', info.messageId);
+                }
+                main().catch(console.error);
+
+
+
+            // axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+            //             "email": values.email,
+            //             "password": values.password,
+            //             "returnSecureToken": true
+            //             })
+            //              .then(response => {console.log(response)})
+            //              .catch(error => {console.log(error)})
 
             axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
                 "Firstname": values.fname,
@@ -167,7 +193,9 @@ function TrainRegister() {
 
     }
 
-   
+    
+    const [show, setShow] = useState(false);
+    
 
     return (
         <div className="Body_Regis" style={{marginTop :"50px"}}>
@@ -176,6 +204,30 @@ function TrainRegister() {
             <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
             <div className="Card-Regis" src="images/New_login/552721.jpg">
             <input type="checkbox" id="chk" aria-hidden="true" />
+            <Alert show={show} variant="danger">
+              <Alert.Heading>Warning</Alert.Heading>
+              <p>
+                Are you sure to cancel the registration?
+              </p>
+              <hr />
+              <div className="d-flex justify-content-end">
+                <Button onClick={() => {setShow(false); setValues({
+                                                                    fname: "",
+                                                                    lname: "",
+                                                                    username: "",
+                                                                    password: "",
+                                                                    repeat_password: "",
+                                                                    tel: "",
+                                                                    DOB: "",
+                                                                    email: "",
+                                                                    sex: "", });}} variant="outline-danger">
+                  Yes
+                </Button>
+                <Button onClick={() => setShow(false)} variant="outline-danger">
+                  No
+                </Button>
+              </div>
+            </Alert>
             <div className="signup">
                 <form>
                 <label htmlFor="chk" aria-hidden="true">Sign up</label>
@@ -295,7 +347,7 @@ function TrainRegister() {
                     {errors.DOB && <p className="error">{errors.DOB}</p>}
                 </div>
                 <div id="right">
-                    <Button variant="outline-danger">Cancel</Button>{' '}
+                <Button variant="outline-danger"onClick={() => setShow(true)} >Cancel</Button>
                     <Button variant="outline-primary" onClick={handleSubmit}>Sign Up</Button>{' '}
                 </div>
                 </form>
