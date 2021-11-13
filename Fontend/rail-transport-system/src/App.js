@@ -14,6 +14,7 @@ import History from './components/pages/History';
 import Manual from './components/pages/Manual';
 import Schedule from './components/pages/Schedule';
 import Register from './components/pages/Register';
+import SelectStation from './components/pages/SelectStation';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path='/schedule' exact component ={Schedule} />
         <Route path='/register' exact component ={Register} />
         <Route path='/contact' exact component ={Contact}/>
+        <Route path='/SelectStation' exact component ={SelectStation}/>
         
       </Switch>
       <Footer />

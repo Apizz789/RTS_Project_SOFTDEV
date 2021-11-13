@@ -4,12 +4,13 @@
     width: 100%;
 }
 
-
+/* 
 .navbara{
     background-color: rgb(18, 136, 97);
     width:100vw;
     height:75px;
-}
+} */
+
 .Bghead{
     display: flex;
     /* background-image: url(P:\GIT\Project_SOFTDEV\Fontend\rail-transport-system\src\components\Calculate\ตารางรถไฟฟ้า.png); */
@@ -73,6 +74,7 @@
     height: 76px;
     margin-right:10%;
     border-radius: 20px;
+    
 }
 
 .StaS{

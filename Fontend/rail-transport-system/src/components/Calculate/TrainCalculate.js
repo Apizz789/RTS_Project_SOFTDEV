@@ -1,7 +1,8 @@
 import React from 'react'
-import ShowStationGreen from "./liststationofcal";
 import './TrainCalculate.css'
 import { Link, useHistory } from 'react-router-dom'
+import SelectforCal from "./SelectforCal"
+
 
 
 const Cal = () => {
@@ -43,8 +44,12 @@ const StaDest = () => {
 
 const ButSelSta = () => {
     return (
-            <button className="botton">
-            </button>
+        <Link to="/SelectStation">
+     <button type="button" className="botton">
+          Click Me!
+     </button>
+        </Link>
+            
             )
 }
 
@@ -84,7 +89,7 @@ const Navbar = () => {
 
                     </div>
                 </div>
-                <ShowStationGreen />
+            
             </div>
             )
 }
