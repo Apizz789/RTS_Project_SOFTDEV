@@ -57,11 +57,12 @@ function TrainRegister() {
             });
         }
     }
+
     const handleSubmits = () => {
         setErrors(validation_register(values));
         console.log(errors)
-        if (!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex) {
-            
+
+        if (values.username&&values.fname&&values.lname&&values.password&&values.repeat_password&&!values.tel&&values.DOB&&values.email&&values.sex) { 
             // async function main() {
             //     // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
             //     let transporter = nodemailer.createTransport({
@@ -326,7 +327,7 @@ function TrainRegister() {
                     {errors.password && <p className="error">{errors.password}</p>}
 
                     <input 
-                        type="re-password" 
+                        type="password" 
                         name="repeat_password" 
                         placeholder="RE- Password" 
                         required
