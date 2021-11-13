@@ -3,18 +3,24 @@ import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
 
+function refreshPage(){
+  window.scrollTo(0,0);
+}
+
 function Footer() {
   return (
     <div className='footer-container'>
+      <img src='images/trainloop.gif' style={{width: "100%",height: '80px'}} draggable="false" dragstart="false" class="unselectable"></img>
+      <br/>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
-            <Link to='/sign-up'>Signup</Link>
-            <Link to='/'>Map</Link>
-            <Link to='/'>ข้อปฏิบัติ</Link>
-            <Link to='/'>Calculate</Link>
-            <Link to='/'>Terms of Service</Link>
+            <Link to='/register' onClick={refreshPage}>Signup</Link>
+            <Link to='/map' onClick={refreshPage}>Map</Link>
+            <Link to='/manual' onClick={refreshPage}>ข้อปฏิบัติ</Link>
+            <Link to='/calculate' onClick={refreshPage}>Calculate</Link>
+            <Link to='/services' onClick={refreshPage}>Service</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>
@@ -33,7 +39,6 @@ function Footer() {
         <div className='social-media-wrap'>
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
-              RTS
               <i className="fas fa-subway"></i>
             </Link>
           </div>
