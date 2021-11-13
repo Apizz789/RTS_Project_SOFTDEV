@@ -1,9 +1,13 @@
 import React from 'react'
 
+function refreshPage(){
+	window.scrollTo(0,0);
+  }
+
 function TrainTicket() {
     return (
         <div style={{marginTop:"55px",width:"100%"}}>
-            Ticket
+            <h1 align = "center">Ticket</h1>
         </div>
     )
 }

@@ -1,8 +1,14 @@
 import React from 'react'
-import {Tab,Tabs, Button,ToggleButton,Row,Col,Container} from 'react-bootstrap'
+import {Tab,Tabs, Button,ToggleButton,Row,Col,Container, Form} from 'react-bootstrap'
 import '../../App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import StationBlue from "./StationBlue"
+
+function getValue(station){
+  return(
+    console.log(station)
+  )
+}
 
 const SelectforCal =()=>{
   return (
@@ -11,8 +17,8 @@ const SelectforCal =()=>{
             <Tabs defaultActiveKey="Btsgreen" className="mb-3" >
                 <Tab eventKey="Btsgreen" title="BTS สายสีเขียวอ่อน" >
                 <div style={{textAlign:"center"}}>
-                  <Button variant="outline-primary">A01</Button>{' '}
-                  <Button variant="outline-primary">A02</Button>{' '}
+                  <Button variant="outline-primary" onClick={()=> getValue("A01")}>A01</Button>{' '}
+                  <Button variant="outline-primary" onClick={()=> getValue("A02")}>A02</Button>{' '}
                   <Button variant="outline-primary">A03</Button>{' '}
                   <Button variant="outline-primary">A04</Button>{' '}
                   <Button variant="outline-primary">A05</Button>{' '}
@@ -20,7 +26,7 @@ const SelectforCal =()=>{
                   <Button variant="outline-primary">A07</Button>{' '}
                   <Button variant="outline-primary">A08</Button>{' '}
                   <Button variant="outline-primary">A09</Button>{' '}
-                  <Button variant="outline-primary">A10</Button>{' '}
+                  <Button variant="outline-primary" as ="input" type="button" value="Input" >A10</Button>{' '}
 
                   <Button variant="outline-primary">A11</Button>{' '}
                   <Button variant="outline-primary">A12</Button>{' '}
@@ -213,7 +219,7 @@ const SelectforCal =()=>{
                   
                   </div>
                 </Tab>
-                <Tab eventKey="MrtOrange" title="MRT สายสีม่วง 33">
+                <Tab eventKey="MrtOrange" title="MRT สายสีม่วง">
                 <div style={{textAlign:"center"}}>
                   <Button variant="outline-primary">A01</Button>{' '}
                   <Button variant="outline-primary">A02</Button>{' '}

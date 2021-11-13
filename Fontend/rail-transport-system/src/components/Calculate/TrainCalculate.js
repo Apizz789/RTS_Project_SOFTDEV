@@ -21,6 +21,7 @@ const StaSource = () => {
                     <h1 className="StaS">สถานีต้นทาง</h1>
                 </div>
                 <div className="BgSelect1">
+
                     <h1 className="Select1">เลือกสถานี</h1>
                     <ButSelSta />
                 </div>
@@ -55,9 +56,12 @@ const ButSelSta = () => {
 
 const ButOkCal = () => {
     return (
-            <button className="bottonok">
+        <Link to="/calculation-result">
+        <button className="bottonok">
                 <h1 className="textok">คำนวณค่าโดยสาร</h1>
             </button>
+        </Link>
+            
             )
 }
 
