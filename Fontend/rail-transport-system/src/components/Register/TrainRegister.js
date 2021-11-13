@@ -296,6 +296,7 @@ function TrainRegister() {
                         type="Telephone" 
                         name="tel" 
                         placeholder="Tel" 
+                        maxlength="10"
                         required
                         value={values.tel}
                         onChange={handleChange}
