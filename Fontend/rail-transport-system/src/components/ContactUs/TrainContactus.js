@@ -7,7 +7,7 @@ export default function TrainContactus() {
     return (
         <div style={{marginTop:"55px"}}>
 <Container>
-  <Row>
+  <Row style={{textAlign:"center"}}>
     <h1>Contact Us</h1>
     <Col xs={5} md={3}>
     
@@ -26,7 +26,7 @@ export default function TrainContactus() {
     </Col>
   </Row>
   
-  <Row>
+  <Row style={{textAlign:"center"}}>
    
     <Col xs={5} md={3}>
     <Image src="../images/img-8.jpg" roundedCircle />

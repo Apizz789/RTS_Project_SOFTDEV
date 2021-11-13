@@ -14,7 +14,7 @@ function TrainManual() {
                 <Tab eventKey="mrt" title="MRT">
                     <ManualMRT/>
                 </Tab>
-                <Tab eventKey="apl" title="APL">
+                <Tab eventKey="apl" title="Airport Rail Link">
                     <ManualAPL/>
                 </Tab>
                 <Tab eventKey="manaual" title="Manaul Train" disabled></Tab>
