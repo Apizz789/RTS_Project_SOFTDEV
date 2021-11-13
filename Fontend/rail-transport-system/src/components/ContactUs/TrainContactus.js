@@ -2,6 +2,10 @@ import React from 'react'
 import Image from 'react-bootstrap/Image'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 
+function refreshPage(){
+	window.scrollTo(0,0);
+  }
+  
 
 export default function TrainContactus() {
     return (
