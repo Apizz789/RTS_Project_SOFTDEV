@@ -19,12 +19,12 @@ import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
 import CalculationResult from './components/pages/CalculationResult';
-
+import ContextProvider from './components/Calculate/StationBlue'
 
 function App() {
 
   return (
-    <>
+    <ContextProvider>
     <Router>
       <Navbar />
       <br/>
@@ -52,7 +52,7 @@ function App() {
       <Footer />
     </Router>
 
-    </>
+    </ContextProvider>
   );
 }
 

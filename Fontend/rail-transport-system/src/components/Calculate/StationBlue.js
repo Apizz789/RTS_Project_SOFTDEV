@@ -1,8 +1,15 @@
-const StationBlue =()=>{
-    const name = "สถานีสีน้ำเงิน"
-    return(
-        <li>{name}</li>
-    );
-}
+import { createContext , useState } from 'react'
 
-export default StationBlue
+export const UserContext = createContext(null);
+
+function ContextProvider({children}) {
+    const [click,setclick] = useState("Please Select")
+    const value = {click,setclick}
+    return (
+      <UserContext.Provider value={value}>
+        {children}
+      </UserContext.Provider>
+    );
+  }
+
+export default ContextProvider
