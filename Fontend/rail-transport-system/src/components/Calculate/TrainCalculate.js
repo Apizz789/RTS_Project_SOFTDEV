@@ -4,15 +4,13 @@ import './TrainCalculate.css'
 import { Link, useHistory } from 'react-router-dom'
 
 
-
-
 const Cal = () => {
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <div >
                 <h1 className="Cal">คำนวณค่าโดยสาร</h1>
-                </div>
             </div>
+        </div>
             )
 }
 const StaSource = () => {
@@ -67,9 +65,6 @@ const Navbar = () => {
 
 
             export default function TrainCalculate() {
-
-
-
 
     return (
             <div>
