@@ -11,9 +11,11 @@ function refreshPage(){
 
 export default memo(function Trainmap() {
   return (
+    <div style={{marginTop:"55px"}}>
     <Container align="center">
       <Row>
-        <Col>แผนที่สถานีรถไฟฟ้า</Col>
+        <Col><h1>แผนที่สถานีรถไฟฟ้า</h1>
+        </Col>
         <Col>BTS,MRT and AIRPORTLINK</Col>
       </Row>
       <Row>
@@ -74,7 +76,9 @@ export default memo(function Trainmap() {
           </Row>
         </Col>
       </Row>
-      <Link to='/calculate' onClick={refreshPage}><i class="far fa-arrow-alt-circle-down"></i>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></Link>
+      <Link to='/calculate' onClick={refreshPage}><h2><i class="far fa-arrow-alt-circle-down"></i>>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></h2></Link>
     </Container>
+    </div>
+    
   );
 });

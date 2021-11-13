@@ -26,7 +26,7 @@ const SelectforCal =()=>{
                   <Button variant="outline-primary">A07</Button>{' '}
                   <Button variant="outline-primary">A08</Button>{' '}
                   <Button variant="outline-primary">A09</Button>{' '}
-                  <Button variant="outline-primary" as ="input" type="button" value="Input" >A10</Button>{' '}
+                  <Button variant="outline-primary" >A10</Button>{' '}
 
                   <Button variant="outline-primary">A11</Button>{' '}
                   <Button variant="outline-primary">A12</Button>{' '}
