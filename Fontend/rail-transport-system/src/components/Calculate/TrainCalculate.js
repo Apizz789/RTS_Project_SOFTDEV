@@ -2,8 +2,8 @@ import React from 'react'
 import './TrainCalculate.css'
 import { Link, useHistory } from 'react-router-dom'
 import SelectforCal from "./SelectforCal"
-
-
+import { UserContext } from './StationBlue'
+import { useContext } from 'react';
 
 const Cal = () => {
     return (
@@ -15,14 +15,15 @@ const Cal = () => {
             )
 }
 const StaSource = () => {
+    const {click} = useContext(UserContext)
     return (
             <div style={{ display: "flex", flexDirection: "column" }}>
                 <div className="BgS">
                     <h1 className="StaS">สถานีต้นทาง</h1>
                 </div>
                 <div className="BgSelect1">
-
-                    <h1 className="Select1">เลือกสถานี</h1>
+                    
+                    {click}
                     <ButSelSta />
                 </div>
             </div>
