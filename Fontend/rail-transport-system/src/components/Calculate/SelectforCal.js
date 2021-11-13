@@ -9,7 +9,9 @@ function getValue(station){
     console.log(station)
   )
 }
-
+// function addToCard(e) {
+//   alert($(e.target).data('value'))
+// }
 const SelectforCal =()=>{
   return (
       <div style={{marginTop:"55px",width:"100%"}} >
@@ -37,7 +39,7 @@ const SelectforCal =()=>{
                   <Button variant="outline-primary">A17</Button>{' '}
                   <Button variant="outline-primary">A18</Button>{' '}
                   <Button variant="outline-primary">A19</Button>{' '}
-                  <Button variant="outline-primary">A20</Button>{' '}
+                  <Button variant="outline-primary" type="submit" name="A20" value="A20" onClick={()=> getValue("A20")}>A20</Button>{' '}
 
                   <Button variant="outline-primary">A21</Button>{' '}
                   <Button variant="outline-primary">A22</Button>{' '}
