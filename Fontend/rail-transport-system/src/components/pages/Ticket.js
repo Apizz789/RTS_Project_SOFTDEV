@@ -1,5 +1,5 @@
 import React from 'react'
-import TrainTicket from '../Buyticket/Trainticket'
+import TrainTicket from '../Buyticket/TrainTicket'
 
 function Ticket() {
     return (

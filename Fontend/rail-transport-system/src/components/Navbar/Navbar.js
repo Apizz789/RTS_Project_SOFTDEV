@@ -4,6 +4,10 @@ import '../Navbar/Navbar.css';
 // import { Button } from '../Button/Button';
 import {Button} from 'react-bootstrap';
 
+function refreshPage(){
+  window.scrollTo(0,0);
+}
+
 function Navbar() {
     const [click,setClick]= useState(false);
     const [button,setButton]=useState(true);
@@ -29,7 +33,7 @@ function Navbar() {
         <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"9999"}}>
           <nav className='navbar'>
             <div className='navbar-container'>
-              <Link to='/' className='navbar-logo' onClick={closeMobileMenu}> 
+              <Link to='/' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage}> 
                 <i className="fas fa-subway"></i>RTS
               </Link>
               <div className='menu-icon' onClick={handleClick}>
@@ -37,7 +41,7 @@ function Navbar() {
               </div>
               <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='navbar-item'>
-                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  <Link to='/' className='nav-links' onClick={closeMobileMenu} onClick={refreshPage}>
                     Home
                   </Link>
                 </li>
@@ -46,6 +50,7 @@ function Navbar() {
                     to='/services'
                     className='nav-links'
                     onClick={closeMobileMenu}
+                    onClick={refreshPage}
                   >
                     Services
                   </Link>
@@ -55,6 +60,7 @@ function Navbar() {
                     to='/history'
                     className='nav-links'
                     onClick={closeMobileMenu}
+                    onClick={refreshPage}
                   >
                     Ticket
                   </Link>
@@ -64,18 +70,15 @@ function Navbar() {
                     to='/contact'
                     className='nav-links'
                     onClick={closeMobileMenu}
+                    onClick={refreshPage}
                   >
                     Contact
                   </Link>
                 </li>
               </ul>
 
-              <Link to='/register' className='btn-mobile'>
+              <Link to='/register' className='btn-mobile' onClick={refreshPage}>
                 <Button variant="outline-light">SIGN UP</Button>
-              </Link>
-
-              <Link to='/sign-in' className='btn-mobile'>
-                <Button variant="outline-light">SIGN IN</Button>
               </Link>
 
             </div>

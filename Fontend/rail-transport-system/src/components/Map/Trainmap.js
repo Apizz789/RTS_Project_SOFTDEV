@@ -4,6 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from 'react-router-dom';
 import './Trainmap.css'
+
+function refreshPage(){
+  window.scrollTo(0,0);
+}
+
 export default memo(function Trainmap() {
   return (
     <Container align="center">
@@ -69,7 +74,7 @@ export default memo(function Trainmap() {
           </Row>
         </Col>
       </Row>
-      <Link to='/calculate'><i class="far fa-arrow-alt-circle-down"></i>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></Link>
+      <Link to='/calculate' onClick={refreshPage}><i class="far fa-arrow-alt-circle-down"></i>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></Link>
     </Container>
   );
 });
