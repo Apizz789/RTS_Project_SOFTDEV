@@ -18,6 +18,7 @@ import SelectStation from './components/pages/SelectStation';
 import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
+import CalculationResult from './components/pages/CalculationResult';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path='/ticket' exact component ={Ticket}/>
         <Route path='/show-ticket' exact component ={ShowTicket}/>
         <Route path='/informaion' exact component ={Information} />
+        <Route path='/calculation-result' exact component ={CalculationResult}/>
         
       </Switch>
       <Footer />
