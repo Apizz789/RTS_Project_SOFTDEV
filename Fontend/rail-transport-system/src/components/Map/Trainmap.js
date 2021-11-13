@@ -76,7 +76,7 @@ export default memo(function Trainmap() {
           </Row>
         </Col>
       </Row>
-      <Link to='/calculate' onClick={refreshPage}><h2><i class="far fa-arrow-alt-circle-down"></i>>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></h2></Link>
+      <Link to='/calculate' onClick={refreshPage}><h2><i class="far fa-arrow-alt-circle-down"></i>คำนวณระยะทางค่าโดยสาร<i class="far fa-arrow-alt-circle-down"></i></h2></Link>
     </Container>
     </div>
     
