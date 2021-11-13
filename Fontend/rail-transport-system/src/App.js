@@ -35,6 +35,7 @@ function App() {
         <Route path='/contact' exact component ={Contact} />
         <Route path='/schedule' exact component ={Schedule} />
         <Route path='/register' exact component ={Register} />
+        <Route path='/contact' exact component ={Contact}/>
         
       </Switch>
       <Footer />
