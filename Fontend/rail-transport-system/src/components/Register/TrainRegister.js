@@ -167,31 +167,7 @@ function TrainRegister() {
 
     }
 
-    function AlertDismissible() {
-        const [show, setShow] = useState(true);
-      
-        return (
-          <>
-            <Alert show={show} variant="success">
-              <Alert.Heading>How's it going?!</Alert.Heading>
-              <p>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-                lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-                fermentum.
-              </p>
-              <hr />
-              <div className="d-flex justify-content-end">
-                <Button onClick={() => setShow(false)} variant="outline-success">
-                  Close me y'all!
-                </Button>
-              </div>
-            </Alert>
-      
-            {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
-          </>
-        );
-      }
-
+   
 
     return (
         <div className="Body_Regis" style={{marginTop :"50px"}}>
@@ -215,6 +191,9 @@ function TrainRegister() {
                         onChange={handleChange} 
                     />
                     {errors.fname && <p className="error">{errors.fname}</p>}
+                    <div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
                     <input 
                         id="ln" 
                         type="text" 
