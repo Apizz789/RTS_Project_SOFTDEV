@@ -241,10 +241,15 @@ function TrainRegister() {
             </Alert>
             <div className="signup">
                 <form onSubmit={sendEmail}>
+                <br></br>
+                <br></br>
                 <label htmlFor="chk" aria-hidden="true">Sign up</label>
                 <div className="Name-User" id="left">
-                    <center><img className="sealImage" alt="Image of Seal" src="images/New_login/552721.jpg" width={70} /></center>
-                    <input 
+                <br></br>
+                <br></br>
+                    <center><img className="sealImage" alt="Image of Seal" src="images/LOGO.png" width={70} marginTop ={20}/></center>
+                    <input
+                        className="inputlogin"  
                         id="fn" 
                         type="text" 
                         name="fname" 
@@ -254,10 +259,9 @@ function TrainRegister() {
                         onChange={handleChange} 
                     />
                     {errors.fname && <p className="error">{errors.fname}</p>}
-                    <div className="alert alert-primary" role="alert">
-  This is a primary alert—check it out!
-</div>
-                    <input 
+                    
+                    <input
+                        className="inputlogin"  
                         id="ln" 
                         type="text" 
                         name="lname" 
@@ -295,7 +299,8 @@ function TrainRegister() {
             
                 <div className="Info-User" id="right">
 
-                    <input 
+                    <input
+                        className="inputlogin"  
                         type="text" 
                         name="username" 
                         placeholder="User name" 
@@ -305,7 +310,8 @@ function TrainRegister() {
                     />
                     {errors.username && <p className="error">{errors.username}</p>}
     
-                    <input 
+                    <input
+                        className="inputlogin"  
                         type="email" 
                         name="email" 
                         placeholder="Email" 
@@ -316,7 +322,8 @@ function TrainRegister() {
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
                 
-                    <input 
+                    <input
+                        className="inputlogin"  
                         type="password" 
                         name="password" 
                         placeholder="Password" 
@@ -326,7 +333,8 @@ function TrainRegister() {
                     />
                     {errors.password && <p className="error">{errors.password}</p>}
 
-                    <input 
+                    <input
+                        className="inputlogin"  
                         type="password" 
                         name="repeat_password" 
                         placeholder="RE- Password" 
@@ -336,7 +344,8 @@ function TrainRegister() {
                     />
                     {errors.repeat_password && <p className="error">{errors.repeat_password}</p>}
 
-                    <input 
+                    <input
+                        className="inputlogin"  
                         type="Telephone" 
                         name="tel" 
                         placeholder="Tel" 
@@ -348,7 +357,7 @@ function TrainRegister() {
                     {errors.tel && <p className="error">{errors.tel}</p>}
 
                     <input 
-                        className="inputbox" 
+                        className="inputlogin" 
                         type="date" 
                         data-date-inline-picker="true" 
                         name="DOB" min="1900-01-01" 
@@ -358,10 +367,13 @@ function TrainRegister() {
                         value={values.DOB} 
                         onChange={handleChange} />
                     {errors.DOB && <p className="error">{errors.DOB}</p>}
+
                 </div>
+
+
                 <div id="right">
-                <Button variant="outline-danger"onClick={() => setShow(true)} >Cancel</Button>
-                    <Button className="btn btn-default" type="submit" value="Submit" onClick={handleSubmits}> Sign Up </Button>
+                <Button className="buttonlogin" type="submit" value="Submit" onClick={handleSubmits}> Sign Up </Button>
+                <Button className="buttonlogin" variant="outline-danger"onClick={() => setShow(true)} >Cancel</Button>
                 </div>
                 </form>
                 
@@ -369,7 +381,9 @@ function TrainRegister() {
             <div className="login">
                 <form>
                 <label htmlFor="chk" aria-hidden="true">Login</label>
-                <input 
+                <input
+
+                    className="inputlogin"  
                     type="email" 
                     name="login_username" 
                     placeholder="User Name" 
@@ -379,7 +393,8 @@ function TrainRegister() {
                 />
                 {login_errors.login_username && <p className="error">{login_errors.login_username}</p>}
 
-                <input 
+                <input
+                    className="inputlogin"  
                     type="password" 
                     name="login_password" 
                     placeholder="Password" 
@@ -390,7 +405,6 @@ function TrainRegister() {
                 {login_errors.login_password && <p className="error">{login_errors.login_password}</p>}
 
                 <button onClick={handleLogin} >Login</button>
-                Copy
                 </form></div>
             </div>
         </div>

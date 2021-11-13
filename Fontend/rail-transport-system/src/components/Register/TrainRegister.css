@@ -6,19 +6,17 @@
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to top, #ffffff, #ffffff, #0aa6ee);
 }
 
 .Card-Regis{
-	width:1200px;
-	height: 750px;
-	background: rgb(255, 255, 255);
+	width:1150px;
+	height: 725px;
 	overflow: hidden;
-	
 	background: url("https://rail-transport-system.netlify.app/images/New_login/spider-card.jpg")  no-repeat center/ cover ;
 	/* opacity: 0.5; */
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+	border-radius: 50px;
+	box-shadow: 5px 20px 50px rgb(30, 122, 165);
 }
 
 #chk{
@@ -41,27 +39,27 @@
 	transition: .5s ease-in-out;
 } */
 
-/* input{
-		width: 60%;
-		height: 20px;
-		background: #e0dede;
-		justify-content: space-around;
+.inputlogin{
+		width: 40%;
+		height: 40px;
+		background: #b3ddb8;
+		justify-content: center;
 		display: flex;
-		margin: 15px auto;
+		margin: 12px 10px;
 		padding: 10px;
 		border: none;
 		outline: none;
 		border-radius: 5px;
-} */
+}
 
-/* button{
+.buttonlogin{
 	width: 30%;
 	height: 40px;
 	margin: 10px auto;
 	justify-content:  center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #ffffff;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -70,7 +68,7 @@
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
-} */
+}
 #cancle{
 	width: 30%;
 	height: 40px;
