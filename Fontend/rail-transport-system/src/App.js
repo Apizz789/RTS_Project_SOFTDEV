@@ -17,15 +17,11 @@ import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
 import CalculationResult from './components/pages/CalculationResult';
-<<<<<<< Updated upstream
 import SourceProvider from './components/Calculate/UseContextSource'
 import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
-=======
-import ContextProvider from './components/Calculate/StationBlue'
-import Flippage from './components/pages/Flippage';
 import Test from './components/pages/Test';
->>>>>>> Stashed changes
+import Flippage from './components/pages/Flippage';
 
 function App() {
 
