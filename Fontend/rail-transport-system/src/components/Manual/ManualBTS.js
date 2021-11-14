@@ -12,27 +12,27 @@ function ManualBTS() {
                         <h4>Bangkok Mass Transit System</h4>
                         <ul className='cards__items'>
                             <CardManual
-                            src='images/no/BTS/1.jpg'
+                            src='images/no/BTS/1.png'
                             text='ห้ามยืนพิงประตู หรือเสา หรือยืนกีดขวางบริเวณประตูไฟฟ้า'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManual
-                            src='images/img-9.jpg'
-                            text='ห้ามยึด หรือจับบริเวณยางที่เป็นรอยต่อ ระหว่างขบวนรถไฟฟ้า เพราะอาจเกิดอันตรายได้'
+                            src='images/no/BTS/2.png'
+                            text='ห้ามส่งเสียงดัง หรือแสดงพฤติกรรมที่ก่อความรำคาญ'
                             label='ข้อห้าม'
                             path='#'
                             />
                         </ul>
                         <ul className='cards__items'>
                             <CardManual
-                            src='images/img-9.jpg'
+                            src='images/no/BTS/3.png'
                             text='ห้ามวางมือบริเวณประตูไฟฟ้า'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManual
-                            src='images/img-9.jpg'
+                            src='images/no/BTS/4.png'
                             text='ห้ามวางสัมภาระกีดขวางทางเดินในขบวน'
                             label='ข้อห้าม'
                             path='#'
@@ -40,13 +40,13 @@ function ManualBTS() {
                         </ul>
                         <ul className='cards__items'>
                             <CardManual
-                            src='images/img-9.jpg'
-                            text='ห้ามรับประทานอาหารและเครื่องดื่มในขบวนรถไฟฟ้าบีทีเอส'
+                            src='images/no/BTS/5.png'
+                            text='ห้ามรับประทานอาหารและเครื่องดื่มในขบวนรถไฟฟ้าบีทีเอสและทิ้งขยะในรถไฟฟ้า'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManual
-                            src='images/img-9.jpg'
+                            src='images/BTS-Logo.png'
                             text='Manaul Train'
                             label='Raill Transport System'
                             path='#'

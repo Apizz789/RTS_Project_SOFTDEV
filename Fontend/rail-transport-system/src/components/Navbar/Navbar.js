@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import '../Navbar/Navbar.css';
-// import { Button } from '../Button/Button';
 import {Button} from 'react-bootstrap';
 
 function refreshPage(){

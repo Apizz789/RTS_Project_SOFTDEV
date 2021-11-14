@@ -12,19 +12,19 @@
                         <h4>Airport Rail Link</h4>
                         <ul className='cards__items'>
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/1.jpg'
                             text='ห้ามรับประทานอาหารและเครื่องดื่ม'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/2.png'
                             text='ห้ามสูบบุหรี่่'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/3.png'
                             text='ห้ามนับจักรยานขึ้นมา'
                             label='ข้อห้าม'
                             path='#'
@@ -32,64 +32,40 @@
                         </ul>
                         <ul className='cards__items'>
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/4.png'
                             text='ห้ามสัตว์เลี้ยง'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/5.jpg'
                             text='ห้ามวัตถุไวไฟ'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามทุเรียน'
-                            label='ข้อห้าม'
-                            path='#'
-                            />
-                            <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามลูกโป่ง'
-                            label='ข้อห้าม'
-                            path='#'
-                            />
-                            <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามกระดานโต้คลื่น'
+                            src='images/no/APL/6.png'
+                            text='ห้ามพกพาอาวุธ'
                             label='ข้อห้าม'
                             path='#'
                             />
                         </ul>
                         <ul className='cards__items'>
-                        <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามพกพาอาวุธ'
+                            <CardManaul
+                            src='images/no/APL/7.jpg'
+                            text='ห้ามขายของ'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามหาบเร่แผงลอย'
-                            label='ข้อห้าม'
-                            path='#'
-                            />
-                            <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/8.png'
                             text='ห้ามใช้เสียงดัง'
                             label='ข้อห้าม'
                             path='#'
                             />
                             <CardManaul
-                            src='images/img-9.jpg'
+                            src='images/no/APL/9.jpg'
                             text='ห้ามทิ้งขยะ'
-                            label='ข้อห้าม'
-                            path='#'
-                            />
-                            <CardManaul
-                            src='images/img-9.jpg'
-                            text='ห้ามใช้รถเข็น'
                             label='ข้อห้าม'
                             path='#'
                             />
