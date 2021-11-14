@@ -9,8 +9,6 @@ function Home(){
     return(
         <>
             <TrainSlidebar />
-            <TrainSection />
-            
             <Cards />
         </>
     )
