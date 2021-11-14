@@ -151,7 +151,7 @@ const SelectforCal = () => {
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickS(item)}
-                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre', marginright: '10px'}}
+                style={{width:"230px",whiteSpace: 'pre', margin: '10px'}}
               >
                 {item}
               </Button>
