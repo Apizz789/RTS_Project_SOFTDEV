@@ -70,33 +70,6 @@ const Navbar = () => {
 export default function TrainCalculate() {
   const { clickS , setclickS } = useContext(UserContextS);
   const { clickD , setclickD } = useContext(UserContextD);
-
-<<<<<<< Updated upstream
-            export default function TrainCalculate() {
-                const {clickS} = useContext(UserContextS)
-                //const {clickD} = useContext(UserContextD)
-    return (
-            <div>
-                <Row>
-                
-                    <Row >
-                    <Col style={{marginTop:"15%" }}>
-                        
-                        <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"250px" }}>สถานีต้นทาง</h1>
-                            <Link to="/SelectStation"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>{clickS}</Button></Link>
-                        <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"300px" }}>สถานีปลายทาง</h1>
-                            <Link to="/select-station-dest"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>{clickS}</Button></Link>
-                            <br/>
-                            <Link to="/calculation-result"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>คำนวณค่าโดยสาร</Button></Link>
-                    </Col>
-                    <Col><img src="images/ตารางรถไฟฟ้า.png" style={{width:"100vh",height:"100vh"}}/></Col>   
-                    </Row>
-                </Row>
-                
-            </div>
-            )
-}
-=======
   const handleSetdefault =()=>{
     setclickS("Please Select Sourrce :")
     setclickD("Please Select Sourrce :")
@@ -145,7 +118,7 @@ export default function TrainCalculate() {
             <br />
             <Link to="/calculation-result">
               <Button
-                onClick={() => handleSetdefault()}
+                //onClick={() => handleSetdefault()}
                 variant="outline-success"
                 size="lg"
                 style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
@@ -165,4 +138,3 @@ export default function TrainCalculate() {
     </div>
   );
 }
->>>>>>> Stashed changes
