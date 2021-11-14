@@ -10,28 +10,40 @@ function Flip() {
                 <div
                     style={{
                     backgroundColor: "green",
-                    height: 100,
+                    height: 300,
+                    width:1000,
                     color: "#fff",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center"
                     }}
                 >
-                    How do you define the meaning of success?
+
+
+                    sdsdfsdfsdfsdf<br></br>
+                    
+
+
                     <button onClick={handleClick}>Click to flip</button>
                 </div>
 
                 <div
                     style={{
-                    backgroundColor: "red",
-                    height: 100,
+                    backgroundColor: "yellow",
+                    height: 300,
+                    width:1000,
                     color: "#fff",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center"
                     }}
                 >
+
+
                     Create video tutorials on YouTube
+
+
+
                     <button onClick={handleClick}>Click to flip</button>
                 </div>
             </ReactCardFlip>
