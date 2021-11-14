@@ -6,8 +6,15 @@ import validation_signin from "./validation_signin"
 import {Button,Form} from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert'
 import emailjs from 'emailjs-com'
-
+let submit = false
+let login = false
 function TrainRegister() {
+
+    const [member_satistic_val,setMember_satistic_val] = useState({
+        username: "",
+        Login_Date: "",
+        Logout_Date: "",
+    })
 
     const [values, setValues] = useState({
         fname: "",
@@ -19,6 +26,15 @@ function TrainRegister() {
         DOB: "",
         email: "",
         sex: "",
+        status: {
+            type: String, 
+            enum: ['Pending', 'Active'],
+            default: 'Pending'
+          },
+        confirmationCode: { 
+          type: String, 
+          unique: true },
+
         login_username: "",
         login_password: "",
     });
@@ -60,67 +76,62 @@ function TrainRegister() {
 
     const handleSubmits = () => {
         setErrors(validation_register(values));
-        console.log(errors)
+        submit = true
+    }
 
-        if (values.username&&values.fname&&values.lname&&values.password&&values.repeat_password&&!values.tel&&values.DOB&&values.email&&values.sex) { 
-            // async function main() {
-            //     // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
-            //     let transporter = nodemailer.createTransport({
-            //      host: 'smtp.gmail.com',
-            //      port: 587,
-            //      secure: false, // true for 465, false for other ports
-            //      auth: { // ข้อมูลการเข้าสู่ระบบ
-            //        user: '62010765@kmitl.ac.th', // email user ของเรา
-            //        pass: 'Qwertyuio123' // email password
-            //      }
-            //     });
-            //     // เริ่มทำการส่งอีเมล
-            //     let info = await transporter.sendMail({
-            //     from: '"Rail Transport System Authen"' + values.email, // อีเมลผู้ส่ง
-            //     to: values.email, // อีเมลผู้รับ สามารถกำหนดได้มากกว่า 1 อีเมล โดยขั้นด้วย ,(Comma)
-            //     subject: 'Hello ✔', // หัวข้ออีเมล
-            //     text: 'Hello world?', // plain text body
-            //     html: 'Please confirm your email press this link<br><a href = "pornhub.com" class="add" >Hello world?</a><br><br>ขอบคุณสำหรับการใช้บริการ' // html body
-            //     });
-            //     // log ข้อมูลการส่งว่าส่งได้-ไม่ได้
-            //     console.log('Message sent: %s', info.messageId);
-            //     }
-            //     main().catch(console.error);
+    if (submit === true &&!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex) { 
+        console.log("senttt")
+        // axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
+        //             "email": values.email,
+        //             "password": values.password,
+        //             "returnSecureToken": true
+        //             })
+        //              .then(response => {console.log(response)})
+        //              .catch(error => {console.log(error)})
 
-
-
-            // axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI',{
-            //             "email": values.email,
-            //             "password": values.password,
-            //             "returnSecureToken": true
-            //             })
-            //              .then(response => {console.log(response)})
-            //              .catch(error => {console.log(error)})
-
-            axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
-                "Firstname": values.fname,
-                "Lastname": values.lname,
-                "Username": values.username,
-                "Password": values.password,
-                "Tel": values.tel,
-                "DOB": values.DOB,
-                "Email": values.email,
-                "Sex": values.sex,
-            })
-                .then(response => { console.log(response) })
-                .catch(error => { console.log(error) })
-
+        const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let token = '';
+        for (let i = 0; i < 25; i++) {
+            token += characters[Math.floor(Math.random() * characters.length )];
         }
+
+        setValues({
+            ...values,
+            "confirmationCode" : token,
+        });
+
+        axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users', {
+            "Firstname": values.fname,
+            "Lastname": values.lname,
+            "Username": values.username,
+            "Password": values.password,
+            "Tel": values.tel,
+            "DOB": values.DOB,
+            "Email": values.email,
+            "Sex": values.sex,
+            "confirmationCode" : token,
+            "status": values.status
+
+        })
+            .then(response => {if (values.status != "Active"){
+                console.log("Pending Account. Please Verify Your Email!")
+              }console.log(response)})
+            .catch(error => { console.log(error) })
+
+        submit = false
+
     }
     const sendEmail = (event) =>{
         event.preventDefault();
-        console.log(event.target)
-        emailjs.sendForm('gmail', 'template_k74q3lt', event.target, 'user_uf4z8ASWRLqiA35joJDJd')
-        .then((result) => {
-          console.log(result.text);
-        }, (error) => {
-          console.log(error.text);
-        });
+        if(!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex){
+            console.log(event.target)
+            emailjs.sendForm('gmail', 'template_k74q3lt', event.target, 'user_uf4z8ASWRLqiA35joJDJd')
+            .then((result) => {
+              console.log(result.text);
+            }, (error) => {
+              console.log(error.text);
+            });
+        }
     }
 
     // ********************** - LOG IN - ************************
@@ -168,7 +179,23 @@ function TrainRegister() {
                 console.log("Password Match")
                 InvPwd = false
                 if (!login_errors.login_username && !login_errors.login_password) {
-                    console.log("login")
+                    const d = new Date();
+                    setMember_satistic_val({
+                        "username": values.login_username,
+                        "Login_Date": d
+                    })
+                    login = true
+                }
+
+                if (login === true){
+                    axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day', {
+                                        "username": member_satistic_val.username,
+                                        "Login_Date":member_satistic_val.Login_Date
+                                        })
+                                        .then(response => {console.log(response)})
+                                        .catch(error => { console.log(error) })
+                                console.log("login")
+                    login = false
                 }
             }
             else {
@@ -191,13 +218,12 @@ function TrainRegister() {
 
         }
     }
+    
 
     const handleLogin = (event) => {
         event.preventDefault()
         if (!InvUn && !InvPwd) {
             setlogin_Errors(validation_signin(values)
-
-            
             );
         }
         makeGetRequest();
@@ -365,6 +391,11 @@ function TrainRegister() {
                         value={values.DOB} 
                         onChange={handleChange} />
                     {errors.DOB && <p className="error">{errors.DOB}</p>}
+
+                    <input className="inputlogin"
+                            name ="confirmcode"
+                            defaultValue={values.confirmationCode}
+                            type = "hidden"/>
 
                 </div>
 
