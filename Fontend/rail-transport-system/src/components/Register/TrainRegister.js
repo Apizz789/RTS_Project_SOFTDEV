@@ -276,8 +276,7 @@ function TrainRegister() {
                     <Form.Check
                         inline
                         label="Male"
-                        className="form-check-input" 
-                        type="radio" 
+                        type="checkbox" 
                         name="sex" 
                         id="Radios1" 
                         value="Male" 
@@ -287,8 +286,7 @@ function TrainRegister() {
                     <Form.Check
                         inline
                         label="Female"
-                        className="form-check-input" 
-                        type="radio" 
+                        type="checkbox" 
                         name="sex" 
                         id="Radios2" 
                         value="Female"
