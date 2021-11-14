@@ -17,13 +17,15 @@ import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
 import CalculationResult from './components/pages/CalculationResult';
-import ContextProvider from './components/Calculate/UseContextSource'
+import SourceProvider from './components/Calculate/UseContextSource'
+import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
 
 function App() {
 
   return (
-    <ContextProvider>
+    <SourceProvider>
+    <DestProvider>
     <Router>
       <Navbar />
       <br/>
@@ -49,8 +51,8 @@ function App() {
       </Switch>
       <Footer />
     </Router>
-
-    </ContextProvider>
+    </DestProvider>
+    </SourceProvider>
   );
 }
 

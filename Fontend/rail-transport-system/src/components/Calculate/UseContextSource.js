@@ -2,7 +2,7 @@ import { createContext , useState } from 'react'
 
 export const UserContextS = createContext();
 
-function ContextProvider({children}) {
+function SourceProvider({children}) {
     const [clickS,setclickS] = useState("Please Select Sourrce :")
     const value = {clickS,setclickS}
     return (
@@ -12,4 +12,4 @@ function ContextProvider({children}) {
     );
   }
 
-export default ContextProvider
+export default SourceProvider
