@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Card/Cards.css'
+import './CardsManual.css'
 import CardManual from './CardManual';
 function ManualMRT() {
     return (

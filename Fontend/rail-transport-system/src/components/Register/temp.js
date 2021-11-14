@@ -1,4 +1,4 @@
-<div className="Body_Regis" style={{marginTop :"50px"}}>
+{/* <div className="Body_Regis" style={{marginTop :"50px"}}>
                 <title>Slide Navbar</title>
 
             <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
@@ -61,8 +61,8 @@
                         onChange={handleChange} 
                     />
                     {errors.lname && <p className="error">{errors.lname}</p>}
-                    {/* <input type="checkbox" check = {true} />
-                    <input type="checkbox" /> */}
+                    <input type="checkbox" check = {true} />
+                    <input type="checkbox" /> 
                     <Form.Check
                         inline
                         label="Male"
@@ -201,4 +201,4 @@
                 </form>
                 </div>
             </div>
-        </div>
+        </div> */}

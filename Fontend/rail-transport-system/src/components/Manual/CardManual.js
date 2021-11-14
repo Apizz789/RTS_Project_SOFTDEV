@@ -2,7 +2,7 @@ import React from 'react';
 function CardManual(props) {
   return (
     <>
-      <li className='cards__item' >
+      <li className='cards__item'>
         <div className='cards__item__link'>
           <figure className='cards__item__pic-wrap' data-category={props.label}>
             <img
