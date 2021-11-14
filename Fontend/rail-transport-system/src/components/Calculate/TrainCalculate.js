@@ -78,7 +78,20 @@ export default function TrainCalculate() {
     <div style={{overflowX:'hidden',width:'100vw'}}>
       <Row>
         <Row>
-          <Col style={{ marginTop: "15%"}}>
+          <Col style={{ marginTop: "5%" }}>
+            <h1
+              style={{
+                backgroundColor: "Grey",
+                marginBottom :"5%",
+                borderRadius: "12px",
+                width: "400px",
+                height: "80px",
+                alignContent:"center",
+                textAlign:"center",
+              }}
+            >
+              คำนวณค่าโดยสาร
+            </h1>
             <h1
               style={{
                 backgroundColor: "grey",

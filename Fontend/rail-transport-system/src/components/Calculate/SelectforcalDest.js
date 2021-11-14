@@ -19,10 +19,12 @@ const SelectforCalDest = () => {
   const { setclickD } = useContext(UserContextD);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+
   const handleShow = (item) => {
     setShow(true);
     setclickD(item);
   };
+
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>
       <br></br>
@@ -90,7 +92,7 @@ const SelectforCalDest = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} align>
+            <Modal show={show} onHide={handleClose} centered>
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
@@ -125,12 +127,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
 
@@ -145,12 +158,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
         <Tab eventKey="Btsyellow" title="BTS สายสีเหลือง">
@@ -185,12 +209,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
         <Tab eventKey="Btspink" title="BTS สายสีชมพู">
@@ -230,12 +265,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
         <Tab eventKey="Mrtblue" title="MRT สายสีน้ำเงิน">
@@ -284,7 +330,7 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
@@ -332,12 +378,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
         <Tab eventKey="MrtOrange" title="MRT สายสีส้ม">
@@ -376,12 +433,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
@@ -401,7 +469,7 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
@@ -424,12 +492,23 @@ const SelectforCalDest = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickD(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
       </Tabs>
