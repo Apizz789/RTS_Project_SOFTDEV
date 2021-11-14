@@ -19,15 +19,17 @@ const SelectforCal = () => {
   const { setclickS } = useContext(UserContextS);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+  
   const handleShow = (item) => {
     setShow(true);
     setclickS(item)
   };
+
   function newLineText(props){
     const text = props.text;
     return <div>{text}</div>;
   }
-
+  
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>
       <br></br>
@@ -95,7 +97,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} align>
+            <Modal show={show} onHide={handleClose} centered>
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
@@ -130,12 +132,23 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
 
@@ -150,14 +163,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{width:"230px",whiteSpace: 'pre', margin: '10px'}}
               >
                 {item}
               </Button>
             ))}
+             <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="Btsyellow" title="BTS สายสีเหลือง">
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
@@ -190,14 +215,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="Btspink" title="BTS สายสีชมพู">
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
@@ -235,14 +272,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+           <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal> 
           </div>
         </Tab>
+
         <Tab eventKey="Mrtblue" title="MRT สายสีน้ำเงิน">
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
@@ -289,14 +338,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="MrtPurple" title="MRT สายสีม่วง">
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
@@ -337,14 +398,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+             <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="MrtOrange" title="MRT สายสีส้ม">
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
@@ -381,14 +454,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
           <div style={{ textAlign: "center",columnCount:"4" }}>
             {[
@@ -406,14 +491,26 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
+
         <Tab eventKey="apl" title="Airport Rail Link">
           <div style={{ textAlign: "center",columnCount:"4" }}>
             {[
@@ -429,12 +526,23 @@ const SelectforCal = () => {
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => setclickS(item)}
+                onClick={() => handleShow(item)}
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
             ))}
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>Modal Head Part</Modal.Header>
+              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Footer>
+                <Link to="/calculate">
+                  <Button variant="secondary" onClick={handleClose}>
+                    OK
+                  </Button>
+                </Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Tab>
       </Tabs>
