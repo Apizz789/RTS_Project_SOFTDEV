@@ -17,7 +17,8 @@ import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
 import CalculationResult from './components/pages/CalculationResult';
-import ContextProvider from './components/Calculate/StationBlue'
+import ContextProvider from './components/Calculate/UseContextSource'
+import SelectStationDest from './components/pages/SelectStationDest';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='/register' exact component ={Register} />
         <Route path='/contact' exact component ={Contact}/>
         <Route path='/SelectStation' exact component ={SelectStation}/>
+        <Route path='/select-station-dest' exact component ={SelectStationDest}/>
         <Route path='/ticket' exact component ={Ticket}/>
         <Route path='/show-ticket' exact component ={ShowTicket}/>
         <Route path='/informaion' exact component ={Information} />
