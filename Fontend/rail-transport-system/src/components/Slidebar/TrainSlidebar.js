@@ -12,6 +12,22 @@ function TrainSlidebar() {
     return (
         <div className='train-slidebar'>
             <Carousel  interval={6000}>
+
+            <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  // src="../images/BN2.png?text=First slide&bg=373940"
+                  alt="First slide"
+                  style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
+                />
+                <Carousel.Caption>
+                <img src="../images/LOGO.png" style={{height:'auto'}} /> 
+                  <h3 >Bangkok Mass Transit System</h3>
+                  <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+
+
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -25,6 +41,8 @@ function TrainSlidebar() {
                   <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
               </Carousel.Item>
+
+
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -39,6 +57,8 @@ function TrainSlidebar() {
                   <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
               </Carousel.Item>
+
+
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -53,6 +73,9 @@ function TrainSlidebar() {
                   <p >Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </Carousel.Caption>
               </Carousel.Item>
+
+
+
             </Carousel>
         </div>
     
