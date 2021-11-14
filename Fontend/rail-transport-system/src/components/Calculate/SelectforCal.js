@@ -140,10 +140,10 @@ const SelectforCal = () => {
         </Tab>
 
         <Tab eventKey="Btsgold" title="BTS สายสีทอง">
-          <div style={{ textAlign: "center",columnCount:"6" }}>
+          <div style={{ textAlign: "center",columnCount:"1" }}>
             {[
               "G01 กรุงธนบุรี\nKrung Thonburi",
-              "G02 เจริญนคร\n(ไอคอนสยาม) Charoen Nakhon",
+              "G02 เจริญนคร\nCharoen Nakhon",
               "G03 คลองสาน\nKhlong San",
               "G04 ประชาธิปก\nPrajadhipok",
             ].map((item, index) => (
@@ -151,7 +151,7 @@ const SelectforCal = () => {
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickS(item)}
-                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre', marginright: '10px'}}
               >
                 {item}
               </Button>
@@ -159,7 +159,7 @@ const SelectforCal = () => {
           </div>
         </Tab>
         <Tab eventKey="Btsyellow" title="BTS สายสีเหลือง">
-          <div style={{ textAlign: "center",columnCount:"6" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
               "YLEX01 พหลโยธิน\n24 Phahon Yothin 24",
               "YLEX02 จันทรเกษม\nChan Kasem",
@@ -417,12 +417,12 @@ const SelectforCal = () => {
         <Tab eventKey="apl" title="Airport Rail Link">
           <div style={{ textAlign: "center",columnCount:"4" }}>
             {[
-              "A01 สุวรรณภูมิ\nSuvarnabhumi (Airport)",
+              "A01 สุวรรณภูมิ\nSuvarnabhumi",
               "A02 ลาดกระบัง\nLat Krabang",
               "A03 บ้านทับช้าง\nBan Thap Chang",
               "A04 หัวหมาก\nHua Mak",
               "A05 รามคำแหง\nRamkhamhaeng",
-              "A06 มักกะสัน\nMakkasan(City Air Terminal)",
+              "A06 มักกะสัน\nMakkasan",
               "A07 ราชปรารภ\nRatchaprarop",
               "A08 พญาไท\nPhaya Thai",
             ].map((item, index) => (
