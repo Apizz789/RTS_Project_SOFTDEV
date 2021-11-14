@@ -318,7 +318,7 @@ function TrainRegister() {
                         required
                         value={values.email}
                         onChange={handleChange}
-                        className = "form-control"
+                        
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
                 
