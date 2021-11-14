@@ -21,7 +21,7 @@ function TrainSlidebar() {
                   style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
                 />
                 <Carousel.Caption>
-                <img src="../images/LOGO.png" style={{height:'auto'}} /> 
+                <img src="../images/RTS-LOGO.png" style={{height:'auto'}} /> 
                   <h3 >Bangkok Mass Transit System</h3>
                   <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
