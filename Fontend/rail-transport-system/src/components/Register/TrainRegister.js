@@ -209,6 +209,7 @@ function TrainRegister() {
     
 
     return (
+        
         <div className="Body_Regis" style={{marginTop :"50px"}}>
                 <title>Slide Navbar</title>
             <link rel="stylesheet" type="text/css" href="slide navbar style.css" />

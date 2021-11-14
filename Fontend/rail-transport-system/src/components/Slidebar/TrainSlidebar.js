@@ -16,12 +16,12 @@ function TrainSlidebar() {
             <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  // src="../images/BN2.png?text=First slide&bg=373940"
+                  src="../images/BN0.png?text=First slide&bg=373940"
                   alt="First slide"
                   style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
                 />
                 <Carousel.Caption>
-                <img src="../images/RTS-LOGO.png" style={{height:'auto'}} /> 
+                <img src="../images/RTS=LOGO2.png" style={{height:'auto'}} /> 
                   <h3 >Bangkok Mass Transit System</h3>
                   <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
@@ -31,7 +31,7 @@ function TrainSlidebar() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  // src="../images/BN2.png?text=First slide&bg=373940"
+                  src="../images/BN2.png?text=First slide&bg=373940"
                   alt="First slide"
                   style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
                 />
@@ -46,7 +46,7 @@ function TrainSlidebar() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  // src="../images/BN3.png?text=Second slide&bg=282c34"
+                  src="../images/BN3.png?text=Second slide&bg=282c34"
                   alt="Second slide"
                   style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
                 />
@@ -62,7 +62,7 @@ function TrainSlidebar() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  // src="../images/BN1.png?text=Third slide&bg=20232a"
+                  src="../images/BN1.png?text=Third slide&bg=20232a"
                   alt="Third slide"
                   style={{height:'500px', width:'100vh',backgroundColor:'grey'}}
                 />

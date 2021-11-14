@@ -59,7 +59,7 @@ export default function TrainContactus() {
 		  <div className="contact-wrap">
 
 			<div className="contact-in" align="center">
-			<Container style={{backgroundColor:"#974C27"}}>
+			<Container style={{backgroundColor:"#85D4BE"}}>
 			<Row style={{textAlign:"center"}}>
 			<h1>Contact Info</h1>
 			<Col>
@@ -83,8 +83,8 @@ export default function TrainContactus() {
 			</div>
 
 			<div className="contact-in" align="center" margin="60px">
-			  <h1 style={{backgroundColor:"#859480"}} >Send a Message</h1>
-			  <Container style={{backgroundColor:"#B19333"}}>
+			  <h1 style={{backgroundColor:"#96DFD8"}} >Send a Message</h1>
+			  <Container style={{backgroundColor:"#AEE6CB"}}>
 				<Row style={{textAlign:"center"}}>
 					<Col  >
 					<Row >
@@ -98,12 +98,12 @@ export default function TrainContactus() {
 					<Row>
 					<input type="text" placeholder="Subject" className="contact-in-input" />
 					</Row>
-
+					<input type="submit" defaultValue="SUBMIT" className="contact-in-btn" />
 					</Col>
 					
 					<Col>
-					<textarea placeholder="Message" className="contact-in-textarea" defaultValue={""} />
-					<input type="submit" defaultValue="SUBMIT" className="contact-in-btn" />
+					<textarea placeholder="Message" className="contact-in-textarea" defaultValue={""} height="50px" width="40px" />
+					
 					</Col>
 
 
