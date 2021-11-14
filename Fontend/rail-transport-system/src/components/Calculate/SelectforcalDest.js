@@ -30,61 +30,62 @@ const SelectforCalDest = () => {
       <br></br>
       <Tabs defaultActiveKey="Btsgreen" className="mb-3">
         <Tab eventKey="Btsgreen" title="BTS สายสีเขียวอ่อน">
-          <div style={{ textAlign: "center" }}>
+          <div  style={{ textAlign: "center",columnCount:"6"}}>
             {[
-              "N24 คูคต Khu Khot",
-              "N23 แยก คปอ. Yaek Kor Por Aor",
-              "N22 พิพิธภัณฑ์กองทัพอากาศ Royal Thai Air Force Museum",
-              "N21 โรงพยาบาลภูมิพลอดุลยเดช Bhumibol Adulyadej Hospital",
-              "N20 สะพานใหม่ Saphan Mai",
-              "N19 สายหยุด Sai Yud",
-              "N18 พหลโยธิน 59 Phahon Yothin 59",
-              "N17 วัดพระศรีมหาธาตุ Wat Phra Sri Mahathat",
-              "N16 กรมทหารราบที่ 11 11th Infantry Regiment",
-              "N15 บางบัว Bang Bua",
-              "N14 กรมป่าไม้ Royal Forest Department",
-              "N13 มหาวิทยาลัยเกษตรศาสตร์ Kasetsart University",
-              "N12 เสนานิคม Sena Nikhom",
-              "N11 รัชโยธิน Ratchayothin",
-              "N10 พหลโยธิน 24 Phahon Yothin 24",
-              "N09 ห้าแยกลาดพร้าว Ha Yaek Lat Phrao",
-              "N08 หมอชิต Mo Chit",
-              "N07 สะพานควาย Saphan Khwai",
-              "N06 เสนาร่วม Sena Ruam",
-              "N05 อารีย์ Ari",
-              "N04 สนามเป้า Sanam Pao",
-              "N03 อนุสาวรีย์ชัยสมรภูมิ Victory Monument",
-              "N02 พญาไท Phaya Thai",
-              "N01 ราชเทวี Ratchathewi",
-              "CEN01 สยาม Siam",
-              "E01 ชิดลม Chit Lom",
-              "E02 เพลินจิต Phloen Chit",
-              "E03 นานา Nana",
-              "E04 อโศก Asok",
-              "E05 พร้อมพงษ์ Phrom Phong",
-              "E06 ทองหล่อ Thong Lo",
-              "E07 เอกมัย Ekkamai",
-              "E08 พระโขนง Phra Khanong",
-              "E09 อ่อนนุช On Nut",
-              "E10 บางจาก Bang Chak",
-              "E11 ปุณณวิถี Punnawithi",
-              "E12 อุดมสุข Udom Suk",
-              "E13 บางนา Bang Na",
-              "E14 แบริ่ง Bearing",
-              "E15 สำโรง Samrong",
-              "E16 ปู่เจ้า Pu Chao",
-              "E17 ช้างเอราวัณ Chang Erawan",
-              "E18 โรงเรียนนายเรือ Royal Thai Naval Academy",
-              "E19 ปากน้ำ Pak Nam",
-              "E20 ศรีนครินทร์ Srinagarindra",
-              "E21 แพรกษา Phraek Sa",
-              "E22 สายลวด Sai Luat",
-              "E23 เคหะฯ Kheha",
+              "N24 คูคต\nKhu Khot",
+              "N23 แยก คปอ.\nYaek Kor Por Aor",
+              "N22 พิพิธภัณฑ์กองทัพอากาศ\nRoyal Thai Air Force Museum",
+              "N21 โรงพยาบาลภูมิพลอดุลยเดช\nBhumibol Adulyadej Hospital",
+              "N20 สะพานใหม่\nSaphan Mai",
+              "N19 สายหยุด\nSai Yud",
+              "N18 พหลโยธิน\n59 Phahon Yothin 59",
+              "N17 วัดพระศรีมหาธาตุ\nWat Phra Sri Mahathat",
+              "N16 กรมทหารราบที่ 11\n11th Infantry Regiment",
+              "N15 บางบัว\nBang Bua",
+              "N14 กรมป่าไม้\nRoyal Forest Department",
+              "N13 มหาวิทยาลัยเกษตรศาสตร์\nKasetsart University",
+              "N12 เสนานิคม\nSena Nikhom",
+              "N11 รัชโยธิน\nRatchayothin",
+              "N10 พหลโยธิน\n24 Phahon Yothin 24",
+              "N09 ห้าแยกลาดพร้าว\nHa Yaek Lat Phrao",
+              "N08 หมอชิต\nMo Chit",
+              "N07 สะพานควาย\nSaphan Khwai",
+              "N06 เสนาร่วม\nSena Ruam",
+              "N05 อารีย์\nAri",
+              "N04 สนามเป้า\nSanam Pao",
+              "N03 อนุสาวรีย์ชัยสมรภูมิ\nVictory Monument",
+              "N02 พญาไท\nPhaya Thai",
+              "N01 ราชเทวี\nRatchathewi",
+              "CEN01 สยาม\nSiam",
+              "E01 ชิดลม\nChit Lom",
+              "E02 เพลินจิต\nPhloen Chit",
+              "E03 นานา\nNana",
+              "E04 อโศก\nAsok",
+              "E05 พร้อมพงษ์\nPhrom Phong",
+              "E06 ทองหล่อ\nThong Lo",
+              "E07 เอกมัย\nEkkamai",
+              "E08 พระโขนง\nPhra Khanong",
+              "E09 อ่อนนุช\nOn Nut",
+              "E10 บางจาก\nBang Chak",
+              "E11 ปุณณวิถี\nPunnawithi",
+              "E12 อุดมสุข\nUdom Suk",
+              "E13 บางนา\nBang Na",
+              "E14 แบริ่ง\nBearing",
+              "E15 สำโรง\nSamrong",
+              "E16 ปู่เจ้า\nPu Chao",
+              "E17 ช้างเอราวัณ\nChang Erawan",
+              "E18 โรงเรียนนายเรือ\nRoyal Thai Naval Academy",
+              "E19 ปากน้ำ\nPak Nam",
+              "E20 ศรีนครินทร์\nSrinagarindra",
+              "E21 แพรกษา\nPhraek Sa",
+              "E22 สายลวด\nSai Luat",
+              "E23 เคหะฯ\nKheha",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
-                onClick={() => handleShow(item)}
+                onClick={()=>handleShow(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -104,27 +105,28 @@ const SelectforCalDest = () => {
         </Tab>
 
         <Tab eventKey="Btsdarkgreen" title="BTS สายสีเขียวเข้ม">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"5"}}>
             {[
-              "W01 สนามกีฬาแห่งชาติ National Stadium",
-              "CEN02 สยาม Siam",
-              "S01 ราชดำริ Ratchadamri",
-              "S02 ศาลาแดง Sala Daeng",
-              "S03 ช่องนนทรี Chong Nonsi",
-              "S04 เซนต์หลุยส์ Saint Louis",
-              "S05 สุรศักดิ์ Surasak",
-              "S06 สะพานตากสิน Saphan Taksin",
-              "S07 กรุงธนบุรี Krung Thon Buri",
-              "S08 วงเวียนใหญ่ Wongwian Yai",
-              "S09 โพธิ์นิมิตร Pho Nimit",
-              "S10 ตลาดพลู Talat Phlu",
-              "S11 วุฒากาศ Wutthakat",
-              "S12 บางหว้า Bang Wa",
+              "W01 สนามกีฬาแห่งชาติ\nNational Stadium",
+              "CEN02 สยาม\nSiam",
+              "S01 ราชดำริ\nRatchadamri",
+              "S02 ศาลาแดง\nSala Daeng",
+              "S03 ช่องนนทรี\nChong Nonsi",
+              "S04 เซนต์หลุยส์\nSaint Louis",
+              "S05 สุรศักดิ์\nSurasak",
+              "S06 สะพานตากสิน\nSaphan Taksin",
+              "S07 กรุงธนบุรี\nKrung Thon Buri",
+              "S08 วงเวียนใหญ่\nWongwian Yai",
+              "S09 โพธิ์นิมิตร\nPho Nimit",
+              "S10 ตลาดพลู\nTalat Phlu",
+              "S11 วุฒากาศ\nWutthakat",
+              "S12 บางหว้า\nBang Wa",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -133,17 +135,18 @@ const SelectforCalDest = () => {
         </Tab>
 
         <Tab eventKey="Btsgold" title="BTS สายสีทอง">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"6" }}>
             {[
-              "G01 กรุงธนบุรี Krung Thonburi",
-              "G02 เจริญนคร (ไอคอนสยาม) Charoen Nakhon",
-              "G03 คลองสาน Khlong San",
-              "G04 ประชาธิปก Prajadhipok",
+              "G01 กรุงธนบุรี\nKrung Thonburi",
+              "G02 เจริญนคร\n(ไอคอนสยาม) Charoen Nakhon",
+              "G03 คลองสาน\nKhlong San",
+              "G04 ประชาธิปก\nPrajadhipok",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -151,38 +154,39 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="Btsyellow" title="BTS สายสีเหลือง">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"6" }}>
             {[
-              "YLEX01 พหลโยธิน 24 Phahon Yothin 24",
-              "YLEX02 จันทรเกษม Chan Kasem",
-              "YL01 ลาดพร้าว Lat Phrao",
-              "YL02 ภาวนา Phawana",
-              "YL03 โชคชัย 4 Chok chai 4",
-              "YL04 ลาดพร้าว 71 Lat Phrao 71",
-              "YL05 ลาดพร้าว 83 Lat Phrao 83",
-              "YL06 มหาดไทย Mahat Thai",
-              "YL07 ลาดพร้าว 101 Lat Phrao 101",
-              "YL08 บางกะปิ Bang Kapi",
-              "YL09 แยกลำสาลี Yaek Lam Sali",
-              "YL10 ศรีกรีฑา Si Kritha",
-              "YL11 พัฒนาการ Phattanakarn",
-              "YL12 กลันตัน Kalantan",
-              "YL13 ศรีนุช Si Nut",
-              "YL14 ศรีนครินทร์ 38 Srinagarindra 38",
-              "YL15 สวนหลวง ร. 9 Suan Luang Ro 9",
-              "YL16 ศรีอุดม Si Udom",
-              "YL17 ศรีเอี่ยม Si Iam",
-              "YL18 ศรีลาซาล Si La Salle",
-              "YL19 ศรีแบริ่ง Si Bearing",
-              "YL20 ศรีด่าน Si Dan",
-              "YL21 ศรีเทพา Si Thepha",
-              "YL22 ทิพวัล Thipphawan",
-              "YL23 สำโรง Samrong",
+              "YLEX01 พหลโยธิน\n24 Phahon Yothin 24",
+              "YLEX02 จันทรเกษม\nChan Kasem",
+              "YL01 ลาดพร้าว\nLat Phrao",
+              "YL02 ภาวนา\nPhawana",
+              "YL03 โชคชัย\n4 Chok chai 4",
+              "YL04 ลาดพร้าว\n71 Lat Phrao 71",
+              "YL05 ลาดพร้าว\n83 Lat Phrao 83",
+              "YL06 มหาดไทย\nMahat Thai",
+              "YL07 ลาดพร้าว\n101 Lat Phrao 101",
+              "YL08 บางกะปิ\nBang Kapi",
+              "YL09 แยกลำสาลี\nYaek Lam Sali",
+              "YL10 ศรีกรีฑา\nSi Kritha",
+              "YL11 พัฒนาการ\nPhattanakarn",
+              "YL12 กลันตัน\nKalantan",
+              "YL13 ศรีนุช\nSi Nut",
+              "YL14 ศรีนครินทร์\n38 Srinagarindra 38",
+              "YL15 สวนหลวง ร. 9\nSuan Luang Ro 9",
+              "YL16 ศรีอุดม\nSi Udom",
+              "YL17 ศรีเอี่ยม\nSi Iam",
+              "YL18 ศรีลาซาล\nSi La Salle",
+              "YL19 ศรีแบริ่ง\nSi Bearing",
+              "YL20 ศรีด่าน\nSi Dan",
+              "YL21 ศรีเทพา\nSi Thepha",
+              "YL22 ทิพวัล\nThipphawan",
+              "YL23 สำโรง\nSamrong",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -190,43 +194,44 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="Btspink" title="BTS สายสีชมพู">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
-              "PK01 ศูนย์ราชการนนทบุรี Nonthaburi Civic Center",
-              "PK02 แคราย Khae Rai",
-              "PK03 สนามบินน้ำ Sanambin Nam",
-              "PK04 สามัคคี Samakkhi",
-              "PK05 กรมชลประทาน Royal Irrigation Department",
-              "PK06 แยกปากเกร็ด Yeak Pak Kret",
-              "PK07 เลี่ยงเมืองปากเกร็ด Pak Kret Bypass",
-              "PK08 แจ้งวัฒนะ-ปากเกร็ด 28 Chaeng Wattana-Pak Kret 28",
-              "PK09 เมืองทองธานี Muang Thong Thani",
-              "PK10 ศรีรัช Si Rat",
-              "PK11 แจ้งวัฒนะ 14 Chaeng Watthana 14",
-              "PK12 ศูนย์ราชการเฉลิมพระเกียรติ Government Complex",
-              "PK13 โทรคมนาคมแห่งชาติ TOT",
-              "PK14 หลักสี่ Lak Si",
-              "PK15 ราชภัฏพระนคร Rajabhat Phranakhon",
-              "PK16 วัดพระศรีมหาธาตุ Wat Phra Sri Mahathat",
-              "PK17 รามอินทรา 3 Ram Inthra 3",
-              "PK18 ลาดปลาเค้า Lat Pla Khao",
-              "PK19 รามอินทรา กม.4 Ram Inthra Km.4",
-              "PK20 มัยลาภ Maiyalap",
-              "PK21 วัชรพล Vatcharaphon",
-              "PK22 รามอินทรา กม.6 Ram Inthra Km.6",
-              "PK23 คู้บอน Khu Bon",
-              "PK24 รามอินทรา กม.9 Ram Inthra Km.9",
-              "PK25 วงแหวนรามอินทรา Outer Ring Road - Ram Inthra",
-              "PK26 นพรัตน์ Nopparat",
-              "PK27 บางชัน Bang Chan",
-              "PK28 เศรษฐบุตรบำเพ็ญ Setthabutbamphen",
-              "PK29 ตลาดมีนบุรี Min Buri Market",
-              "PK30 มีนบุรี Min Buri",
+              "PK01 ศูนย์ราชการนนทบุรี\nNonthaburi Civic Center",
+              "PK02 แคราย\nKhae Rai",
+              "PK03 สนามบินน้ำ\nSanambin Nam",
+              "PK04 สามัคคี\nSamakkhi",
+              "PK05 กรมชลประทาน\nRoyal Irrigation Department",
+              "PK06 แยกปากเกร็ด\nYeak Pak Kret",
+              "PK07 เลี่ยงเมืองปากเกร็ด\nPak Kret Bypass",
+              "PK08 แจ้งวัฒนะ-ปากเกร็ด 28\nChaeng Wattana-Pak Kret 28",
+              "PK09 เมืองทองธานี\nMuang Thong Thani",
+              "PK10 ศรีรัช\nSi Rat",
+              "PK11 แจ้งวัฒนะ 14\nChaeng Watthana 14",
+              "PK12 ศูนย์ราชการเฉลิมพระเกียรติ\nGovernment Complex",
+              "PK13 โทรคมนาคมแห่งชาติ\nTOT",
+              "PK14 หลักสี่\nLak Si",
+              "PK15 ราชภัฏพระนคร\nRajabhat Phranakhon",
+              "PK16 วัดพระศรีมหาธาตุ\nWat Phra Sri Mahathat",
+              "PK17 รามอินทรา 3\nRam Inthra 3",
+              "PK18 ลาดปลาเค้า\nLat Pla Khao",
+              "PK19 รามอินทรา กม.4\nRam Inthra Km.4",
+              "PK20 มัยลาภ\nMaiyalap",
+              "PK21 วัชรพล\nVatcharaphon",
+              "PK22 รามอินทรา กม.6\nRam Inthra Km.6",
+              "PK23 คู้บอน\nKhu Bon",
+              "PK24 รามอินทรา กม.9\nRam Inthra Km.9",
+              "PK25 วงแหวนรามอินทรา\nOuter Ring Road - Ram Inthra",
+              "PK26 นพรัตน์\nNopparat",
+              "PK27 บางชัน\nBang Chan",
+              "PK28 เศรษฐบุตรบำเพ็ญ\nSetthabutbamphen",
+              "PK29 ตลาดมีนบุรี\nMin Buri Market",
+              "PK30 มีนบุรี\nMin Buri",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -234,52 +239,53 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="Mrtblue" title="MRT สายสีน้ำเงิน">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
-              "BL01 ท่าพระ Tha Phra",
-              "BL02 จรัญฯ 13 Charan 13",
-              "BL03 ไฟฉาย Fai Chai",
-              "BL04 บางขุนนนท์ Bang Khun Non",
-              "BL05 บางยี่ขัน Bang Yi Khan",
-              "BL06 สิรินธร Sirindhorn",
-              "BL07 บางพลัด Bang Phlat",
-              "BL08 บางอ้อ Bang O",
-              "BL09 บางโพ Bang Pho",
-              "BL10 เตาปูน Tao Poon",
-              "BL11 บางซื่อ Bang Sue",
-              "BL12 กำแพงเพชร Kamphaeng Phet",
-              "BL13 สวนจตุจักร Chatuchak Park",
-              "BL14 พหลโยธิน Phahon Yothin",
-              "BL15 ลาดพร้าว Lat Phrao",
-              "BL16 รัชดาภิเษก Ratchadaphisek",
-              "BL17 สุทธิสาร Sutthisan",
-              "BL18 ห้วยขวาง Huai Khwang",
-              "BL19 ศูนย์วัฒนธรรมแห่งประเทศไทย Thailand Cultural Centre",
-              "BL20 พระราม 9 Phra Ram 9",
-              "BL21 เพชรบุรี Phetchaburi",
-              "BL22 สุขุมวิท Sukhumvit",
-              "BL23 ศูนย์การประชุมแห่งชาติสิริกิติ์ Queen Sirikit National Convention Centre",
-              "BL24 คลองเตย Khlong Toei",
-              "BL25 ลุมพินี Lumphini",
-              "BL26 สีลม Si Lom",
-              "BL27 สามย่าน Sam Yan",
-              "BL28 หัวลำโพง Hua Lamphong",
-              "BL29 วัดมังกร Wat Mangkon",
-              "BL30 สามยอด Sam Yot",
-              "BL31 สนามไชย Sanam Chai",
-              "BL32 อิสรภาพ Itsaraphap",
-              "BL01-L ท่าพระ Tha Phra",
-              "BL33 บางไผ่ Bang Phai",
-              "BL34 บางหว้า Bang Wa",
-              "BL35 เพชรเกษม 48 Phetkasem 48",
-              "BL36 ภาษีเจริญ Phasi Charoen",
-              "BL37 บางแค Bang Khae",
-              "BL38 หลักสอง Lak Song",
+              "BL01 ท่าพระ\nTha Phra",
+              "BL02 จรัญฯ 13\nCharan 13",
+              "BL03 ไฟฉาย\nFai Chai",
+              "BL04 บางขุนนนท์\nBang Khun Non",
+              "BL05 บางยี่ขัน\nBang Yi Khan",
+              "BL06 สิรินธร\nSirindhorn",
+              "BL07 บางพลัด\nBang Phlat",
+              "BL08 บางอ้อ\nBang O",
+              "BL09 บางโพ\nBang Pho",
+              "BL10 เตาปูน\nTao Poon",
+              "BL11 บางซื่อ\nBang Sue",
+              "BL12 กำแพงเพชร\nKamphaeng Phet",
+              "BL13 สวนจตุจักร\nChatuchak Park",
+              "BL14 พหลโยธิน\nPhahon Yothin",
+              "BL15 ลาดพร้าว\nLat Phrao",
+              "BL16 รัชดาภิเษก\nRatchadaphisek",
+              "BL17 สุทธิสาร\nSutthisan",
+              "BL18 ห้วยขวาง\nHuai Khwang",
+              "BL19 ศูนย์วัฒนธรรมแห่งประเทศไทย\nThailand Cultural Centre",
+              "BL20 พระราม 9\nPhra Ram 9",
+              "BL21 เพชรบุรี\nPhetchaburi",
+              "BL22 สุขุมวิท\nSukhumvit",
+              "BL23 ศูนย์การประชุมแห่งชาติสิริกิติ์\nQueen Sirikit National\nConvention Centre",
+              "BL24 คลองเตย\nKhlong Toei",
+              "BL25 ลุมพินี\nLumphini",
+              "BL26 สีลม\nSi Lom",
+              "BL27 สามย่าน\nSam Yan",
+              "BL28 หัวลำโพง\nHua Lamphong",
+              "BL29 วัดมังกร\nWat Mangkon",
+              "BL30 สามยอด\nSam Yot",
+              "BL31 สนามไชย\nSanam Chai",
+              "BL32 อิสรภาพ\nItsaraphap",
+              "BL01-L ท่าพระ\nTha Phra",
+              "BL33 บางไผ่\nBang Phai",
+              "BL34 บางหว้า\nBang Wa",
+              "BL35 เพชรเกษม\n48 Phetkasem 48",
+              "BL36 ภาษีเจริญ\nPhasi Charoen",
+              "BL37 บางแค\nBang Khae",
+              "BL38 หลักสอง\nLak Song",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"250px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -287,46 +293,47 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="MrtPurple" title="MRT สายสีม่วง">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
-              "PP01 คลองบางไผ่ Khlong Bang Phai",
-              "PP02 ตลาดบางใหญ่ Talad Bang Yai",
-              "PP03 สามแยกบางใหญ่ Sam Yaek Bang Yai",
-              "PP04 บางพลู Bang Phlu",
-              "PP05 บางรักใหญ่ Bang Rak Yai",
-              "PP06 บางรักน้อย-ท่าอิฐ Bang Rak Noi Tha It",
-              "PP07 ไทรม้า Sai Ma",
-              "PP08 สะพานพระนั่งเกล้า Phra Nang Klao Bridge",
-              "PP09 แยกนนทบุรี 1 Yaek Nonthaburi 1",
-              "PP10 บางกระสอ Bang Krasor",
-              "PP11 ศูนย์ราชการนนทบุรี Nonthaburi Civic Center",
-              "PP12 กระทรวงสาธารณสุข Ministry of Public Health",
-              "PP13 แยกติวานนท์ Yaek Tiwanon",
-              "PP14 วงศ์สว่าง Wong Sawang",
-              "PP15 บางซ่อน Bang Son",
-              "PP16 เตาปูน Tao Poon",
-              "PP17 รัฐสภา Parliament House",
-              "PP18 ศรีย่าน Sri Yan",
-              "PP19 วชิรพยาบาล Vajira Hospital",
-              "PP20 หอสมุดแห่งชาติ National Library",
-              "PP21 บางขุนพรหม Bang Khun Phrom",
-              "PP22 ผ่านฟ้า Phan Fa",
-              "PP23 สามยอด Sam Yot",
-              "PP24 สะพานพุทธฯ Memorial Bridge",
-              "PP25 วงเวียนใหญ่ Wong Wian Yai",
-              "PP26 สำเหร่ Sam Rae",
-              "PP27 ดาวคะนอง Dao Khanong",
-              "PP28 บางปะแก้ว Bang Pakaeo",
-              "PP29 บางปะกอก Bang Pakok",
-              "PP30 สะพานพระราม 9 Rama 9 Bridge",
-              "PP31 ราษฎร์บูรณะ Rat Burana",
-              "PP32 พระประแดง Phra Pradaeng",
-              "PP33 ครุใน Kru Nai",
+              "PP01 คลองบางไผ่\nKhlong Bang Phai",
+              "PP02 ตลาดบางใหญ่\nTalad Bang Yai",
+              "PP03 สามแยกบางใหญ่\nSam Yaek Bang Yai",
+              "PP04 บางพลู\nBang Phlu",
+              "PP05 บางรักใหญ่\nBang Rak Yai",
+              "PP06 บางรักน้อย-ท่าอิฐ\nBang Rak Noi Tha It",
+              "PP07 ไทรม้า\nSai Ma",
+              "PP08 สะพานพระนั่งเกล้า\nPhra Nang Klao Bridge",
+              "PP09 แยกนนทบุรี 1\nYaek Nonthaburi 1",
+              "PP10 บางกระสอ\nBang Krasor",
+              "PP11 ศูนย์ราชการนนทบุรี\nNonthaburi Civic Center",
+              "PP12 กระทรวงสาธารณสุข\nMinistry of Public Health",
+              "PP13 แยกติวานนท์\nYaek Tiwanon",
+              "PP14 วงศ์สว่าง\nWong Sawang",
+              "PP15 บางซ่อน\nBang Son",
+              "PP16 เตาปูน\nTao Poon",
+              "PP17 รัฐสภา\nParliament House",
+              "PP18 ศรีย่าน\nSri Yan",
+              "PP19 วชิรพยาบาล\nVajira Hospital",
+              "PP20 หอสมุดแห่งชาติ\nNational Library",
+              "PP21 บางขุนพรหม\nBang Khun Phrom",
+              "PP22 ผ่านฟ้า\nPhan Fa",
+              "PP23 สามยอด\nSam Yot",
+              "PP24 สะพานพุทธฯ\nMemorial Bridge",
+              "PP25 วงเวียนใหญ่\nWong Wian Yai",
+              "PP26 สำเหร่\nSam Rae",
+              "PP27 ดาวคะนอง\nDao Khanong",
+              "PP28 บางปะแก้ว\nBang Pakaeo",
+              "PP29 บางปะกอก\nBang Pakok",
+              "PP30 สะพานพระราม 9\nRama 9 Bridge",
+              "PP31 ราษฎร์บูรณะ\nRat Burana",
+              "PP32 พระประแดง\nPhra Pradaeng",
+              "PP33 ครุใน\nKru Nai",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -334,42 +341,43 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="MrtOrange" title="MRT สายสีส้ม">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
-              "OR29 แยกร่มเกล้า Yeak Rom Klao",
-              "OR28 มีนบุรี Min Buri",
-              "OR27 เคหะรามคำแหง Kheha Ramkhamhaeng",
-              "OR26 มีนพัฒนา Min Phatthana",
-              "OR25 ราษฎร์พัฒนา Rat Phatthana",
-              "OR24 น้อมเกล้า Nom Klao",
-              "OR23 สัมมากร Sammakorn",
-              "OR22 คลองบ้านม้า Khlong Ban Ma",
-              "OR21 ศรีบูรพา Sri Burapha",
-              "OR20 แยกลำสาลี  Yeak Lam Sali",
-              "OR19 รามคำแหง 34  Ramkhamhaeng 34",
-              "OR18 ราชมังคลา Rajamangala",
-              "OR17 มหาวิทยาลัยรามคำแหง Ramkhamhaeng University",
-              "OR16 รามคำแหง 12 Ramkhamhaeng 12",
-              "OR15 วัดพระราม 9 Wat Phra Ram 9",
-              "OR14 รฟม. MRTA",
-              "OR13 ศูนย์วัฒนธรรมแห่งประเทศไทย Thailand Cultural Centre",
-              "OR12 ประชาสงเคราะห์ Pracha Songkhro",
-              "OR11 ดินแดง Din Daeng",
-              "OR10 รางน้ำ Rang Nam",
-              "OR09 ราชปรารภ Ratchaprarop",
-              "OR08 ประตูน้ำ Pratunam",
-              "OR07 ราชเทวี Ratchathewi",
-              "OR06 ยมราช Yommarat",
-              "OR05 หลานหลวง Lan Luang",
-              "OR04 อนุสาวรีย์ประชาธิปไตย Democracy Monument",
-              "OR03 สนามหลวง Sanam Luang",
-              "OR02 ศิริราช Siriraj",
-              "OR01 บางขุนนนท์ Bang Khun Non",
+              "OR29 แยกร่มเกล้า\nYeak Rom Klao",
+              "OR28 มีนบุรี\nMin Buri",
+              "OR27 เคหะรามคำแหง\nKheha Ramkhamhaeng",
+              "OR26 มีนพัฒนา\nMin Phatthana",
+              "OR25 ราษฎร์พัฒนา\nRat Phatthana",
+              "OR24 น้อมเกล้า\nNom Klao",
+              "OR23 สัมมากร\nSammakorn",
+              "OR22 คลองบ้านม้า\nKhlong Ban Ma",
+              "OR21 ศรีบูรพา\nSri Burapha",
+              "OR20 แยกลำสาลี\nYeak Lam Sali",
+              "OR19 รามคำแหง 34\nRamkhamhaeng 34",
+              "OR18 ราชมังคลา\nRajamangala",
+              "OR17 มหาวิทยาลัยรามคำแหง\nRamkhamhaeng University",
+              "OR16 รามคำแหง 12\nRamkhamhaeng 12",
+              "OR15 วัดพระราม 9\nWat Phra Ram 9",
+              "OR14 รฟม.\nMRTA",
+              "OR13 ศูนย์วัฒนธรรม\nแห่งประเทศไทย\nThailand Cultural Centre",
+              "OR12 ประชาสงเคราะห์\nPracha Songkhro",
+              "OR11 ดินแดง\nDin Daeng",
+              "OR10 รางน้ำ\nRang Nam",
+              "OR09 ราชปรารภ\nRatchaprarop",
+              "OR08 ประตูน้ำ\nPratunam",
+              "OR07 ราชเทวี\nRatchathewi",
+              "OR06 ยมราช\nYommarat",
+              "OR05 หลานหลวง\nLan Luang",
+              "OR04 อนุสาวรีย์ประชาธิปไตย\nDemocracy Monument",
+              "OR03 สนามหลวง\nSanam Luang",
+              "OR02 ศิริราช\nSiriraj",
+              "OR01 บางขุนนนท์\nBang Khun Non",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -377,23 +385,24 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"4" }}>
             {[
-              "RN10 รังสิต Rangsit",
-              "RN09 หลักหก (มหาวิทยาลัยรังสิต) Lak Hok (Rangsit University)",
-              "RN08 ดอนเมือง Don Mueang",
-              "RN07 การเคหะ Kan Kheha",
-              "RN06 หลักสี่ Lak Si",
-              "RN05 ทุ่งสองห้อง Thung Song Hong",
-              "RN04 บางเขน Bang Khen",
-              "RN03 วัดเสมียนนารี Wat Samian Nari",
-              "RN02 จตุจักร Chatuchak",
-              "RN01 บางซื่อ Bang Sue",
+              "RN10 รังสิต\nRangsit",
+              "RN09 หลักหก\n(มหาวิทยาลัยรังสิต)\nLak Hok (Rangsit University)",
+              "RN08 ดอนเมือง\nDon Mueang",
+              "RN07 การเคหะ\nKan Kheha",
+              "RN06 หลักสี่\nLak Si",
+              "RN05 ทุ่งสองห้อง\nThung Song Hong",
+              "RN04 บางเขน\nBang Khen",
+              "RN03 วัดเสมียนนารี\nWat Samian Nari",
+              "RN02 จตุจักร\nChatuchak",
+              "RN01 บางซื่อ\nBang Sue",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
@@ -401,21 +410,22 @@ const SelectforCalDest = () => {
           </div>
         </Tab>
         <Tab eventKey="apl" title="Airport Rail Link">
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",columnCount:"4" }}>
             {[
-              "A01 สุวรรณภูมิ Suvarnabhumi (Airport)",
-              "A02 ลาดกระบัง Lat Krabang",
-              "A03 บ้านทับช้าง Ban Thap Chang",
-              "A04 หัวหมาก Hua Mak",
-              "A05 รามคำแหง Ramkhamhaeng",
-              "A06 มักกะสัน Makkasan(City Air Terminal)",
-              "A07 ราชปรารภ Ratchaprarop",
-              "A08 พญาไท Phaya Thai",
+              "A01 สุวรรณภูมิ\nSuvarnabhumi (Airport)",
+              "A02 ลาดกระบัง\nLat Krabang",
+              "A03 บ้านทับช้าง\nBan Thap Chang",
+              "A04 หัวหมาก\nHua Mak",
+              "A05 รามคำแหง\nRamkhamhaeng",
+              "A06 มักกะสัน\nMakkasan(City Air Terminal)",
+              "A07 ราชปรารภ\nRatchaprarop",
+              "A08 พญาไท\nPhaya Thai",
             ].map((item, index) => (
               <Button
                 key={index}
                 variant="outline-primary"
                 onClick={() => setclickD(item)}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
               >
                 {item}
               </Button>
