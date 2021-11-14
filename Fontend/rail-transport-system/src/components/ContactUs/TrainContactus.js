@@ -87,9 +87,9 @@ export default function TrainContactus() {
 			  <Container style={{backgroundColor:"#AEE6CB"}}>
 				<Row style={{textAlign:"center"}}>
 					<Col  >
-					<Row >
-					<input type="text" placeholder="Full Name" className="contact-in-input" />
-					</Row>
+					
+					<input type="text" placeholder="Full Name" className="contact-in-input" style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
+					<br/>
 
 					
 					<input type="text" placeholder="Email" className="contact-in-input"  style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
