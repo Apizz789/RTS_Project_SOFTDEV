@@ -61,7 +61,7 @@ export default function TrainContactus() {
 			<div className="contact-in" align="center">
 			<Container>
 			<Row style={{textAlign:"center"}}>
-			<h1>Contact Info</h1><br></br>
+			<h1>Contact Info</h1>
 			<Col>
 			
 			<h2><i className="fa fa-phone" aria-hidden="true" /> Phone</h2>
@@ -80,26 +80,47 @@ export default function TrainContactus() {
 			  
 			</Row>
 			</Container>
-			  <ul>
-				<li><a href="#"><i className="fa fa-facebook" aria-hidden="true" /></a></li>
-				<li><a href="#"><i className="fa fa-twitter" aria-hidden="true" /></a></li>
-				<li><a href="#"><i className="fa fa-google" aria-hidden="true" /></a></li>
-				<li><a href="#"><i className="fa fa-instagram" aria-hidden="true" /></a></li>
-			  </ul>
 			</div>
 
 			<div className="contact-in" align="center" margin="60px">
 			  <h1>Send a Message</h1>
+			  <Container>
+				<Row style={{textAlign:"center"}}>
+					<Col>
+					<Row style={{backgroundColor:"red"}}>
+					<input type="text" placeholder="Full Name" className="contact-in-input" />
+					</Row>
+
+					<Row>
+					<input type="text" placeholder="Email" className="contact-in-input" />
+					</Row>
+
+					<Row>
+					<input type="text" placeholder="Subject" className="contact-in-input" />
+					</Row>
+
+					</Col>
+					
+					<Col>
+					<textarea placeholder="Message" className="contact-in-textarea" defaultValue={""} />
+					<input type="submit" defaultValue="SUBMIT" className="contact-in-btn" />
+					</Col>
+
+
+
+				</Row>
+
 			  <form>
-				<input type="text" placeholder="Full Name" className="contact-in-input" />
-				<input type="text" placeholder="Email" className="contact-in-input" />
-				<input type="text" placeholder="Subject" className="contact-in-input" />
-				<textarea placeholder="Message" className="contact-in-textarea" defaultValue={""} />
-				<input type="submit" defaultValue="SUBMIT" className="contact-in-btn" />
+				
+				
+				
+				
+				
 			  </form>
+			  </Container>
 			</div>
 			<div className="contact-in">
-			  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1601968196548!5m2!1sen!2sin" width="100%" height="250" frameBorder={0} style={{border: 0}} allowFullScreen aria-hidden="false" tabIndex={0} />
+			  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7751.731092026345!2d100.775403!3d13.72658900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50ff92d38918ed0d!2zMTPCsDQzJzM1LjUiTiAxMDDCsDQ2JzMxLjIiRQ!5e0!3m2!1sen!2sth!4v1636875622225!5m2!1sen!2sth" width="100%" height="250" frameBorder={0} style={{border: 0}} allowFullScreen aria-hidden="false" tabIndex={0} />
 			</div>
 		  </div>
 		</div>
