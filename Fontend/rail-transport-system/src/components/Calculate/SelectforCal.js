@@ -26,21 +26,7 @@ const SelectforCal =()=>{
                 
                 <Tab eventKey="Btsdarkgreen" title="BTS สายสีเขียวเข้ม">
                 <div style={{textAlign:"center"}}>
-                  <Button variant="outline-primary">A1</Button>{' '}
-                  <Button variant="outline-primary">A2</Button>{' '}
-                  <Button variant="outline-primary">A3</Button>{' '}
-                  <Button variant="outline-primary">A4</Button>{' '}
-                  <Button variant="outline-primary">A5</Button>{' '}
-                  <Button variant="outline-primary">A6</Button>{' '}
-                  <Button variant="outline-primary">A7</Button>{' '}
-                  <Button variant="outline-primary">A8</Button>{' '}
-                  <Button variant="outline-primary">A9</Button>{' '}
-                  <Button variant="outline-primary">A10</Button>{' '}
-
-                  <Button variant="outline-primary">A11</Button>{' '}
-                  <Button variant="outline-primary">A12</Button>{' '}
-                  <Button variant="outline-primary">A13</Button>{' '}
-                  <Button variant="outline-primary">A14</Button>{' '}
+                 {["B01","B02","B03","B04","B05","B06","B07","B08","B09","B10","B11","B12","B13","B14"].map((item,index)=><Button key={index} variant="outline-primary" onClick={()=>setclick(item)}>{item}</Button>)}
                   </div>
                 </Tab>
                 
