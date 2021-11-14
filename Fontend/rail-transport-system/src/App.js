@@ -17,9 +17,15 @@ import Ticket from './components/pages/Ticket';
 import ShowTicket from './components/pages/ShowTicket';
 import Information from './components/pages/Information';
 import CalculationResult from './components/pages/CalculationResult';
+<<<<<<< Updated upstream
 import SourceProvider from './components/Calculate/UseContextSource'
 import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
+=======
+import ContextProvider from './components/Calculate/StationBlue'
+import Flippage from './components/pages/Flippage';
+import Test from './components/pages/Test';
+>>>>>>> Stashed changes
 
 function App() {
 
@@ -29,6 +35,7 @@ function App() {
     <Router>
       <Navbar />
       <br/>
+      <Test/>
       <Switch>
         <Route path='/home' exact  component ={Home} />
         <Route path='/' exact  component ={Home} />
@@ -45,9 +52,9 @@ function App() {
         <Route path='/select-station-dest' exact component ={SelectStationDest}/>
         <Route path='/ticket' exact component ={Ticket}/>
         <Route path='/show-ticket' exact component ={ShowTicket}/>
-        <Route path='/informaion' exact component ={Information} />
+        <Route path='/information' exact component ={Information} />
         <Route path='/calculation-result' exact component ={CalculationResult}/>
-        
+        <Route path='/flip-page' exact component ={Flippage}/>
       </Switch>
       <Footer />
     </Router>
