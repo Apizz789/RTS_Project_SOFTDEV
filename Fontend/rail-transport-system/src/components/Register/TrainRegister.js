@@ -500,7 +500,7 @@ function TrainRegister() {
             size="lg"
             style={{ width: "auto", borderRadius: "12px" }}
           >
-            Click to flip
+            Login is here
           </Button>
         </div>
 
@@ -565,7 +565,7 @@ function TrainRegister() {
             size="lg"
             style={{ margin: "10px",borderRadius: "10px"}}
           >
-            Click to flip
+            Back to Register
           </Button>
         </div>
       </ReactCardFlip>
