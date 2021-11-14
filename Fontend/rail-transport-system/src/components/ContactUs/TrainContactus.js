@@ -10,39 +10,40 @@ function refreshPage(){
 export default function TrainContactus() {
     return (
         <div style={{marginTop:"55px"}}>
+		<br></br><h1>Contact Us</h1><br></br>
 <Container>
   <Row style={{textAlign:"center"}}>
-    <h1>Contact Us</h1>
+   
     <Col xs={5} md={3}>
     
     </Col>
     <Col class="row justify-content-md-center">
-    <Image src="../images/img-2.jpg" roundedCircle />
-    <p  align="center" >62011019 Apirak Oulis <br></br> Directer </p> 
+    <Image src="../images/Minor.jpg" roundedCircle style={{width:"auto"}}/>
+    <p  align="center" >62010175	CHAWAKORN LAOKAEW <br></br> BACKEND </p> 
     </Col>
     <Col class="row justify-content-md-center">
-      <Image src="../images/img-5.jpg" roundedCircle />
-      <p   align="center">62011019 Apirak Oulis <br></br> Directer </p> 
+      <Image src="../images/Tum.jpg" roundedCircle style={{width:"auto"}} />
+      <p   align="center">62010142 CHATDANAI SINGTO <br></br> DATABASE </p> 
     </Col>
     <Col class="row justify-content-md-center">
-    <Image src="../images/img-7.jpg" roundedCircle />
-    <p align="center" size="20px">62011019 Apirak Oulis <br></br> Directer </p> 
+    <Image src="../images/Dink.jpg" roundedCircle style={{width:"auto"}}/>
+    <p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FONTEND </p> 
     </Col>
   </Row>
   
   <Row style={{textAlign:"center"}}>
    
     <Col xs={5} md={3}>
-    <Image src="../images/img-8.jpg" roundedCircle />
-    <p align="center">62011019 Apirak Oulis <br></br> Directer </p> 
+    <Image src="../images/P.jpg" roundedCircle style={{width:"auto"}}/>
+    <p align="center">62010765 RAPEEPAT PENGTEE <br></br> BACKEND </p> 
     </Col>
     <Col xs={5} md={3}>
-      <Image src="../images/img-9.jpg" roundedCircle />
-      <p align="center">62011019 Apirak Oulis <br></br> Directer </p> 
+      <Image src="../images/Aim.jpg" roundedCircle style={{width:"auto"}}/>
+      <p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FONTEND </p> 
     </Col>
     <Col xs={5} md={3}>
-    <Image src="../images/img-6.jpg" roundedCircle />
-    <p p align="center">62011019 Apirak Oulis <br></br> Directer </p> 
+    <Image src="../images/pluem.jpg" roundedCircle style={{width:"auto"}}/>
+    <p p align="center">62011019 APIRAK OULIS <br></br> FONTEND </p> 
     </Col>
   </Row>
 
@@ -58,13 +59,27 @@ export default function TrainContactus() {
 		  <div className="contact-wrap">
 
 			<div className="contact-in" align="center">
-			  <h1>Contact Info</h1>
-			  <h2><i className="fa fa-phone" aria-hidden="true" /> Phone</h2>
+			<Container>
+			<Row style={{textAlign:"center"}}>
+			<h1>Contact Info</h1><br></br>
+			<Col>
+			
+			<h2><i className="fa fa-phone" aria-hidden="true" /> Phone</h2>
 			  <p>02-999-9999</p>
-			  <h2><i className="fa fa-envelope" aria-hidden="true" /> Email</h2>
+			</Col>
+			<Col>
+			<h2><i className="fa fa-envelope" aria-hidden="true" /> Email</h2>
 			  <p>info@railtransportsystems.com</p>
-			  <h2><i className="fa fa-map-marker" aria-hidden="true" /> Address</h2>
+			</Col>
+			<Col>
+			<h2><i className="fa fa-map-marker" aria-hidden="true" /> Address</h2>
 			  <p>Bangkok, Thailand</p>
+			</Col>
+			  
+			  
+			  
+			</Row>
+			</Container>
 			  <ul>
 				<li><a href="#"><i className="fa fa-facebook" aria-hidden="true" /></a></li>
 				<li><a href="#"><i className="fa fa-twitter" aria-hidden="true" /></a></li>
