@@ -12,7 +12,7 @@ function ManualBTS() {
                         <h4>Bangkok Mass Transit System</h4>
                         <ul className='cards__items'>
                             <CardManual
-                            src='images/img-9.jpg'
+                            src='images/no/BTS/1.jpg'
                             text='ห้ามยืนพิงประตู หรือเสา หรือยืนกีดขวางบริเวณประตูไฟฟ้า'
                             label='ข้อห้าม'
                             path='#'

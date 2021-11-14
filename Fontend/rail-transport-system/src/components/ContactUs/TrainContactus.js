@@ -59,7 +59,7 @@ export default function TrainContactus() {
 		  <div className="contact-wrap">
 
 			<div className="contact-in" align="center">
-			<Container>
+			<Container style={{backgroundColor:"#974C27"}}>
 			<Row style={{textAlign:"center"}}>
 			<h1>Contact Info</h1>
 			<Col>
@@ -83,11 +83,11 @@ export default function TrainContactus() {
 			</div>
 
 			<div className="contact-in" align="center" margin="60px">
-			  <h1>Send a Message</h1>
-			  <Container>
+			  <h1 style={{backgroundColor:"#859480"}} >Send a Message</h1>
+			  <Container style={{backgroundColor:"#B19333"}}>
 				<Row style={{textAlign:"center"}}>
-					<Col>
-					<Row style={{backgroundColor:"red"}}>
+					<Col  >
+					<Row >
 					<input type="text" placeholder="Full Name" className="contact-in-input" />
 					</Row>
 

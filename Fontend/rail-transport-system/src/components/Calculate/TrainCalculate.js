@@ -4,6 +4,7 @@ import SelectforCal from "./SelectforCal"
 import { UserContext } from './StationBlue'
 import { useContext } from 'react';
 import {Col,Row,Button} from 'react-bootstrap';
+import './TrainCalculate.css'
 
 const Cal = () => {
     return (
@@ -77,22 +78,19 @@ const Navbar = () => {
             export default function TrainCalculate() {
 
     return (
-            <div style={{marginTop:"55px" }}>
+            <div>
                 <Row>
-                
-                    <Row >
-                    <Col style={{marginTop:"15%" }}>
-                        
-                        <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"250px" }}>สถานีต้นทาง</h1>
-                            <Link to="/SelectStation"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>เลือกสถานี</Button></Link>
-                        <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"300px" }}>สถานีปลายทาง</h1>
-                            <Link to="/SelectStation"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>เลือกสถานี</Button></Link>
-                            <br/>
-                            <Link to="/calculation-result"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>คำนวณค่าโดยสาร</Button></Link>
-                    </Col>
-                    <Col><img src="images/ตารางรถไฟฟ้า.png" style={{width:"100vh",height:"100vh"}}/></Col>   
+                    <Row>
+                        <Col style={{marginTop:"15%"}}>
+                            <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"250px" }}>สถานีต้นทาง</h1>
+                                <Link to="/SelectStation"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>เลือกสถานี</Button></Link>
+                            <h1 style={{backgroundColor:"grey",borderRadius:"12px",width:"300px" }}>สถานีปลายทาง</h1>
+                                <Link to="/SelectStation"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>เลือกสถานี</Button></Link>
+                                <br/>
+                                <Link to="/calculation-result"><Button variant="outline-success" size="lg" style={{width:"auto",borderRadius:"12px",margin:"20px"}}>คำนวณค่าโดยสาร</Button></Link>
+                        </Col>
+                        <Col><img src="images/ตารางรถไฟฟ้า.png" style={{width:"100vh",height:"100vh"}}/></Col>   
                     </Row>
-                    
                 </Row>
                 
             </div>

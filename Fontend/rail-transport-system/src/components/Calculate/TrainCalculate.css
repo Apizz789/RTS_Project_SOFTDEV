@@ -105,13 +105,3 @@
     border: 2px solid red;
     color: rgb(255, 255, 255);
 }  */
-
-.custom-btn{
-    border-radius:"12px";
-    width: auto;
-}
-.h3{
-    background-color:"grey";
-    border-radius:"12px";
-    width:"150px";
-}
