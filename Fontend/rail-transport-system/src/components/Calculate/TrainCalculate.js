@@ -75,10 +75,10 @@ export default function TrainCalculate() {
     setclickD("Please Select Sourrce :")
 }
   return (
-    <div>
+    <div style={{overflowX:'hidden',width:'100vw'}}>
       <Row>
         <Row>
-          <Col style={{ marginTop: "15%" }}>
+          <Col style={{ marginTop: "15%"}}>
             <h1
               style={{
                 backgroundColor: "grey",

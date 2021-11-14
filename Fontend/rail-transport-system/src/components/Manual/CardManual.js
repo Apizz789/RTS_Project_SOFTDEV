@@ -9,6 +9,7 @@ function CardManual(props) {
               className='cards__item__img'
               alt='Travel Image'
               src={props.src}
+              style={{objectFit:"contain"}}
             />
           </figure>
           <div className='cards__item__info'>
