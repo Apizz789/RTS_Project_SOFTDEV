@@ -4,8 +4,6 @@ import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
-import Signup from './components/pages/Signup';
-import Signin from './components/pages/Signin';
 import MapTrain from './components/pages/Map';
 import Calculate from './components/pages/Calculate';
 import Contact from './components/pages/Contact';
@@ -32,8 +30,6 @@ function App() {
         <Route path='/home' exact  component ={Home} />
         <Route path='/' exact  component ={Home} />
         <Route path='/services' exact component ={Services} />
-        {/* <Route path='/sign-up' exact component ={Signup}Train />
-        <Route path='/sign-in' exact component ={Signin} /> */}
         <Route path='/map' exact component ={MapTrain} />
         <Route path='/calculate' exact component ={Calculate} />
         <Route path='/history' exact component ={History} />
