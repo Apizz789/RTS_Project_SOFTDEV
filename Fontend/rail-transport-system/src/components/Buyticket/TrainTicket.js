@@ -20,14 +20,7 @@ function TrainTicket() {
     //const { clickDTic , setclickDTic } = useContext(UserContextD);
     return (
         <div style={{marginTop:"55px",width:"100%"}}>
-             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
-                <marquee>
-                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
-                </marquee>
-            </Row>
-            <h1 align = "center">Ticket</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
-            </Row>
+            
             <Row className="text-center">
                 <Col>
                     <Link to="/select-sorce-ticket">
@@ -103,6 +96,7 @@ function TrainTicket() {
                     </Col>
                 </Row>
 
+            
             </Row>
         </div>
     )
