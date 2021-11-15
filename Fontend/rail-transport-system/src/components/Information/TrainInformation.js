@@ -2,9 +2,13 @@ import React from 'react'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal} from 'react-bootstrap'
 import Spinner from 'react-bootstrap/Spinner'
 import "./TrainInformation.css";
+import { useState , useContext } from "react";
 
 function TrainInformation() {
-   
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
   
     return (
         <div className="Body_Info" style={{marginTop:"10px",width:"100%"}}>            
@@ -16,36 +20,28 @@ function TrainInformation() {
                 <Row style={{textAlign:"center"}}>
                     <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fed46e", textAlign:"left"}}>
                     <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><br></br>
-
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [BTS]  - ประกาศ !!! ปิดสถานี สายสีเขียวอ่อน E04 อโศก Asok : Update 15/11/2021</a>  <br></br>
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [MRT] - ประกาศ !!! ปิดสถานี สายสีน้ำเงิน BL21 เพชรบุรี Phetchaburi : Update 15/11/2021</a>  <br></br>
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [ARL] - ประกาศ !!! ปิดสถานี สายเชื่อมท่าอากาศยาน A06 มักกะสัน Makkasan : Update 15/11/2021</a>  <br></br>
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [BTS] - ประกาศ !!! แจ้งจับ นายบีทีเอส ข้อหาแสดงละครบนรางรถไฟ  : Update 14/11/2021</a>  <br></br>
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [MRT] - ทั่วไป !!! ชี่นชม นายเออาร์แอล หลังคว้ารางวัลนักเดินทางดีเด่น  : Update 14/11/2021</a>  <br></br>
-                    <a className="ahover" href="/home"><i class="fas fa-envelope-open"></i> [ARL] - ทั่วไป !!! นายเอ็มอาร์ที ไปกองฉลากไม่ทัน เหตุจากตกขบวนรถ  : Update 12/11/2021</a>  <br></br>
+                    
+                    <Button variant="link" onClick={handleShow}> <i class="fas fa-envelope-open"></i>  [BTS]  - ประกาศ !!! ปิดสถานี สายสีเขียวอ่อน E04 อโศก Asok : Update 15/11/2021</Button>
+                    <Button variant="link"> <i class="fas fa-envelope-open"></i>   [MRT] - ประกาศ !!! ปิดสถานี สายสีน้ำเงิน BL21 เพชรบุรี Phetchaburi : Update 15/11/2021</Button>
+                    <Button variant="link"> <i class="fas fa-envelope-open"></i>   [ARL] - ประกาศ !!! ปิดสถานี สายเชื่อมท่าอากาศยาน A06 มักกะสัน Makkasan : Update 15/11/2021</Button>
+                    <Button variant="link"> <i class="fas fa-envelope-open"></i>   [BTS] - ประกาศ !!! แจ้งจับ นายบีทีเอส ข้อหาแสดงละครบนรางรถไฟ  : Update 14/11/2021</Button>
+                    <Button variant="link"> <i class="fas fa-envelope-open"></i>   [MRT] - ทั่วไป !!! ชี่นชม นายเออาร์แอล หลังคว้ารางวัลนักเดินทางดีเด่น  : Update 14/11/2021</Button>
+                    <Button variant="link"> <i class="fas fa-envelope-open"></i>   [ARL] - ทั่วไป !!! นายเอ็มอาร์ที ไปกองฉลากไม่ทัน เหตุจากตกขบวนรถ  : Update 12/11/2021</Button>
                     . <br></br>
                     .  <br></br>
-                    {/* <Button variant="primary" onClick={handleShow}>
-                        Launch demo modal
-                    </Button>
-
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                        <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
+    
+                    <Modal show={show} onHide={handleClose} centered>
+                        <Modal.Header closeButton>ข่าวสาร</Modal.Header>
+                            <Modal.Body>
+                                ข่าวสาร
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    OK
+                                </Button>
                         </Modal.Footer>
-                    </Modal> */}
+                    </Modal>
                     
-                    
-
                     </Col>
                     <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fad4ae"}}>
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><br></br>
