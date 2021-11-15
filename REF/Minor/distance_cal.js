@@ -1,7 +1,6 @@
 let V = 240;
 
-function dijkstra(graph, src)
-{
+function dijkstra(graph, src) {
     let cost = new Array(V);
     let distance = new Array(V);
     let pred = new Array(V);
@@ -11,35 +10,29 @@ function dijkstra(graph, src)
     let srcstation = 0;
 
 
-    for (let i=0 ; i<V ; i++)
-    {
-        if (src == nameofgraph[i])
-        {
+    for (let i = 0; i < V; i++) {
+        if (src == codeofgraph[i]) {
             srcstation = i;
             // document.write(srcstation);
             break;
         }
     }
-    
+
     // document.write(srcstation);
 
 
-    for (let i=0 ; i<V ; i++)
-    {
+    for (let i = 0; i < V; i++) {
         cost[i] = new Array(V);
     }
-    for (let i=0 ; i<V ; i++)
-    {
-        for (let j=0 ; j<V ; j++)
-        {
-            if (graph[i][j]==0)
+    for (let i = 0; i < V; i++) {
+        for (let j = 0; j < V; j++) {
+            if (graph[i][j] == 0)
                 cost[i][j] = Number.MAX_VALUE;
             else
                 cost[i][j] = graph[i][j];
         }
     }
-    for (let i=0 ; i<V ; i++)
-    {
+    for (let i = 0; i < V; i++) {
         distance[i] = cost[srcstation][i];
         pred[i] = srcstation;
         visited[i] = 0;
@@ -47,26 +40,20 @@ function dijkstra(graph, src)
     distance[srcstation] = 0;
     visited[srcstation] = 1;
     let count = 1;
-    while (count<V-1)
-    {
+    while (count < V - 1) {
         let minDistance = Number.MAX_VALUE;
 
-        for (let i=0 ; i<V ; i++)
-        {
-            if (distance[i]<minDistance && !visited[i])
-            {
+        for (let i = 0; i < V; i++) {
+            if (distance[i] < minDistance && !visited[i]) {
                 minDistance = distance[i];
                 nextnode = i;
             }
         }
 
         visited[nextnode] = 1;
-        for (let i=0 ; i<V ; i++)
-        {
-            if (!visited[i])
-            {
-                if (minDistance+cost[nextnode][i] < distance[i])
-                {
+        for (let i = 0; i < V; i++) {
+            if (!visited[i]) {
+                if (minDistance + cost[nextnode][i] < distance[i]) {
                     distance[i] = minDistance + cost[nextnode][i];
                     pred[i] = nextnode;
                 }
@@ -78,39 +65,36 @@ function dijkstra(graph, src)
     let tmp = "";
     let dest = "";
     let result = "";
-    let minor_count = new Array(V).fill(0);
+    let station_count = new Array(V).fill(0);
+    let station = 0;
     let transfer_count = 0;
-    for (let i=0 ; i<V ; i++)
-    {
-        if(i != srcstation)
-        {
+    let price = 0;
+    for (let i = 0; i < V; i++) {
+        if (i != srcstation) {
             // lst[i] = lst[i].concat("<br>Path = ");
-            lst[i] = lst[i].concat(nameofgraph[i]);
-            // lst[i].push(nameofgraph[i]);
+            lst[i] = lst[i].concat(codeofgraph[i]);
+            // lst[i].push(codeofgraph[i]);
             j = i;
-            do
-            {
+            do {
                 j = pred[j];
                 lst[i] = lst[i].concat("<-");
-                lst[i] = lst[i].concat(nameofgraph[j]);
-                // lst[i].push(nameofgraph[j]);
-                minor_count[i]++;
+                lst[i] = lst[i].concat(codeofgraph[j]);
+                // lst[i].push(codeofgraph[j]);
+                station_count[i]++;
             }
             while (j != srcstation);
 
-            if (i == nameofgraph.indexOf(deststation))
-            {
-                for(let l=minor_count[i] ; l>=0 ; l--)
-                {
+            if (i == codeofgraph.indexOf(deststation)) {
+                station = station_count[i] + 1;
+                for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
-                    if (l != 0)
-                    {
-                        if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l-1][0])
+                    if (l != 0) {
+                        if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l - 1][0])
                             transfer_count++;
                         result += '->';
                     }
                 }
-                document.write("<br>The Shortest path from station " + nameofgraph[srcstation] + " to " + deststation + " station is : ");
+                document.write("<br>The Shortest path from station " + codeofgraph[srcstation] + " to " + deststation + " station is : ");
                 // document.write(lst[i].split("<-"));
                 document.write(result);
                 // for(let l=V-1 ; l>0 ; l--)
@@ -118,13 +102,135 @@ function dijkstra(graph, src)
                 // if (lst[i][l] != "")
                 //     document.write(lst[i][l]);
                 // }
-                document.write("<br>Count : " + minor_count[i] + "<br>Transfer Count : " + transfer_count);
+                document.write("<br>Station Count : " + station + "<br>Transfer Count : " + transfer_count);
+                document.write("<br>Price : " + price_calculation(result, station));
                 break;
             }
         }
     }
+}
 
-    
+function price_calculation(result, num) {
+    var sum = 0;
+    var bts_count = 0;
+    var mrt_count = 0;
+    var arl_count = 0;
+
+    for (var i = 0; i < num; i++) {
+        first_con = brand[codeofgraph.indexOf(result.split("->")[i])];
+        if (i != num - 1)
+            second_con = brand[codeofgraph.indexOf(result.split("->")[i + 1])];
+
+        if (i != num - 1) {
+            if (first_con == second_con && first_con == 'BTS') {
+                bts_count++;
+            }
+            else if (first_con != second_con && first_con == 'BTS') {
+                bts_count++;
+                sum += bts_price_rate(bts_count);
+                bts_count = 0;
+            }
+            else if (first_con == second_con && first_con == 'MRT') {
+                mrt_count++;
+            }
+            else if (first_con != second_con && first_con == 'MRT') {
+                mrt_count++;
+                sum += mrt_price_rate(mrt_count);
+                mrt_count = 0;
+            }
+            else if (first_con == second_con && first_con == 'ARL') {
+                mrt_count++;
+            }
+            else if (first_con != second_con && first_con == 'ARL') {
+                arl_count++;
+                sum += arl_price_rate(arl_count);
+                arl_count = 0;
+            }
+        }
+        else {
+            if (bts_count > 0)
+            {
+                bts_count++;
+                sum += bts_price_rate(bts_count);
+            }
+            else if (mrt_count > 0)
+            {
+                mrt_count++;
+                sum += mrt_price_rate(mrt_count);
+            }
+            else if (arl_count > 0)
+            {
+                arl_count++;
+                sum += arl_price_rate(arl_count);
+            }
+            // document.write("<br>" + bts_count);
+        }
+    }
+
+    return sum;
+}
+
+function bts_price_rate(bts_count) {
+    if (0 <= bts_count && bts_count <= 1)
+        return 16;
+    else if (bts_count == 2)
+        return 23;
+    else if (bts_count == 3)
+        return 26;
+    else if (bts_count == 4)
+        return 30;
+    else if (bts_count == 5)
+        return 33;
+    else if (bts_count == 6)
+        return 37;
+    else if (bts_count == 7)
+        return 40;
+    else if (bts_count >= 8)
+        return 44;
+}
+
+function mrt_price_rate(mrt_count) {
+    if (0 <= mrt_count && mrt_count <= 1)
+        return 16;
+    else if (mrt_count == 2)
+        return 19;
+    else if (mrt_count == 3)
+        return 21;
+    else if (mrt_count == 4)
+        return 23;
+    else if (mrt_count == 5)
+        return 25;
+    else if (mrt_count == 6)
+        return 28;
+    else if (mrt_count == 7)
+        return 30;
+    else if (mrt_count == 8)
+        return 32;
+    else if (mrt_count == 9)
+        return 35;
+    else if (mrt_count == 10)
+        return 37;
+    else if (mrt_count == 11)
+        return 39;
+    else if (mrt_count >= 12)
+        return 42;
+}
+
+function arl_price_rate(arl_count) {
+    if (0 <= arl_count && arl_count <= 1)
+        return 15;
+    else if (arl_count == 2)
+        return 20;
+    else if (arl_count == 3)
+        return 25;
+    else if (arl_count == 4)
+        return 30;
+    else if (arl_count == 5)
+        return 35;
+    else if (arl_count == 6)
+        return 40;
+    else if (arl_count == 7)
+        return 45;
 }
 
 // let graph = [[0, 10, 0, 30, 100],
@@ -136,7 +242,7 @@ function dijkstra(graph, src)
 
 let graph = Array(240).fill().map(() => Array(240).fill(0));
 graph[0][1] = 1;  //N01
-graph[0][215] = 1;
+// graph[0][215] = 1;
 graph[1][0] = 1;  //N02
 graph[1][2] = 1;
 graph[2][1] = 1;  //N03
@@ -426,7 +532,7 @@ graph[149][150] = 1;
 graph[150][149] = 1;  //BL38
 graph[151][152] = 1;  //OR02
 graph[152][151] = 1;  //OR03
-graph[152][153] = 1; 
+graph[152][153] = 1;
 graph[153][152] = 1;  //OR04
 graph[153][154] = 1;
 graph[154][153] = 1;  //OR05
@@ -686,49 +792,89 @@ graph[97][227] = 1;
 
 
 // CEN, W1, BL01-L
-let nameofgraph = ['N01','N02','N03','N04','N05','N06','N07','N08','N09','N10','N11'
-                  ,'N12','N13','N14','N15','N16','N17','N18','N19','N20'
-                  ,'N21','N22','N23','N24','E01','E02','E03','E04','E05','E06'
-                  ,'E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17'
-                  ,'E18','E19','E20','E21','E22','E23','S01','S02','S03','S04','S05'
-                  ,'S06','S07','S08','S09','S10','S11','S12','YLEX01','YLEX02','YL01'
-                  ,'YL02','YL03','YL04','YL05','YL06','YL07','YL08','YL09','YL10'
-                  ,'YL11','YL12','YL13','YL14','YL15','YL16','YL17','YL18','YL19'
-                  ,'YL20','YL21','YL22','YL23','PK01','PK02','PK03','PK04','PK05'
-                  ,'PK06','PK07','PK08','PK09','PK10','PK11','PK12','PK13','PK14'
-                  ,'PK15','PK16','PK17','PK18','PK19','PK20','PK21','PK22','PK23'
-                  ,'PK24','PK25','PK26','PK27','PK28','PK29','PK30','BL02','BL03'
-                  ,'BL04','BL05','BL06','BL07','BL08','BL09','BL10','BL11','BL12'
-                  ,'BL13','BL14','BL15','BL16','BL17','BL18','BL19','BL20','BL21'
-                  ,'BL22','BL23','BL24','BL25','BL26','BL27','BL28','BL29','BL30'
-                  ,'BL31','BL32','BL33','BL34','BL35','BL36','BL37','BL38','OR02'
-                  ,'OR03','OR04','OR05','OR06','OR07','OR08','OR09','OR10','OR11','OR12'
-                  ,'OR13','OR14','OR15','OR16','OR17','OR18','OR19','OR20','OR21'
-                  ,'OR22','OR23','OR24','OR25','OR26','OR27','OR28','OR29','PP02'
-                  ,'PP03','PP04','PP05','PP06','PP07','PP08','PP09','PP10','PP11'
-                  ,'PP12','PP13','PP14','PP15','PP16','PP17','PP18','PP19','PP20'
-                  ,'PP21','PP22','PP23','PP24','PP25','PP26','PP27','PP28','PP29'
-                  ,'PP30','PP31','PP32','PP33','G01','G02','G03','G04','A01','A02'
-                  ,'A03','A04','A05','A06','A07','A08','RN10','RN09','RN08','RN07'
-                  ,'RN06','RN05','RN04','RN03','RN02','RN01','CEN01','CEN02','W01','BL01-L'
-                  ,'BL01','PP01','OR01'];
+let codeofgraph = ['N01', 'N02', 'N03', 'N04', 'N05', 'N06', 'N07', 'N08', 'N09', 'N10', 'N11'
+    , 'N12', 'N13', 'N14', 'N15', 'N16', 'N17', 'N18', 'N19', 'N20'
+    , 'N21', 'N22', 'N23', 'N24', 'E01', 'E02', 'E03', 'E04', 'E05', 'E06'
+    , 'E07', 'E08', 'E09', 'E10', 'E11', 'E12', 'E13', 'E14', 'E15', 'E16', 'E17'
+    , 'E18', 'E19', 'E20', 'E21', 'E22', 'E23', 'S01', 'S02', 'S03', 'S04', 'S05'
+    , 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'YLEX01', 'YLEX02', 'YL01'
+    , 'YL02', 'YL03', 'YL04', 'YL05', 'YL06', 'YL07', 'YL08', 'YL09', 'YL10'
+    , 'YL11', 'YL12', 'YL13', 'YL14', 'YL15', 'YL16', 'YL17', 'YL18', 'YL19'
+    , 'YL20', 'YL21', 'YL22', 'YL23', 'PK01', 'PK02', 'PK03', 'PK04', 'PK05'
+    , 'PK06', 'PK07', 'PK08', 'PK09', 'PK10', 'PK11', 'PK12', 'PK13', 'PK14'
+    , 'PK15', 'PK16', 'PK17', 'PK18', 'PK19', 'PK20', 'PK21', 'PK22', 'PK23'
+    , 'PK24', 'PK25', 'PK26', 'PK27', 'PK28', 'PK29', 'PK30', 'BL02', 'BL03'
+    , 'BL04', 'BL05', 'BL06', 'BL07', 'BL08', 'BL09', 'BL10', 'BL11', 'BL12'
+    , 'BL13', 'BL14', 'BL15', 'BL16', 'BL17', 'BL18', 'BL19', 'BL20', 'BL21'
+    , 'BL22', 'BL23', 'BL24', 'BL25', 'BL26', 'BL27', 'BL28', 'BL29', 'BL30'
+    , 'BL31', 'BL32', 'BL33', 'BL34', 'BL35', 'BL36', 'BL37', 'BL38', 'OR02'
+    , 'OR03', 'OR04', 'OR05', 'OR06', 'OR07', 'OR08', 'OR09', 'OR10', 'OR11', 'OR12'
+    , 'OR13', 'OR14', 'OR15', 'OR16', 'OR17', 'OR18', 'OR19', 'OR20', 'OR21'
+    , 'OR22', 'OR23', 'OR24', 'OR25', 'OR26', 'OR27', 'OR28', 'OR29', 'PP02'
+    , 'PP03', 'PP04', 'PP05', 'PP06', 'PP07', 'PP08', 'PP09', 'PP10', 'PP11'
+    , 'PP12', 'PP13', 'PP14', 'PP15', 'PP16', 'PP17', 'PP18', 'PP19', 'PP20'
+    , 'PP21', 'PP22', 'PP23', 'PP24', 'PP25', 'PP26', 'PP27', 'PP28', 'PP29'
+    , 'PP30', 'PP31', 'PP32', 'PP33', 'G01', 'G02', 'G03', 'G04', 'A01', 'A02'
+    , 'A03', 'A04', 'A05', 'A06', 'A07', 'A08', 'RN10', 'RN09', 'RN08', 'RN07'
+    , 'RN06', 'RN05', 'RN04', 'RN03', 'RN02', 'RN01', 'CEN01', 'CEN02', 'W01', 'BL01-L'
+    , 'BL01', 'PP01', 'OR01'];
 
-let x = nameofgraph.length;
-document.write(x);
-document.write(nameofgraph[239] + "<br>");
+let brand = ['BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS'
+    , 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'BTS', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'MRT', 'MRT', 'MRT', 'MRT', 'BTS', 'BTS', 'BTS', 'BTS', 'ARL', 'ARL', 'ARL', 'ARL', 'ARL'
+    , 'ARL', 'ARL', 'ARL', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT', 'MRT'
+    , 'BTS', 'BTS', 'BTS', 'MRT', 'MRT', 'MRT', 'MRT'];
 
-let sourcestation = 'A05';
-let deststation = 'OR01';
+let nameofgraph = ['ราชเทวี', 'พญาไท', 'อนุสาวรีย์ชัยสมรภูมิ', 'สนามเป้า', 'อารีย์', 'เสนาร่วม', 'สะพานควาย', 'หมอชิต', 'ห้าแยกลาดพร้าว', 'พหลโยธิน 24', 'รัชโยธิน'
+    , 'เสนานิคม', 'มหาวิทยาลัยเกษตรศาสตร์', 'กรมป่าไม้', 'บางบัว', 'กรมทหารราบที่ 11', 'วัดพระศรีมหาธาตุ', 'พหลโยธิน 59', 'สายหยุด', 'สะพานใหม่'
+    , 'โรงพยาบาลภูมิพลอดุลยเดช', 'พิพิธภัณฑ์กองทัพอากาศ', 'แยก คปอ.', 'คูคต', 'ชิดลม', 'เพลินจิต', 'นานา', 'อโศก', 'พร้อมพงษ์', 'ทองหล่อ', 'เอกมัย'
+    , 'พระโขนง', 'อ่อนนุช', 'บางจาก', 'ปุณณวิถี', 'อุดมสุข', 'บางนา', 'แบริ่ง', 'สำโรง', 'ปู่เจ้า', 'ช้างเอราวัณ', 'โรงเรียนนายเรือ', 'ปากน้ำ', 'ศรีนครินทร์'
+    , 'แพรกษา', 'สายลวด', 'เคหะฯ', 'ราชดำริ', 'ศาลาแดง', 'ช่องนนทรี', 'เซนต์หลุยส์', 'สุรศักดิ์', 'สะพานตากสิน', 'กรุงธนบุรี', 'วงเวียนใหญ่'
+    , 'โพธิ์นิมิตร', 'ตลาดพลู', 'วุฒากาศ', 'บางหว้า', 'พหลโยธิน 24', 'จันทรเกษม', 'ลาดพร้าว', 'ภาวนา', 'โชคชัย 4', 'ลาดพร้าว 71', 'ลาดพร้าว 83'
+    , 'มหาดไทย', 'ลาดพร้าว 101', 'บางกะปิ', 'แยกลำสาลี', 'ศรีกรีฑา', 'พัฒนาการ', 'กลันตัน', 'ศรีนุช', 'ศรีนครินทร์ 38', 'สวนหลวง ร. 9'
+    , 'ศรีอุดม', 'ศรีเอี่ยม', 'ศรีลาซาล', 'ศรีแบริ่ง', 'ศรีด่าน', 'ศรีเทพา', 'ทิพวัล', 'สำโรง', 'ศูนย์ราชการนนทบุรี', 'แคราย', 'สนามบินน้ำ'
+    , 'สามัคคี', 'กรมชลประทาน', 'แยกปากเกร็ด', 'เลี่ยงเมืองปากเกร็ด', 'แจ้งวัฒนะ-ปากเกร็ด 28', 'เมืองทองธานี', 'ศรีรัช', 'แจ้งวัฒนะ 14'
+    , 'ศูนย์ราชการเฉลิมพระเกียรติ', 'โทรคมนาคมแห่งชาติ', 'หลักสี่', 'ราชภัฏพระนคร', 'วัดพระศรีมหาธาตุ', 'รามอินทรา 3', 'ลาดปลาเค้า'
+    , 'รามอินทรา กม.4', 'มัยลาภ', 'วัชรพล', 'รามอินทรา กม.6', 'คู้บอน', 'รามอินทรา กม.9', 'วงแหวนรามอินทรา', 'นพรัตน์', 'บางชัน'
+    , 'เศรษฐบุตรบำเพ็ญ', 'ตลาดมีนบุรี', 'มีนบุรี', 'จรัญฯ 13', 'ไฟฉาย', 'บางขุนนนท์', 'บางยี่ขัน', 'สิรินธร', 'บางพลัด', 'บางอ้อ', 'บางโพ'
+    , 'เตาปูน', 'บางซื่อ', 'กำแพงเพชร', 'สวนจตุจักร', 'พหลโยธิน', 'ลาดพร้าว', 'รัชดาภิเษก', 'สุทธิสาร', 'ห้วยขวาง', 'ศูนย์วัฒนธรรมแห่งประเทศไทย'
+    , 'พระราม 9', 'เพชรบุรี', 'สุขุมวิท', 'ศูนย์การประชุมแห่งชาติสิริกิติ์', 'คลองเตย', 'ลุมพินี', 'สีลม', 'สามย่าน', 'หัวลำโพง', 'วัดมังกร', 'สามยอด'
+    , 'สนามไชย', 'อิสรภาพ', 'บางไผ่', 'บางหว้า', 'เพชรเกษม 48', 'ภาษีเจริญ', 'บางแค', 'หลักสอง', 'ศิริราช', 'สนามหลวง', 'อนุสาวรีย์ประชาธิปไตย'
+    , 'หลานหลวง', 'ยมราช', 'ราชเทวี', 'ประตูน้ำ', 'ราชปรารภ', 'รางน้ำ', 'ดินแดง', 'ประชาสงเคราะห์', 'ศูนย์วัฒนธรรมแห่งประเทศไทย', 'รฟม.', 'วัดพระราม 9'
+    , 'รามคำแหง 12', 'มหาวิทยาลัยรามคำแหง', 'ราชมังคลา', 'รามคำแหง 34 ', 'แยกลำสาลี ', 'ศรีบูรพา', 'คลองบ้านม้า', 'สัมมากร', 'น้อมเกล้า', 'ราษฎร์พัฒนา'
+    , 'มีนพัฒนา', 'เคหะรามคำแหง', 'มีนบุรี', 'แยกร่มเกล้า', 'ตลาดบางใหญ่', 'สามแยกบางใหญ่', 'บางพลู', 'บางรักใหญ่', 'บางรักน้อย-ท่าอิฐ'
+    , 'ไทรม้า', 'สะพานพระนั่งเกล้า', 'แยกนนทบุรี 1', 'บางกระสอ', 'ศูนย์ราชการนนทบุรี', 'กระทรวงสาธารณสุข', 'แยกติวานนท์', 'วงศ์สว่าง'
+    , 'บางซ่อน', 'เตาปูน', 'รัฐสภา', 'ศรีย่าน', 'วชิรพยาบาล', 'หอสมุดแห่งชาติ', 'บางขุนพรหม', 'ผ่านฟ้า', 'สามยอด', 'สะพานพุทธฯ'
+    , 'วงเวียนใหญ่', 'สำเหร่', 'ดาวคะนอง', 'บางปะแก้ว', 'บางปะกอก', 'สะพานพระราม 9', 'ราษฎร์บูรณะ', 'พระประแดง', 'ครุใน', 'กรุงธนบุรี'
+    , 'เจริญนคร (ไอคอนสยาม)', 'คลองสาน', 'ประชาธิปก', 'สุวรรณภูมิ', 'ลาดกระบัง', 'บ้านทับช้าง', 'หัวหมาก', 'รามคำแหง', 'มักกะสัน'
+    , 'ราชปรารภ', 'พญาไท', 'รังสิต', 'หลักหก (มหาวิทยาลัยรังสิต)', 'ดอนเมือง', 'การเคหะ', 'หลักสี่', 'ทุ่งสองห้อง', 'บางเขน', 'วัดเสมียนนารี'
+    , 'จตุจักร', 'บางซื่อ', 'สยาม', 'สยาม', 'สนามกีฬาแห่งชาติ', 'ท่าพระ', 'ท่าพระ', 'คลองบางไผ่', 'บางขุนนนท์'];
 
-// let nameofgraph = ['a','b','c','d','e'];
 
+
+// let x = codeofgraph.length;
+// let y = brand.length;
+// let z = nameofgraph.length;
+// document.write(x + ' ' + y + ' ' + z);
+// document.write("<br>" + codeofgraph[239] + " " + nameofgraph[239] + "<br>");
+
+let sourcestation = 'N01';
+let deststation = 'N10';
 
 let lst = new Array(V).fill("");
-// let lst = Array(V).fill().map(() => Array(V).fill(""));
-// let graph = Array(V).fill().map(() => Array(V).fill(0));
-// for (let i=0 ; i<V ; i++)
-// {
-//     lst[i] = "";
-// }
 
 dijkstra(graph, sourcestation);
