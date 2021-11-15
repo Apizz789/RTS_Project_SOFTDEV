@@ -22,6 +22,7 @@ import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
 import Test from './components/pages/Test';
 import Flippage from './components/pages/Flippage';
+import Confirm from './components/Confirm/Confirm';
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
         <Route path='/information' exact component ={Information} />
         <Route path='/calculation-result' exact component ={CalculationResult}/>
         <Route path='/flip-page' exact component ={Flippage}/>
+        <Route path='/Confirm' exact component ={Confirm}/>
+        <Route path="/Confirm/:confirmcode" component={Confirm} />
       </Switch>
       <Footer />
     </Router>
