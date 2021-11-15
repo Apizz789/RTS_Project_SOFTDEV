@@ -1,10 +1,37 @@
 import React from 'react'
-import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Modal} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import { useState } from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
+
 function TrainPayment() {
     function refreshPage(){
         window.scrollTo(0,0);
       }
+      const [show, setShow] = useState(false);
+      const handleClose = () => setShow(false);
+
+      const handleShow = () => {
+        setShow(true);
+      };
+
+      const [ Count , setCount ] = useState(0)
+
+      const DropdownItem =()=>{
+        return(
+            <div>
+                {
+                ["Promptpay","โอนผ่านธนาคาร","บัตรเครดิต"].map((item) => (
+                <Dropdown.Item key={item} onClick={()=>{setCount(item)}}>
+                     {item}
+                 </Dropdown.Item>
+                ))
+                }
+            </div>
+        )
+    
+    }
+    
     return (
         <div style={{marginTop:"10px",width:"100%"}}>
             <h1 align = "center">Payment</h1>
@@ -32,9 +59,31 @@ function TrainPayment() {
                             <Button variant="outline-warning" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>แก้ไข</Button>
                             </Link>
 
-                            <Link to="/info">
-                            <Button variant="outline-success" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยืนยัน</Button>
-                            </Link>
+                            <Button onClick={()=>handleShow()} variant="outline-success" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยืนยัน</Button>
+                        
+                            <Modal show={show} onHide={handleClose} centered>
+                            <Modal.Header closeButton>เลือกวิธีการชำระเงิน</Modal.Header>
+                            <Modal.Body>
+                                <h1>รูปแบบการชำระเงิน</h1>
+                                <Dropdown style={{width: "100px"}}>
+                                    <Dropdown.Toggle variant="success">
+                                        {
+                                            Count? Count:"รูปแบบการชำระเงิน"
+                                        }
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <DropdownItem/>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Link to="/info">
+                                <Button variant="secondary" onClick={handleClose}>
+                                    OK
+                                </Button>
+                                </Link>
+                            </Modal.Footer>
+                            </Modal>
 
                             <Button variant="outline-danger" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยกเลิก</Button>
                         </Col>

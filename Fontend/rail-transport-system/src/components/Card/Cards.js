@@ -6,7 +6,7 @@ import CardManaul from '../Manual/CardManual';
 
 function Cards() {
   return (
-    <div className='cards'>
+    <div className='cards' style={{marginTop:"10px",width:"100%"}}>
       <h1>Rail Transport System</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>

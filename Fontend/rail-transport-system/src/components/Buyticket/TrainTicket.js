@@ -104,8 +104,9 @@ function TrainTicket() {
                         data-date-inline-picker="true"
                         name="DOB"
                         min="2021-11-16"
-                        max="2021-11-30"
+                        // max="2021-11-30"
                         placeholder="dd-mm-yyyy"
+                        
                         // style={{borderRadius: "10px", width: "20",fontSize=  "20"}}
                         required
 
