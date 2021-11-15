@@ -146,11 +146,14 @@ function Navbar() {
               
               {login_state['login_token'] ?(<Link to='/home' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}} onClick= {handleLogout}>LOGOUT</Button>
-              </Link>) : (<Link to='/register' className='btn-mobile' onClick={refreshPage}>
+              </Link> ) : (<Link to='/register' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
               </Link>)}
+
+              {login_state['login_token'] ?(<p className="uname">Hi..{username_cookie['username_tkn']}</p>) :(<p className="uname"></p>) }
               
-              <p className="uname">Hi..[NAME]</p>
+              
+              
                   
               
         

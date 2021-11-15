@@ -34,6 +34,23 @@ function TrainRegister() {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleClick = () => {
     setIsFlipped(!isFlipped);
+      setShow(false);
+      setValues({
+        fname: "",
+        lname: "",
+        username: "",
+        password: "",
+        repeat_password: "",
+        tel: "",
+        DOB: "",
+        email: "",
+        sex: "",
+        login_username: "",
+        login_password: "",
+      });
+      setGender('');
+
+    
   };
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
@@ -87,18 +104,25 @@ function TrainRegister() {
     });
   };
   const handleRadio = (event) => {
-    if (event.target.checked) {
-      setValues({
-        ...values,
-        sex: event.target.value,
-      });
-    }
+    // if (event.target.checked) {
+    //   setValues({
+    //     ...values,
+    //     sex: event.target.value,
+    //   });
+    // }
+    setGender(event.target.value)
+    setValues({
+          ...values,
+          sex: event.target.value,
+        });
   };
 
   const handleSubmits = () => {
     setErrors(validation_register(values));
     submit = true;
   };
+
+  const [gender, setGender] = React.useState();
 
   if (
     submit === true &&
@@ -163,6 +187,7 @@ function TrainRegister() {
   function setVerified(verify) {
     setVerify(verify);
   }
+
 
   // console.log(verify['verify'])
   // if (verify['verify']===true){
@@ -323,7 +348,7 @@ function TrainRegister() {
           </Button>
         </div>
       </Alert>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical ">
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
         <div style={{ textAlign: "center" }}>
           <h1>Rail Transport System / Login</h1>
           <div
@@ -383,6 +408,7 @@ function TrainRegister() {
                         name="sex"
                         id="Radios1"
                         value="Male"
+                        checked={gender === 'Male'}
                         onChange={handleRadio}
                       />
                       <Form.Check
@@ -392,6 +418,7 @@ function TrainRegister() {
                         name="sex"
                         id="Radios2"
                         value="Female"
+                        checked={gender === 'Female'}
                         onChange={handleRadio}
                       />
                       {errors.sex && <p className="error">{errors.sex}</p>}
@@ -518,6 +545,7 @@ function TrainRegister() {
             variant="outline-info"
             size="lg"
             style={{ width: "auto", borderRadius: "12px" }}
+            type = "reset"  
           >
             Login is here
           </Button>
