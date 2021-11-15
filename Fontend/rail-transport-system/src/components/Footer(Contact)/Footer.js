@@ -26,7 +26,7 @@ function Footer() {
             <a href='https://github.com/Apizz789/Project_SOFTDEV' target='_blank'>Github</a>
           </div>
           <div className='footer-link-items' style={{paddingTop:"25px"}}>
-            <img src='images/qr.png' style={{width: "80%",height: 'auto'}} draggable="false" dragstart="false" class="unselectable" roundedCircle/>
+            <img src='images/qr-code.png' style={{width: "80%",height: 'auto'}} draggable="false" dragstart="false" class="unselectable" roundedCircle/>
             {/* <a href='https://www.facebook.com/piyaphatboontham/'>Facebook</a> */}
           </div>
         </div>
@@ -39,32 +39,6 @@ function Footer() {
             </Link>
           </div>
           <small className='website-rights'>RTS © 2021</small>
-          <div className='social-icons'>
-            <a
-              className='social-icon-link facebook'
-              href='https://www.facebook.com/piyaphatboontham/'
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <i className='fab fa-facebook-f' />
-            </a>
-            <Link
-              className='social-icon-link instagram'
-              to='/'
-              target='_blank'
-              aria-label='Instagram'
-            >
-              <i className='fab fa-instagram' />
-            </Link>
-            <Link
-              className='social-icon-link youtube'
-              to='/'
-              target='_blank'
-              aria-label='Youtube'
-            >
-              <i className='fab fa-youtube' />
-            </Link>
-          </div>
         </div>
       </section>
     </div>
