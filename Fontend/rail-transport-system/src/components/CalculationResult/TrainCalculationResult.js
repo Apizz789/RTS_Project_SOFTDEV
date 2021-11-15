@@ -34,7 +34,7 @@ function TrainCalculationResult() {
             <div className="result" style={{textAlign:"center"}}>
             <h2 align="center">สถานีต้นทาง   : {clickS}</h2>
             <h2 align="center">สถานีปลายทาง : {clickD}</h2>
-            <h4 align="center">เส้นทางที่คำนวณได้ : {dijkstra(graph, src, dest)[0]}</h4>
+            <h4 align="center" style={{whiteSpace: 'pre'}}>เส้นทางที่คำนวณได้ : {dijkstra(graph, src, dest)[0]}</h4>
             <h4 align="center">เวลาที่คำนวณได้ : {dijkstra(graph, src, dest)[2]} นาที</h4>
             <h5 align="center">ราคาที่คำนวณได้ : {dijkstra(graph, src, dest)[1]} บาท</h5>
             {/* <h6 align="center">อะไร : {clickS.split(" ")[0]}</h6> */}

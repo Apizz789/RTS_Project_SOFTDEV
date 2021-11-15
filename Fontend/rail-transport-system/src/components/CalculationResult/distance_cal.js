@@ -89,7 +89,7 @@ export function dijkstra(graph, src, dest) {
                     if (l != 0) {
                         if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l - 1][0])
                             transfer_count++;
-                        result += '->';
+                        result += '->\n';
                     }
                 }
                 // document.write("<br>The Shortest path from station " + src + " to " + dest + " station is : ");

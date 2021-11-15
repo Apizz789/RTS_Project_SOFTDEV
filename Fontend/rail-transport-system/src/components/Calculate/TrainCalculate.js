@@ -84,33 +84,34 @@ export default function TrainCalculate() {
                 backgroundColor: "Grey",
                 marginBottom :"5%",
                 borderRadius: "12px",
-                width: "400px",
-                height: "80px",
+                width:"300px",
+               
                 alignContent:"center",
                 textAlign:"center",
               }}
             >
               คำนวณค่าโดยสาร
             </h1>
-            <h1
+            <h2
               style={{
                 backgroundColor: "grey",
                 borderRadius: "12px",
-                width: "250px",
+                width: "200px",
+                textAlign:"center"
               }}
             >
               สถานีต้นทาง
-            </h1>
+            </h2>
             <Link to="/SelectStation">
               <Button
                 variant="outline-success"
                 size="lg"
-                style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
+                style={{ width: "auto", borderRadius: "12px", margin: "20px",textAlign:"center" }}
               >
                 {clickS}
               </Button>
             </Link>
-            <h1
+            <h2
               style={{
                 backgroundColor: "grey",
                 borderRadius: "12px",
@@ -118,7 +119,7 @@ export default function TrainCalculate() {
               }}
             >
               สถานีปลายทาง
-            </h1>
+            </h2>
             <Link to="/select-station-dest">
               <Button
                 variant="outline-success"
