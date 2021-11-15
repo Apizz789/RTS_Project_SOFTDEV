@@ -37,7 +37,7 @@ function App() {
     <Router>
       <Navbar/>
       <br/>
-      {/* <Test/> */}
+      <Test/>
       <Header/>
       <Switch>
         <Route path='/home' exact  component ={Home} />
