@@ -31,23 +31,10 @@ function Navbar() {
     return (
         <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"10"}}>
           <nav className='navbar'>
-            <div className='navbar-container'>
-              <Container>
-                <Row>
-                  <Col>
-                  </Col>
-                  <Col>
-                    <Col>
-                    1
-                    </Col>
-                    <Col>
-                    2
-                    </Col>
-                  </Col>
-                </Row>
-              </Container>
-              <Link to='/home' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage}> 
-                <i className="fas fa-subway"></i>RTS
+            <div className='navbar-container' >
+              <Link to='/home' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage} > 
+                <i className="fas fa-subway"></i>
+                RTS
               </Link>
               <div className='menu-icon' onClick={handleClick}>
                 <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

@@ -9,7 +9,6 @@
   top: 0;
   z-index: 999;
   margin-top: 0px;
-  
 }
 
 .navbar-container {
@@ -29,6 +28,7 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  
 }
 
 .fa-typo3 {
