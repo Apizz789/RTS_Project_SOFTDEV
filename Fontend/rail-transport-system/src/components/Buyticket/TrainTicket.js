@@ -59,6 +59,27 @@ function TrainTicket() {
                         <Dropdown.Item href="#">
                             3
                         </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            4
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            5
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            6
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            7
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            8
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            9
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#">
+                            10
+                        </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     </Col>
