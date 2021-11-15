@@ -3,6 +3,7 @@ import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Modal} from '
 import { Link } from 'react-router-dom';
 import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
 import { UserContextDTic } from '../Buyticket/UseContextDestTic';
+import { UserContextCountTic } from '../Buyticket/UseContextCount';
 import { useState , useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -28,6 +29,7 @@ function TrainPayment() {
       const { clickSTic , setclickSTic } = useContext(UserContextSTic);
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
+      const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
 
       const DropdownItem =()=>{
         return(
@@ -63,7 +65,7 @@ function TrainPayment() {
                             <h3 align = "left">ชื่อผู้ใช้:________________________________</h3><br></br><br></br>
                             <h3>{clickSTic} ------------------- {clickDTic}</h3><br></br>
                             <h3 align = "left"> ราคา:________________________________บาท</h3>
-                            <h3 align = "left"> จำนวน:________________________________ชิ้น</h3>
+                            <h3 align = "left"> จำนวน:{clickCountTic} ชิ้น</h3>
                             <h3 align = "left"> วันที่ซื้อ:________________________________</h3>
                             <h3 align = "left" > วันที่หมดอายุ:________________________________</h3>
                             

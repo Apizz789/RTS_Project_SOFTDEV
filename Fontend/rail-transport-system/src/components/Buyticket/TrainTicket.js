@@ -13,6 +13,7 @@ import {
 import Dropdown from 'react-bootstrap/Dropdown';
 import { UserContextSTic } from "./UseContextSourceTic";
 import { UserContextDTic } from './UseContextDestTic';
+import { UserContextCountTic } from './UseContextCount';
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
 
@@ -21,14 +22,14 @@ function TrainTicket() {
     const { clickSTic , setclickSTic } = useContext(UserContextSTic);
     const { clickDTic , setclickDTic } = useContext(UserContextDTic);
 
-    const [ Count , setCount ] = useState(0)
+    const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
     //const { clickDTic , setclickDTic } = useContext(UserContextD);
     const DropdownItem =()=>{
         return(
             <div>
                 {
                 [1,2,3,4,5,6,7,8,9,10].map((item) => (
-                <Dropdown.Item key={item} onClick={()=>{setCount(item)}}>
+                <Dropdown.Item key={item} onClick={()=>{setclickCountTic(item)}}>
                      {item}
                  </Dropdown.Item>
                 ))
@@ -86,7 +87,7 @@ function TrainTicket() {
                         <Dropdown style={{width: "100px"}}>
                             <Dropdown.Toggle variant="success">
                                 {
-                                    Count? Count:"จำนวนตั๋ว"
+                                    clickCountTic? clickCountTic:"จำนวนตั๋ว"
                                 }
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
