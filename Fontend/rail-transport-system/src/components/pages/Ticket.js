@@ -3,7 +3,7 @@ import '../../App.css';
 import TrainTicket from '../Buyticket/TrainTicket';
 function Ticket() {
     return (
-        <div>
+        <div style={{overflow: 'hidden'}}>
            <TrainTicket/>
         </div>
     )

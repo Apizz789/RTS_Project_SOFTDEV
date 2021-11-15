@@ -66,22 +66,22 @@ export default function TrainContactus() {
             <h1 align = "center">CalculationResult ====</h1>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
 			</Row>
-		{/* <Container>
+		<Container>
 		<Row style={{textAlign:"center"}}>
 		
 			<Col xs={5} md={1}>
 			
 			</Col>
 			<Col >
-			<Image src="../images/Minor.jpg" roundedCircle style={{width:"auto"}} />
+			<Image src="../images/Minor.jpg" roundedCircle style={{width:"100px"}} />
 			<p  align="center" >62010175	CHAWAKORN LAOKAEW <br></br> BACKEND </p> 
 			</Col>
 			<Col>
-			<Image src="../images/Tum.jpg" roundedCircle style={{width:"auto"}} />
+			<Image src="../images/Tum.jpg" roundedCircle style={{width:"100px"}} />
 			<p   align="center">62010142 CHATDANAI SINGTO <br></br> DATABASE </p> 
 			</Col>
 			<Col>
-			<Image src="../images/Dink.jpg" roundedCircle style={{width:"auto"}}/>
+			<Image src="../images/Dink.jpg" roundedCircle style={{width:"100px"}}/>
 			<p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FONTEND </p> 
 			</Col>
 		</Row>
@@ -89,20 +89,20 @@ export default function TrainContactus() {
 		<Row style={{textAlign:"center"}}>
 		
 			<Col xs={5} md={3}>
-			<Image src="../images/P.jpg" roundedCircle style={{width:"auto"}}/>
+			<Image src="../images/P.jpg" roundedCircle style={{width:"100px"}}/>
 			<p align="center">62010765 RAPEEPAT PENGTEE <br></br> BACKEND </p> 
 			</Col>
 			<Col xs={5} md={3}>
-			<Image src="../images/Aim.jpg" roundedCircle style={{width:"auto"}}/>
+			<Image src="../images/Aim.jpg" roundedCircle style={{width:"100px"}}/>
 			<p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FONTEND </p> 
 			</Col>
 			<Col xs={5} md={3}>
-			<Image src="../images/pluem.jpg" roundedCircle style={{width:"auto"}}/>
+			<Image src="../images/pluem.jpg" roundedCircle style={{width:"100px"}}/>
 			<p p align="center">62011019 APIRAK OULIS <br></br> FONTEND </p> 
 			</Col>
 		</Row>
 
-		</Container> */}
+		</Container>
 
 		<Container>
 		<div class="bodycontact">
