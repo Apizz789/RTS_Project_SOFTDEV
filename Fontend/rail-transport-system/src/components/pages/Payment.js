@@ -1,9 +1,11 @@
 import React from 'react'
+import TrainPayment from '../Payment/TrainPayment'
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 
 function Payment() {
     return (
         <div>
-            dsfadsfadsfasdaf
+            <TrainPayment/>
         </div>
     )
 }

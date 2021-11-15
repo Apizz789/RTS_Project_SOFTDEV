@@ -48,9 +48,10 @@ function TrainTicket() {
                 </Col>
                 <Row>
                     <Col></Col>
-                    <Col style={{borderRadius:"20px",width:"200px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col style={{borderRadius:"20px",width:"400px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
                     <br></br><h1><i class="fas fa-newspaper"></i> Ticket</h1><br></br>
-                        <Row>
+                        
+                    <Row style={{textAlign:"center"}}>
                         <Link to="/select-sorce-ticket">
                     <Button
                         //onClick={() => handleSetdefault()}
@@ -60,6 +61,7 @@ function TrainTicket() {
                     >
                        {clickSTic}
                     </Button>
+
                     </Link>
                     <Button
                         //onClick={() => handleSetdefault()}
@@ -71,11 +73,11 @@ function TrainTicket() {
                     </Button>
 
 
-                        </Row>
+                    </Row>
 
-                        <Row>
+                    <Row style={{textAlign:"center"}}>
                         <h1 style={{width:"200px" }}>จำนวนตั๋ว</h1>
-                    <Dropdown style={{width: "150px"}}>
+                        <Dropdown style={{width: "150px"}}>
                         <Dropdown.Toggle variant="success">
                             {
                                 Count? Count:"จำนวนตั๋ว"
@@ -88,7 +90,7 @@ function TrainTicket() {
 
                         </Row>
 
-                        <Row>
+                        <Row style={{textAlign:"center"}}>
                         <input
                         className="inputlogin"
                         type="date"
@@ -101,7 +103,8 @@ function TrainTicket() {
                         // value={values.DOB}
                         // onChange={handleChange}
                         style={{ margin: "10px",borderRadius: "10px"}}/>
-                         <Button
+                    <Link to="/payment">
+                    <Button
                         //onClick={() => handleSetdefault()}
                         variant="outline-success"
                         size="lg"
@@ -109,6 +112,7 @@ function TrainTicket() {
                     >
                         ซื้อตั๋ว
                     </Button>
+                    </Link>
 
                         </Row>
 
