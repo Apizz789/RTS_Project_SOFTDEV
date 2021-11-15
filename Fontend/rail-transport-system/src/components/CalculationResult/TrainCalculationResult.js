@@ -22,12 +22,8 @@ function TrainCalculationResult() {
     setclickS("Please Select Source")
     setclickD("Please Select Dest")
   }
-<<<<<<< Updated upstream
-    return (
-      <div style={{marginTop:"10px",width:"100%"}}>
-=======
   return (
-    <div style={{ marginTop: "55px" }}>
+    <div style={{marginTop:"10px",width:"100%"}}>
 
       <h1 align="center">CalculationResult ====</h1>
 
@@ -61,7 +57,6 @@ function TrainCalculationResult() {
         <Spinner animation="grow" variant="info" />
         <Spinner animation="grow" variant="info" />
       </div>
->>>>>>> Stashed changes
 
       <br></br>
       <br></br>
