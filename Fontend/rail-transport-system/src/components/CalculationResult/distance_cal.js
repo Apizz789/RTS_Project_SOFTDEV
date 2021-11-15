@@ -1,4 +1,7 @@
+import { func } from "prop-types";
+
 let V = 240;
+
 
 export function dijkstra(graph, src, dest) {
     let cost = new Array(V);
@@ -65,6 +68,7 @@ export function dijkstra(graph, src, dest) {
     let station_count = new Array(V).fill(0);
     let station = 0;
     let transfer_count = 0;
+
     for (let i = 0; i < V; i++) {
         if (i != srcstation) {
             lst[i] = lst[i].concat(codeofgraph[i]);
@@ -872,6 +876,7 @@ let lst = new Array(V).fill("");
 // export { sourcestation };
 // export { deststation };
 export { graph };
+export { station };
 // export { dijkstra };
 // module.exports = { deststation };
 // module.exports = { codeofgraph };

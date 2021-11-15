@@ -6,7 +6,7 @@ import { useContext } from "react";
 import {Button,Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
-import { graph, dijkstra } from './distance_cal.js';
+import { graph, station, dijkstra, price_calculation } from './distance_cal.js';
 
 function refreshPage(){
 	window.scrollTo(0,0);
