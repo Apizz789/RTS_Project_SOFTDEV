@@ -1,7 +1,9 @@
 import React from 'react'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Modal} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
+import { UserContextDTic } from '../Buyticket/UseContextDestTic';
+import { useState , useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function TrainPayment() {
@@ -23,6 +25,8 @@ function TrainPayment() {
         setShow1(true);
       };
 
+      const { clickSTic , setclickSTic } = useContext(UserContextSTic);
+      const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
 
       const DropdownItem =()=>{
@@ -37,7 +41,7 @@ function TrainPayment() {
                 }
             </div>
         )
-    
+
     }
     
     return (
@@ -57,7 +61,7 @@ function TrainPayment() {
                         <Col style={{borderRadius:"20px",width:"700px",height:"500px",margin:"10px",backgroundColor:"#dbf2f8",textAlign:"center"}}>
                             <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><br></br>
                             <h3 align = "left">ชื่อผู้ใช้:________________________________</h3><br></br><br></br>
-                            <h3>(ต้นทาง) ------------------- (ปลายทาง)</h3><br></br>
+                            <h3>{clickSTic} ------------------- {clickDTic}</h3><br></br>
                             <h3 align = "left"> ราคา:________________________________บาท</h3>
                             <h3 align = "left"> จำนวน:________________________________ชิ้น</h3>
                             <h3 align = "left"> วันที่ซื้อ:________________________________</h3>
@@ -102,7 +106,7 @@ function TrainPayment() {
                                 </Button>
                             </Modal.Footer>
                             </Modal>
-                            
+
                             <Button variant="outline-danger" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยกเลิก</Button>
                         </Col>
                     </Col>
