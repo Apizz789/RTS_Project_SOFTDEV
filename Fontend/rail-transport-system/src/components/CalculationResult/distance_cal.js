@@ -97,13 +97,13 @@ export function dijkstra(graph, src, dest) {
                 // document.write("<br>Station Count : " + station + "<br>Transfer Count : " + transfer_count);
                 // document.write("<br>Price : " + price_calculation(result, station));
                 // break;
-                return result;
+                return [result, price_calculation(result, station), time_calculation(result, station)];
             }
         }
     }
 }
 
-export function price_calculation(result, num) {
+function price_calculation(result, num) {
     var sum = 0;
     var bts_count = 0;
     var mrt_count = 0;
@@ -219,16 +219,34 @@ function arl_price_rate(arl_count) {
         return 45;
 }
 
-// function transfer_time_calculation(result, num)
-// {
+function time_calculation(result, num)
+{
+    var sum = 0.0;
+    for (var i = 0; i < num; i++) {
+        if (i != num - 1) {
+            if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+                sum += 2.5;
+            }
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+                sum += 2.5;
+            }
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+                sum += 2.0;
+            }
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+                sum += 2.0;
+            }
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+                sum += 3.5;
+            }
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+                sum += 3.5;
+            }
+        }
+    }
 
-// }
-
-// let graph = [[0, 10, 0, 30, 100],
-// [10, 0, 50, 0, 0],
-// [0, 50, 0, 20, 10],
-// [30, 0, 20, 0, 60],
-// [100, 0, 10, 60, 0]];
+    return sum;
+}
 
 
 let graph = Array(240).fill().map(() => Array(240).fill(0));
