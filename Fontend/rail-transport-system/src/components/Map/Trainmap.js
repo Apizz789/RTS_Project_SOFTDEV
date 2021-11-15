@@ -11,7 +11,7 @@ function refreshPage(){
 
 export default memo(function Trainmap() {
   return (
-    <div style={{marginTop:"55px"}}>
+    <div style={{marginTop:"10px",width:"100%"}}>
     <Container align="center">
       <Row>
         <Col><h1>แผนที่สถานีรถไฟฟ้า</h1>

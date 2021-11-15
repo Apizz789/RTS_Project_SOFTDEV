@@ -56,7 +56,7 @@ export default function TrainContactus() {
     return (
 
 
-        <div style={{marginTop:"55px"}}>
+        <div style={{marginTop:"10px",width:"100%"}}>
 	
         <h1 align = "center">CalculationResult ====</h1>
 		<Container>
