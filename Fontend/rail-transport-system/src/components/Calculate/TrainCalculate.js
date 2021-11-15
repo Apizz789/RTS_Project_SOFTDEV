@@ -9,9 +9,9 @@ import "./TrainCalculate.css";
 
 const Cal = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>   
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <div>
-            <h1 className="Cal">คำนวณค่าโดยสาร</h1>
+        <h1 className="Cal">คำนวณค่าโดยสาร</h1>
       </div>
     </div>
   );
@@ -68,74 +68,84 @@ const Navbar = () => {
 };
 
 export default function TrainCalculate() {
-  const { clickS , setclickS } = useContext(UserContextS);
-  const { clickD , setclickD } = useContext(UserContextD);
-  const handleSetdefault =()=>{
-    setclickS("Please Select Sourrce :")
-    setclickD("Please Select Sourrce :")
-}
+  const { clickS, setclickS } = useContext(UserContextS);
+  const { clickD, setclickD } = useContext(UserContextD);
+  const handleSetdefault = () => {
+    setclickS("Please Select Sourrce :");
+    setclickD("Please Select Sourrce :");
+  };
   return (
-    <div style={{overflowX:'hidden',width:'100vw'}}>
+    <div style={{ overflowX: "hidden", width: "100vw" }}>
       <Row>
         <Row>
-          <Col style={{ marginTop: "5%" }}>
+          <Col style={{ marginTop: "10%" }}>
             <h1
               style={{
-                backgroundColor: "Grey",
-                marginBottom :"5%",
+                backgroundColor: "#567DA6",
+                marginBottom: "5%",
                 borderRadius: "12px",
-                width:"300px",
-               
-                alignContent:"center",
-                textAlign:"center",
+                width: "300px",
+                alignContent: "center",
+                textAlign: "center",
+                margin: "20px",
+                color: "white"
               }}
             >
               คำนวณค่าโดยสาร
             </h1>
-            <h2
+            <div
               style={{
-                backgroundColor: "grey",
+                backgroundColor: "#F7F3EE",
                 borderRadius: "12px",
-                width: "200px",
-                textAlign:"center"
+                width: "auto",
+                textAlign: "center",
+                marginLeft: "20px",
               }}
             >
-              สถานีต้นทาง
-            </h2>
-            <Link to="/SelectStation">
-              <Button
-                variant="outline-success"
-                size="lg"
-                style={{ width: "auto", borderRadius: "12px", margin: "20px",textAlign:"center" }}
-              >
-                {clickS}
-              </Button>
-            </Link>
-            <h2
-              style={{
-                backgroundColor: "grey",
-                borderRadius: "12px",
-                width: "300px",
-              }}
-            >
-              สถานีปลายทาง
-            </h2>
-            <Link to="/select-station-dest">
-              <Button
-                variant="outline-success"
-                size="lg"
-                style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
-              >
-                {clickD}
-              </Button>
-            </Link>
-            <br />
+              <h2>
+                สถานีต้นทาง :
+                <Link to="/SelectStation">
+                  <Button
+                    variant="outline-secondary"
+                    size="lg"
+                    style={{
+                      width: "auto",
+                      borderRadius: "12px",
+                      margin: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {clickS}
+                  </Button>
+                </Link>
+              </h2>
+              <h2>
+                สถานีปลายทาง :
+                <Link to="/select-station-dest">
+                  <Button
+                    variant="outline-secondary"
+                    size="lg"
+                    style={{
+                      width: "auto",
+                      borderRadius: "12px",
+                      margin: "20px",
+                    }}
+                  >
+                    {clickD}
+                  </Button>
+                </Link>
+              </h2>
+            </div>
             <Link to="/calculation-result">
               <Button
                 //onClick={() => handleSetdefault()}
                 variant="outline-success"
                 size="lg"
-                style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
+                style={{
+                  width: "auto",
+                  borderRadius: "12px",
+                  margin: "20px",
+                }}
               >
                 คำนวณค่าโดยสาร
               </Button>
@@ -144,7 +154,7 @@ export default function TrainCalculate() {
           <Col>
             <img
               src="images/ตารางรถไฟฟ้า.png"
-              style={{ width: "100vh", height: "100vh" ,borderRadius:"60px" }}
+              style={{ width: "100vh", height: "100vh", borderRadius: "60px" }}
             />
           </Col>
         </Row>
