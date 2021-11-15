@@ -1,18 +1,24 @@
 import React,{useState,useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import '../Navbar/Navbar.css';
+import {useCookies} from 'react-cookie'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 
-function refreshPage(){
-  window.scrollTo(0,0);
-}
+
 
 function Navbar() {
+    let history = useHistory()
+    const [login_state, setLogin_state, removeLogin_state] = useCookies(['login_token'])
     const [click,setClick]= useState(false);
     const [button,setButton]=useState(true);
 
     const handleClick =()=>setClick(!click);
     const closeMobileMenu = ()=>setClick(false);
+
+    function refreshPage(){
+      // scrollto(0,0)
+      history.push("/")
+    }
 
     const showButton=()=>{
         if(window.innerWidth<=960){
@@ -21,6 +27,11 @@ function Navbar() {
             setButton(true);
         }
     };
+
+    const handleLogout = () => {
+      removeLogin_state(['login_token'])
+
+  }
 
     useEffect(()=>{
       showButton()
@@ -76,17 +87,14 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
-              if (false){
-                <Link to='/register' className='btn-mobile' onClick={refreshPage}>
-                <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
-              </Link>
-
-              }
               
-                    
-              <Link to='/filp-page' className='btn-mobile' onClick={refreshPage}>
-                <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}}>LOGOUT</Button>
-              </Link>
+              {login_state['login_token'] ?(<Link to='/filp-page' className='btn-mobile' onClick={refreshPage}>
+                <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}} onClick= {handleLogout}>LOGOUT</Button>
+              </Link>) : (<Link to='/register' className='btn-mobile' onClick={refreshPage}>
+                <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
+              </Link>)}
+              
+                  
               
         
             </div>

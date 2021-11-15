@@ -14,6 +14,7 @@ let submit = false
 let login = false
 let loginsuccess = false
 function TrainRegister() {
+  const [login_state, setLogin_state, removeLogin_state] = useCookies(['login_token'])
   const [verify, setVerify] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false);
     const handleClick = () => {
@@ -179,7 +180,6 @@ function TrainRegister() {
     let InvUn = false
     let InvPwd = false
     async function makeGetRequest() {
-
         user_list = []
         const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users');
         for (let key in res.data) {
@@ -216,7 +216,7 @@ function TrainRegister() {
                 }
 
                 if (login === true){
-                  
+                  setLogin_state(['login_token'],true)
                     axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day', {
                                         "username": member_satistic_val.username,
                                         "Login_Date":member_satistic_val.Login_Date
