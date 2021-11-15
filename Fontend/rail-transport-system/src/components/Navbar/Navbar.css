@@ -19,6 +19,16 @@
   max-width: 1500px;
 }
 
+.uname{
+  color: rgb(209, 212, 212);
+  justify-self: start;
+  margin-left: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
 .navbar-logo {
   color: rgb(209, 212, 212);
   justify-self: start;

@@ -150,6 +150,7 @@ function Navbar() {
                 <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
               </Link>)}
               
+              <p className="uname">Hi..[NAME]</p>
                   
               
         
