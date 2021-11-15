@@ -24,7 +24,7 @@ function Footer() {
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
+            <Link to='/contact' onClick={refreshPage}>Contact</Link>
             <a href='https://github.com/Apizz789/Project_SOFTDEV' target='_blank'>Github</a>
           </div>
           <div className='footer-link-items' style={{paddingTop:"25px"}}>

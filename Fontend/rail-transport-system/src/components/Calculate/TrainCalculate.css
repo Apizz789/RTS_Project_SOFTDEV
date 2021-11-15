@@ -1,19 +1,19 @@
-.calculate_test{
+/* .calculate_test{
     background-color:rgba(0, 0, 0, 0.2);
     height: 88vh;
     width: 100%;
 }
 
-/* 
+
 .navbara{
     background-color: rgb(18, 136, 97);
     width:100vw;
     height:75px;
-} */
+}
 
 .Bghead{
     display: flex;
-    /* background-image: url(P:\GIT\Project_SOFTDEV\Fontend\rail-transport-system\src\components\Calculate\ตารางรถไฟฟ้า.png); */
+    background-image: url(P:\GIT\Project_SOFTDEV\Fontend\rail-transport-system\src\components\Calculate\ตารางรถไฟฟ้า.png);
     margin-top: 20px;
     margin-bottom: 20px;
     width: 736px;
@@ -104,4 +104,14 @@
     align-self: center;
     border: 2px solid red;
     color: rgb(255, 255, 255);
-} 
+}  */
+
+.custom-btn{
+    border-radius:"12px";
+    width: auto;
+}
+.h3{
+    background-color:"grey";
+    border-radius:"12px";
+    width:"150px";
+}

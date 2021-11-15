@@ -276,7 +276,6 @@ function TrainRegister() {
                     <Form.Check
                         inline
                         label="Male"
-                        className="form-check-input" 
                         type="radio" 
                         name="sex" 
                         id="Radios1" 
@@ -287,7 +286,6 @@ function TrainRegister() {
                     <Form.Check
                         inline
                         label="Female"
-                        className="form-check-input" 
                         type="radio" 
                         name="sex" 
                         id="Radios2" 
@@ -318,7 +316,6 @@ function TrainRegister() {
                         required
                         value={values.email}
                         onChange={handleChange}
-                        className = "form-control"
                     />
                     {errors.email && <p className="error">{errors.email}</p>}
                 
