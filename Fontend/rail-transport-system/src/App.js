@@ -22,12 +22,15 @@ import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
 import Test from './components/pages/Test';
 import Flippage from './components/pages/Flippage';
+import SelectSourceTic from './components/pages/SelectSourceTic';
+import SourceTicProvider from './components/Buyticket/UseContextSourceTic'
 
 function App() {
 
   return (
     <SourceProvider>
     <DestProvider>
+    <SourceTicProvider>
     <Router>
       <Navbar />
       <br/>
@@ -47,6 +50,7 @@ function App() {
         <Route path='/SelectStation' exact component ={SelectStation}/>
         <Route path='/select-station-dest' exact component ={SelectStationDest}/>
         <Route path='/ticket' exact component ={Ticket}/>
+        <Route path='/select-sorce-ticket' exact component ={SelectSourceTic}/>
         <Route path='/show-ticket' exact component ={ShowTicket}/>
         <Route path='/information' exact component ={Information} />
         <Route path='/calculation-result' exact component ={CalculationResult}/>
@@ -54,6 +58,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </SourceTicProvider>
     </DestProvider>
     </SourceProvider>
   );
