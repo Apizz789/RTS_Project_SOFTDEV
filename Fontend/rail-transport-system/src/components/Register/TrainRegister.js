@@ -544,7 +544,7 @@ function TrainRegister() {
                         {login_errors.login_username && (
                           <p className="error">{login_errors.login_username}</p>
                         )}
-    
+                          <br/>
                         <input
                           className="inputlogin"
                           type="password"
