@@ -102,7 +102,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -143,7 +143,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -174,7 +174,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -226,7 +226,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -283,7 +283,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -349,7 +349,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -409,7 +409,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -465,7 +465,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -476,10 +476,10 @@ const SelectSourceforTic = () => {
         </Tab>
 
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
-          <div style={{ textAlign: "center",columnCount:"4" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
               "RN10 รังสิต\nRangsit",
-              "RN09 หลักหก\n(มหาวิทยาลัยรังสิต)\nLak Hok (Rangsit University)",
+              "RN09 หลักหก\nLak Hok",
               "RN08 ดอนเมือง\nDon Mueang",
               "RN07 การเคหะ\nKan Kheha",
               "RN06 หลักสี่\nLak Si",
@@ -502,7 +502,7 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
-                <Link to="/ticket">
+                <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -528,7 +528,7 @@ const SelectSourceforTic = () => {
                 key={index}
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
-                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre', margin: '10px'}}
               >
                 {item}
               </Button>
