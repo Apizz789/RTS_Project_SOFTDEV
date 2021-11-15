@@ -36,18 +36,22 @@ function TrainTicket() {
     }
     return (
         <div style={{marginTop:"55px",width:"100%"}}>
-         {/* <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
-                <marquee>
-                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
-                </marquee>
-            </Row> */}
             <h1 align = "center">Ticket</h1>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
             </Row>
-            
-            <Row className="text-center">
+
+            <Container>
                 <Col>
-                    <Link to="/select-sorce-ticket">
+
+
+
+                </Col>
+                <Row>
+                    <Col></Col>
+                    <Col style={{borderRadius:"20px",width:"200px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <br></br><h1><i class="fas fa-newspaper"></i> Ticket</h1><br></br>
+                        <Row>
+                        <Link to="/select-sorce-ticket">
                     <Button
                         //onClick={() => handleSetdefault()}
                         variant="outline-success"
@@ -65,9 +69,12 @@ function TrainTicket() {
                     >
                         สถานีปลายทาง
                     </Button>
-                </Col>
-                <Row style={{display:"flex", justifyContent:"center" ,alignItems:"center"}}>
-                    <h1 style={{width:"200px" }}>จำนวนตั๋ว</h1>
+
+
+                        </Row>
+
+                        <Row>
+                        <h1 style={{width:"200px" }}>จำนวนตั๋ว</h1>
                     <Dropdown style={{width: "150px"}}>
                         <Dropdown.Toggle variant="success">
                             {
@@ -78,11 +85,23 @@ function TrainTicket() {
                             <DropdownItem/>
                         </Dropdown.Menu>
                     </Dropdown>
-                   
-                </Row>
-                <Row className="text-center">
-                    <Col>
-                    <Button
+
+                        </Row>
+
+                        <Row>
+                        <input
+                        className="inputlogin"
+                        type="date"
+                        data-date-inline-picker="true"
+                        name="DOB"
+                        min="1900-01-01"
+                        max="2009-12-31"
+                        placeholder="dd-mm-yyyy"
+                        required
+                        // value={values.DOB}
+                        // onChange={handleChange}
+                        style={{ margin: "10px",borderRadius: "10px"}}/>
+                         <Button
                         //onClick={() => handleSetdefault()}
                         variant="outline-success"
                         size="lg"
@@ -90,12 +109,18 @@ function TrainTicket() {
                     >
                         ซื้อตั๋ว
                     </Button>
-                    </Col>
-                </Row>
 
+                        </Row>
+
+
+                    </Col>
+                    <Col></Col>
             
-            </Row>
+                </Row>
+            </Container>
         </div>
     )
 }
 export default TrainTicket
+
+
