@@ -12,12 +12,15 @@ import {
   } from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { UserContextSTic } from "./UseContextSourceTic";
+import { UserContextDTic } from './UseContextDestTic';
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
 
 
 function TrainTicket() {
     const { clickSTic , setclickSTic } = useContext(UserContextSTic);
+    const { clickDTic , setclickDTic } = useContext(UserContextDTic);
+
     const [ Count , setCount ] = useState(0)
     //const { clickDTic , setclickDTic } = useContext(UserContextD);
     const DropdownItem =()=>{
@@ -63,14 +66,17 @@ function TrainTicket() {
                     </Button>
 
                     </Link>
+                    <Link to="/select-dest-ticket">
                     <Button
                         //onClick={() => handleSetdefault()}
                         variant="outline-success"
                         size="lg"
                         style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
                     >
-                        สถานีปลายทาง
+                        {clickDTic}
                     </Button>
+
+                    </Link>
 
 
                     </Row>
