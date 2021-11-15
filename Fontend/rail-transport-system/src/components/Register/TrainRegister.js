@@ -8,16 +8,17 @@ import { Button, Form, Row, Col } from "react-bootstrap";
 import Alert from 'react-bootstrap/Alert'
 import emailjs from 'emailjs-com'
 import {useCookies} from 'react-cookie'
-import {verify} from '../Confirm/Confirm.js'
+import Confirm from '../Confirm/Confirm'
+import { Link } from "react-router-dom";
 let submit = false
 let login = false
+let loginsuccess = false
 function TrainRegister() {
-
+  const [verify, setVerify] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false);
     const handleClick = () => {
       setIsFlipped(!isFlipped);
     };
-
     const [cookies, setCookie, removeCookie] = useCookies(['token'])
 
     const [member_satistic_val,setMember_satistic_val] = useState({
@@ -84,11 +85,7 @@ function TrainRegister() {
             });
         }
     }
-    console.log("Verify state",verify)
-    if (verify===true){
-        console.log("change to Active")
-        values.status ="Active"
-    }
+    
     
 
     const handleSubmits = () => {
@@ -140,6 +137,16 @@ function TrainRegister() {
         submit = false
 
     }
+
+    function setVerified(verify){
+      setVerify(verify)
+    }
+
+    // console.log(verify['verify'])
+    // if (verify['verify']===true){
+    //   console.log("change to Active")
+    //   values.status ="Active"
+    // }
     const sendEmail = (event) =>{
         event.preventDefault();
         if(!errors.username&&!errors.fname&&!errors.lname&&!errors.password&&!errors.repeat_password&&!errors.tel&&!errors.DOB&&!errors.email&&!errors.sex){
@@ -158,6 +165,7 @@ function TrainRegister() {
     const [login_errors, setlogin_Errors] = useState({
         login_username: "",
         login_password: "",
+        status: ""
     });
     let user_list = []
 
@@ -170,7 +178,6 @@ function TrainRegister() {
     const fetchedResult = [];
     let InvUn = false
     let InvPwd = false
-
     async function makeGetRequest() {
 
         user_list = []
@@ -181,6 +188,7 @@ function TrainRegister() {
                     // ...res.data[key],
                     username: res.data[key].Username,
                     password: res.data[key].Password,
+                    status: res.data[key].status,
                     id: key
                 }
             )
@@ -192,12 +200,13 @@ function TrainRegister() {
         if (Object.values(user_list).includes(values.login_username)) {
             InvUn = false
             let key = user_list.indexOf(values.login_username)
-            console.log(fetchedResult[key].password)
+            console.log(fetchedResult[key].status)
             console.log(values.login_password)
             if (fetchedResult[key].password === values.login_password) {
                 console.log("Password Match")
                 InvPwd = false
-                if (!login_errors.login_username && !login_errors.login_password) {
+                if (fetchedResult[key].status==="Active"){
+                  if (!login_errors.login_username && !login_errors.login_password) {
                     const d = new Date();
                     setMember_satistic_val({
                         "username": values.login_username,
@@ -207,6 +216,7 @@ function TrainRegister() {
                 }
 
                 if (login === true){
+                  
                     axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day', {
                                         "username": member_satistic_val.username,
                                         "Login_Date":member_satistic_val.Login_Date
@@ -214,8 +224,20 @@ function TrainRegister() {
                                         .then(response => {console.log(response)})
                                         .catch(error => { console.log(error) })
                                 console.log("login")
+                                loginsuccess = true
+                                
                     login = false
+
                 }
+              }
+              else{
+                if (values.login_username && values.login_password) {
+                  setlogin_Errors({
+                      login_password: "Please Verify your Account Before Login",
+                  })
+              }
+              }
+                  
             }
             else {
                 InvPwd = true
@@ -251,6 +273,10 @@ function TrainRegister() {
 
     
     const [show, setShow] = useState(false);
+
+    const ConditionalLink = ({ children, to, condition }) => (!!condition && to)
+      ? <Link to={to}>{children}</Link>
+      : <>{children}</>;
     
 
     return (
@@ -533,7 +559,11 @@ function TrainRegister() {
                           <p className="error">{login_errors.login_password}</p>
                         )}
                         <br/>
-                        <Button onClick={handleLogin} style={{ margin: "10px",borderRadius: "10px"}}>Login</Button>
+
+                        
+                        <Button onClick={handleLogin} style={{ margin: "10px",borderRadius: "10px"}} >Login
+                        </Button>
+                        
                       </form>
                     </div>
                   </Col>
