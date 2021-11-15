@@ -22,16 +22,13 @@ import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
 import Test from './components/pages/Test';
 import Flippage from './components/pages/Flippage';
-import SelectSourceTic from './components/pages/SelectSourceTic';
-import SourceTicProvider from './components/Buyticket/UseContextSourceTic'
-import Confirm from './components/Confirm/Confirm';
+import Payment from './components/pages/Payment';
 
 function App() {
 
   return (
     <SourceProvider>
     <DestProvider>
-    <SourceTicProvider>
     <Router>
       <Navbar/>
       <br/>
@@ -51,18 +48,15 @@ function App() {
         <Route path='/SelectStation' exact component ={SelectStation}/>
         <Route path='/select-station-dest' exact component ={SelectStationDest}/>
         <Route path='/ticket' exact component ={Ticket}/>
-        <Route path='/select-sorce-ticket' exact component ={SelectSourceTic}/>
         <Route path='/show-ticket' exact component ={ShowTicket}/>
         <Route path='/information' exact component ={Information} />
         <Route path='/calculation-result' exact component ={CalculationResult}/>
         <Route path='/flip-page' exact component ={Flippage}/>
-        <Route path='/Confirm' exact component ={Confirm}/>
-        <Route path="/Confirm/:confirmcode" component={Confirm} />
+        <Route path='/payment' exact component ={Payment}/>
       </Switch>
       <img src='images/trainloop.gif' style={{width: "100%",height: '80px'}} draggable="false" dragstart="false" class="unselectable"></img>
       <Footer />
     </Router>
-    </SourceTicProvider>
     </DestProvider>
     </SourceProvider>
   );
