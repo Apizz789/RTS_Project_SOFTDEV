@@ -6,7 +6,7 @@ import { useContext } from "react";
 import {Button,Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
-import { graph, dijkstra, price_calculation } from './distance_cal.js';
+import { graph, dijkstra } from './distance_cal.js';
 
 function refreshPage(){
 	window.scrollTo(0,0);
@@ -24,15 +24,9 @@ function TrainCalculationResult() {
   }
     return (
         <div style={{marginTop:"55px"}}>  
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
-                <marquee>
-                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
-                </marquee>
-            </Row>
+
             <h1 align = "center">CalculationResult ====</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
             
-            </Row>
             
             <br></br>
             <br></br>
@@ -40,9 +34,9 @@ function TrainCalculationResult() {
             <div className="result" style={{textAlign:"center"}}>
             <h2 align="center">สถานีต้นทาง   : {clickS}</h2>
             <h2 align="center">สถานีปลายทาง : {clickD}</h2>
-            <h4 align="center">เส้นทางที่คำนวณได้ : {dijkstra(graph, src, dest)}</h4>
-            <h4 align="center">เวลาที่คำนวณได้ : ______________________________</h4>
-            <h5 align="center">ราคาที่คำนวณได้ : ______________________________</h5>
+            <h4 align="center">เส้นทางที่คำนวณได้ : {dijkstra(graph, src, dest)[0]}</h4>
+            <h4 align="center">เวลาที่คำนวณได้ : {dijkstra(graph, src, dest)[2]} นาที</h4>
+            <h5 align="center">ราคาที่คำนวณได้ : {dijkstra(graph, src, dest)[1]} บาท</h5>
             {/* <h6 align="center">อะไร : {clickS.split(" ")[0]}</h6> */}
             {/* <h6 align="center">อะไร : {dijkstra(graph, src, dest)}</h6> */}
            

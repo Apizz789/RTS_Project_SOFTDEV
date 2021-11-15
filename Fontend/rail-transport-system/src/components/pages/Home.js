@@ -8,7 +8,7 @@ import TrainSlidebar from '../Slidebar/TrainSlidebar';
 function Home(){
     return(
         <>
-            <TrainSlidebar />
+            <TrainSlidebar/>
             <Cards />
         </>
     )

@@ -19,7 +19,7 @@ function Test() {
             <Link to={'/services'}><Button variant="outline-dark">Services</Button></Link>
             <Link to={'/show-ticket'}><Button variant="outline-dark">ShowTicket</Button></Link>
             <Link to={'/ticket'}><Button variant="outline-dark">Ticket</Button></Link>
-
+            <Link to={'/payment'}><Button variant="outline-dark">Pay</Button></Link>
         </div>
     )
 }
