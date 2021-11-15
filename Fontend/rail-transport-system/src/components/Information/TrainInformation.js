@@ -47,23 +47,22 @@ function TrainInformation() {
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><br></br>
 
                     <marquee  behavior="scroll" direction="up" scrollamount="2" style={{textAlign:"left", border:"2"}}>
-
+                    <p align="center">[RTS] Rail Transport System </p>
                     <i class="fas fa-comment-dots"></i> RTS ขอต้อนรับทุกท่านเข้าสู่ โลกแห่งการไร้พรหมแดน <br></br>
-                    ที่จะพาทุกคนสะดวกและง่ายต่อการเดินทาง <br></br>
-                    หากมีข้อสงสัย ติดต่อเรราได้ที่ <b>Call center 02-999-9999</b> <br></br>
-                    และช่องทางออนไลน์ <b>info@railtransportsystems.com</b><br></br><br></br>
+                    ที่จะพาทุกคนสะดวกและง่ายต่อการเดินทาง หากมีข้อสงสัย <br></br>
+                    ติดต่อเราได้ที่ <b>Call center 02-999-9999  และช่องทางออนไลน์</b> 
+                    <b>   info@railtransportsystems.com</b><br></br><br></br>
 
                     <i class="fas fa-comment-dots"></i> เธอห่วงใครก็ไม่เท่าเราห่วงเธอ แต่ RTS ห่วงคุณเสมอ<br></br>
                     เพื่อความปลอดภัยของผู้ใช้งาน กรุณาเก็บรหัสผ่านไว้ อย่าให้ใครเป็นการส่วนตัว ไม่บอกต่อคนอื่น ไม่ว่าจะเจตนาอย่างไร<br></br>
-                     <br></br>
                     ด้วยความปรารถนาจาก RTS<br></br><br></br>
 
                     <i class="fas fa-comment-dots"></i> หน้าร้อนมันหนาว หน้าเรามันฟิน RTS พาคุณไปดื่มด่ำกับ<br></br>
                     โปรโมชั่นที่ร้อนแรงในวินาทีนี้ กับโปรโมชั่น หน้าหนาวสุดฟิน มาฟินกับ RTS <br></br><br></br> 
-                    ฟินกับส่วนลดการเดินทาง <b>RTS ลดให้คุณทันที 10%</b><br></br> 
+                    ฟินกับส่วนลดการเดินทาง <b>RTS ลดให้คุณทันที 10%</b><br></br>
                     เมื่อซื้อตั๋วกับทางเรา <b>วันนี้ถึง 31 ธันวาคม ศกนี้</b><br></br><br></br>
 
-                    <center><img src="images/RTS-LOGO.png" width = '100' height='100'style={{textAlign:"center"}} /><br></br> <big><big><big><b>RTS</b></big></big></big></center> 
+                    <center><img src="images/RTS-LOGO.png" width = '50' height='50'style={{textAlign:"center"}} /><br></br> <big><big><big><b>RTS</b></big></big></big></center> 
 
 
                    </marquee>
