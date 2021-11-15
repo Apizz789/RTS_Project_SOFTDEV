@@ -9,13 +9,12 @@ let id_list = []
 let confirm_temp
 let userid
 
-async function makeGetRequest() {
+async function makeGetRequest_confirm() {
 
     const fetchedResult = [];
     code_list = []
     id_list = []
     const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/users');
-    console.log(res.data)
     for (let key in res.data) {
     fetchedResult.unshift(
         {
@@ -28,8 +27,6 @@ async function makeGetRequest() {
     code_list.push(res.data[key].confirmationCode)
     id_list.push(res.data[key].id)
     }
-    console.log(code_list)
-    console.log(id_list)
 
     // let reversed = user_list.reverse();
     
@@ -47,7 +44,7 @@ async function makeGetRequest() {
 }
 
 
-makeGetRequest()
+makeGetRequest_confirm()
 
 
 function Confirm() {
