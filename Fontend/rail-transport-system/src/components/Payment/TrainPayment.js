@@ -11,8 +11,16 @@ function TrainPayment() {
       const [show, setShow] = useState(false);
       const handleClose = () => setShow(false);
 
+      const [show1, setShow1] = useState(false);
+      const handleClose1 = () => setShow1(false);
+
       const handleShow = () => {
         setShow(true);
+      };
+
+      const handleShow1 = () => {
+        setShow(false)
+        setShow1(true);
       };
 
       const [ Count , setCount ] = useState(0)
@@ -77,14 +85,24 @@ function TrainPayment() {
                                 </Dropdown>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Link to="/info">
-                                <Button variant="secondary" onClick={handleClose}>
+                                <Button variant="secondary" onClick={handleShow1}>
                                     OK
                                 </Button>
-                                </Link>
                             </Modal.Footer>
                             </Modal>
-
+                            
+                            <Modal show={show1} onHide={handleClose1} centered>
+                            <Modal.Header closeButton>เลือกวิธีการชำระเงิน</Modal.Header>
+                            <Modal.Body>
+                                รูปแบบการชำระเงิน
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose1}>
+                                    OK
+                                </Button>
+                            </Modal.Footer>
+                            </Modal>
+                            
                             <Button variant="outline-danger" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยกเลิก</Button>
                         </Col>
                     </Col>
