@@ -26,6 +26,7 @@ import Payment from './components/pages/Payment';
 import SelectSourceTic from './components/pages/SelectSourceTic';
 import SourceTicProvider from './components/Buyticket/UseContextSourceTic'
 import Confirm from './components/Confirm/Confirm';
+import Header from './components/pages/Header';
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
     <Router>
       <Navbar/>
       <br/>
-      <Test/>
+      {/* <Test/> */}
+      <Header/>
       <Switch>
         <Route path='/home' exact  component ={Home} />
         <Route path='/' exact  component ={Home} />
