@@ -9,8 +9,7 @@ function refreshPage(){
 
 
   }
-
-
+  
 export default function TrainContactus() {
 
 	const [values, setValues] = useState({

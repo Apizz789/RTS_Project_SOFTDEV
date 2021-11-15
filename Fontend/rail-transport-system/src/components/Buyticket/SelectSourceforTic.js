@@ -32,7 +32,7 @@ const SelectSourceforTic = () => {
   }
   
   return (
-    <div style={{ marginTop: "px", width: "100%" }}>
+    <div style={{ marginTop: "30px", width: "100%" }}>
       <br></br>
       <h1 align="center">เลือกสถานี</h1>
       <br></br>
@@ -476,10 +476,10 @@ const SelectSourceforTic = () => {
         </Tab>
 
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
-          <div style={{ textAlign: "center",columnCount:"4" }}>
+          <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
               "RN10 รังสิต\nRangsit",
-              "RN09 หลักหก\n(มหาวิทยาลัยรังสิต)\nLak Hok (Rangsit University)",
+              "RN09 หลักหก\nLak Hok",
               "RN08 ดอนเมือง\nDon Mueang",
               "RN07 การเคหะ\nKan Kheha",
               "RN06 หลักสี่\nLak Si",
@@ -528,7 +528,7 @@ const SelectSourceforTic = () => {
                 key={index}
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
-                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre', margin: '10px'}}
               >
                 {item}
               </Button>

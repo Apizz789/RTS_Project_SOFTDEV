@@ -10,8 +10,7 @@ import "./TrainCalculate.css";
 const Cal = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div>
-        <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+       <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
                 <marquee>
                 [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
                 </marquee>
@@ -19,6 +18,8 @@ const Cal = () => {
             <h1 className="Cal">คำนวณค่าโดยสาร</h1>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
 			</Row>
+      <div>
+            <h1 className="Cal">คำนวณค่าโดยสาร</h1>
       </div>
     </div>
   );
@@ -150,7 +151,7 @@ export default function TrainCalculate() {
           <Col>
             <img
               src="images/ตารางรถไฟฟ้า.png"
-              style={{ width: "100vh", height: "100vh" }}
+              style={{ width: "100vh", height: "100vh" ,borderRadius:"60px" }}
             />
           </Col>
         </Row>

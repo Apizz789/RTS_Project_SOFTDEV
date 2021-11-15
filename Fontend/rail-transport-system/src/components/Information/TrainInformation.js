@@ -5,16 +5,15 @@ import "./TrainInformation.css";
 
 function TrainInformation() {
     return (
-        <div className="Body_Info" style={{marginTop:"55px",width:"100%"}}>
-
-            <br></br>
-            <h1 align="center">Information</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"10px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+        <div className="Body_Info" style={{marginTop:"55px",width:"100%"}}>            
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
                 <marquee>
                 [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
                 </marquee>
-
-                </Row>
+            </Row>
+            <h1 align="center">Information</h1>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            </Row>
             <Container>
             
                 <Row style={{textAlign:"center"}}>
@@ -22,6 +21,14 @@ function TrainInformation() {
                     <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><br></br>
                     <marquee  behavior="alternate" scrollamount="2" style={{textAlign:"center", border:"2"}}>
                     1.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    2.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    3.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    4.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    5.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    6.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    7.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    8.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+
                     
                     
                    </marquee>
