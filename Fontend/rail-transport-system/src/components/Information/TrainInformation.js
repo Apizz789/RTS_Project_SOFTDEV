@@ -9,7 +9,7 @@ function TrainInformation() {
 
             <br></br>
             <h1 align="center">Information</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"20px",margin:"10px",backgroundColor:"#06a547",color:"#ffff"}}>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"10px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
                 <marquee>
                 [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-999 และช่องทางออนไลน์
                 </marquee>
