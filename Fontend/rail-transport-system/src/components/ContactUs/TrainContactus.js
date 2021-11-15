@@ -1,14 +1,68 @@
-import React from 'react'
+import React, {useState, useReducer } from 'react'
 import Image from 'react-bootstrap/Image'
+import axios from 'axios'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
-
+let submit = false
 function refreshPage(){
 	window.scrollTo(0,0);
+	
+
+
   }
+
+  
+
   
 
 export default function TrainContactus() {
+
+	const [values, setValues] = useState({
+        email: "",
+        name: "",
+        subject: "",
+        comment: ""
+	});
+
+
+
+	const handleChange = (event) => {
+        setValues({
+            ...values,
+            [event.target.name]: event.target.value,
+        });
+    }
+
+	const handleSubmits = () => {
+		// console.log('handleSubmit')
+		submit = true
+		console.log(submit)
+		if (submit === true){
+			// console.log("senttt")
+			// console.log(values.email)
+			// console.log(values.name)
+			// console.log(values.subject)
+			// console.log(values.comment)
+			axios.post('https://us-central1-soft-dev-tutorial.cloudfunctions.net/Reply', {
+				"Email": values.email,
+				"Name": values.name,
+				"Subject": values.subject,
+				"Comment": values.comment
+
+			})
+		
+		}
+	}
+
+	
+	
+
+
     return (
+
+
+		
+
+
         <div style={{marginTop:"55px"}}>
 		<br></br><h1>Contact Us</h1><br></br>
 <Container>
@@ -88,23 +142,23 @@ export default function TrainContactus() {
 				<Row style={{textAlign:"center"}}>
 					<Col  >
 					
-					<input type="text" placeholder="Full Name" className="contact-in-input" style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
+					<input type="text" value={values.name} name="name" required placeholder="Full Name" className="contact-in-input" onChange={handleChange} style={{borderRadius:"10px",width:"250px",margin:"10px"}}  />
 					<br/>
 
 					
-					<input type="text" placeholder="Email" className="contact-in-input"  style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
+					<input type="text" value={values.email} name="email" placeholder="Email" className="contact-in-input" onChange={handleChange} style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
 					<br/>
 
 					
-					<input type="text" placeholder="Subject" className="contact-in-input" style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
+					<input type="text" value={values.subject} name="subject" placeholder="Subject" className="contact-in-input" onChange={handleChange} style={{borderRadius:"10px",width:"250px",margin:"10px"}}/>
 					<br/>
 
 					</Col>
 					
 					<Col>
-					<textarea placeholder="Message" className="contact-in-textarea" defaultValue={""} style={{borderRadius:"10px",width:"300px",height:"125px",margin:"10px"}}/>
+					<textarea placeholder="Message" value={values.comment} name="comment" className="contact-in-textarea" defaultValue={""} onChange={handleChange} style={{borderRadius:"10px",width:"300px",height:"125px",margin:"10px"}}/>
 					<br/>
-					<Button variant="outline-success">Success</Button>{' '}
+					<Button variant="outline-success" type="submit" onClick={handleSubmits} >Success</Button>{' '}
 					</Col>
 
 

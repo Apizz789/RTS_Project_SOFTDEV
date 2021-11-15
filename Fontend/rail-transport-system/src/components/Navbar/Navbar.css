@@ -21,7 +21,7 @@
 }
 
 .navbar-logo {
-   color: rgb(209, 212, 212);
+  color: rgb(209, 212, 212);
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -81,7 +81,7 @@
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
-    position: relative;
+    position: center;
   }
 
   .nav-menu {

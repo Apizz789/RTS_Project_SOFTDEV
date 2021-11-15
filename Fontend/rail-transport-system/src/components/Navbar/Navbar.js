@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import '../Navbar/Navbar.css';
-import {Button} from 'react-bootstrap';
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 
 function refreshPage(){
   window.scrollTo(0,0);
@@ -29,9 +29,23 @@ function Navbar() {
     window.addEventListener('resize',showButton);
 
     return (
-        <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"9999"}}>
+        <div style={{display:"block",position: "fixed",width:"100vw",zIndex:"10"}}>
           <nav className='navbar'>
             <div className='navbar-container'>
+              <Container>
+                <Row>
+                  <Col>
+                  </Col>
+                  <Col>
+                    <Col>
+                    1
+                    </Col>
+                    <Col>
+                    2
+                    </Col>
+                  </Col>
+                </Row>
+              </Container>
               <Link to='/home' className='navbar-logo' onClick={closeMobileMenu} onClick={refreshPage}> 
                 <i className="fas fa-subway"></i>RTS
               </Link>
@@ -75,11 +89,16 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
-
+              
               <Link to='/register' className='btn-mobile' onClick={refreshPage}>
-                <Button variant="outline-light">SIGN UP</Button>
+                <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
               </Link>
-
+                    
+              <Link to='/filp-page' className='btn-mobile' onClick={refreshPage}>
+                <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}}>LOGOUT</Button>
+              </Link>
+              
+        
             </div>
           </nav>
         </div>
