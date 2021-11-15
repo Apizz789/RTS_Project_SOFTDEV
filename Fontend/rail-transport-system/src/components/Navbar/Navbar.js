@@ -3,12 +3,31 @@ import {Link,useHistory} from 'react-router-dom';
 import '../Navbar/Navbar.css';
 import {useCookies} from 'react-cookie'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
+import axios from "axios";
 
-
+console.log("Kuy Pleum")
 
 function Navbar() {
+
+  const [logout,setLogout] = useState(false);
+
+  const [login_time, setLogin_time, removeLogin_time] = useCookies([
+    "login_time_tkn",
+  ]);
+
+  const [member_satistic_val, setMember_satistic_val] = useState({
+    username: "",
+    Login_Date: "",
+    Logout_Date: "",
+  });
+
     let history = useHistory()
     const [login_state, setLogin_state, removeLogin_state] = useCookies(['login_token'])
+    const [username_cookie, setUsername_cookie, removeUsername_cookie] = useCookies([
+      'username_tkn',
+    ]);
+    const [cookies, setCookie, removeCookie] = useCookies(['token']);
+
     const [click,setClick]= useState(false);
     const [button,setButton]=useState(true);
 
@@ -26,11 +45,39 @@ function Navbar() {
             setButton(true);
         }
     };
-
+    const d = new Date();
     const handleLogout = () => {
-      removeLogin_state(['login_token'])
-
+      setMember_satistic_val({
+        ...member_satistic_val,
+        Logout_Date: d
+      });
+      setLogout(true)
   }
+    if (logout === true){
+      axios
+              .post(
+                "https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day",
+                {
+                  username: username_cookie['username_tkn'],
+                  Login_Date: login_time['login_time_tkn'],
+                  Logout_Date:d
+                }
+              )
+              .then((response) => {
+                console.log(response);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+            console.log("logout");
+
+      removeLogin_state(['login_token'])
+      removeUsername_cookie(['username_tkn'])
+      removeCookie(['username_tkn'])
+
+      setLogout(false)
+
+    }
 
     useEffect(()=>{
       showButton()

@@ -8,10 +8,8 @@ import { Button, Form, Row, Col } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
-import Confirm from "../Confirm/Confirm";
 import { Link } from "react-router-dom";
 let submit = false;
-let login = false;
 
 function TrainRegister() {
   const [login_state, setLogin_state, removeLogin_state] = useCookies([
@@ -20,6 +18,11 @@ function TrainRegister() {
   const [username_cookie, setUsername_cookie, removeUsername_cookie] = useCookies([
     "username_tkn",
   ]);
+
+  const [login_time, setLogin_time, removeLogin_time] = useCookies([
+    "login_time_tkn",
+  ]);
+
 
   useEffect(() => {
     if(login_state["login_token"]==1){
@@ -33,12 +36,6 @@ function TrainRegister() {
     setIsFlipped(!isFlipped);
   };
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-
-  const [member_satistic_val, setMember_satistic_val] = useState({
-    username: "",
-    Login_Date: "",
-    Logout_Date: "",
-  });
 
   const [values, setValues] = useState({
     fname: "",
@@ -249,35 +246,16 @@ function TrainRegister() {
         InvPwd = false;
         if (fetchedResult[key].status === "Active") {
           if (!login_errors.login_username && !login_errors.login_password) {
+            
             const d = new Date();
-            setMember_satistic_val({
-              username: values.login_username,
-              Login_Date: d,
-            });
-            login = true;
-          }
 
-          if (login === true) {
+            console.log("login");
             setLogin_state(["login_token"], 1);
             setUsername_cookie(["username_tkn"],values.login_username)
-            axios
-              .post(
-                "https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day",
-                {
-                  username: member_satistic_val.username,
-                  Login_Date: member_satistic_val.Login_Date,
-                }
-              )
-              .then((response) => {
-                console.log(response);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-            console.log("login");
-
-            login = false;
+            setLogin_time(["login_time_tkn"],d)
           }
+
+          
         } else {
           if (values.login_username && values.login_password) {
             setlogin_Errors({
@@ -313,8 +291,6 @@ function TrainRegister() {
 
   const [show, setShow] = useState(false);
 
-  const ConditionalLink = ({ children, to, condition }) =>
-    !!condition && to ? <Link to={to}>{children}</Link> : <>{children}</>;
 
   return (
     <div className="Body_Regis" style={{ marginTop: "50px" }}>
