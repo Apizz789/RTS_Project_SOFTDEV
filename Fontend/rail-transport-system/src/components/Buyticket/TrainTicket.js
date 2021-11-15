@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Tab,
     Tabs,
@@ -15,11 +15,35 @@ import { UserContextSTic } from "./UseContextSourceTic";
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
 
+
 function TrainTicket() {
     const { clickSTic , setclickSTic } = useContext(UserContextSTic);
+    const [ Count , setCount ] = useState(0)
     //const { clickDTic , setclickDTic } = useContext(UserContextD);
+    const DropdownItem =()=>{
+        return(
+            <div>
+                {
+                [1,2,3,4,5,6,7,8,9,10].map((item) => (
+                <Dropdown.Item key={item} onClick={()=>{setCount(item)}}>
+                     {item}
+                 </Dropdown.Item>
+                ))
+                }
+            </div>
+        )
+    
+    }
     return (
         <div style={{marginTop:"55px",width:"100%"}}>
+         {/* <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+                <marquee>
+                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
+                </marquee>
+            </Row> */}
+            <h1 align = "center">Ticket</h1>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            </Row>
             
             <Row className="text-center">
                 <Col>
@@ -42,46 +66,19 @@ function TrainTicket() {
                         สถานีปลายทาง
                     </Button>
                 </Col>
-                <Row className="text-center">
-                    <Col>
-                    <Dropdown>
+                <Row style={{display:"flex", justifyContent:"center" ,alignItems:"center"}}>
+                    <h1 style={{width:"200px" }}>จำนวนตั๋ว</h1>
+                    <Dropdown style={{width: "150px"}}>
                         <Dropdown.Toggle variant="success">
-                            จำนวนตั๋ว
+                            {
+                                Count? Count:"จำนวนตั๋ว"
+                            }
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item href="#">
-                            1
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            2
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            3
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            4
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            5
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            6
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            7
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            8
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            9
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">
-                            10
-                        </Dropdown.Item>
+                            <DropdownItem/>
                         </Dropdown.Menu>
                     </Dropdown>
-                    </Col>
+                   
                 </Row>
                 <Row className="text-center">
                     <Col>
