@@ -9,11 +9,7 @@ function refreshPage(){
 
 
   }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-
+  
 export default function TrainContactus() {
 
 	const [values, setValues] = useState({
