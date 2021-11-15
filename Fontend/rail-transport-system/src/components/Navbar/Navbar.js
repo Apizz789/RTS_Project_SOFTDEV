@@ -76,10 +76,13 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
-              
-              <Link to='/register' className='btn-mobile' onClick={refreshPage}>
+              if (false){
+                <Link to='/register' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
               </Link>
+
+              }
+              
                     
               <Link to='/filp-page' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}}>LOGOUT</Button>
