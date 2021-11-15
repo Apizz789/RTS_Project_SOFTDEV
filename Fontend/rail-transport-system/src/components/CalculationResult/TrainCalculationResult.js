@@ -3,7 +3,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import { UserContextS } from "../Calculate/UseContextSource";
 import { UserContextD } from "../Calculate/UseContextDest";
 import { useContext } from "react";
-import Button from 'react-bootstrap/Button'
+import {Button,Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
 import { graph, dijkstra } from './distance_cal.js';
@@ -23,13 +23,17 @@ function TrainCalculationResult() {
       setclickD("Please Select Dest")
   }
     return (
-        <div style={{marginTop:"55px"}}>
-            <br></br>
-            <br></br>
+        <div style={{marginTop:"55px"}}>  
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+                <marquee>
+                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-9999 และช่องทางออนไลน์ info@railtransportsystems.com
+                </marquee>
+            </Row>
             <h1 align = "center">CalculationResult ====</h1>
-            <br></br>
-            <br></br>
-            <br></br>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            
+            </Row>
+            
             <br></br>
             <br></br>
             <br></br>
@@ -43,6 +47,7 @@ function TrainCalculationResult() {
             {/* <h6 align="center">อะไร : {dijkstra(graph, src, dest)}</h6> */}
            
             <Link to="/home">
+            <br></br>
               <Button
                 onClick={() => handleSetdefault()}
                 variant="outline-success"
@@ -52,6 +57,7 @@ function TrainCalculationResult() {
                 เสร็จสิ้นการทำงาน
               </Button>
             </Link>
+            <br></br>
             <br></br>
             <Spinner animation="grow" variant="info" />
             <Spinner animation="grow" variant="info" />
