@@ -1,14 +1,6 @@
-// import { UserContextS } from "./UseContextSource";
-// import { UserContextD } from "./UseContextDest";
-// import { useContext } from "react";
-
-// const { clickS , setclickS } = useContext(UserContextS);
-// const { clickD , setclickD } = useContext(UserContextD);
-
-
 let V = 240;
 
-function dijkstra(graph, src) {
+export function dijkstra(graph, src, dest) {
     let cost = new Array(V);
     let distance = new Array(V);
     let pred = new Array(V);
@@ -17,17 +9,15 @@ function dijkstra(graph, src) {
     let j = 0;
     let srcstation = 0;
 
+    // document.write(src + "<br>" + dest + "<br>");
 
     for (let i = 0; i < V; i++) {
         if (src == codeofgraph[i]) {
             srcstation = i;
-            // document.write(srcstation);
+            // document.write(srcstation + "<br>");
             break;
         }
     }
-
-    // document.write(srcstation);
-
 
     for (let i = 0; i < V; i++) {
         cost[i] = new Array(V);
@@ -70,29 +60,25 @@ function dijkstra(graph, src) {
         count++;
     }
 
-    let tmp = "";
-    let dest = "";
+
     let result = "";
     let station_count = new Array(V).fill(0);
     let station = 0;
     let transfer_count = 0;
-    let price = 0;
     for (let i = 0; i < V; i++) {
         if (i != srcstation) {
-            // lst[i] = lst[i].concat("<br>Path = ");
             lst[i] = lst[i].concat(codeofgraph[i]);
-            // lst[i].push(codeofgraph[i]);
             j = i;
             do {
                 j = pred[j];
                 lst[i] = lst[i].concat("<-");
                 lst[i] = lst[i].concat(codeofgraph[j]);
-                // lst[i].push(codeofgraph[j]);
                 station_count[i]++;
             }
             while (j != srcstation);
 
-            if (i == codeofgraph.indexOf(deststation)) {
+            if (i == codeofgraph.indexOf(dest)) {
+                // document.write(lst[i] + "<br>Station : " + station_count[i] + "<br>");
                 station = station_count[i] + 1;
                 for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
@@ -102,66 +88,60 @@ function dijkstra(graph, src) {
                         result += '->';
                     }
                 }
-                document.write("<br>The Shortest path from station " + codeofgraph[srcstation] + " to " + deststation + " station is : ");
-                document.write(result);
-                document.write("<br>Station Count : " + station + "<br>Transfer Count : " + transfer_count);
-                document.write("<br>Price : " + price_calculation(result, station));
-                break;
+                // document.write("<br>The Shortest path from station " + src + " to " + dest + " station is : ");
+                // document.write(result);
+                // document.write("<br>Station Count : " + station + "<br>Transfer Count : " + transfer_count);
+                // document.write("<br>Price : " + price_calculation(result, station));
+                // break;
+                return result;
             }
         }
     }
 }
 
-function price_calculation(result, num) {
+export function price_calculation(result, num) {
     var sum = 0;
     var bts_count = 0;
     var mrt_count = 0;
     var arl_count = 0;
 
     for (var i = 0; i < num; i++) {
-        first_con = brand[codeofgraph.indexOf(result.split("->")[i])];
-        if (i != num - 1)
-            second_con = brand[codeofgraph.indexOf(result.split("->")[i + 1])];
-
         if (i != num - 1) {
-            if (first_con == second_con && first_con == 'BTS') {
+            if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
                 bts_count++;
             }
-            else if (first_con != second_con && first_con == 'BTS') {
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
                 bts_count++;
                 sum += bts_price_rate(bts_count);
                 bts_count = 0;
             }
-            else if (first_con == second_con && first_con == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
                 mrt_count++;
             }
-            else if (first_con != second_con && first_con == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
                 mrt_count++;
                 sum += mrt_price_rate(mrt_count);
                 mrt_count = 0;
             }
-            else if (first_con == second_con && first_con == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
                 mrt_count++;
             }
-            else if (first_con != second_con && first_con == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
                 arl_count++;
                 sum += arl_price_rate(arl_count);
                 arl_count = 0;
             }
         }
         else {
-            if (bts_count > 0)
-            {
+            if (bts_count > 0) {
                 bts_count++;
                 sum += bts_price_rate(bts_count);
             }
-            else if (mrt_count > 0)
-            {
+            else if (mrt_count > 0) {
                 mrt_count++;
                 sum += mrt_price_rate(mrt_count);
             }
-            else if (arl_count > 0)
-            {
+            else if (arl_count > 0) {
                 arl_count++;
                 sum += arl_price_rate(arl_count);
             }
@@ -796,8 +776,6 @@ graph[97][227] = 1;
 
 
 
-
-
 // CEN, W1, BL01-L
 let codeofgraph = ['N01', 'N02', 'N03', 'N04', 'N05', 'N06', 'N07', 'N08', 'N09', 'N10', 'N11'
     , 'N12', 'N13', 'N14', 'N15', 'N16', 'N17', 'N18', 'N19', 'N20'
@@ -873,15 +851,29 @@ let nameofgraph = ['ราชเทวี', 'พญาไท', 'อนุสา�
 
 
 
+
 // let x = codeofgraph.length;
 // let y = brand.length;
 // let z = nameofgraph.length;
 // document.write(x + ' ' + y + ' ' + z);
 // document.write("<br>" + codeofgraph[239] + " " + nameofgraph[239] + "<br>");
 
-let sourcestation = 'N01';
-let deststation = 'N10';
+
+
+// let sourcestation = '';
+// let deststation = '';
 
 let lst = new Array(V).fill("");
 
-dijkstra(graph, sourcestation);
+// dijkstra(graph, sourcestation, deststation);
+
+
+// module.exports = { graph };
+// export { sourcestation };
+// export { deststation };
+export { graph };
+// export { dijkstra };
+// module.exports = { deststation };
+// module.exports = { codeofgraph };
+// module.exports = { brand };
+// module.exports = { nameofgraph };

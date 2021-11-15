@@ -6,6 +6,8 @@ import { useContext } from "react";
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 
+import { graph, dijkstra } from './distance_cal.js';
+
 function refreshPage(){
 	window.scrollTo(0,0);
   }
@@ -13,6 +15,8 @@ function refreshPage(){
 function TrainCalculationResult() {
     const { clickS , setclickS } = useContext(UserContextS);
     const { clickD , setclickD } = useContext(UserContextD);
+    let src = clickS.split(" ")[0];
+    let dest = clickD.split(" ")[0];
 
     const handleSetdefault =()=>{
       setclickS("Please Select Source")
@@ -32,9 +36,11 @@ function TrainCalculationResult() {
             <div className="result" style={{textAlign:"center"}}>
             <h2 align="center">สถานีต้นทาง   : {clickS}</h2>
             <h2 align="center">สถานีปลายทาง : {clickD}</h2>
-            <h4 align="center">เส้นทางที่คำนวณได้ : ______________________________</h4>
+            <h4 align="center">เส้นทางที่คำนวณได้ : {dijkstra(graph, src, dest)}</h4>
             <h4 align="center">เวลาที่คำนวณได้ : ______________________________</h4>
             <h5 align="center">ราคาที่คำนวณได้ : ______________________________</h5>
+            {/* <h6 align="center">อะไร : {clickS.split(" ")[0]}</h6> */}
+            {/* <h6 align="center">อะไร : {dijkstra(graph, src, dest)}</h6> */}
            
             <Link to="/home">
               <Button
