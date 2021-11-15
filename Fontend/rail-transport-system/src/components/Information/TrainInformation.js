@@ -9,9 +9,9 @@ function TrainInformation() {
 
             <br></br>
             <h1 align="center">Information</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"20px",margin:"10px",backgroundColor:"#06a547"}}>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"10px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
                 <marquee>
-                สวัสดีการเคหะ สวัสดีการเคหะ สวัสดีการเคหะ สวัสดีการเคหะ สวัสดีการเคหะ
+                [ RTS Rail Transport System ] : ทาง RTS ขอยินดีต้อนรับทุกท่านที่เข้าใช้บริการ หากท่านมีคำถามสามารถติดต่อเราได้ที่ 02-999-999 และช่องทางออนไลน์
                 </marquee>
 
                 </Row>
@@ -20,6 +20,11 @@ function TrainInformation() {
                 <Row style={{textAlign:"center"}}>
                     <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
                     <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><br></br>
+                    <marquee  behavior="alternate" scrollamount="2" style={{textAlign:"center", border:"2"}}>
+                    1.แจ้งเตือน พบการโจมตีช่องโหว่ใน Apache  <br></br>
+                    
+                    
+                   </marquee>
                     </Col>
                     <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#fad4ae"}}>
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><br></br>
