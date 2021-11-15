@@ -1,6 +1,6 @@
 import React from 'react'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
-
+import { Link } from 'react-router-dom';
 function TrainPayment() {
     function refreshPage(){
         window.scrollTo(0,0);
@@ -24,9 +24,19 @@ function TrainPayment() {
                    <h3 align = "left">ราคา:________________________________</h3>
                    <h3 align = "left">วันที่ซื้อ:________________________________</h3>
                    <h3 align = "left" >วันที่หมดอายุ:________________________________</h3>
-                   <Button variant="outline-warning" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>แก้ไข</Button>
+                    
+                    <Link to="/ticket">
+                    <Button variant="outline-warning" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>แก้ไข</Button>
+                    </Link>
+
+                    <Link to="/info">
                     <Button variant="outline-success" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยืนยัน</Button>
+                    </Link>
+
                     <Button variant="outline-danger" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยกเลิก</Button>
+  
+
+
                     </Col>
                 
                 </Col>
