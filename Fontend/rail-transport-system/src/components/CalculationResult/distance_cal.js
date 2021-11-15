@@ -8,6 +8,7 @@ export function dijkstra(graph, src, dest) {
     let distance = new Array(V);
     let pred = new Array(V);
     let visited = new Array(V);
+    let lst = new Array(V).fill("");
     let nextnode = 0;
     let j = 0;
     let srcstation = 0;
@@ -82,14 +83,14 @@ export function dijkstra(graph, src, dest) {
             while (j != srcstation);
 
             if (i == codeofgraph.indexOf(dest)) {
-                // document.write(lst[i] + "<br>Station : " + station_count[i] + "<br>");
                 station = station_count[i] + 1;
+                result += '\n';
                 for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
                     if (l != 0) {
                         if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l - 1][0])
-                            transfer_count++;
-                        result += '->\n';
+                        transfer_count++;
+                        result += '\n';
                     }
                 }
                 // document.write("<br>The Shortest path from station " + src + " to " + dest + " station is : ");
@@ -103,6 +104,16 @@ export function dijkstra(graph, src, dest) {
     }
 }
 
+// function inverse_string(stR, num)
+// {
+//     // var temp = '';
+//     // for(let i=num-1 ; i>=0 ; i--)
+//     // {
+//     //     temp += stR.split("-<")[i];
+//     // }
+//     document.write('55555');
+// }
+
 function price_calculation(result, num) {
     var sum = 0;
     var bts_count = 0;
@@ -111,26 +122,26 @@ function price_calculation(result, num) {
 
     for (var i = 0; i < num; i++) {
         if (i != num - 1) {
-            if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+            if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'BTS') {
                 bts_count++;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'BTS') {
                 bts_count++;
                 sum += bts_price_rate(bts_count);
                 bts_count = 0;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'MRT') {
                 mrt_count++;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'MRT') {
                 mrt_count++;
                 sum += mrt_price_rate(mrt_count);
                 mrt_count = 0;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'ARL') {
                 mrt_count++;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'ARL') {
                 arl_count++;
                 sum += arl_price_rate(arl_count);
                 arl_count = 0;
@@ -219,27 +230,26 @@ function arl_price_rate(arl_count) {
         return 45;
 }
 
-function time_calculation(result, num)
-{
+function time_calculation(result, num) {
     var sum = 0.0;
     for (var i = 0; i < num; i++) {
         if (i != num - 1) {
-            if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+            if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'BTS') {
                 sum += 2.5;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'BTS') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'BTS') {
                 sum += 2.5;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'MRT') {
                 sum += 2.0;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'MRT') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'MRT') {
                 sum += 2.0;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] == brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'ARL') {
                 sum += 3.5;
             }
-            else if (brand[codeofgraph.indexOf(result.split("->")[i])] != brand[codeofgraph.indexOf(result.split("->")[i + 1])] && brand[codeofgraph.indexOf(result.split("->")[i])] == 'ARL') {
+            else if (brand[codeofgraph.indexOf(result.split('\n')[i])] != brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'ARL') {
                 sum += 3.5;
             }
         }
@@ -885,7 +895,7 @@ let nameofgraph = ['ราชเทวี', 'พญาไท', 'อนุสา�
 // let sourcestation = '';
 // let deststation = '';
 
-let lst = new Array(V).fill("");
+
 
 // dijkstra(graph, sourcestation, deststation);
 
