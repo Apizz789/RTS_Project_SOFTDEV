@@ -5,7 +5,7 @@ import {useCookies} from 'react-cookie'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 import axios from "axios";
 
-
+console.log("Kuy Pleum")
 
 function Navbar() {
 
