@@ -3,22 +3,24 @@ import {useCookies} from 'react-cookie'
 import {useParams} from 'react-router-dom'
 import { Link } from "react-router-dom";
 let verify = false
-let verify_flag = false
-function Confirm() {
-    const [cookies, setCookie, removeCookie] = useCookies(['token'])
-    const {confirmcode} = useParams()
-    console.log(confirmcode)
-    console.log(cookies['token'])
 
-    if (cookies['token'] === confirmcode) {
+
+function Confirm() {
+  const [cookies, setCookie, removeCookie] = useCookies(['token'])
+  const {confirmcode} = useParams()
+  console.log(confirmcode)
+  console.log(cookies['token'])
+
+  
+  if (cookies['token'] === confirmcode) {
     console.log("Verified")
     verify = true
-    verify_flag = true
     }
     else{
+      verify = false
       console.log("Error")
     }
-    console.log(verify)
+    
 
   return (
     
@@ -35,8 +37,6 @@ function Confirm() {
     
   );
 }
-if(verify_flag = true){
-    verify = true
-}
+
 export {verify};
 export default Confirm;
