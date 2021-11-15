@@ -22,16 +22,25 @@ import DestProvider from './components/Calculate/UseContextDest';
 import SelectStationDest from './components/pages/SelectStationDest';
 import Test from './components/pages/Test';
 import Flippage from './components/pages/Flippage';
+<<<<<<< Updated upstream
 import SelectSourceTic from './components/pages/SelectSourceTic';
 import SourceTicProvider from './components/Buyticket/UseContextSourceTic'
 import Confirm from './components/Confirm/Confirm';
 
+=======
+import SelectSourceTic from './components/pages/SelectSourceForTic';
+import DestTicProvider from './components/Buyticket/UseContextSourceTic'
+>>>>>>> Stashed changes
 function App() {
 
   return (
     <SourceProvider>
     <DestProvider>
+<<<<<<< Updated upstream
     <SourceTicProvider>
+=======
+    <DestTicProvider>
+>>>>>>> Stashed changes
     <Router>
       <Navbar />
       <br/>
@@ -61,7 +70,11 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+<<<<<<< Updated upstream
     </SourceTicProvider>
+=======
+    </DestTicProvider>
+>>>>>>> Stashed changes
     </DestProvider>
     </SourceProvider>
   );

@@ -32,7 +32,11 @@ const SelectSourceforTic = () => {
   }
   
   return (
+<<<<<<< Updated upstream
     <div style={{ marginTop: "px", width: "100%" }}>
+=======
+    <div style={{ marginTop: "30px", width: "100%" }}>
+>>>>>>> Stashed changes
       <br></br>
       <h1 align="center">เลือกสถานี</h1>
       <br></br>
@@ -102,7 +106,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -143,7 +151,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -174,7 +186,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -226,7 +242,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -283,7 +303,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -349,7 +373,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -409,7 +437,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -465,7 +497,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -476,10 +512,17 @@ const SelectSourceforTic = () => {
         </Tab>
 
         <Tab eventKey="MrtRed" title="MRT สายสีแดง">
+<<<<<<< Updated upstream
           <div style={{ textAlign: "center",columnCount:"5" }}>
             {[
               "RN10 รังสิต\nRangsit",
               "RN09 หลักหก\nLak Hok",
+=======
+          <div style={{ textAlign: "center",columnCount:"4" }}>
+            {[
+              "RN10 รังสิต\nRangsit",
+              "RN09 หลักหก\n(มหาวิทยาลัยรังสิต)\nLak Hok (Rangsit University)",
+>>>>>>> Stashed changes
               "RN08 ดอนเมือง\nDon Mueang",
               "RN07 การเคหะ\nKan Kheha",
               "RN06 หลักสี่\nLak Si",
@@ -502,7 +545,11 @@ const SelectSourceforTic = () => {
               <Modal.Header closeButton>Modal Head Part</Modal.Header>
               <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
               <Modal.Footer>
+<<<<<<< Updated upstream
                 <Link to="/calculate">
+=======
+                <Link to="/ticket">
+>>>>>>> Stashed changes
                   <Button variant="secondary" onClick={handleClose}>
                     OK
                   </Button>
@@ -528,7 +575,11 @@ const SelectSourceforTic = () => {
                 key={index}
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
+<<<<<<< Updated upstream
                 style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre', margin: '10px'}}
+=======
+                style={{marginBottom:"5px",width:"230px",whiteSpace: 'pre'}}
+>>>>>>> Stashed changes
               >
                 {item}
               </Button>
