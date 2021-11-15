@@ -69,7 +69,7 @@ function TrainHistory() {
     
     
     return (
-        <div style={{marginTop:"55px",width:"100%"}}>
+        <div style={{marginTop:"px",width:"100%"}}>
             <h1>Rail Transport System</h1>
             <br/>
             <Container>
@@ -78,7 +78,8 @@ function TrainHistory() {
                             <Button style={{ borderRadius:"10px"}} onClick={onClickSearch}  variant="outline-primary" >Search</Button>
                 </div>
             </Container>
-            <div style={{ borderTop: "5px solid #7f7df9 ", marginTop:"20px",width:"100%"}}></div>
+            <br/>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}></Row>
             <br/>
             <h2 align="center">รายการสั่งซื้อล่าสุด</h2>
             
