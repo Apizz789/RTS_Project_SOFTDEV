@@ -16,7 +16,7 @@ import { UserContextSTic } from "./UseContextSourceTic";
 import { useContext, useState } from "react";
 
 const SelectSourceforTic = () => {
-  const { setclickSTic } = useContext(UserContextSTic);
+  const { clickSTic , setclickSTic } = useContext(UserContextSTic);
  
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -31,6 +31,8 @@ const SelectSourceforTic = () => {
     return <div>{text}</div>;
   }
   
+  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickSTic}</h1> 
+
   return (
     <div style={{ marginTop: "30px", width: "100%" }}>
       <br></br>
@@ -99,8 +101,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -140,8 +142,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -171,8 +173,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
              <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -223,8 +225,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -280,8 +282,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -346,8 +348,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -406,8 +408,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
              <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -462,8 +464,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -499,8 +501,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
@@ -534,8 +536,8 @@ const SelectSourceforTic = () => {
               </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>

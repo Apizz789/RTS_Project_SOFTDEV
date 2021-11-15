@@ -16,7 +16,7 @@ import StationBlue, { UserContextD } from "./UseContextDest";
 import { useContext, useState } from "react";
 
 const SelectforCalDest = () => {
-  const { setclickD } = useContext(UserContextD);
+  const { clickD , setclickD } = useContext(UserContextD);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -25,6 +25,7 @@ const SelectforCalDest = () => {
     setclickD(item);
   };
 
+  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickD}</h1> 
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>
     <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
@@ -98,8 +99,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -139,8 +140,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -170,8 +171,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
            <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -222,8 +223,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -279,8 +280,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
          <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -345,8 +346,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -405,8 +406,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
            <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -461,8 +462,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -498,8 +499,8 @@ const SelectforCalDest = () => {
             </Button>
           ))}
           <Modal show={show} onHide={handleClose} centered>
-            <Modal.Header closeButton>Modal Head Part</Modal.Header>
-            <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+            <Modal.Header closeButton>Rail Transport System</Modal.Header>
+            <Modal.Body>{ShowModal}</Modal.Body>
             <Modal.Footer>
               <Link to="/calculate">
                 <Button variant="secondary" onClick={handleClose}>
@@ -533,8 +534,8 @@ const SelectforCalDest = () => {
             </Button>
             ))}
             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Modal Head Part</Modal.Header>
-              <Modal.Body>คุณต้องการที่จะเลือกสถานี</Modal.Body>
+              <Modal.Header closeButton>Rail Transport System</Modal.Header>
+              <Modal.Body>{ShowModal}</Modal.Body>
               <Modal.Footer>
                 <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
