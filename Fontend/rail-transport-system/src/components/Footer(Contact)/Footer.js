@@ -9,7 +9,6 @@ function refreshPage(){
 function Footer() {
   return (
     <div className='footer-container'>
-      <img src='images/trainloop.gif' style={{width: "100%",height: '80px'}} draggable="false" dragstart="false" class="unselectable"></img>
       <br/>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>

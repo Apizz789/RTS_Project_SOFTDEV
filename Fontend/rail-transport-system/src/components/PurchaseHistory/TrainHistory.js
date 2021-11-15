@@ -69,31 +69,39 @@ function TrainHistory() {
     
     
     return (
-        <div style={{marginTop:"60px",width:"100%"}}>
+        <div style={{marginTop:"55px",width:"100%"}}>
             <h1>Rail Transport System</h1>
+            <br/>
             <Container>
                 <div  style={{display:"flex",justifyContent:"space-between",width:"45%",margin:"auto"}}>
-                            <Form.Control value={numberOrder}   onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
-                            <Button onClick={onClickSearch}  variant="outline-primary" >Search</Button>
+                            <Form.Control style={{ borderRadius:"10px",marginRight:"10px"}} value={numberOrder}   onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
+                            <Button style={{ borderRadius:"10px"}} onClick={onClickSearch}  variant="outline-primary" >Search</Button>
                 </div>
             </Container>
-            <div style={{ borderTop: "5px solid #7f7df9 ", marginTop:  100,width:"100%"}}></div>
-            <h2>รายการสั่งซื้อล่าสุด</h2>
-           <Table striped  hover >
-                <thead>
-                    <tr>
-                        <th>หมายเลขคำสั่งซื้อ</th>
-                        <th>สถานีต้นทาง</th>
-                        <th>สถานีปลายทาง</th>
-                        <th>เวลา</th>
-                    </tr>
-                </thead>
+            <div style={{ borderTop: "5px solid #7f7df9 ", marginTop:"20px",width:"100%"}}></div>
+            <br/>
+            <h2 align="center">รายการสั่งซื้อล่าสุด</h2>
+            
+                <div style={{ width: "100vh",textAlign: "center",backgroundColor:"#F7F3EE",borderRadius:"10px",marginLeft:"25%",borderStyle: "solid",borderWidth: "20px",borderColor:"#8FB1EB"}}>
+                <Table >
+                    <thead>
+                        <tr>
+                            <th style={{ width: "150px"}}>หมายเลขคำสั่งซื้อ</th>
+                            <th>สถานีต้นทาง</th>
+                            <th>สถานีปลายทาง</th>
+                            <th>เวลา</th>
+                        </tr>
+                    </thead>
 
-                {showAll ? ShowHistory:null}
-                {isSearch ? ShowSearch:null}
-                
-                
-            </Table>
+                    {showAll ? ShowHistory:null}
+                    {isSearch ? ShowSearch:null}
+                    
+                    
+                </Table>
+                </div>
+            
+            
+           
         </div>
     )
 }
