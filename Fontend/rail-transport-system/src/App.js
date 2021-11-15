@@ -66,7 +66,6 @@ function App() {
         <Route path='/Confirm' exact component ={Confirm}/>
         <Route path="/Confirm/:confirmcode" component={Confirm} />
         <Route path='/payment' exact component ={Payment}/>
-
       </Switch>
       <img src='images/trainloop.gif' style={{width: "100%",height: '80px'}} draggable="false" dragstart="false" class="unselectable"></img>
       <Footer />

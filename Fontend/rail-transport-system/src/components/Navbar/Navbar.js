@@ -16,8 +16,7 @@ function Navbar() {
     const closeMobileMenu = ()=>setClick(false);
 
     function refreshPage(){
-      // scrollto(0,0)
-      history.push("/")
+      window.scrollTo(0,0)
     }
 
     const showButton=()=>{

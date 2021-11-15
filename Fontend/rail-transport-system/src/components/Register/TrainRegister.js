@@ -11,10 +11,12 @@ import {useCookies} from 'react-cookie'
 import Confirm from '../Confirm/Confirm'
 import { Link } from "react-router-dom";
 let submit = false
+
 let login = false
 let loginsuccess = false
 function TrainRegister() {
   const [login_state, setLogin_state, removeLogin_state] = useCookies(['login_token'])
+  const [login, setLogin] = useState(false)
   const [verify, setVerify] = useState(false)
     const [isFlipped, setIsFlipped] = useState(false);
     const handleClick = () => {
@@ -212,7 +214,7 @@ function TrainRegister() {
                         "username": values.login_username,
                         "Login_Date": d
                     })
-                    login = true
+                    setLogin(true)
                 }
 
                 if (login === true){
@@ -224,9 +226,7 @@ function TrainRegister() {
                                         .then(response => {console.log(response)})
                                         .catch(error => { console.log(error) })
                                 console.log("login")
-                                loginsuccess = true
-                                
-                    login = false
+                    setLogin(false)
 
                 }
               }
@@ -266,8 +266,10 @@ function TrainRegister() {
         if (!InvUn && !InvPwd) {
             setlogin_Errors(validation_signin(values)
             );
+            
         }
         makeGetRequest();
+        window.location.reload()
 
     }
 
@@ -561,7 +563,8 @@ function TrainRegister() {
                         <br/>
 
                         
-                        <Button onClick={handleLogin} style={{ margin: "10px",borderRadius: "10px"}} >Login
+                        <Button onClick={handleLogin} style={{ margin: "10px",borderRadius: "10px"}} >
+                          Login
                         </Button>
                         
                       </form>
