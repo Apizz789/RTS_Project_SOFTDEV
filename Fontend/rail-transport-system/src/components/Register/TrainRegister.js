@@ -17,6 +17,10 @@ function TrainRegister() {
   const [login_state, setLogin_state, removeLogin_state] = useCookies([
     "login_token",
   ]);
+  const [username_cookie, setUsername_cookie, removeUsername_cookie] = useCookies([
+    "username_tkn",
+  ]);
+
   useEffect(() => {
     if(login_state["login_token"]==1){
       setLogin_state(["login_token"], 2);
@@ -255,6 +259,7 @@ function TrainRegister() {
 
           if (login === true) {
             setLogin_state(["login_token"], 1);
+            setUsername_cookie(["username_tkn"],values.login_username)
             axios
               .post(
                 "https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day",
