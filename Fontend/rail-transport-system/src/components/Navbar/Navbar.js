@@ -65,7 +65,7 @@ function Navbar() {
                     Services
                   </Link>
                 </li>
-                <li className='navbar-item'>
+                {login_state['login_token'] ?(<li className='navbar-item'>
                   <Link
                     to='/ticket'
                     className='nav-links'
@@ -74,7 +74,17 @@ function Navbar() {
                   >
                     Ticket
                   </Link>
-                </li>
+                </li>) :
+                (<li className='navbar-item'>
+                  <Link
+                    to='/calculate'
+                    className='nav-links'
+                    onClick={closeMobileMenu}
+                    onClick={refreshPage}
+                  >
+                    Calculate
+                  </Link>
+                </li>)}
                 <li className='navbar-item'>
                   <Link
                     to='/contact'
@@ -87,7 +97,7 @@ function Navbar() {
                 </li>
               </ul>
               
-              {login_state['login_token'] ?(<Link to='/filp-page' className='btn-mobile' onClick={refreshPage}>
+              {login_state['login_token'] ?(<Link to='/home' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-danger" style={{width:"100px",margin:"5px"}} onClick= {handleLogout}>LOGOUT</Button>
               </Link>) : (<Link to='/register' className='btn-mobile' onClick={refreshPage}>
                 <Button  variant="outline-info" style={{width:"100px",margin:"5px"}}>LOGIN</Button>
