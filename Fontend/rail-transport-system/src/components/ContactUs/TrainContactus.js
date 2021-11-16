@@ -259,6 +259,7 @@ export default function TrainContactus() {
                       variant="outline-success"
                       type="submit"
                       onClick={handleSubmits}
+					  
                     >
                       Success
                     </Button>{" "}
