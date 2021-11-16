@@ -71,12 +71,13 @@ export default function TrainCalculate() {
   const history = useHistory();
   const { clickS, setclickS } = useContext(UserContextS);
   const { clickD, setclickD } = useContext(UserContextD);
-  const { show, setshow } = useState(false);
+
 
   const handleSetdefault = () => {
     setclickS("Please Select Sourrce :");
     setclickD("Please Select Sourrce :");
   };
+
   return (
     <div style={{ overflowX: "hidden", width: "100vw" }}>
       <Row>
@@ -143,10 +144,13 @@ export default function TrainCalculate() {
             </div>
             <Button
               onClick={() => {
-                if (!show)
-                history.push("/calculation-result");
+                if (clickS == "Please Select Source" || clickD == "Please Select Dest")
+                console.log("aimmmmmmmm")
+    
                 else
-                {}  
+                {
+                  history.push("/calculation-result");
+                }
               }}
               variant="outline-cal"
               size="lg"
