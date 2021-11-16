@@ -43,20 +43,19 @@ function TrainTicket() {
   };
   return (
     <div style={{ marginTop: "10px" }}>
-      <h1 align="center">Ticket</h1>
+      {/* <h1 align="center">Ticket</h1>
       <Row
         style={{
           borderRadius: "20px",
           width: "auto",
           height: "23px",
           margin: "1px",
-          backgroundColor: "#0C9EA8",
+          backgroundColor: "#2F2F35",
           color: "#ffff",
           fontsize: "20px",
           fontWeight: "bold",
         }}
-      ></Row>
-
+      ></Row> */}
       <Container>
         <Col></Col>
         <Row>
@@ -67,7 +66,7 @@ function TrainTicket() {
               width: "500px",
               height: "500px",
               margin: "10px",
-              backgroundColor: "#fed46e",
+              backgroundColor: "#F1B674",
             }}
           >
             <br></br>
@@ -108,7 +107,7 @@ function TrainTicket() {
             </Row>
 
             <div style={{ textAlign: "center",display :"flex", justifyContent:"center" }}>
-              <h1 style={{ width: "200px" }}>จำนวนตั๋ว</h1>
+            <h3 style={{marginInline:"10px" }}>จำนวนตั๋ว</h3>
               <div>
               <Dropdown>
                 <Dropdown.Toggle variant="success">
@@ -120,7 +119,7 @@ function TrainTicket() {
               </Dropdown>
               </div>
             </div>
-
+            <br/>
             <Row style={{ textAlign: "center" }}>
               <input
                 // className="inputlogin"
@@ -130,7 +129,7 @@ function TrainTicket() {
                 min="2021-11-17"
                 // max="2021-11-30"
                 placeholder="dd-mm-yyyy"
-                // style={{borderRadius: "10px", width: "20",fontSize=  "20"}}
+                style={{borderRadius: "10px", width: "200px",margin: "auto"}}
                 required
 
                 // value={values.DOB}
