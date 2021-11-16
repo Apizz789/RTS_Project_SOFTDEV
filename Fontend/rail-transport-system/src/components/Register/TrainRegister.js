@@ -358,7 +358,7 @@ function TrainRegister() {
               
               <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#a6e3e9",}}>
               2
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>
+              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>
               <Col>
                 <input
                           className="inputlogin"
@@ -369,7 +369,7 @@ function TrainRegister() {
                           required
                           value={values.fname}
                           onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px"}}
+                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.fname && <p className="error">{errors.fname}</p>}
                 </Col>
@@ -384,7 +384,7 @@ function TrainRegister() {
                           required
                           value={values.lname}
                           onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px"}}
+                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.lname && <p className="error">{errors.lname}</p>}
               </Col>
@@ -422,16 +422,15 @@ function TrainRegister() {
                         checked={gender === 'Female'}
                         onChange={handleRadio}
                         
+                        
                       />
                 </Col>
                 {errors.sex && <p className="error">{errors.sex}</p>}
               </Row>
 
-              <Row>d
-                
-              </Row>
+            
 
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>e
+              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>e
                 <Col>
                 <input
                         className="inputlogin"
@@ -441,7 +440,7 @@ function TrainRegister() {
                         required
                         value={values.username}
                         onChange={handleChange}
-                        style={{borderRadius: "10px",height:"40px"}}
+                        style={{borderRadius: "10px",height:"40px",width:"200px"}}
                       />
                       {errors.username && (
                         <p className="error">{errors.username}</p>
@@ -456,7 +455,7 @@ function TrainRegister() {
                           required
                           value={values.email}
                           onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px"}}
+                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.email && <p className="error">{errors.email}</p>}
                 </Col>
@@ -467,7 +466,7 @@ function TrainRegister() {
 
               </Row>
               
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>g
+              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>g
                 <Col>
                 <input
                             className="inputlogin"
@@ -477,7 +476,7 @@ function TrainRegister() {
                             required
                             value={values.password}
                             onChange={handleChange}
-                            style={{borderRadius: "10px",height:"40px"}}
+                            style={{borderRadius: "10px",height:"40px",width:"200px"}}
                           />
                           {errors.password && (
                             <p className="error">{errors.password}</p>
@@ -492,7 +491,7 @@ function TrainRegister() {
                             required
                             value={values.repeat_password}
                             onChange={handleChange}
-                            style={{borderRadius: "10px",height:"40px"}}
+                            style={{borderRadius: "10px",height:"40px",width:"200px"}}
                           />
                           {errors.repeat_password && (
                             <p className="error">{errors.repeat_password}</p>
@@ -504,7 +503,7 @@ function TrainRegister() {
               <Row>h
               </Row>
               
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>i
+              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>i
                   
                   <Col>
                     <input
@@ -516,7 +515,7 @@ function TrainRegister() {
                           required
                           value={values.tel}
                           onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px"}}
+                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.tel && <p className="error">{errors.tel}</p>}
                   </Col>
@@ -548,8 +547,8 @@ function TrainRegister() {
                           style={{  borderRadius: "10px" }}
                         />
               </Row>
-
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>k
+              <br />               
+              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>k
                       <Col>
                         <Button
                           className="buttonlogin"
@@ -628,12 +627,14 @@ function TrainRegister() {
                       required
                       value={values.login_username}
                       onChange={handleChange}
-                      style={{ margin: "10px", borderRadius: "10px" }}
+                      
+                      style={{ margin: "10px", borderRadius: "10px", width:"500px" }}
                     />
                     {login_errors.login_username && (
                       <p className="error">{login_errors.login_username}</p>
                     )}
                     <br />
+
                     <input
                       className="inputlogin"
                       type="password"
@@ -642,33 +643,34 @@ function TrainRegister() {
                       required
                       value={values.login_password}
                       onChange={handleChange}
-                      style={{ margin: "10px", borderRadius: "10px" }}
+                      style={{ margin: "10px", borderRadius: "10px", width:"500px" }}
                     />
                     {login_errors.login_password && (
                       <p className="error">{login_errors.login_password}</p>
                     )}
-                    <br />
-
+                    
                     <Button
                       onClick={handleLogin}
-                      style={{ margin: "10px", borderRadius: "10px" }}
+                      size="lg"
+                      style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
                     >
                       Login
                     </Button>
+                    <Button
+                    onClick={handleClick}
+                    variant="outline-success"
+                    size="lg"
+                    style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
+                  >
+                    Back to Register
+                  </Button>
                   </form>
                 </div>
               </Col>
             </Row>
           </div>
           <br></br>
-          <Button
-            onClick={handleClick}
-            variant="outline-success"
-            size="lg"
-            style={{ margin: "10px", borderRadius: "10px" }}
-          >
-            Back to Register
-          </Button>
+          
         </div>
       </ReactCardFlip>
     </div>
