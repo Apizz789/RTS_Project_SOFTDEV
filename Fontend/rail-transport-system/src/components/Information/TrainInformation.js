@@ -292,7 +292,7 @@ function TrainInformation() {
                             <Spinner animation="grow" variant="dark" size="sm" /> <b>[ARL] - Airport Rail Link</b> <Button variant="link" onClick={handleShow16}><i class="fas fa-caret-right"></i> <b>แอร์พอร์ตลิงก์ Airport Line</b></Button><br></br>
                             
                             <Modal show={show7} onHide={handleClose7} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีเขียวอ่อน Light Green line</b></center>
                                     <hr></hr>
@@ -358,7 +358,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show8} onHide={handleClose8} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีเขียวเข้ม Dark Green line</b></center>
                                     <hr></hr>
@@ -390,7 +390,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show9} onHide={handleClose9} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีทอง Golden Line</b></center>
                                     <hr></hr>
@@ -412,7 +412,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show10} onHide={handleClose10} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีเหลือง Yellow Line</b></center>
                                     <hr></hr>
@@ -454,7 +454,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show11} onHide={handleClose11} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีชมพู Pink Line</b></center>
                                     <hr></hr>
@@ -501,7 +501,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show12} onHide={handleClose12} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีน้ำเงิน Blue Line</b></center>
                                     <hr></hr>
@@ -558,7 +558,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show13} onHide={handleClose13} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีม่วง Purple Line</b></center>
                                     <hr></hr>
@@ -609,7 +609,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show14} onHide={handleClose14} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีส้ม Orange Line</b></center>
                                     <hr></hr>
@@ -656,7 +656,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show15} onHide={handleClose15} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[MRT] - Mass Rapid Transit</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีแดง Red Line</b></center>
                                     <hr></hr>
@@ -684,7 +684,7 @@ function TrainInformation() {
                             </Modal>
 
                             <Modal show={show16} onHide={handleClose16} centered>
-                                <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[ARL] - Airport Rail Link</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[ARL] - Airport Rail Link</b></Modal.Header>
                                     <Modal.Body>
                                     <center><b>สายสีทอง Golden Line</b></center>
                                     <hr></hr>
