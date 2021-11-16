@@ -156,7 +156,7 @@ function TrainPayment() {
                 >
                   <br></br>
                   <h4 align="center">
-                    หมายเลขคำสั่งซื้อ :______________________
+                    หมายเลขคำสั่งซื้อ : {Math.floor(Math.random() * 100000000)}
                   </h4>
                   <h4 align="center">ชื่อผู้ใช้ :______________________</h4>
                   <h4 align="center">เส้นทางโดยสาร : </h4>
