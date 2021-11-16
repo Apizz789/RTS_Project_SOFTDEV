@@ -91,7 +91,7 @@ function TrainPayment() {
                             <Modal.Header closeButton>เลือกวิธีการชำระเงิน</Modal.Header>
                             <Modal.Body style={{margin:"auto"}}>
                                 <h1>รูปแบบการชำระเงิน</h1>
-                                <Dropdown style={{width: "100px", textAlign:"center",marginLeft:"20%"}}>
+                                <Dropdown style={{width: "100px", textAlign:"center",marginLeft:"25%"}}>
                                     <Dropdown.Toggle variant="success" style={{textAlign:"center"}}>
                                         {
                                             Count? Count:"รูปแบบการชำระเงิน"
