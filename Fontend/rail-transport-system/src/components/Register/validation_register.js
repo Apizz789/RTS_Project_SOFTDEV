@@ -54,7 +54,7 @@ const validation_register = (values) => {
     else if (Object.values(user_list).includes(values.username)){
         errors.username = <small><small><h6>"This Username is already taken."</h6></small></small>
     }
-    if(!values.username.match(/^([A-Z]|[a-z]|[0-9])/i)){
+    if(!values.username.match(/^([A-Z]|[a-z]|[0-9])+$/i)){
         errors.username = <small><small><h6>"Last Name must contains only A-Z , a-z"</h6></small></small>
     }
 
