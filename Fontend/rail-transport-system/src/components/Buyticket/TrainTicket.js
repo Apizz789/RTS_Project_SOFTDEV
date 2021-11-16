@@ -24,6 +24,7 @@ function TrainTicket() {
     const { clickDTic , setclickDTic } = useContext(UserContextDTic);
 
     const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
+
     //const { clickDTic , setclickDTic } = useContext(UserContextD);
     const DropdownItem =()=>{
         return(
@@ -42,7 +43,7 @@ function TrainTicket() {
     return (
         <div style={{marginTop:"10px"}}>
             <h1 align = "center">Ticket</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
             </Row>
 
             <Container>
@@ -99,7 +100,7 @@ function TrainTicket() {
 
                         </Row>
 
-                        <Row style={{textAlign:"center",width:"50%",marginLeft:"25%"}} >
+                        <Row style={{textAlign:"center"}}>
                         <input
                         // className="inputlogin"
                         type="date"
@@ -114,7 +115,6 @@ function TrainTicket() {
 
                         // value={values.DOB}
                         // onChange={handleChange}
-                        style={{borderRadius:"10px"}}
                         />
                     <Link to="/payment">
                     <Button

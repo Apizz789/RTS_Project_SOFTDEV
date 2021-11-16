@@ -30,8 +30,16 @@ function TrainPayment() {
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
       const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
+      let Ans = 0;
 
-      const Ans = dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+      if (clickSTic == 'สถานีต้นทาง'  || clickDTic == 'สถานีปลายทาง')
+      {
+          
+      }
+      else
+      {
+        Ans = dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+      } 
 
 
       const DropdownItem =()=>{
@@ -52,9 +60,9 @@ function TrainPayment() {
     return (
         <div style={{marginTop:"10px",width:"100%"}}>
             <h1 align = "center">Payment</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
             </Row>
-            <br></br><br></br><br></br><br></br><br></br><br></br>
+            <br></br><br></br><br></br>
             <Container>
                 <Row>
                     <Col>
