@@ -3,7 +3,7 @@ import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Mod
 import Spinner from 'react-bootstrap/Spinner'
 import "./TrainInformation.css";
 import { useState , useContext } from "react";
-
+import { Link} from 'react-router-dom';
 function TrainInformation() {
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
@@ -263,10 +263,10 @@ function TrainInformation() {
                     <br></br><h1><i class="fas fa-map-marked-alt"></i> RTS MAP</h1><hr></hr>
                     <div style={{textAlign:"center"}}>
                     
-                    <a href="https://rail-transport-system.netlify.app/images/mapfull2564.jpg" target='_blank'>
+                    <Link to="/map">
                     <img src='images/mapfull2564.jpg' style={{width: 600,height: 480,borderStyle: "solid",borderRadius: "20px",borderWidth: "10px",borderColor:"#8FB1EB"}} draggable="false" dragstart="false" class="unselectable">
                     </img>
-                    </a>
+                    </Link>
                     </div>
                     </Col>
 
