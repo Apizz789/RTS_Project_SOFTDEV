@@ -235,7 +235,7 @@ function TrainPayment() {
                 {/* ------------------------------------- PromptPay ------------------------------------------------------------------ */}
                 <Modal
                   show={Count == "Promptpay" ? true : false}
-                  onHide={handleClose1}
+                  onHide={handleClose2}
                   centered
                 >
                   <Modal.Header closeButton>
@@ -244,7 +244,7 @@ function TrainPayment() {
                   <Modal.Body>
                     <center>
                       <img
-                        src="images/testpromptpay.jpg"
+                        src={promtpay_preview}
                         width="300"
                         height="auto"
                         style={{
@@ -254,13 +254,13 @@ function TrainPayment() {
                         }}
                       ></img>
                     </center>
-                    <Form.Group controlId="formFileMultiple" className="mb-3">
+                    <Form.Group controlId="formFileMultiple" className="mb-3" onSubmit={handleClose1}>
                       <Form.Label>Upload You Slip Payment</Form.Label>
-                      <Form.Control type="file" multiple />
+                      <Form.Control type="file" multiple name="picture" onChange={handlePromtpay}/>
                     </Form.Group>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1}>
+                    <Button variant="secondary" onClick={handleClose1} type = "submit">
                       OK
                     </Button>
                   </Modal.Footer>
@@ -268,7 +268,7 @@ function TrainPayment() {
                 {/* ------------------------------------- โอนผ่านธนาคาร ------------------------------------------------------------------ */}
                 <Modal
                   show={Count == "โอนผ่านธนาคาร" ? true : false}
-                  onHide={handleClose1}
+                  onHide={handleClose2}
                   centered
                   style={{ width: "500", height: "auto", borderRadius: "30px" }}
                 >
@@ -285,7 +285,7 @@ function TrainPayment() {
                             </h4>
                             <center>
                               <img
-                                src="images/KBANK_LOGO.png"
+                                src={bank_preview}
                                 width="100"
                                 height="auto"
                                 style={{
@@ -316,7 +316,7 @@ function TrainPayment() {
                               className="mb-3"
                             >
                               <Form.Label>Upload You Slip Payment</Form.Label>
-                              <Form.Control type="file" multiple />
+                              <Form.Control type="file" multiple onChange={handleBank}/>
                             </Form.Group>
                           </Col>
                         </Row>
@@ -330,7 +330,7 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1}>
+                    <Button variant="secondary" onClick={handleClose1} type = "submit">
                       OK
                     </Button>
                   </Modal.Footer>
@@ -338,7 +338,7 @@ function TrainPayment() {
                 {/* ------------------------------------- บัตรเครดิต ------------------------------------------------------------------ */}
                 <Modal
                   show={Count == "บัตรเครดิต" ? true : false}
-                  onHide={handleClose1}
+                  onHide={handleClose2}
                   centered
                   style={{ width: "500", height: "auto", borderRadius: "30px" }}
                 >
@@ -427,7 +427,7 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1}>
+                    <Button variant="secondary" onClick={handleClose1} type = "submit">
                       OK
                     </Button>
                   </Modal.Footer>
