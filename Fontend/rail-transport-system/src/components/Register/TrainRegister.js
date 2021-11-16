@@ -351,12 +351,19 @@ function TrainRegister() {
       </Alert>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
       <form onSubmit={sendEmail}>
+      <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
         <div  className="Card-Regis" align="center" >
           <Container>
             <Row>
             
               <Col>
-              1
+              <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
+                <img
+                  className="sealImage"
+                  alt="Image of Seal"
+                  src="images/LOGO.png"
+                  style={{ width: "70" }}
+                />
               </Col>
               
               
@@ -588,7 +595,7 @@ function TrainRegister() {
                         style={{ width: "auto", borderRadius: "12px",textAlign:"center" }}
                         type = "reset"  
                       >
-                        Login is here
+                        Back to Login
                       </Button>       
                 </Col>
                             
@@ -605,26 +612,24 @@ function TrainRegister() {
         <div style={{ textAlign: "center" }}>
           <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Login</h1>
           <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
-            <Row style={{ height: "100vh" }}>
-              <Col>
-                <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
-                <img
-                  className="sealImage"
-                  alt="Image of Seal"
-                  src="images/LOGO.png"
-                  style={{ width: "70" }}
-                />
-              </Col>
-              <Col>
-                <div
-                  className="login"
-                  style={{ marginTop: "50%", textAlign: "center" }}
-                >
-                  <form>
+          <Container>
+             <Row>
+                <Col>1
+                  <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
+                  <img
+                    className="sealImage"
+                    alt="Image of Seal"
+                    src="images/LOGO.png"
+                    style={{ width: "70" }}
+                  />
+
+                </Col>
+                <Col >2
+                <form>
                     <h2 htmlFor="chk" aria-hidden="true">
-                      Login
+                      <h1>[RTS] Login</h1>
                     </h2>
-                    <br />
+                    <br/>
                     <input
                       className="inputlogin"
                       type="email"
@@ -634,12 +639,12 @@ function TrainRegister() {
                       value={values.login_username}
                       onChange={handleChange}
                       
-                      style={{ margin: "10px", borderRadius: "10px", width:"500px" }}
+                      style={{ margin: "5px", borderRadius: "10px", width:"300px",textAlign:"center" }}
                     />
                     {login_errors.login_username && (
                       <p className="error">{login_errors.login_username}</p>
                     )}
-                    <br />
+                    
 
                     <input
                       className="inputlogin"
@@ -649,7 +654,7 @@ function TrainRegister() {
                       required
                       value={values.login_password}
                       onChange={handleChange}
-                      style={{ margin: "10px", borderRadius: "10px", width:"500px" }}
+                      style={{ margin: "5px", borderRadius: "10px", width:"300px",textAlign:"center" }}
                     />
                     {login_errors.login_password && (
                       <p className="error">{login_errors.login_password}</p>
@@ -668,12 +673,16 @@ function TrainRegister() {
                     size="lg"
                     style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
                   >
-                    Back to Register
+                    Register
                   </Button>
                   </form>
-                </div>
-              </Col>
-            </Row>
+
+                </Col>
+
+             </Row>        
+          </Container>
+
+
           </div>
           <br></br>
           
