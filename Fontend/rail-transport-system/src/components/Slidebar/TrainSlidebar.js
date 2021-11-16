@@ -51,7 +51,7 @@ function TrainSlidebar() {
                 />
 
                 <Carousel.Caption>
-                <img src="../images/MRT-Logo.png" style={{height:'20=5vh',objectFit:'contain'}}/>  <br/><br/> <hr/>
+                <img src="../images/MRT-Logo.png" style={{height:'25vh',objectFit:'contain'}}/>  <br/><br/> <hr/>
                   <h3 >Mass Rapid Transit</h3>
                   <p >The Metropolitan Rapid Transit or MRT is a mass rapid transit system serving the Bangkok Metropolitan Region in Thailand.</p>
                 </Carousel.Caption>
