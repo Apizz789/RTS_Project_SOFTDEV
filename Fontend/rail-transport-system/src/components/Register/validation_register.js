@@ -30,7 +30,7 @@ const validation_register = (values) => {
     console.log(user_list)
     values.fname = values.fname.replace(/\s+/g, '');
     if(!values.fname){
-        errors.fname = <h6><small><small>"First Name is required"</small></small></h6>
+        errors.fname = <small><small><h6>"First Name is required"</h6></small></small>
     }
     else if(!values.fname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
         errors.fname = <small><small><h6>'First Name must contains only A-Z , a-z'</h6></small></small>

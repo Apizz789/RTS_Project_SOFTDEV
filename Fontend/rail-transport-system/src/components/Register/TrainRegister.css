@@ -12,7 +12,7 @@
 	width:1150px;
 	height: 725px;
 	overflow: hidden;
-	background: url("https://rail-transport-system.netlify.app/images/New_login/spider-card.jpg")  no-repeat center/ cover ;
+	/* background: url("https://rail-transport-system.netlify.app/images/New_login/spider-card.jpg")  no-repeat center/ cover ; */
 	/* opacity: 0.5; */
 	border-radius: 50px;
 	box-shadow: 5px 20px 50px rgb(126, 125, 129);
