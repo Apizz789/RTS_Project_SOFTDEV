@@ -173,7 +173,7 @@ export default function TrainCalculate() {
               <Modal.Title>warning</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            ไม่สามารถสั่งคำนวณเส้นทางได้ กรุณาเลือกข้อมูลให้ครบถ้วน
+            ไม่สามารถสั่งคำนวณเส้นทางได้ กรุณาเลือกข้อมูลให้ครบถ้วนและถูกต้อง
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
