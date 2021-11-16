@@ -632,6 +632,7 @@ function TrainRegister() {
                     <br/> 
                     <Col>
                       <Row style={{height:"80px"}}>
+                      <Col>
                         <input
                           className="inputlogin"
                           type="email"
@@ -641,15 +642,17 @@ function TrainRegister() {
                           value={values.login_username}
                           onChange={handleChange}
                           
-                          style={{ marginLeft: "25%", margin: "5px", borderRadius: "10px", height:"50px", width:"300px",textAlign:"center" }}
+                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
                         />
                         {login_errors.login_username && (
                           <p className="error">{login_errors.login_username}</p>
                         )}
+                        </Col>
                       </Row>
                       
                       
                       <Row style={{height:"80px"}}>
+                        <Col>
                         <input
                           className="inputlogin"
                           type="password"
@@ -658,11 +661,13 @@ function TrainRegister() {
                           required
                           value={values.login_password}
                           onChange={handleChange}
-                          style={{ marginLeft: "25%",margin: "5px", borderRadius: "10px", height:"50px", width:"300px",textAlign:"center" }}
+                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
                         />
                         {login_errors.login_password && (
                           <p className="error">{login_errors.login_password}</p>
                         )}
+                        </Col>
+                        
                       </Row>
                     
                       
