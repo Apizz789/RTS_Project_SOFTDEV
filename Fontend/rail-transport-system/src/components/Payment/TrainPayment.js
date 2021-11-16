@@ -318,6 +318,7 @@ function TrainPayment() {
                     </Form.Group>
                   </Modal.Body>
                   <Modal.Footer>
+                    <Link to="/show-ticket">
                     <Button
                       variant="secondary"
                       onClick={handleClose1}
@@ -325,6 +326,7 @@ function TrainPayment() {
                     >
                       OK
                     </Button>
+                    </Link>
                   </Modal.Footer>
                 </Modal>
                 {/* ------------------------------------- โอนผ่านธนาคาร ------------------------------------------------------------------ */}
@@ -396,6 +398,7 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
+                  <Link to="/show-ticket">
                     <Button
                       variant="secondary"
                       onClick={handleClose1}
@@ -403,6 +406,7 @@ function TrainPayment() {
                     >
                       OK
                     </Button>
+                    </Link>
                   </Modal.Footer>
                 </Modal>
                 {/* ------------------------------------- บัตรเครดิต ------------------------------------------------------------------ */}
@@ -497,6 +501,7 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
+                  <Link to="/show-ticket">
                     <Button
                       variant="secondary"
                       onClick={handleClose1}
@@ -504,6 +509,7 @@ function TrainPayment() {
                     >
                       OK
                     </Button>
+                    </Link>
                   </Modal.Footer>
                 </Modal>
                 <Button
