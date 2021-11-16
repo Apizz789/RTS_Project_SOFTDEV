@@ -14,17 +14,14 @@ function TrainPayment() {
       const [show, setShow] = useState(false);
       const handleClose = () => setShow(false);
 
-      const [show1, setShow1] = useState(false);
-      const handleClose1 = () => setShow1(false);
+      const handleClose1 = () => {
+          setCount("รูปแบบการชำระเงิน");
+      };
 
       const handleShow = () => {
         setShow(true);
       };
 
-      const handleShow1 = () => {
-        setShow(false)
-        setShow1(true);
-      };
 
       const { clickSTic , setclickSTic } = useContext(UserContextSTic);
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
@@ -36,7 +33,7 @@ function TrainPayment() {
             <div>
                 {
                 ["Promptpay","โอนผ่านธนาคาร","บัตรเครดิต"].map((item) => (
-                <Dropdown.Item key={item} onClick={()=>{setCount(item)}}>
+                <Dropdown.Item key={item} onClick={()=>{setCount(item);handleClose()}}>
                      {item}
                  </Dropdown.Item>
                 ))
@@ -75,10 +72,7 @@ function TrainPayment() {
 
                             <Button onClick={()=>handleShow()} variant="outline-success" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>ยืนยัน</Button>
 
-
-
-
-{/* ------------------------------------- โอนผ่านธนาคาร ------------------------------------------------------------------ */}                       
+   
                             <Modal show={show} onHide={handleClose} centered>
                             <Modal.Header closeButton>เลือกวิธีการชำระเงิน</Modal.Header>
                             <Modal.Body>
@@ -95,16 +89,17 @@ function TrainPayment() {
                                 </Dropdown>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleShow1}>
+                                <Button variant="secondary" onClick={handleClose}>
                                     OK
                                 </Button>
                             </Modal.Footer>
                             </Modal>
                             
 
+
 {/* ------------------------------------- PromptPay ------------------------------------------------------------------ */}
 
-                            <Modal show={show1} onHide={handleClose1} centered>
+                            <Modal show={Count == "Promptpay" ?true:false} onHide={handleClose1} centered>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : PromptPay </Modal.Header>
                             <Modal.Body>
                                 <center><img src="images/testpromptpay.jpg" width = '300' height='auto'style={{textAlign:"center", margin:"20px",borderRadius:"30px"}}></img></center>
@@ -121,7 +116,7 @@ function TrainPayment() {
                             </Modal>
 
 {/* ------------------------------------- โอนผ่านธนาคาร ------------------------------------------------------------------ */}                           
-                            {/* <Modal show={show1} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
+                            <Modal show={Count == "โอนผ่านธนาคาร" ?true:false} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : โอนผ่านธนาคาร</Modal.Header>
                             <Modal.Body>
                                <Container>
@@ -161,9 +156,10 @@ function TrainPayment() {
                                     OK
                                 </Button>
                             </Modal.Footer>
-                            </Modal> */}
+                            </Modal> 
+
 {/* ------------------------------------- บัตรเครดิต ------------------------------------------------------------------ */}       
-     {/* <Modal show={show1} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
+                        <Modal show={Count == "บัตรเครดิต" ?true:false} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : บัตรเครดิต</Modal.Header>
                             <Modal.Body>
                                <Container>
@@ -219,7 +215,7 @@ function TrainPayment() {
                                     OK
                                 </Button>
                             </Modal.Footer>
-                            </Modal> */}
+                            </Modal> 
 
 
 
