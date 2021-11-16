@@ -15,10 +15,10 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContextDTic } from "./UseContextDestTic";
 import { UserContextDS } from "./UseContextDestTS";
+
 import "./TrainTicket.css";
 const SelectSourceforTic = () => {
   const { clickDTic , setclickDTic } = useContext(UserContextDTic);
-
   const { dest_station , setDest_station } = useContext(UserContextDS);
  
   const [show, setShow] = useState(false);
