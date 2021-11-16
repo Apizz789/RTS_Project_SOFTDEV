@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../App.css';
 import TrainManual from '../Manual/TrainManual';
+import '../../App.css'
 function Manual() {
     return (
         <div>

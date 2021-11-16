@@ -14,7 +14,7 @@ import "../../App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { UserContextSTic } from "./UseContextSourceTic";
 import { useContext, useState } from "react";
-
+import "./TrainTicket.css";
 const SelectSourceforTic = () => {
   const { clickSTic , setclickSTic } = useContext(UserContextSTic);
  
@@ -31,7 +31,7 @@ const SelectSourceforTic = () => {
     return <div>{text}</div>;
   }
   
-  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickSTic}</h1> 
+  const ShowModal = <h4 style={{whiteSpace: 'pre',textAlign: "center"  }}> คุณได้เลือก<br/>{clickSTic}</h4>
 
   return (
     <div style={{ marginTop: "30px", width: "100%" }}>

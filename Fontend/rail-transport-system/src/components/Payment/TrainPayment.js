@@ -30,8 +30,16 @@ function TrainPayment() {
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
       const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
+      let Ans = 0;
 
-      const Ans = dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+      if (clickSTic == 'สถานีต้นทาง'  || clickDTic == 'สถานีปลายทาง')
+      {
+          
+      }
+      else
+      {
+        Ans = dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+      } 
 
 
       const DropdownItem =()=>{

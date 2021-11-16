@@ -24,3 +24,21 @@
 		outline: none;
 		border-radius: 5px;
 }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  color:#F9F9F8 !important ;
+  background-color: #C25F5D  !important;
+}
+.nav-link{
+  color:#1D7E89 !important
+}
+
+.btn-outline-primary {
+  color: #1D7E89  !important;
+  border-color: #93A9A3  !important;
+}
+
+.btn-outline-primary:hover{
+  color:#F9F9F8 !important ;
+  background-color: #A4C0BF !important;
+}

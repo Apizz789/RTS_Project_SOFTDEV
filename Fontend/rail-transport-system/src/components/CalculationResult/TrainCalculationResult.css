@@ -1,3 +1,10 @@
-.result{
-    margin: 20px
-}
+.btn-outline-success {
+    color: #C25F5D  !important;
+    border-color: #C25F5D  !important;
+    background-color: #F9F9F8 !important;
+  }
+  
+  .btn-outline-success:hover{
+    color:#F9F9F8 !important ;
+    background-color: #C25F5D !important;
+  }

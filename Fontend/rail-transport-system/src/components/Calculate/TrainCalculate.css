@@ -1,1 +1,9 @@
-
+.btn-outline-cal {
+    color: #1D7E89  !important;
+    border-color: #93A9A3  !important;
+  }
+  
+  .btn-outline-cal:hover{
+    color:#F9F9F8 !important ;
+    background-color: #A4C0BF !important;
+  }

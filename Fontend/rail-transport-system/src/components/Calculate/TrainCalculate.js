@@ -6,8 +6,7 @@ import { UserContextS } from "./UseContextSource";
 import { UserContextD } from "./UseContextDest";
 import { useContext } from "react";
 import { Col, Row, Button } from "react-bootstrap";
-
-
+import "../../App.css";
 const Cal = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -109,7 +108,7 @@ export default function TrainCalculate() {
                 สถานีต้นทาง :
                 <Link to="/SelectStation">
                   <Button
-                    variant="outline-success"
+                    variant="outline-cal"
                     size="lg"
                     style={{
                       width: "auto",
@@ -126,7 +125,7 @@ export default function TrainCalculate() {
                 สถานีปลายทาง :
                 <Link to="/select-station-dest">
                   <Button
-                    variant="outline-success"
+                    variant="outline-cal"
                     size="lg"
                     style={{
                       width: "auto",
@@ -142,7 +141,7 @@ export default function TrainCalculate() {
             <Link to="/calculation-result">
               <Button
                 //onClick={() => handleSetdefault()}
-                variant="outline-success"
+                variant="outline-cal"
                 size="lg"
                 style={{
                   width: "auto",

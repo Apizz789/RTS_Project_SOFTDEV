@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../App.css';
 import TrainSchedule from '../Schedule/TrainSchedule';
+import '../../App.css'
 function Schedule() {
     return (
         <div>

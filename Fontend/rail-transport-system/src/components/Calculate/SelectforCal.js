@@ -32,7 +32,7 @@ const SelectforCal = () => {
     return <div>{text}</div>;
   }
   
-  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickS}</h1>
+  const ShowModal = <h4 style={{whiteSpace: 'pre',textAlign: "center"  }}> คุณได้เลือก<br/>{clickS}</h4>
  
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>

@@ -1,7 +1,6 @@
 import React from 'react'
-import '../../App.css';
 import TrainCalculationResult from '../CalculationResult/TrainCalculationResult'
-
+import '../../App.css'
 function CalculationResult() {
     return (
         <div style={{overflow: 'hidden'}}>

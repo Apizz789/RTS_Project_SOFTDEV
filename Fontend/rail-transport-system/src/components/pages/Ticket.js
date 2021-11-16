@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../App.css';
 import TrainTicket from '../Buyticket/TrainTicket';
+import '../../App.css'
 function Ticket() {
     return (
         <div style={{overflow: 'hidden'}}>

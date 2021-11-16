@@ -6,7 +6,8 @@ import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-
 import axios from "axios";
 import { UserContextS } from "../Calculate/UseContextSource";
 import { UserContextD } from "../Calculate/UseContextDest";
-
+import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
+import { UserContextDTic } from '../Buyticket/UseContextDestTic';
 
 function Navbar() {
 
@@ -45,6 +46,14 @@ function Navbar() {
     const handleSetdefault = () => {
       setclickS("Please Select Source ");
       setclickD("Please Select Dest ");
+    };
+
+    const { clickSTic , setclickSTic } = useContext(UserContextSTic);
+    const { clickDTic , setclickDTic } = useContext(UserContextDTic);
+
+    const handleSetdefaultTicket = () => {
+      setclickSTic("Please Select Source ");
+      setclickDTic("Please Select Dest ");
     };
 
     const showButton=()=>{
@@ -127,6 +136,7 @@ function Navbar() {
                     className='nav-links'
                     onClick={closeMobileMenu}
                     onClick={refreshPage}
+                    onClick={handleSetdefaultTicket}
                   >
                     Ticket
                   </Link>

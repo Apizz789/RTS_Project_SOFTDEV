@@ -1,8 +1,7 @@
 import React from 'react';
-import '../../App.css';
 import SelectDestforTic from '../Buyticket/SelectDestforTic';
 
-
+import '../../App.css'
 function SelectDestTic(){
     return(
         <>

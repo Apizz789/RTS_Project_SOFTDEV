@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../App.css';
 import TrainContactus from "../ContactUs/TrainContactus";
-
+import '../../App.css'
 function Contactus() {
     return (
         <div>

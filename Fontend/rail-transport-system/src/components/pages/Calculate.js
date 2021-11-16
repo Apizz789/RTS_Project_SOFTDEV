@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../App.css';
 import TrainCalculate from '../Calculate/TrainCalculate';
-
+import '../../App.css'
 
 function Calculate(){
     return(
