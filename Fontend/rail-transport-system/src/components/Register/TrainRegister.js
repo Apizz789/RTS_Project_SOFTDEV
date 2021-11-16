@@ -4,7 +4,7 @@ import "./TrainRegister.css";
 import axios from "axios";
 import validation_register from "./validation_register";
 import validation_signin from "./validation_signin";
-import { Button, Form, Row, Col } from "react-bootstrap";
+import { Button, Form, Row, Col,Container } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
@@ -349,59 +349,56 @@ function TrainRegister() {
         </div>
       </Alert>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
-        <div style={{ textAlign: "center" }}>
-          <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
-          <div
-            className="Card-Regis"
-            src="images/New_login/552721.jpg"
-            style={{ objectFit: "cover", maxHeight: "100vh" }}
-          >
-            <Row style={{ height: "100vh" }}>
+        <div  className="Card-Regis" align="center" >
+          <Container>
+            <Row>
               <Col>
-                <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
-                <img
-                  className="sealImage"
-                  alt="Image of Seal"
-                  src="images/LOGO.png"
-                  style={{ width: "70" }}
-                />
+              1
               </Col>
-              <Col style={{ textAlign: "center" }}>
-                <div className="signup">
-                  <form onSubmit={sendEmail}>
-                    <br></br>
-                    <br></br>
-                    <h3 htmlFor="chk" aria-hidden="true">
-                      Sign up
-                    </h3>
-                    <div className="Name-User" id="left">
-                      <input
-                        className="inputlogin"
-                        id="fn"
-                        type="text"
-                        name="fname"
-                        placeholder="First name"
-                        required
-                        value={values.fname}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.fname && <p className="error">{errors.fname}</p>}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        id="ln"
-                        type="text"
-                        name="lname"
-                        placeholder="Last name"
-                        required
-                        value={values.lname}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.lname && <p className="error">{errors.lname}</p>}
-                      <br />
-                      <Form.Check
+              
+              <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#a6e3e9",}}>
+              2
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>
+              <Col>
+                <input
+                          className="inputlogin"
+                          id="fn"
+                          type="text"
+                          name="fname"
+                          placeholder="First name"
+                          required
+                          value={values.fname}
+                          onChange={handleChange}
+                          style={{borderRadius: "10px",height:"40px"}}
+                        />
+                        {errors.fname && <p className="error">{errors.fname}</p>}
+                </Col>
+
+              <Col>
+                <input
+                          className="inputlogin"
+                          id="ln"
+                          type="text"
+                          name="lname"
+                          placeholder="Last name"
+                          required
+                          value={values.lname}
+                          onChange={handleChange}
+                          style={{borderRadius: "10px",height:"40px"}}
+                        />
+                        {errors.lname && <p className="error">{errors.lname}</p>}
+              </Col>
+              
+
+              </Row>
+
+              <Row>b
+                
+              </Row>
+
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>c
+                <Col>
+                <Form.Check
                         inline
                         label="Male"
                         type="radio"
@@ -410,8 +407,12 @@ function TrainRegister() {
                         value="Male"
                         checked={gender === 'Male'}
                         onChange={handleRadio}
+                        
                       />
-                      <Form.Check
+                     
+                </Col>
+                <Col>
+                <Form.Check
                         inline
                         label="Female"
                         type="radio"
@@ -420,12 +421,19 @@ function TrainRegister() {
                         value="Female"
                         checked={gender === 'Female'}
                         onChange={handleRadio}
+                        
                       />
-                      {errors.sex && <p className="error">{errors.sex}</p>}
-                    </div>
-                    <br />
-                    <div className="Info-User" id="right">
-                      <input
+                </Col>
+                {errors.sex && <p className="error">{errors.sex}</p>}
+              </Row>
+
+              <Row>d
+                
+              </Row>
+
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>e
+                <Col>
+                <input
                         className="inputlogin"
                         type="text"
                         name="username"
@@ -433,123 +441,161 @@ function TrainRegister() {
                         required
                         value={values.username}
                         onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
+                        style={{borderRadius: "10px",height:"40px"}}
                       />
                       {errors.username && (
                         <p className="error">{errors.username}</p>
                       )}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                        value={values.email}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.email && <p className="error">{errors.email}</p>}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        required
-                        value={values.password}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.password && (
-                        <p className="error">{errors.password}</p>
-                      )}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        type="password"
-                        name="repeat_password"
-                        placeholder="RE- Password"
-                        required
-                        value={values.repeat_password}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.repeat_password && (
-                        <p className="error">{errors.repeat_password}</p>
-                      )}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        type="Telephone"
-                        name="tel"
-                        placeholder="Tel"
-                        maxlength="10"
-                        required
-                        value={values.tel}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.tel && <p className="error">{errors.tel}</p>}
-                      <br />
-                      <input
-                        className="inputlogin"
-                        type="date"
-                        data-date-inline-picker="true"
-                        name="DOB"
-                        min="1900-01-01"
-                        max="2009-12-31"
-                        placeholder="dd-mm-yyyy"
-                        required
-                        value={values.DOB}
-                        onChange={handleChange}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                      {errors.DOB && <p className="error">{errors.DOB}</p>}
-                      <input
-                        className="inputlogin"
-                        name="confirmcode"
-                        defaultValue={values.confirmationCode}
-                        type="hidden"
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      />
-                    </div>
-                    <br />
-                    <div id="right">
-                      <Button
-                        className="buttonlogin"
-                        type="submit"
-                        value="Submit"
-                        onClick={handleSubmits}
-                        style={{ margin: "10px", borderRadius: "10px" }}
+                </Col>
+                <Col>
+                  <input
+                          className="inputlogin"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          required
+                          value={values.email}
+                          onChange={handleChange}
+                          style={{borderRadius: "10px",height:"40px"}}
+                        />
+                        {errors.email && <p className="error">{errors.email}</p>}
+                </Col>
+
+
+              </Row>
+              <Row>f
+
+              </Row>
+              
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>g
+                <Col>
+                <input
+                            className="inputlogin"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required
+                            value={values.password}
+                            onChange={handleChange}
+                            style={{borderRadius: "10px",height:"40px"}}
+                          />
+                          {errors.password && (
+                            <p className="error">{errors.password}</p>
+                          )}
+                </Col>
+                  <Col>
+                    <input
+                            className="inputlogin"
+                            type="password"
+                            name="repeat_password"
+                            placeholder="RE- Password"
+                            required
+                            value={values.repeat_password}
+                            onChange={handleChange}
+                            style={{borderRadius: "10px",height:"40px"}}
+                          />
+                          {errors.repeat_password && (
+                            <p className="error">{errors.repeat_password}</p>
+                          )}
+                  </Col>
+              </Row>
+
+              
+              <Row>h
+              </Row>
+              
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>i
+                  
+                  <Col>
+                    <input
+                          className="inputlogin"
+                          type="Telephone"
+                          name="tel"
+                          placeholder="Tel"
+                          maxlength="10"
+                          required
+                          value={values.tel}
+                          onChange={handleChange}
+                          style={{borderRadius: "10px",height:"40px"}}
+                        />
+                        {errors.tel && <p className="error">{errors.tel}</p>}
+                  </Col>
+
+                  <Col>
+                    <input
+                          className="inputlogin"
+                          type="date"
+                          data-date-inline-picker="true"
+                          name="DOB"
+                          min="1900-01-01"
+                          max="2009-12-31"
+                          placeholder="dd-mm-yyyy"
+                          required
+                          value={values.DOB}
+                          onChange={handleChange}
+                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
+                        />
+                        {errors.DOB && <p className="error">{errors.DOB}</p>}
+                  </Col>
+              </Row>
+
+              <Row>j
+                <input
+                          className="inputlogin"
+                          name="confirmcode"
+                          defaultValue={values.confirmationCode}
+                          type="hidden"
+                          style={{  borderRadius: "10px" }}
+                        />
+              </Row>
+
+              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>k
+                      <Col>
+                        <Button
+                          className="buttonlogin"
+                          type="submit"
+                          value="Submit"
+                          onClick={handleSubmits}
+                          style={{  width: "200px",borderRadius: "10px" }}
+                        > Sign Up
+                        </Button>
+                      </Col>
+
+                      <Col>
+                        <Button
+                          className="buttonlogin"
+                          variant="outline-danger"
+                          onClick={() => setShow(true)}
+                          style={{  width: "200px",borderRadius: "10px" }}
+                        >
+                          Cancel
+                        </Button>
+
+                      </Col>
+                      
+              </Row>
+              <br /> 
+              <Row style={{ textAlign:"center" }}>       
+                <Col>
+                <Button
+                        onClick={handleClick}
+                        variant="outline-info"
+                        size="lg"
+                        style={{ width: "auto", borderRadius: "12px",textAlign:"center" }}
+                        type = "reset"  
                       >
-                        Sign Up
-                      </Button>
-                      <Button
-                        className="buttonlogin"
-                        variant="outline-danger"
-                        onClick={() => setShow(true)}
-                        style={{ margin: "10px", borderRadius: "10px" }}
-                      >
-                        Cancel
-                      </Button>
-                    </div>
-                  </form>
-                </div>
+                        Login is here
+                      </Button>       
+                </Col>
+                            
+              </Row>
+
+
               </Col>
             </Row>
-          </div>
-          <br></br>
-          <Button
-            onClick={handleClick}
-            variant="outline-info"
-            size="lg"
-            style={{ width: "auto", borderRadius: "12px" }}
-            type = "reset"  
-          >
-            Login is here
-          </Button>
+          </Container>
         </div>
+       
 
         <div style={{ textAlign: "center" }}>
           <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Login</h1>

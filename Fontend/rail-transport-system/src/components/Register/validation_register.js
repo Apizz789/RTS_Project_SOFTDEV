@@ -30,37 +30,37 @@ const validation_register = (values) => {
     console.log(user_list)
     values.fname = values.fname.replace(/\s+/g, '');
     if(!values.fname){
-        errors.fname = "First Name is required"
+        errors.fname = <h6><small><small>"First Name is required"</small></small></h6>
     }
     else if(!values.fname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-        errors.fname = 'First Name must contains only A-Z , a-z'
+        errors.fname = <small><small><h6>'First Name must contains only A-Z , a-z'</h6></small></small>
     }
 
     values.lname = values.lname.replace(/\s+/g, '');
     if(!values.lname){
-        errors.lname = "Last Name is required"
+        errors.lname = <small><small><h6>"Last Name is required"</h6></small></small>
     }
     else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-        errors.lname = 'Last Name must contains only A-Z , a-z'
+        errors.lname = <small><small><h6>'Last Name must contains only A-Z , a-z'</h6></small></small>
     }
 
     if(!values.username){
-        errors.username = "Username is required"
+        errors.username = <small><small><h6>"Username is required"</h6></small></small>
     }
     else if(values.username.length < 8 || values.username.length > 20){
-        errors.username = "Username length must be between 8-20 characters"
+        errors.username = <small><small><h6>"Username length must be between 8-20 characters"</h6></small></small>
     }
     else if (Object.values(user_list).includes(values.username)){
-        errors.username = "This Username is already taken."
+        errors.username = <small><small><h6>"This Username is already taken."</h6></small></small>
     }
 
 
 
     if(!values.password){
-        errors.password = "Password is required"
+        errors.password = <small><small><h6>"Password is required"</h6></small></small>
     }
     else if(values.password.length < 8 || values.password.length > 32){
-        errors.password = "Password length must be between 8-32 characters"
+        errors.password = <small><small><h6>"Password length must be between 8-32 characters"</h6></small></small>
     }
     // else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
     // {
@@ -68,35 +68,35 @@ const validation_register = (values) => {
     // } 
 
     if(!values.repeat_password){
-        errors.repeat_password = "Password is required"
+        errors.repeat_password = <small><small><h6>"Password is required"</h6></small></small>
     }
     else if(values.password != values.repeat_password){
-        errors.repeat_password = "Password Not Match!!"
+        errors.repeat_password = <small><small><h6>"Password Not Match!!"</h6></small></small>
     }
 
 
     if(!values.tel){
-        errors.tel = "Tel. is required"
+        errors.tel = <small><small><h6>"Tel. is required"</h6></small></small>
     }
     else if(values.tel.length < 10 || values.tel[0] != '0'){
-        errors.tel = "Tel Invalid"
+        errors.tel = <small><small><h6>"Tel Invalid"</h6></small></small>
     }
 
 
     if(!values.DOB){
-        errors.DOB = "Date of Birth is required"
+        errors.DOB = <small><small><h6>"Date of Birth is required"</h6></small></small>
     }
 
 
     if(!values.email){
-        errors.email = "Email is required"
+        errors.email = <small><small><h6>"Email is required"</h6></small></small>
     }
     else if(!/\S+@\S+\.\S+/.test(values.email)){
-        errors.email = "Email is invalid"
+        errors.email = <small><small><h6>"Email is invalid"</h6></small></small>
     }
 
     if(!values.sex){
-        errors.sex = "Please Select Your Gender"
+        errors.sex = <small><small><h6>"Please Select Your Gender"</h6></small></small>
     }
 
 
