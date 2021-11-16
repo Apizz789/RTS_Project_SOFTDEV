@@ -4,7 +4,7 @@ import "./TrainRegister.css";
 import axios from "axios";
 import validation_register from "./validation_register";
 import validation_signin from "./validation_signin";
-import { Button, Form, Row, Col,Container } from "react-bootstrap";
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal,Spinner} from 'react-bootstrap'
 import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
@@ -23,6 +23,9 @@ function TrainRegister() {
     "login_time_tkn",
   ]);
 
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
 
   useEffect(() => {
     if(login_state["login_token"]==1){
@@ -586,10 +589,38 @@ function TrainRegister() {
                           className="buttonlogin"
                           type="submit"
                           value="Submit"
-                          onClick={handleSubmits}
+                          onClick={handleShow1}
                           style={{  width: "200px",borderRadius: "10px" }}
                         > Sign Up
                         </Button>
+                        
+                        <Modal show={show1} onHide={handleClose1} centered>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                    <Modal.Body>
+                                    <center><b>สายสีทอง Golden Line</b></center>
+                                    <hr></hr>
+                                    <center><img src="images/BTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                                    
+                                    <b>ผู้ให้บริการรถไฟฟ้า :</b> BTS - Bangkok Mass Transit System<br></br>
+                                    <b>จำนวนสถานี :</b> 4 <br></br>
+                                    G01 กรุงธนบุรี Krung Thonburi<br></br> 
+                                    G02 เจริญนคร (ไอคอนสยาม) Charoen Nakhon<br></br>
+                                    G03 คลองสาน Khlong San<br></br>
+                                    G04 ประชาธิปก Prajadhipok<br></br>
+
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleSubmits}>
+                                            SUBMIT
+                                        </Button>
+                                        <Button variant="secondary" onClick={handleClose1}>
+                                            CANCEL
+                                        </Button>
+
+
+                                        
+                                </Modal.Footer>
+                            </Modal>
                       </Col>
 
                       <Col>
