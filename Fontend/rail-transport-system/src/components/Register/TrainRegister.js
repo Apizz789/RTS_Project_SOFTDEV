@@ -359,10 +359,12 @@ function TrainRegister() {
               1
               </Col>
               
-              <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#a6e3e9",}}>
-              2
-              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>
-              <Col>
+              
+              <Col style={{borderRadius:"10px",width:"60px",height:"500px",margin:"30px"}}>
+              <h1 style={{height:"90px"}}>[RTS] Registration</h1>
+              <Row style={{height:"120px"}}>
+              
+              <Col>First Name
                 <input
                           className="inputlogin"
                           id="fn"
@@ -377,7 +379,7 @@ function TrainRegister() {
                         {errors.fname && <p className="error">{errors.fname}</p>}
                 </Col>
 
-              <Col>
+              <Col >Last Name
                 <input
                           className="inputlogin"
                           id="ln"
@@ -395,11 +397,11 @@ function TrainRegister() {
 
               </Row>
 
-              <Row>b
+              <Row>
                 
               </Row>
 
-              <Row style={{height:"40px",backgroundColor: "#F9F9F8"}}>c
+              <Row style={{height:"40px"}}>
                 <Col>
                 <Form.Check
                         inline
@@ -433,7 +435,7 @@ function TrainRegister() {
 
             
 
-              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>e
+              <Row style={{height:"80px"}}>
                 <Col>
                 <input
                         className="inputlogin"
@@ -465,11 +467,11 @@ function TrainRegister() {
 
 
               </Row>
-              <Row>f
+              <Row>
 
               </Row>
               
-              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>g
+              <Row style={{height:"80px"}}>
                 <Col>
                 <input
                             className="inputlogin"
@@ -503,10 +505,10 @@ function TrainRegister() {
               </Row>
 
               
-              <Row>h
+              <Row>
               </Row>
               
-              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>i
+              <Row style={{height:"70px"}}>
                   
                   <Col>
                     <input
@@ -541,7 +543,7 @@ function TrainRegister() {
                   </Col>
               </Row>
 
-              <Row>j
+              <Row>
                 <input
                           className="inputlogin"
                           name="confirmcode"
@@ -551,7 +553,7 @@ function TrainRegister() {
                         />
               </Row>
               <br />               
-              <Row style={{height:"65px",backgroundColor: "#F9F9F8"}}>k
+              <Row style={{height:"65px"}}>
                       <Col>
                         <Button
                           className="buttonlogin"

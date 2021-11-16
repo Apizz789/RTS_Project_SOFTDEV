@@ -48,7 +48,7 @@ const validation_register = (values) => {
         errors.username = <small><small><h6>"Username is required"</h6></small></small>
     }
     else if(values.username.length < 8 || values.username.length > 20){
-        errors.username = <small><small><h6>"Username length must be between 8-20 characters"</h6></small></small>
+        errors.username = <small><small><p>"length must be between 8-20 characters"</p></small></small>
     }
     
     else if (Object.values(user_list).includes(values.username)){
