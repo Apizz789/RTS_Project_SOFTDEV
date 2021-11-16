@@ -71,10 +71,10 @@ function TrainPayment() {
                     
 
                     <Col style={{textAlign:"center"}}>
-                        <Col style={{borderRadius:"20px",width:"1000px",height:"880px",margin:"10px",backgroundColor:"#99ff99",textAlign:"center"}}>
+                        <Col style={{borderRadius:"20px",width:"1000px",height:"850px",margin:"10px",backgroundColor:"#99ff99",textAlign:"center"}}>
                             <br></br><h1><i class="fas fa-check-double"></i> Confirm Order</h1><hr/><br></br>
-                            <h3 align = "left">หมายเลขคำสั่งซื้อ :________________________________</h3><br/>
-                            <h3 align = "left">ชื่อผู้ใช้ :________________________________</h3><br></br><br></br>
+                            <h3 align = "left">หมายเลขคำสั่งซื้อ :________________________________</h3>
+                            <h3 align = "left">ชื่อผู้ใช้ :________________________________</h3>
                             <h3 align = "left">เส้นทางโดยสาร : </h3><br></br><br></br>
                             <h3>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i><br></br>      {clickDTic}</h3><br></br> <br/>
                             <h3 align = "left">ระยะเวลาที่ใช้โดยประมาณ :________________________________นาที</h3>
