@@ -12,11 +12,14 @@ import {
 } from "react-bootstrap";
 import "../../App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { UserContextDTic } from "./UseContextDestTic";
 import { useContext, useState } from "react";
+import { UserContextDTic } from "./UseContextDestTic";
+import { UserContextDS } from "./UseContextDestTS";
 import "./TrainTicket.css";
 const SelectSourceforTic = () => {
   const { clickDTic , setclickDTic } = useContext(UserContextDTic);
+
+  const { dest_station , setDest_station } = useContext(UserContextDS);
  
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -24,6 +27,7 @@ const SelectSourceforTic = () => {
   const handleShow = (item) => {
     setShow(true);
     setclickDTic(item)
+    setDest_station(item)
   };
 
   function newLineText(props){

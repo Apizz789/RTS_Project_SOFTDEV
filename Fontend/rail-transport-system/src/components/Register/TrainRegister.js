@@ -27,8 +27,8 @@ function TrainRegister() {
   useEffect(() => {
     if(login_state["login_token"]==1){
       setLogin_state(["login_token"], 2);
-      // window.location.reload()
-      window.location.href="https://rail-transport-system.netlify.app/"
+      window.location.reload()
+      // window.location.href="https://rail-transport-system.netlify.app/"
     }
   }, [login_state["login_token"]]);
   const [verify, setVerify] = useState(false);
@@ -49,6 +49,25 @@ function TrainRegister() {
         login_username: "",
         login_password: "",
       });
+      setErrors({
+        fname: "",
+        lname: "",
+        username: "",
+        password: "",
+        repeat_password: "",
+        tel: "",
+        DOB: "",
+        email: "",
+        sex: "",
+      });
+
+      setlogin_Errors({
+        login_username: "",
+        login_password: "",
+        status: "",
+      })
+
+      console.log(errors)
       setGender('');
 
     
@@ -339,6 +358,7 @@ function TrainRegister() {
                 email: "",
                 sex: "",
               });
+              
             }}
             variant="outline-danger"
           >
