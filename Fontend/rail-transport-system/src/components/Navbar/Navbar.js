@@ -8,6 +8,8 @@ import { UserContextS } from "../Calculate/UseContextSource";
 import { UserContextD } from "../Calculate/UseContextDest";
 import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
 import { UserContextDTic } from '../Buyticket/UseContextDestTic';
+import { UserContextDS } from '../Buyticket/UseContextDestTS';
+
 
 function Navbar() {
 
@@ -35,6 +37,8 @@ function Navbar() {
       window.scrollTo(0,0)
     }
 
+    const { dest_station , setDest_station } = useContext(UserContextDS);
+    
     const { clickS, setclickS } = useContext(UserContextS);
     const { clickD, setclickD } = useContext(UserContextD);
 
@@ -72,8 +76,9 @@ function Navbar() {
                   username: username_cookie['username_tkn'],
                   Login_Date: login_time['login_time_tkn'],
                   Logout_Date:d,
-                  Source_Station: clickSTic,
-                  Dest_Station: clickDTic
+                  Source_Station: dest_station,
+                  Dest_Station: clickDTic,
+                  Travel_Time: ""
                 }
               )
               .then((response) => {
