@@ -17,12 +17,17 @@ import { UserContextDTic } from "../Buyticket/UseContextDestTic";
 import { UserContextCountTic } from "../Buyticket/UseContextCount";
 import { UserContextDate } from "../Buyticket/UseContextDate";
 import { useState, useContext, useMemo } from "react";
+import { useCookies } from "react-cookie";
 import Dropdown from "react-bootstrap/Dropdown";
 
 // import { graph, dijkstra } from './distance_cal.js';
 import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
 
 function TrainPayment() {
+
+  const [username_cookie, setUsername_cookie, removeUsername_cookie] =
+  useCookies(["username_tkn"]);
+
   const [picture, setPicture] = useState("");
 
   const [promtpay_preview, setPromtpay_preview] = useState("images/testpromptpay.jpg");
@@ -55,8 +60,6 @@ function TrainPayment() {
       setPromtpay_preview("");
       setBank_preview("images/KBANK_LOGO.png");
       setPicture("");
-    } else {
-      alert("Please Select Your Slip");
     }
   };
 
@@ -160,7 +163,7 @@ function TrainPayment() {
                   <h4 align="center">
                     หมายเลขคำสั่งซื้อ : {Math.floor(Math.random() * 100000000)}
                   </h4>
-                  <h4 align="center">ชื่อผู้ใช้ : ______________________ </h4>
+                  <h4 align="center">ชื่อผู้ใช้ : {" " +username_cookie["username_tkn"]}</h4>
                   <h4 align="center">เส้นทางโดยสาร : </h4>
                 </Col>
                 <br></br>
