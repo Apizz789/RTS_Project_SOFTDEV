@@ -150,7 +150,7 @@ export default function TrainCalculate() {
               onClick={() => {
                 if (
                   clickS == "Please Select Source" ||
-                  clickD == "Please Select Dest"
+                  clickD == "Please Select Dest" || clickD == clickS
                 ) {
                   handleShow();
                 } else {
