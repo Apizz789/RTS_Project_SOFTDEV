@@ -27,8 +27,8 @@ function TrainRegister() {
   useEffect(() => {
     if(login_state["login_token"]==1){
       setLogin_state(["login_token"], 2);
-      // window.location.reload()
-      window.location.href="https://rail-transport-system.netlify.app/"
+      window.location.reload()
+      // window.location.href="https://rail-transport-system.netlify.app/"
     }
   }, [login_state["login_token"]]);
   const [verify, setVerify] = useState(false);
@@ -49,6 +49,25 @@ function TrainRegister() {
         login_username: "",
         login_password: "",
       });
+      setErrors({
+        fname: "",
+        lname: "",
+        username: "",
+        password: "",
+        repeat_password: "",
+        tel: "",
+        DOB: "",
+        email: "",
+        sex: "",
+      });
+
+      setlogin_Errors({
+        login_username: "",
+        login_password: "",
+        status: "",
+      })
+
+      console.log(errors)
       setGender('');
 
     
@@ -339,6 +358,7 @@ function TrainRegister() {
                 email: "",
                 sex: "",
               });
+              
             }}
             variant="outline-danger"
           >
@@ -614,8 +634,8 @@ function TrainRegister() {
           <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
           <Container>
              <Row>
-                <Col>1
-                  <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
+                <Col>
+                  <h1 style={{ marginTop: "40%" }}>Rail Transport System</h1>
                   <img
                     className="sealImage"
                     alt="Image of Seal"
@@ -624,58 +644,70 @@ function TrainRegister() {
                   />
 
                 </Col>
-                <Col >2
+                <Col >
                 <form>
                     <h2 htmlFor="chk" aria-hidden="true">
-                      <h1>[RTS] Login</h1>
+                      <h1 style={{ marginTop: "40%" }}>[RTS] Login</h1>
                     </h2>
-                    <br/>
-                    <input
-                      className="inputlogin"
-                      type="email"
-                      name="login_username"
-                      placeholder="User Name"
-                      required
-                      value={values.login_username}
-                      onChange={handleChange}
+                    <br/> 
+                    <Col>
+                      <Row style={{height:"80px"}}>
+                      <Col>
+                        <input
+                          className="inputlogin"
+                          type="email"
+                          name="login_username"
+                          placeholder="User Name"
+                          required
+                          value={values.login_username}
+                          onChange={handleChange}
+                          
+                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
+                        />
+                        {login_errors.login_username && (
+                          <p className="error">{login_errors.login_username}</p>
+                        )}
+                        </Col>
+                      </Row>
                       
-                      style={{ margin: "5px", borderRadius: "10px", width:"300px",textAlign:"center" }}
-                    />
-                    {login_errors.login_username && (
-                      <p className="error">{login_errors.login_username}</p>
-                    )}
+                      
+                      <Row style={{height:"80px"}}>
+                        <Col>
+                        <input
+                          className="inputlogin"
+                          type="password"
+                          name="login_password"
+                          placeholder="Password"
+                          required
+                          value={values.login_password}
+                          onChange={handleChange}
+                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
+                        />
+                        {login_errors.login_password && (
+                          <p className="error">{login_errors.login_password}</p>
+                        )}
+                        </Col>
+                        
+                      </Row>
                     
-
-                    <input
-                      className="inputlogin"
-                      type="password"
-                      name="login_password"
-                      placeholder="Password"
-                      required
-                      value={values.login_password}
-                      onChange={handleChange}
-                      style={{ margin: "5px", borderRadius: "10px", width:"300px",textAlign:"center" }}
-                    />
-                    {login_errors.login_password && (
-                      <p className="error">{login_errors.login_password}</p>
-                    )}
-                    
-                    <Button
-                      onClick={handleLogin}
+                      
+                      <Button
+                        onClick={handleLogin}
+                        size="lg"
+                        style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
+                      >
+                        Login
+                      </Button>
+                      <Button
+                      onClick={handleClick}
+                      variant="outline-success"
                       size="lg"
                       style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
                     >
-                      Login
+                      Register
                     </Button>
-                    <Button
-                    onClick={handleClick}
-                    variant="outline-success"
-                    size="lg"
-                    style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
-                  >
-                    Register
-                  </Button>
-                  </form>
+                    </Col>
+                </form>
 
                 </Col>
 

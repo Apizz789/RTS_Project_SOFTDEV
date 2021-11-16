@@ -167,13 +167,14 @@ export default function TrainCalculate() {
             <img
               src="images/ตารางรถไฟฟ้า.png"
               style={{
-                width: "100vh",
-                height: "100vh",
+                width: "80vh",
+                height: "80vh",
                 borderRadius: "60px",
                 borderStyle: "solid",
                 borderStyle: "solid",
                 borderWidth: "10px",
                 borderColor: "#7E7D81",
+                margin: "10%"
               }}
             />
           </Col>
