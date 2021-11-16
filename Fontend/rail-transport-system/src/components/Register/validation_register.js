@@ -33,7 +33,7 @@ const validation_register = (values) => {
         errors.fname = <small><small><h6>"First Name is required"</h6></small></small>
     }
     else if(!values.fname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-        errors.fname = <small><small><h6>'First Name must contains only A-Z , a-z'</h6></small></small>
+        errors.fname = <small><small><h6>'Required A-Z , a-z'</h6></small></small>
     }
 
     values.lname = values.lname.replace(/\s+/g, '');
@@ -41,37 +41,38 @@ const validation_register = (values) => {
         errors.lname = <small><small><h6>"Last Name is required"</h6></small></small>
     }
     else if(!values.lname.match(/^([A-Z]|[a-z]|[ ])+$/i)){
-        errors.lname = <small><small><h6>'Last Name must contains only A-Z , a-z'</h6></small></small>
+        errors.lname = <small><small><h6>'Required A-Z , a-z'</h6></small></small>
     }
 
     if(!values.username){
         errors.username = <small><small><h6>"Username is required"</h6></small></small>
     }
     else if(values.username.length < 8 || values.username.length > 20){
-        errors.username = <small><small><p>"length must be between 8-20 characters"</p></small></small>
+        errors.username = <small><small><p>"Required 8-32 characters"</p></small></small>
     }
     
     else if (Object.values(user_list).includes(values.username)){
         errors.username = <small><small><h6>"This Username is already taken."</h6></small></small>
     }
-    if(!values.username.match(/^([A-Z]|[a-z]|[0-9])/i)){
-        errors.username = <small><small><h6>"Last Name must contains only A-Z , a-z"</h6></small></small>
-    }
+
+    // if(!values.username.match(/^([A-Z]|[a-z]|[0-9])/i)){
+    //     errors.username = <small><small><h6>"Last Name must contains only A-Z , a-z"</h6></small></small>
+    // }
 
 
     if(!values.password){
         errors.password = <small><small><h6>"Password is required"</h6></small></small>
     }
     else if(values.password.length < 8 || values.password.length > 32){
-        errors.password = <small><small><h6>"Password length must be between 8-32 characters"</h6></small></small>
+        errors.password = <small><small><h6>"Required 8-32 characters"</h6></small></small>
     }
-    // else if(!values.password.match(/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/))
-    // {
-    //     errors.password = "Password must contains A-z, a-z and 0-9 mix together"
-    // } 
+    else if(!values.password.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})"))
+    {
+        errors.password = <small><small><h6>"Required Strong Pattern"</h6></small></small>
+    } 
 
     if(!values.repeat_password){
-        errors.repeat_password = <small><small><h6>"Password is required"</h6></small></small>
+        errors.repeat_password = <small><small><h6>"RE-Password is required"</h6></small></small>
     }
     else if(values.password != values.repeat_password){
         errors.repeat_password = <small><small><h6>"Password Not Match!!"</h6></small></small>

@@ -30,6 +30,7 @@ import Header from './components/pages/Header';
 import SelectDestTic from './components/pages/SelectDestForTic';
 import DestTicProvider from './components/Buyticket/UseContextDestTic';
 import CountTicProvider from './components/Buyticket/UseContextCount';
+import DestSProvider from './components/Buyticket/UseContextDestTS';
 function App() {
 
   return (
@@ -38,6 +39,7 @@ function App() {
     <SourceTicProvider>
     <DestTicProvider>
     <CountTicProvider>
+    <DestSProvider>
     <Router>
       <Navbar/>
       <br/>
@@ -71,6 +73,7 @@ function App() {
       <img src='images/trainloop.gif' style={{width: "100%",height: '80px'}} draggable="false" dragstart="false" class="unselectable"></img>
       <Footer />
     </Router>
+    </DestSProvider>
     </CountTicProvider>
     </DestTicProvider>
     </SourceTicProvider>
