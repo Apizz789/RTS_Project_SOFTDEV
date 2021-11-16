@@ -70,7 +70,7 @@ function TrainTicket() {
             style={{
               borderRadius: "20px",
               width: "500px",
-              height: "500px",
+              height: "700px",
               margin: "10px",
               backgroundColor: "#F1B674",
             }}

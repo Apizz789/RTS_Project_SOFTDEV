@@ -4,7 +4,7 @@ import "./TrainRegister.css";
 import axios from "axios";
 import validation_register from "./validation_register";
 import validation_signin from "./validation_signin";
-import { Button, Form, Row, Col,Container } from "react-bootstrap";
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal,Spinner} from 'react-bootstrap'
 import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
@@ -22,6 +22,25 @@ function TrainRegister() {
   const [login_time, setLogin_time, removeLogin_time] = useCookies([
     "login_time_tkn",
   ]);
+
+
+
+
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
+
+
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+
+
+
+
+
+
+
 
 
   useEffect(() => {
@@ -586,10 +605,29 @@ function TrainRegister() {
                           className="buttonlogin"
                           type="submit"
                           value="Submit"
-                          onClick={handleSubmits}
+                          onClick={handleShow1}
                           style={{  width: "200px",borderRadius: "10px" }}
                         > Sign Up
                         </Button>
+                        
+                        <Modal show={show1} onHide={handleClose1} centered>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
+                                    <Modal.Body>
+                                    <center><b><h1>Confirm Register</h1></b></center>
+                                    <hr></hr>
+                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                                    <center><h3>Are you sure to registration?</h3></center>
+                                
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleSubmits}>
+                                            CONFIRM
+                                        </Button>
+                                        <Button variant="secondary" onClick={handleClose1}>
+                                            CLOSE
+                                        </Button>    
+                                </Modal.Footer>
+                            </Modal>
                       </Col>
 
                       <Col>
@@ -601,6 +639,25 @@ function TrainRegister() {
                         >
                           Cancel
                         </Button>
+                        <Modal show={show2} onHide={handleClose2} centered>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
+                                    <Modal.Body>
+                                    <center><b><h1>Warning</h1></b></center>
+                                    <hr></hr>
+                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                                    <center><h3>Are you sure to cancel the registration?</h3></center>
+                                
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleSubmits}>
+                                            CONFIRM
+                                        </Button>
+                                        <Button variant="secondary" onClick={handleClose2}>
+                                            CLOSE
+                                        </Button>
+  
+                                </Modal.Footer>
+                            </Modal>
 
                       </Col>
                       
