@@ -25,6 +25,7 @@ function TrainTicket() {
   const history = useHistory();
   const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
   const { Date, setDate } = useContext(UserContextDate);
+  const [values, setValues] = useState({DOB: ""});
 
   //const { clickDTic , setclickDTic } = useContext(UserContextD);
   const DropdownItem = () => {
@@ -48,6 +49,17 @@ function TrainTicket() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleChange = (event) => {
+    setValues({
+        ...values,
+        [event.target.name]: event.target.value,
+    });
+    setDate({
+        ...values,
+        [event.target.name]: event.target.value,
+    });
+}
 
   return (
     <div style={{ marginTop: "10px" }}>
@@ -145,8 +157,10 @@ function TrainTicket() {
                 style={{borderRadius: "10px", width: "200px",margin: "auto"}}
                 required
 
-                // value={Date.placeholder}
-                // onChange={handleChange}
+                value={values.DOB}
+                // Date = {values.DOB}
+                // setDate = {values.DOB}
+                onChange={handleChange}
               />
 
               <span>
@@ -159,7 +173,7 @@ function TrainTicket() {
                       handleShow();
                     else {
                       history.push("/payment");
-                      // setDate(value);
+                      setDate(values.DOB)
                     }
                   }}
                   variant="outline-success"

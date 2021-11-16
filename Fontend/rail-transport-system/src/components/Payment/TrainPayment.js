@@ -15,6 +15,7 @@ import { Link, Redirect } from "react-router-dom";
 import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
 import { UserContextDTic } from "../Buyticket/UseContextDestTic";
 import { UserContextCountTic } from "../Buyticket/UseContextCount";
+import { UserContextDate } from "../Buyticket/UseContextDate";
 import { useState, useContext, useMemo } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -74,6 +75,7 @@ function TrainPayment() {
   const { clickDTic, setclickDTic } = useContext(UserContextDTic);
   const [Count, setCount] = useState(0);
   const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
+  const { Date, setDate } = useContext(UserContextDate);
 
   const Ans = useMemo(() => {
     if (clickSTic == "สถานีต้นทาง" || clickDTic == "สถานีปลายทาง") {
@@ -220,10 +222,10 @@ function TrainPayment() {
                   }}
                 >
                   <h4 align="center">
-                    วันที่ซื้อ :__________________
+                    วันที่ซื้อ : {Date}
                   </h4>
                   <h4 align="center">
-                    วันที่หมดอายุ :_______________
+                    วันที่หมดอายุ : {Date+15}
                   </h4>
                 </Col>
                 <Link to="/ticket">
