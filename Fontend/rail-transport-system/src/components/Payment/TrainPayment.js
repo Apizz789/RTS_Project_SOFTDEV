@@ -24,7 +24,7 @@ import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
 function TrainPayment() {
   const [picture, setPicture] = useState("");
 
-  const [promtpay_preview, setPromtpay_preview] = useState("");
+  const [promtpay_preview, setPromtpay_preview] = useState("images/testpromptpay.jpg");
 
   const [bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
 
@@ -62,7 +62,7 @@ function TrainPayment() {
   const handleClose2 = () => {
     setCount("รูปแบบการชำระเงิน");
     setBank_preview("images/KBANK_LOGO.png");
-    setPromtpay_preview("");
+    setPromtpay_preview("images/testpromptpay.jpg");
     setPicture("");
   };
 
