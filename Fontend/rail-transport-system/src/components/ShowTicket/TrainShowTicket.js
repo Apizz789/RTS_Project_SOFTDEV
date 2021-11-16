@@ -2,6 +2,11 @@ import React from 'react'
 import CardItemTicket from './CardItemTicket'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal,Spinner} from 'react-bootstrap'
 import '../Card/Cards.css'
+
+import { UserContextDate } from "../Buyticket/UseContextDate";
+import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
+import { UserContextDTic } from "../Buyticket/UseContextDestTic";
+
 function TrainShowTicket() {
     return (
 

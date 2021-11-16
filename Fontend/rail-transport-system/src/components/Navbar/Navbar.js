@@ -19,8 +19,13 @@ import { UserContextD } from "../Calculate/UseContextDest";
 import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
 import { UserContextDTic } from "../Buyticket/UseContextDestTic";
 import { UserContextDS } from "../Buyticket/UseContextDestTS";
+import { UserContextSS } from "../Buyticket/UseContextSourceTS";
+import { UserContextTT } from "../Buyticket/UseContextTime";
+
+
 
 function Navbar() {
+
   const [logout, setLogout] = useState(false);
 
   const [login_time, setLogin_time, removeLogin_time] = useCookies([
@@ -46,6 +51,8 @@ function Navbar() {
   }
 
   const { dest_station, setDest_station } = useContext(UserContextDS);
+  const { source_station, setSource_station } = useContext(UserContextSS);
+  const {time_travel, setTime_travel} = useContext(UserContextTT);
 
   const { clickS, setclickS } = useContext(UserContextS);
   const { clickD, setclickD } = useContext(UserContextD);
@@ -82,8 +89,9 @@ function Navbar() {
   const handleShow1 = () => setShow1(true);
 
   if (logout === true) {
-    console.log(clickSTic);
-    console.log(clickDTic);
+    console.log(source_station);
+    console.log(dest_station);
+    console.log(time_travel);
     axios
       .post(
         "https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day",
@@ -91,9 +99,9 @@ function Navbar() {
           username: username_cookie["username_tkn"],
           Login_Date: login_time["login_time_tkn"],
           Logout_Date: d,
-          Source_Station: dest_station,
-          Dest_Station: clickDTic,
-          Travel_Time: "",
+          Source_Station: source_station,
+          Dest_Station: dest_station,
+          Travel_Time: time_travel,
         }
       )
       .then((response) => {

@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import { UserContextS } from "../Calculate/UseContextSource";
 import { UserContextD } from "../Calculate/UseContextDest";
+import { UserContextTT } from "../Buyticket/UseContextTime";
 import { useState, useContext } from "react";
 import { Button, Row } from "react-bootstrap";
 import { Link , Redirect } from "react-router-dom";
@@ -11,7 +12,8 @@ import { graph, dijkstra } from "./distance_cal.js";
 
 
 
-function TrainCalculationResult() {
+function TrainCalculationResult() { 
+  const {time_travel, setTime_travel} = useContext(UserContextTT);
   const { clickS, setclickS } = useContext(UserContextS);
   const { clickD, setclickD } = useContext(UserContextD);
 
@@ -28,6 +30,8 @@ function TrainCalculationResult() {
       return dijkstra(graph, clickS.split(" ")[0], clickD.split(" ")[0]);
     }
   }, [clickS, clickD]);
+
+  setTime_travel(Ans?.[2])
 
   if (Ans)
     return (
