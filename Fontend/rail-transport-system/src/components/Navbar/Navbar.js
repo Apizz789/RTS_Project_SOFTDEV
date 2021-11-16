@@ -11,17 +11,12 @@ import { UserContextDTic } from '../Buyticket/UseContextDestTic';
 
 function Navbar() {
 
+
   const [logout,setLogout] = useState(false);
 
   const [login_time, setLogin_time, removeLogin_time] = useCookies([
     "login_time_tkn",
   ]);
-
-  const [member_satistic_val, setMember_satistic_val] = useState({
-    username: "",
-    Login_Date: "",
-    Logout_Date: "",
-  });
 
     let history = useHistory()
     const [login_state, setLogin_state, removeLogin_state] = useCookies(['login_token'])
@@ -65,20 +60,20 @@ function Navbar() {
     };
     const d = new Date();
     const handleLogout = () => {
-      setMember_satistic_val({
-        ...member_satistic_val,
-        Logout_Date: d
-      });
       setLogout(true)
   }
     if (logout === true){
+      console.log(clickSTic)
+      console.log(clickDTic)
       axios
               .post(
                 "https://us-central1-soft-dev-tutorial.cloudfunctions.net/members_per_day",
                 {
                   username: username_cookie['username_tkn'],
                   Login_Date: login_time['login_time_tkn'],
-                  Logout_Date:d
+                  Logout_Date:d,
+                  Source_Station: clickSTic,
+                  Dest_Station: clickDTic
                 }
               )
               .then((response) => {
@@ -92,6 +87,8 @@ function Navbar() {
       removeLogin_state(['login_token'])
       removeUsername_cookie(['username_tkn'])
       removeCookie(['username_tkn'])
+      removeLogin_time(["login_time_tkn"])
+
 
       setLogout(false)
 

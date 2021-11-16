@@ -11,13 +11,13 @@ function TrainSchedule() {
             <h4>Bangkok Mass Transit System</h4>
             <ul className='cards__items'>
                 <CardSchedule
-                src='images/img-9.jpg'
+                src='images/table1.png'
                 text='BTS Green Line'
                 label='BTS'
                 url='https://www.bts.co.th/pdf/timetable_Green_1nov21.pdf'
                 />
                 <CardSchedule
-                src='images/img-2.jpg'
+                src='images/table2.png'
                 text='BTS Gold Line'
                 label='BTS'
                 url='https://www.bts.co.th/pdf/timetable_Gold_1nov21.pdf'
@@ -26,13 +26,13 @@ function TrainSchedule() {
             <h4>Mass Rapid Transit</h4>
             <ul className='cards__items'>
                 <CardSchedule
-                src='images/img-3.jpg'
+                src='images/table3.png'
                 text='MRT Blue Line'
                 label='Mass Rapid Transit'
                 url='https://rail-transport-system.netlify.app/doc/MRTBlueLine.pdf'
                 />
                 <CardSchedule
-                src='images/img-4.jpg'
+                src='images/table4.png'
                 text='MRT Purple Line'
                 label='Mass Rapid Transit'
                 url='https://rail-transport-system.netlify.app/doc/MRTPurple.pdf'
@@ -41,10 +41,10 @@ function TrainSchedule() {
             <h4>S.R.T. Electrified Train Co., Ltd.</h4>
             <ul className='cards__items'>
                 <CardSchedule
-                src='images/img-8.jpg'
+                src='images/table5.png'
                 text='Suvarnabhumi Airport Rail Link'
                 label='ARL'
-                path='/contact'
+                url='http://www.deesudsud.com/wp-content/uploads/2014/12/apl_time_table.png'
                 />
             </ul>
             
