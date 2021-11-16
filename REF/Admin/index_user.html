@@ -13,24 +13,26 @@
 <body>  
     <div class="container">
         <h2 align="center">Test Data Firebase</h2>
-        <a>db.collection('Station').doc('').update({Field:'value'})   Company,Line,ID,Thai_Name,Eng_Name_Tran_ID</a>
-        <!-- <form id='form_line' >
-            <input type='text' id='Line_Color' name='Line_Color' value='' ><br>
-            <input type='submit' value="ค้นหา">
-        </form> -->
+        <a>db.collection('Connection').doc('').update({Field:'value'})   ID_station1,ID_station2,Time,cost</a>
+        
         <table class='tbTrain' id='Tb_Show_List' align="center">
             <tr>
-                <th>บริษัท</th>
-                <th>สาย</th>
-                <th>ไอดี</th>
-                <th>ชื่อไทย</th>
-                <th>ชื่ออังกฤษ</th>
-                <th>สายเชื่อม</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Sex</th>
+                <th>Tel</th>
+                <th>Date of Birth</th>
+                <th>Email</th>
+                <th>token</th>
+                <th>Status</th>
             </tr>
         </table>
         <!-- <p id="demo"></p> -->
     </div>
-    <a href="index_user.html" class="button_add">หน้าการเชื่อมต่อสถานี</a>  
+    <a href="test_index.html" class="button_add">รายละเอียดสถานี
+    </a>  
 
 
 </body>
@@ -53,7 +55,7 @@
     firebase.initializeApp(firebaseConfig);
     // firebase.analytics();
 </script>
-<script src="app.js" charset="utf-8"></script>
+<script src="app_user.js" charset="utf-8"></script>
 
 
 </html>
