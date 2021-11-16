@@ -25,7 +25,7 @@ const SelectforCalDest = () => {
     setclickD(item);
   };
 
-  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickD}</h1> 
+  const ShowModal = <h4 style={{whiteSpace: 'pre',textAlign: "center"  }}> คุณได้เลือก<br/> {clickD}</h4> 
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>
           <h1 align="center">เลือกสถานี</h1>

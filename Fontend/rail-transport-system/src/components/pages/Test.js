@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 function Test() {
     return (
         <div style={{marginTop:"55px"}}>
-            
             <Link to={'/calculate'}><Button variant="outline-dark">Calculate</Button></Link>
             <Link to={'/calculation-result'}><Button variant="outline-dark">CalculateResult</Button></Link>
             <Link to={'/contact'}><Button variant="outline-dark">Contact</Button></Link>

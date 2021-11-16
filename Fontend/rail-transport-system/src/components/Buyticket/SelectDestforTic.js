@@ -14,7 +14,7 @@ import "../../App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { UserContextDTic } from "./UseContextDestTic";
 import { useContext, useState } from "react";
-
+import "./TrainTicket.css";
 const SelectSourceforTic = () => {
   const { clickDTic , setclickDTic } = useContext(UserContextDTic);
  
@@ -31,7 +31,7 @@ const SelectSourceforTic = () => {
     return <div>{text}</div>;
   }
   
-  const ShowModal = <h1> คุณต้องการเลือกสถานี {clickDTic}</h1> 
+  const ShowModal = <h4 style={{whiteSpace: 'pre',textAlign: "center"  }}> คุณได้เลือก<br/>{clickDTic}</h4>
   return (
     <div style={{ marginTop: "30px", width: "100%" }}>
       <br></br>
@@ -39,7 +39,7 @@ const SelectSourceforTic = () => {
       <br></br>
       <Tabs defaultActiveKey="Btsgreen" className="mb-3">
         <Tab eventKey="Btsgreen" title="BTS สายสีเขียวอ่อน">
-          <div  style={{ textAlign: "center",columnCount:"6"}}>
+          <div  style={{ textAlign: "center",columnCount:"6" }}>
             {[
               "N24 คูคต\nKhu Khot",
               "N23 แยก คปอ.\nYaek Kor Por Aor",

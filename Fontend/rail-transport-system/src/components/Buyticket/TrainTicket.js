@@ -16,7 +16,7 @@ import { UserContextDTic } from './UseContextDestTic';
 import { UserContextCountTic } from './UseContextCount';
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
-
+import "./TrainTicket.css";
 
 
 function TrainTicket() {
