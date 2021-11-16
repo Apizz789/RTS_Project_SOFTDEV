@@ -1,11 +1,12 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import {Link,useHistory} from 'react-router-dom';
 import '../Navbar/Navbar.css';
 import {useCookies} from 'react-cookie'
 import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table} from 'react-bootstrap'
 import axios from "axios";
+import { UserContextS } from "../Calculate/UseContextSource";
+import { UserContextD } from "../Calculate/UseContextDest";
 
-console.log("Kuy Pleum")
 
 function Navbar() {
 
@@ -37,6 +38,14 @@ function Navbar() {
     function refreshPage(){
       window.scrollTo(0,0)
     }
+
+    const { clickS, setclickS } = useContext(UserContextS);
+    const { clickD, setclickD } = useContext(UserContextD);
+
+    const handleSetdefault = () => {
+      setclickS("Please Select Source ");
+      setclickD("Please Select Dest ");
+    };
 
     const showButton=()=>{
         if(window.innerWidth<=960){
@@ -128,6 +137,7 @@ function Navbar() {
                     className='nav-links'
                     onClick={closeMobileMenu}
                     onClick={refreshPage}
+                    onClick={handleSetdefault}
                   >
                     Calculate
                   </Link>
