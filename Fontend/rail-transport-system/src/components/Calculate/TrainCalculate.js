@@ -1,11 +1,12 @@
 import React from "react";
+import "./TrainCalculate.css";
 import { Link, useHistory } from "react-router-dom";
 import SelectforCal from "./SelectforCal";
 import { UserContextS } from "./UseContextSource";
 import { UserContextD } from "./UseContextDest";
 import { useContext } from "react";
 import { Col, Row, Button } from "react-bootstrap";
-import "./TrainCalculate.css";
+
 
 const Cal = () => {
   return (
@@ -153,8 +154,8 @@ export default function TrainCalculate() {
           </Col>
           <Col>
             <img
-              src="images/ตารางรถไฟฟ้า.png"
-              style={{ width: "100vh", height: "100vh", borderRadius: "60px" }}
+              src="images/mapfull2564.jpg"
+              style={{ width: "100vh", height: "100vh", borderRadius: "60px",borderStyle: "solid",borderColor: ""}}
             />
           </Col>
         </Row>

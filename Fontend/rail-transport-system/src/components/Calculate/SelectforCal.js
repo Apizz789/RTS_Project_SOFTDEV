@@ -14,6 +14,7 @@ import "../../App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import StationBlue, { UserContextS } from "./UseContextSource";
 import { useContext, useState } from "react";
+import "./TrainCalculate.css";
 
 const SelectforCal = () => {
   const { clickS , setclickS } = useContext(UserContextS);
