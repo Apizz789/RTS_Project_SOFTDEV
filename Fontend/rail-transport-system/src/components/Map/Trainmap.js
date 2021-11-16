@@ -14,9 +14,9 @@ export default memo(function Trainmap() {
     <div style={{marginTop:"10px",width:"100%"}}>
     <Container align="center">
       <Row>
-        <Col><h1>แผนที่สถานีรถไฟฟ้า</h1>
+        <Col><h3>แผนที่สถานีรถไฟฟ้า</h3>
         </Col>
-        <Col>BTS,MRT and AIRPORTLINK</Col>
+        <Col><h4>BTS,MRT and AIRPORTLINK</h4></Col>
       </Row>
       <Row>
         <Col >
@@ -37,7 +37,7 @@ export default memo(function Trainmap() {
                     <img src='images/airlink.jpg' style={{width: 280,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img>
               </Col>
           </Col>
-          <Col>วิธีดูหมายเลขสถานี</Col>
+          <Col><h4>วิธีดูหมายเลขสถานี</h4></Col>
           <Row>
             <Row>
               <Col>
