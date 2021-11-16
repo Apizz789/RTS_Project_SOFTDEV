@@ -109,7 +109,7 @@ const SelectSourceforTic = () => {
               <Modal.Footer>
                 <Link to="/ticket">
                   <Button variant="secondary" onClick={handleClose}>
-                    OK
+                    ตกลง
                   </Button>
                 </Link>
               </Modal.Footer>
@@ -144,17 +144,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+         
           </div>
         </Tab>
 
@@ -175,17 +165,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+ 
           </div>
         </Tab>
 
@@ -227,17 +207,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+       
           </div>
         </Tab>
 
@@ -284,17 +254,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-           <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal> 
+       
           </div>
         </Tab>
 
@@ -350,17 +310,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+       
           </div>
         </Tab>
 
@@ -410,17 +360,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+            
           </div>
         </Tab>
 
@@ -466,17 +406,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+           
           </div>
         </Tab>
 
@@ -503,17 +433,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+         
           </div>
         </Tab>
 
@@ -538,17 +458,7 @@ const SelectSourceforTic = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/ticket">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+         
           </div>
         </Tab>
       </Tabs>

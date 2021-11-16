@@ -107,7 +107,7 @@ const SelectforCal = () => {
               <Modal.Footer>
                 <Link to="/calculate">
                   <Button variant="secondary" onClick={handleClose}>
-                    OK
+                    ตกลง
                   </Button>
                 </Link>
               </Modal.Footer>
@@ -142,17 +142,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+           
           </div>
         </Tab>
 
@@ -173,17 +163,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+           
           </div>
         </Tab>
 
@@ -225,17 +205,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+            
           </div>
         </Tab>
 
@@ -282,17 +252,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-           <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal> 
+          
           </div>
         </Tab>
 
@@ -348,17 +308,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+          
           </div>
         </Tab>
 
@@ -408,17 +358,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-             <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+            
           </div>
         </Tab>
 
@@ -464,17 +404,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+           
           </div>
         </Tab>
 
@@ -501,17 +431,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+            
           </div>
         </Tab>
 
@@ -536,17 +456,7 @@ const SelectforCal = () => {
                 {item}
               </Button>
             ))}
-            <Modal show={show} onHide={handleClose} centered>
-              <Modal.Header closeButton>Rail Transport System</Modal.Header>
-              <Modal.Body>{ShowModal}</Modal.Body>
-              <Modal.Footer>
-                <Link to="/calculate">
-                  <Button variant="secondary" onClick={handleClose}>
-                    OK
-                  </Button>
-                </Link>
-              </Modal.Footer>
-            </Modal>
+         
           </div>
         </Tab>
       </Tabs>
