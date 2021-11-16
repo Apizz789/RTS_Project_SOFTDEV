@@ -50,6 +50,7 @@ function TrainCalculationResult() {
           }}
         >
         <h1 align="center" style={{color:"#F9F9F8"}}>CalculationResult</h1>
+        <hr />
           <br />
           <div
             style={{
