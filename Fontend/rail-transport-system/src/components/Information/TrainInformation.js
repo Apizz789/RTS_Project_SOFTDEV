@@ -4,6 +4,8 @@ import Spinner from 'react-bootstrap/Spinner'
 import "./TrainInformation.css";
 import { useState , useContext } from "react";
 import { Link} from 'react-router-dom';
+
+
 function TrainInformation() {
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
@@ -58,8 +60,13 @@ function TrainInformation() {
     const handleShow15 = () => setShow15(true);
     const handleClose16 = () => setShow16(false);
     const handleShow16 = () => setShow16(true);
+
+    function refreshPage(){
+        window.scrollTo(0,0)
+      }
   
     return (
+        
         <div className="Body_Info" style={{marginTop:"10px",width:"100%"}}>            
             <h1 align="center">Information</h1>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
@@ -263,7 +270,7 @@ function TrainInformation() {
                     <br></br><h1><i class="fas fa-map-marked-alt"></i> RTS MAP</h1><hr></hr>
                     <div style={{textAlign:"center"}}>
                     
-                    <Link to="/map">
+                    <Link to="/map" onClick={refreshPage}>
                     <img src='images/mapfull2564.jpg' style={{width: 600,height: 480,borderStyle: "solid",borderRadius: "20px",borderWidth: "10px",borderColor:"#8FB1EB"}} draggable="false" dragstart="false" class="unselectable">
                     </img>
                     </Link>
