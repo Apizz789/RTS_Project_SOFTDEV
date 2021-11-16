@@ -111,17 +111,16 @@ function TrainTicket() {
                 </Button>
               </Link>
             </Row>
-
+            
             <div
               style={{
-                textAlign: "center",
+                marginLeft: "20%" ,
                 display: "flex",
-                justifyContent: "center",
               }}
             >
-              <h3 style={{marginInline:"10px" }}>จำนวนตั๋ว</h3>
+            <h3 style={{marginInline:"10px" }}>จำนวนตั๋ว</h3>
               <div>
-                <Dropdown style={{position:"absolute"}}>
+                <Dropdown style={{position: "absolute"}}>
                   <Dropdown.Toggle variant="success">
                     {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
                   </Dropdown.Toggle>
