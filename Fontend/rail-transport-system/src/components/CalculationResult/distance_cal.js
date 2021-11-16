@@ -86,7 +86,7 @@ export function dijkstra(graph, src, dest) {
 
             if (i == codeofgraph.indexOf(dest)) {
                 station = station_count[i] + 1;
-                result += '\n\n';
+                // result += '\n\n';
                 ans += '\n\n';
                 for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
@@ -131,7 +131,7 @@ function price_calculation(result, num) {
     var arl_count = 0;
 
     for (var i = 0; i < num; i++) {
-        if (i != num - 1) {
+        if (i != num) {
             if (brand[codeofgraph.indexOf(result.split('\n')[i])] == brand[codeofgraph.indexOf(result.split('\n')[i + 1])] && brand[codeofgraph.indexOf(result.split('\n')[i])] == 'BTS') {
                 bts_count++;
             }
