@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Link } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 import './Trainmap.css'
 
 function refreshPage(){
@@ -19,7 +19,12 @@ export default memo(function Trainmap() {
         <Col>BTS,MRT and AIRPORTLINK</Col>
       </Row>
       <Row>
-        <Col><img src='images/mapfull2564.jpg' style={{width: 600,height: 'auto'}} draggable="false" dragstart="false" class="unselectable"></img></Col>
+        <Col >
+        <a href="https://rail-transport-system.netlify.app/images/mapfull2564.jpg" target='_blank'>
+        <img src='images/mapfull2564.jpg' style={{width: 600,height: 'auto',borderStyle: "solid",borderRadius: "10px",borderWidth: "10px",borderColor:"#8FB1EB"}} draggable="false" dragstart="false" class="unselectable">
+        </img>
+        </a>
+        </Col>
         <Col>
           <Col>
               <Col>
