@@ -32,7 +32,7 @@ function TrainCalculationResult() {
   if (Ans)
     return (
       <div style={{ marginTop: "10px", width: "100%" }}>
-        <h1 align="center">CalculationResult ====</h1>
+        
 
         <br></br>
         <br></br>
@@ -49,14 +49,19 @@ function TrainCalculationResult() {
             margin: "auto",
           }}
         >
+        <h1 align="center" style={{color:"#F9F9F8"}}>CalculationResult</h1>
           <br />
           <div
             style={{
               backgroundColor: "#A4C0BF",
               borderRadius: "12px",
-              width: "30vw",
+              width: "40vw",
               margin: "auto",
               color: "#F9F9F8",
+              borderStyle: "solid",
+              borderColor: "#7E7D81",
+              borderWidth: "5px",
+              margin: "auto"
             }}
           >
             <h4>สถานีต้นทาง : {clickS}</h4>
@@ -64,12 +69,13 @@ function TrainCalculationResult() {
           </div>
           {/* <h2 align="center">ทดสอบระบบ : {clickS.split(" ")[0]}</h2> */}
           {/* <h2 align="center">ทดสอบระบบ2 : {clickD.split(" ")[0]}</h2> */}
+          <br/>
           <h5
             style={{
               whiteSpace: "pre",
               backgroundColor: "#F9F9F8",
               borderRadius: "12px",
-              width: "50vw",
+              width: "40vw",
               textAlign: "center",
               marginLeft: "20px",
               borderStyle: "solid",
@@ -85,9 +91,13 @@ function TrainCalculationResult() {
             style={{
               backgroundColor: "#A4C0BF",
               borderRadius: "12px",
-              width: "20vw",
+              width: "40vw",
               margin: "auto",
               color: "#F9F9F8",
+              borderStyle: "solid",
+              borderColor: "#7E7D81",
+              borderWidth: "5px",
+              margin: "auto"
             }}
           >
             <h4 align="center">เวลาที่คำนวณได้ : {Ans?.[2]} นาที</h4>
