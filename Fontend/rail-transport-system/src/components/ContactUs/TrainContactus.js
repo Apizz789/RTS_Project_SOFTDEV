@@ -76,7 +76,7 @@ export default function TrainContactus() {
 			<Col>
 			<Image src="../images/Dink.jpg" roundedCircle style={{width:"300px"}}/>
 			<br></br><br></br> 
-			<b><p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FONTEND </p> </b>
+			<b><p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FRONTEND </p> </b>
 			</Col>
 		</Row>
 		<br></br><br></br> 
@@ -90,12 +90,12 @@ export default function TrainContactus() {
 			<Col>
 			<Image src="../images/Aim.jpg" roundedCircle style={{width:"300px"}}/>
 			<br></br><br></br> 
-			<b><p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FONTEND </p> </b> 
+			<b><p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FRONTEND </p> </b> 
 			</Col>
 			<Col>
 			<Image src="../images/pluem.jpg" roundedCircle style={{width:"300px"}}/>
 			<br></br><br></br> 
-			<b><p align="center">62011019 APIRAK OULIS <br></br> FONTEND </p></b> 
+			<b><p align="center">62011019 APIRAK OULIS <br></br> FRONTEND </p></b> 
 			</Col>
 		</Row>
 
