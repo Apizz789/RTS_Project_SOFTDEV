@@ -13,17 +13,20 @@ import {
 import "../../App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { UserContextSTic } from "./UseContextSourceTic";
+import { UserContextSS } from "./UseContextSourceTS";
 import { useContext, useState } from "react";
 import "./TrainTicket.css";
 const SelectSourceforTic = () => {
   const { clickSTic , setclickSTic } = useContext(UserContextSTic);
- 
+  const { source_station , setSource_station } = useContext(UserContextSS);
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   
   const handleShow = (item) => {
     setShow(true);
     setclickSTic(item)
+    setSource_station(item)
   };
 
   function newLineText(props){

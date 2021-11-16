@@ -4,14 +4,14 @@ import "./TrainRegister.css";
 import axios from "axios";
 import validation_register from "./validation_register";
 import validation_signin from "./validation_signin";
-import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal,Spinner} from 'react-bootstrap'
+import { Button, Form, Row, Col } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
+let submit = false;
 
 function TrainRegister() {
-  const [submit,setSubmit] = useState(false);
   const [login_state, setLogin_state, removeLogin_state] = useCookies([
     "login_token",
   ]);
@@ -24,100 +24,16 @@ function TrainRegister() {
   ]);
 
 
-
-
-  const [show1, setShow1] = useState(false);
-
-
-  const handleClose1 = () => setShow1(false);
-  const handleShow1 = (event) => {
-    event.preventDefault();
-    setErrors(validation_register(values));
-    if (
-      !errors.username &&
-      !errors.fname &&
-      !errors.lname &&
-      !errors.password &&
-      !errors.repeat_password &&
-      !errors.tel &&
-      !errors.DOB &&
-      !errors.email &&
-      !errors.sex &&
-      values.fname &&
-      values.lname &&
-      values.username &&
-      values.password &&
-      values.repeat_password &&
-      values.tel &&
-      values.DOB &&
-      values.email &&
-      values.sex
-    )
-    {
-      setShow1(true);
-    }
-  }
-
-  const [show2, setShow2] = useState(false);
-  const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
-
-
-
-
   useEffect(() => {
     if(login_state["login_token"]==1){
       setLogin_state(["login_token"], 2);
       window.location.reload()
-      // window.location.href="https://rail-transport-system.netlify.app/"
     }
   }, [login_state["login_token"]]);
   const [verify, setVerify] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
-  const handleClick = () => {
-
-    setIsFlipped(!isFlipped);
-      setShow(false);
-      setValues({
-        fname: "",
-        lname: "",
-        username: "",
-        password: "",
-        repeat_password: "",
-        tel: "",
-        DOB: "",
-        email: "",
-        sex: "",
-        login_username: "",
-        login_password: "",
-      });
-      setErrors({
-        fname: "",
-        lname: "",
-        username: "",
-        password: "",
-        repeat_password: "",
-        tel: "",
-        DOB: "",
-        email: "",
-        sex: "",
-      });
-
-      setlogin_Errors({
-        login_username: "",
-        login_password: "",
-        status: "",
-      })
-
-      // console.log(errors)
-      setGender('');
-
-    
-  };
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-
-  
-
+  const [gender, setGender] = React.useState();
   const [values, setValues] = useState({
     fname: "",
     lname: "",
@@ -153,6 +69,39 @@ function TrainRegister() {
     sex: "",
   });
 
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+    setValues({
+      fname: "",
+      lname: "",
+      username: "",
+      password: "",
+      repeat_password: "",
+      tel: "",
+      DOB: "",
+      email: "",
+      sex: "",
+    });
+    setErrors({
+      fname: "",
+      lname: "",
+      username: "",
+      password: "",
+      repeat_password: "",
+      tel: "",
+      DOB: "",
+      email: "",
+      sex: "",
+    })
+    setlogin_Errors({
+      login_username: "",
+      login_password: "",
+      status: "",
+    })
+    setGender('');
+    
+  };
+
   // const initialState = {
   //     change: false,
   //     click: true,
@@ -179,17 +128,13 @@ function TrainRegister() {
           ...values,
           sex: event.target.value,
         });
-  };
 
+  };
 
   const handleSubmits = () => {
-      setSubmit(true)
-      setShow1(false);
-    
-
+    setErrors(validation_register(values));
+    submit = true;
   };
-
-  const [gender, setGender] = React.useState();
 
   if (
     submit === true &&
@@ -211,6 +156,7 @@ function TrainRegister() {
     //             })
     //              .then(response => {console.log(response)})
     //              .catch(error => {console.log(error)})
+
     const characters =
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let token = "";
@@ -246,17 +192,26 @@ function TrainRegister() {
       .catch((error) => {
         console.log(error);
       });
+      setIsFlipped(!isFlipped);
+      // setValues({
+      //   fname: "",
+      //   lname: "",
+      //   username: "",
+      //   password: "",
+      //   repeat_password: "",
+      //   tel: "",
+      //   DOB: "",
+      //   email: "",
+      //   sex: "",
+      // });
+      // setGender('');
 
-    setIsFlipped(!isFlipped);
-    setSubmit(false);
+    submit = false;
   }
-
-
 
   function setVerified(verify) {
     setVerify(verify);
   }
-
 
   // console.log(verify['verify'])
   // if (verify['verify']===true){
@@ -265,7 +220,6 @@ function TrainRegister() {
   // }
   const sendEmail = (event) => {
     event.preventDefault();
-    console.log("sendEmail")
     if (
       !errors.username &&
       !errors.fname &&
@@ -277,7 +231,7 @@ function TrainRegister() {
       !errors.email &&
       !errors.sex
     ) {
-      // console.log(event.target);
+      console.log(event.target);
       emailjs
         .sendForm(
           "gmail",
@@ -328,26 +282,26 @@ function TrainRegister() {
       });
       user_list.push(res.data[key].Username);
     }
-    // console.log(fetchedResult);
+    console.log(fetchedResult);
     let reversed = user_list.reverse();
-    // console.log(reversed);
+    console.log(reversed);
     if (Object.values(user_list).includes(values.login_username)) {
       InvUn = false;
       let key = user_list.indexOf(values.login_username);
-      // console.log(fetchedResult[key].status);
-      // console.log(values.login_password);
+      console.log(fetchedResult[key].status);
+      console.log(values.login_password);
       if (fetchedResult[key].password === values.login_password) {
-        // console.log("Password Match");
+        console.log("Password Match");
         InvPwd = false;
         if (fetchedResult[key].status === "Active") {
           if (!login_errors.login_username && !login_errors.login_password) {
             
             const d = new Date();
 
-            // console.log("login");
+            console.log("login");
             setLogin_state(["login_token"], 1);
-            setUsername_cookie(["username_tkn"],values.login_username);
-            setLogin_time(["login_time_tkn"],d);
+            setUsername_cookie(["username_tkn"],values.login_username)
+            setLogin_time(["login_time_tkn"],d)
           }
 
           
@@ -408,7 +362,6 @@ function TrainRegister() {
                 email: "",
                 sex: "",
               });
-              
             }}
             variant="outline-danger"
           >
@@ -419,16 +372,17 @@ function TrainRegister() {
           </Button>
         </div>
       </Alert>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
-      <div className="signup">
-      <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
-        <div  className="Card-Regis" align="center" >
-        <form onSubmit={sendEmail}>
-          <Container>
-            <Row>
-            
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical ">
+        <div style={{ textAlign: "center" }}>
+          <h1>Rail Transport System / Login</h1>
+          <div
+            className="Card-Regis"
+            src="images/New_login/552721.jpg"
+            style={{ objectFit: "cover", maxHeight: "100vh" }}
+          >
+            <Row style={{ height: "100vh" }}>
               <Col>
-              <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
+                <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
                 <img
                   className="sealImage"
                   alt="Image of Seal"
@@ -436,52 +390,42 @@ function TrainRegister() {
                   style={{ width: "70" }}
                 />
               </Col>
-              
-              
-              <Col style={{borderRadius:"10px",width:"60px",height:"500px",margin:"30px"}}>
-              <h1 style={{height:"90px"}}>[RTS] Registration</h1>
-              <Row style={{height:"120px"}}>
-              
-              <Col>First Name
-                <input
-                          className="inputlogin"
-                          id="fn"
-                          type="text"
-                          name="fname"
-                          placeholder="First name"
-                          required
-                          value={values.fname}
-                          onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                        />
-                        {errors.fname && <p className="error">{errors.fname}</p>}
-                </Col>
-
-              <Col >Last Name
-                <input
-                          className="inputlogin"
-                          id="ln"
-                          type="text"
-                          name="lname"
-                          placeholder="Last name"
-                          required
-                          value={values.lname}
-                          onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                        />
-                        {errors.lname && <p className="error">{errors.lname}</p>}
-              </Col>
-              
-
-              </Row>
-
-              <Row>
-                
-              </Row>
-
-              <Row style={{height:"40px"}}>
-                <Col>
-                <Form.Check
+              <Col style={{ textAlign: "center" }}>
+                <div className="signup">
+                  <form onSubmit={sendEmail}>
+                    <br></br>
+                    <br></br>
+                    <h3 htmlFor="chk" aria-hidden="true">
+                      Sign up
+                    </h3>
+                    <div className="Name-User" id="left">
+                      <input
+                        className="inputlogin"
+                        id="fn"
+                        type="text"
+                        name="fname"
+                        placeholder="First name"
+                        required
+                        value={values.fname}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.fname && <p className="error">{errors.fname}</p>}
+                      <br />
+                      <input
+                        className="inputlogin"
+                        id="ln"
+                        type="text"
+                        name="lname"
+                        placeholder="Last name"
+                        required
+                        value={values.lname}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.lname && <p className="error">{errors.lname}</p>}
+                      <br />
+                      <Form.Check
                         inline
                         label="Male"
                         type="radio"
@@ -490,12 +434,8 @@ function TrainRegister() {
                         value="Male"
                         checked={gender === 'Male'}
                         onChange={handleRadio}
-                        
                       />
-                     
-                </Col>
-                <Col>
-                <Form.Check
+                      <Form.Check
                         inline
                         label="Female"
                         type="radio"
@@ -504,18 +444,12 @@ function TrainRegister() {
                         value="Female"
                         checked={gender === 'Female'}
                         onChange={handleRadio}
-                        
-                        
                       />
-                </Col>
-                {errors.sex && <p className="error">{errors.sex}</p>}
-              </Row>
-
-            
-
-              <Row style={{height:"80px"}}>
-                <Col>
-                <input
+                      {errors.sex && <p className="error">{errors.sex}</p>}
+                    </div>
+                    <br />
+                    <div className="Info-User" id="right">
+                      <input
                         className="inputlogin"
                         type="text"
                         name="username"
@@ -523,292 +457,195 @@ function TrainRegister() {
                         required
                         value={values.username}
                         onChange={handleChange}
-                        style={{borderRadius: "10px",height:"40px",width:"200px"}}
+                        style={{ margin: "10px", borderRadius: "10px" }}
                       />
                       {errors.username && (
                         <p className="error">{errors.username}</p>
                       )}
-                </Col>
-                <Col>
-                  <input
-                          className="inputlogin"
-                          type="email"
-                          name="email"
-                          placeholder="Email"
-                          required
-                          value={values.email}
-                          onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                        />
-                        {errors.email && <p className="error">{errors.email}</p>}
-                </Col>
-
-
-              </Row>
-              <Row>
-
-              </Row>
-              
-              <Row style={{height:"80px"}}>
-                <Col>
-                <input
-                            className="inputlogin"
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            required
-                            value={values.password}
-                            onChange={handleChange}
-                            style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                          />
-                          {errors.password && (
-                            <p className="error">{errors.password}</p>
-                          )}
-                </Col>
-                  <Col>
-                    <input
-                            className="inputlogin"
-                            type="password"
-                            name="repeat_password"
-                            placeholder="RE- Password"
-                            required
-                            value={values.repeat_password}
-                            onChange={handleChange}
-                            style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                          />
-                          {errors.repeat_password && (
-                            <p className="error">{errors.repeat_password}</p>
-                          )}
-                  </Col>
-              </Row>
-
-              
-              <Row>
-              </Row>
-              
-              <Row style={{height:"70px"}}>
-                  
-                  <Col>
-                    <input
-                          className="inputlogin"
-                          type="Telephone"
-                          name="tel"
-                          placeholder="Tel"
-                          maxlength="10"
-                          required
-                          value={values.tel}
-                          onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                        />
-                        {errors.tel && <p className="error">{errors.tel}</p>}
-                  </Col>
-
-                  <Col>
-                    <input
-                          className="inputlogin"
-                          type="date"
-                          data-date-inline-picker="true"
-                          name="DOB"
-                          min="1900-01-01"
-                          max="2009-12-31"
-                          placeholder="dd-mm-yyyy"
-                          required
-                          value={values.DOB}
-                          onChange={handleChange}
-                          style={{borderRadius: "10px",height:"40px",width:"200px"}}
-                        />
-                        {errors.DOB && <p className="error">{errors.DOB}</p>}
-                  </Col>
-              </Row>
-
-              <Row>
-                <input
-                          className="inputlogin"
-                          name="confirmcode"
-                          defaultValue={values.confirmationCode}
-                          type="hidden"
-                          style={{  borderRadius: "10px" }}
-                        />
-              </Row>
-              <br />               
-              <Row style={{height:"65px"}}>
-                      <Col>
-                        <Button
-                          className="buttonlogin"
-                          type="submit"
-                          value="Submit"
-                          onClick={handleShow1}
-                          style={{  width: "200px",borderRadius: "10px" }}
-                        > Sign Up
-                        </Button>
-                        
-                        <Modal show={show1} onHide={handleClose1} centered>
-                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
-                                    <Modal.Body>
-                                    <center><b><h1>Confirm Register</h1></b></center>
-                                    <hr></hr>
-                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
-                                    <center><h3>Are you sure to registration?</h3></center>
-                                
-                                    </Modal.Body>
-                                    <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleSubmits} type ="submit">
-                                            CONFIRM
-                                        </Button>
-                                        <Button variant="secondary" onClick={handleClose1}>
-                                            CLOSE
-                                        </Button>    
-                                </Modal.Footer>
-                            </Modal>
-                      </Col>
-
-                      <Col>
-                        <Button
-                          className="buttonlogin"
-                          variant="outline-danger"
-                          onClick={() => setShow(true)}
-                          style={{  width: "200px",borderRadius: "10px" }}
-                        >
-                          Cancel
-                        </Button>
-                        <Modal show={show2} onHide={handleClose2} centered>
-                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
-                                    <Modal.Body>
-                                    <center><b><h1>Warning</h1></b></center>
-                                    <hr></hr>
-                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
-                                    <center><h3>Are you sure to cancel the registration?</h3></center>
-                                
-                                    </Modal.Body>
-                                    <Modal.Footer>
-                                        <Button variant="secondary" type ="submit" onClick={handleSubmits}>
-                                            CONFIRM
-                                        </Button>
-                                        <Button variant="secondary" onClick={handleClose2}>
-                                            CLOSE
-                                        </Button>
-  
-                                </Modal.Footer>
-                            </Modal>
-
-                      </Col>
-                      
-              </Row>
-              <br /> 
-              <Row style={{ textAlign:"center" }}>       
-                <Col>
-                <Button
-                        onClick={handleClick}
-                        variant="outline-info"
-                        size="lg"
-                        style={{ width: "auto", borderRadius: "12px",textAlign:"center" }}
-                        type = "reset"  
-                      >
-                        Back to Login
-                      </Button>       
-                </Col>
-                            
-              </Row>
-            
-
-              </Col>
-            </Row>
-          </Container>
-          </form>
-        </div>
-      
-      </div>
-       
-
-        <div style={{ textAlign: "center" }}>
-          <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Login</h1>
-          <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
-          <Container>
-             <Row>
-                <Col>
-                  <h1 style={{ marginTop: "40%" }}>Rail Transport System</h1>
-                  <img
-                    className="sealImage"
-                    alt="Image of Seal"
-                    src="images/LOGO.png"
-                    style={{ width: "70" }}
-                  />
-
-                </Col>
-                <Col >
-                <form>
-                    <h2 htmlFor="chk" aria-hidden="true">
-                      <h1 style={{ marginTop: "40%" }}>[RTS] Login</h1>
-                    </h2>
-                    <br/> 
-                    <Col>
-                      <Row style={{height:"80px"}}>
-                      <Col>
-                        <input
-                          className="inputlogin"
-                          type="email"
-                          name="login_username"
-                          placeholder="User Name"
-                          required
-                          value={values.login_username}
-                          onChange={handleChange}
-                          
-                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
-                        />
-                        {login_errors.login_username && (
-                          <p className="error">{login_errors.login_username}</p>
-                        )}
-                        </Col>
-                      </Row>
-                      
-                      
-                      <Row style={{height:"80px"}}>
-                        <Col>
-                        <input
-                          className="inputlogin"
-                          type="password"
-                          name="login_password"
-                          placeholder="Password"
-                          required
-                          value={values.login_password}
-                          onChange={handleChange}
-                          style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
-                        />
-                        {login_errors.login_password && (
-                          <p className="error">{login_errors.login_password}</p>
-                        )}
-                        </Col>
-                        
-                      </Row>
-                    
-                      
+                      <br />
+                      <input
+                        className="inputlogin"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                        value={values.email}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.email && <p className="error">{errors.email}</p>}
+                      <br />
+                      <input
+                        className="inputlogin"
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        required
+                        value={values.password}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.password && (
+                        <p className="error">{errors.password}</p>
+                      )}
+                      <br />
+                      <input
+                        className="inputlogin"
+                        type="password"
+                        name="repeat_password"
+                        placeholder="RE- Password"
+                        required
+                        value={values.repeat_password}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.repeat_password && (
+                        <p className="error">{errors.repeat_password}</p>
+                      )}
+                      <br />
+                      <input
+                        className="inputlogin"
+                        type="Telephone"
+                        name="tel"
+                        placeholder="Tel"
+                        maxlength="10"
+                        required
+                        value={values.tel}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.tel && <p className="error">{errors.tel}</p>}
+                      <br />
+                      <input
+                        className="inputlogin"
+                        type="date"
+                        data-date-inline-picker="true"
+                        name="DOB"
+                        min="1900-01-01"
+                        max="2009-12-31"
+                        placeholder="dd-mm-yyyy"
+                        required
+                        value={values.DOB}
+                        onChange={handleChange}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                      {errors.DOB && <p className="error">{errors.DOB}</p>}
+                      <input
+                        className="inputlogin"
+                        name="confirmcode"
+                        defaultValue={values.confirmationCode}
+                        type="hidden"
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                    </div>
+                    <br />
+                    <div id="right">
                       <Button
-                        onClick={handleLogin}
-                        size="lg"
-                        style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
+                        className="buttonlogin"
+                        type="submit"
+                        value="Submit"
+                        onClick={handleSubmits}
+                        style={{ margin: "10px", borderRadius: "10px" }}
                       >
-                        Login
+                        Sign Up
                       </Button>
                       <Button
-                      onClick={handleClick}
-                      variant="outline-success"
-                      size="lg"
-                      style={{ margin: "10px", borderRadius: "10px",width:"200px",height:"50px" }}
-                    >
-                      Register
-                    </Button>
-                    </Col>
-                </form>
-
-                </Col>
-
-             </Row>        
-          </Container>
-
-
+                        className="buttonlogin"
+                        variant="outline-danger"
+                        onClick={() => setShow(true)}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      >
+                        Cancel
+                      </Button>
+                    </div>
+                  </form>
+                </div>
+              </Col>
+            </Row>
           </div>
           <br></br>
-          
+          <Button
+            onClick={handleClick}
+            variant="outline-info"
+            size="lg"
+            style={{ width: "auto", borderRadius: "12px" }}
+          >
+            Login is here
+          </Button>
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <h1>Rail Transport System / Register</h1>
+          <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
+            <Row style={{ height: "100vh" }}>
+              <Col>
+                <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
+                <img
+                  className="sealImage"
+                  alt="Image of Seal"
+                  src="images/LOGO.png"
+                  style={{ width: "70" }}
+                />
+              </Col>
+              <Col>
+                <div
+                  className="login"
+                  style={{ marginTop: "50%", textAlign: "center" }}
+                >
+                  <form>
+                    <h2 htmlFor="chk" aria-hidden="true">
+                      Login
+                    </h2>
+                    <br />
+                    <input
+                      className="inputlogin"
+                      type="email"
+                      name="login_username"
+                      placeholder="User Name"
+                      required
+                      value={values.login_username}
+                      onChange={handleChange}
+                      style={{ margin: "10px", borderRadius: "10px" }}
+                    />
+                    {login_errors.login_username && (
+                      <p className="error">{login_errors.login_username}</p>
+                    )}
+                    <br />
+                    <input
+                      className="inputlogin"
+                      type="password"
+                      name="login_password"
+                      placeholder="Password"
+                      required
+                      value={values.login_password}
+                      onChange={handleChange}
+                      style={{ margin: "10px", borderRadius: "10px" }}
+                    />
+                    {login_errors.login_password && (
+                      <p className="error">{login_errors.login_password}</p>
+                    )}
+                    <br />
+
+                    <Button
+                      onClick={handleLogin}
+                      style={{ margin: "10px", borderRadius: "10px" }}
+                    >
+                      Login
+                    </Button>
+                  </form>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <br></br>
+          <Button
+            onClick={handleClick}
+            variant="outline-success"
+            size="lg"
+            style={{ margin: "10px", borderRadius: "10px" }}
+          >
+            Back to Register
+          </Button>
         </div>
       </ReactCardFlip>
     </div>
