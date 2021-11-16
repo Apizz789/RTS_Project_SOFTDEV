@@ -220,42 +220,46 @@ function TrainInformation() {
                         <Accordion.Item eventKey="0" >
                             <Accordion.Header>ระบบ RTS คืออะไร</Accordion.Header>
                             <Accordion.Body>
-                            55555555555555555555
+                            ระบบเกี่ยวกับการคำนวณเส้นทางของรถไฟฟ้าภายในกรุงเทพมหานครทั้ง 3 สาย ได้แก่ BTS, MRT และ ARL ซึ่งนอกจากนี้ยังมีการประชาสัมพันธ์ข่าวสารต่างๆของ 3 รถไฟฟ้าและระบบจำลองการซื้อขายตั๋ว
                             </Accordion.Body>
                         </Accordion.Item>
 
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>รถไฟฟ้าในระบบ RTS มีเส้นทางการให้บริการกี่สาย</Accordion.Header>
                             <Accordion.Body>
-                            555555555555555555555
+                            10 สาย ประกอบด้วย 
+                            BTS 5 สาย 
+                            MRT 4 สาย 
+                            ARL 1 สาย
                             </Accordion.Body>
                         </Accordion.Item>
 
                         <Accordion.Item eventKey="2">
                             <Accordion.Header>ฉันจะทราบได้อย่างไร ว่าฉันจะเดินทางไปยังจุดหมายได้ถูกต้อง</Accordion.Header>
                             <Accordion.Body>
-                            555555555555555555555
+                            ใช้ระบบคำนวณเส้นทาง ของ RTS(Rail Transport System) ที่จะสามาถบอกสถานีที่ต้องเดินทาง รวมถึงค่าใช้จ่ายและระยะเวลาในการเดินทาง
                             </Accordion.Body>
                         </Accordion.Item>
 
                         <Accordion.Item eventKey="3">
                             <Accordion.Header>ระบบสมาชิก RTS คืออะไร ทำอะไรได้บ้าง </Accordion.Header>
                             <Accordion.Body>
-                            555555555555555555555
+                            ระบบสมาชิก RTS คือผู้ใช้งานทั่วไปสามารถเป็นสมาชิกระบบ RTS ได้ เพื่อที่จะสามารถสั่งซื้อตั๋วรถไฟฟ้าผ่านช่องออนไลน์
                             </Accordion.Body>
                         </Accordion.Item>
 
                         <Accordion.Item eventKey="4">
                             <Accordion.Header>ฉันจะซื้อตั๋วผ่านระบบ RTS ได้อย่างไร</Accordion.Header>
                             <Accordion.Body>
-                            555555555555555555555
+                            สำหรับผู้ใช้งาน ที่ไม่ได้เป็นสมาชิก ต้องทำการ Register หลังจากนั้นให้ทำการ LOGIN เข้าสู่ระบบ จึงจะสามารถ เข้าเมนู Ticket เพื่อสั่งซื้อตั๋วได้
                             </Accordion.Body>
                         </Accordion.Item>
 
                         <Accordion.Item eventKey="5">
                             <Accordion.Header>หากมีข้อสงสัยเกี่ยวกับระบบ ฉันจะติดต่อใคร</Accordion.Header>
                             <Accordion.Body>
-                            555555555555555555555
+                            Email : info@railtransportsystems.com
+                            Phone : 02-999-9999 
                             </Accordion.Body>
                         </Accordion.Item>
 

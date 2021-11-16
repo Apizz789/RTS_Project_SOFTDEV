@@ -71,8 +71,10 @@ function Navbar() {
     }
   };
   const d = new Date();
+  
   const handleLogout = () => {
     setLogout(true);
+    setShow1(false)
   };
 
   const [show1, setShow1] = useState(false);
