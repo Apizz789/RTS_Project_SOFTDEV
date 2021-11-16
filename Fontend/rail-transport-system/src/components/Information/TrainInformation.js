@@ -67,7 +67,7 @@ function TrainInformation() {
             <Container>
             
                 <Row style={{textAlign:"center"}}>
-                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fed46e", textAlign:"left"}}>
+                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fed46e", textAlign:"left"}} className="col-info">
                     <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><hr></hr>
                     <div style={{backgroundColor:"#fff", borderRadius:"20px"}}>
                     <Button variant="link" onClick={handleShow1}> <i class="fas fa-envelope-open"></i>   [BTS] - ประกาศ !!! ปิดสถานี สายสีเขียวอ่อน E04 อโศก Asok : Update 15/11/2021</Button>
@@ -180,7 +180,7 @@ function TrainInformation() {
 
 
                     </Col>
-                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fad4ae"}}>
+                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fad4ae" }}className="col-info">
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><hr></hr>
                     
                     <marquee  behavior="scroll" direction="up" scrollamount="2" style={{textAlign:"left", border:"0",backgroundColor:"#fff", borderRadius:"20px"}}>
@@ -206,7 +206,7 @@ function TrainInformation() {
                    <hr></hr>
                    <br></br>
                     </Col>
-                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#ff7b7b",}}>
+                    <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#ff7b7b",}}className="col-info">
                     <br></br><h1><i class="fas fa-comments"></i> RTS Q&A</h1><hr></hr>
 
                     <Accordion defaultActiveKey="0" >
@@ -259,7 +259,7 @@ function TrainInformation() {
                 </Row>
 
                 <Row>
-                    <Col style={{borderRadius:"20px",width:"600px",height:"600px",margin:"10px",backgroundColor:"#a6e3e9",}}>
+                    <Col style={{borderRadius:"20px",width:"600px",height:"600px",margin:"10px",backgroundColor:"#a6e3e9",}} className="col-info">
                     <br></br><h1><i class="fas fa-map-marked-alt"></i> RTS MAP</h1><hr></hr>
                     <div style={{textAlign:"center"}}>
                     
@@ -270,7 +270,7 @@ function TrainInformation() {
                     </div>
                     </Col>
 
-                    <Col style={{borderRadius:"20px",margin:"10px",backgroundColor:"#95e3bb",}}>
+                    <Col style={{borderRadius:"20px",margin:"10px",backgroundColor:"#95e3bb",}} className="col-info">
                         <br></br><h1><i class="fas fa-subway"></i> ALL TRAIN</h1>
                         
                         <Col>
