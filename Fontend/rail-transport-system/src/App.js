@@ -28,8 +28,8 @@ import SourceTicProvider from './components/Buyticket/UseContextSourceTic'
 import Confirm from './components/Confirm/Confirm';
 import Header from './components/pages/Header';
 import SelectDestTic from './components/pages/SelectDestForTic';
-import DestTicProvider from './components/Buyticket/UseContextDestTic'
-import CountTicProvider from './components/Buyticket/UseContextCount'
+import DestTicProvider from './components/Buyticket/UseContextDestTic';
+import CountTicProvider from './components/Buyticket/UseContextCount';
 function App() {
 
   return (

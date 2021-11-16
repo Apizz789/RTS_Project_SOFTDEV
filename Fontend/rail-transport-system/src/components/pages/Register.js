@@ -1,6 +1,5 @@
 import React from 'react'
 import TrainRegister from '../Register/TrainRegister'
-import '../../App.css'
 
 function Register() {
     return (
