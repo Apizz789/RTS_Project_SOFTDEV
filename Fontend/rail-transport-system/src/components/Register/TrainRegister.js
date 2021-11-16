@@ -350,9 +350,11 @@ function TrainRegister() {
         </div>
       </Alert>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
+      <form onSubmit={sendEmail}>
         <div  className="Card-Regis" align="center" >
           <Container>
             <Row>
+            
               <Col>
               1
               </Col>
@@ -589,12 +591,13 @@ function TrainRegister() {
                 </Col>
                             
               </Row>
-
+            
 
               </Col>
             </Row>
           </Container>
         </div>
+        </form>
        
 
         <div style={{ textAlign: "center" }}>
