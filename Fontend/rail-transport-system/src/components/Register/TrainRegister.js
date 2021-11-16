@@ -9,9 +9,9 @@ import Alert from "react-bootstrap/Alert";
 import emailjs from "emailjs-com";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
-let submit = false;
 
 function TrainRegister() {
+  const [submit,setSubmit] = useState(false);
   const [login_state, setLogin_state, removeLogin_state] = useCookies([
     "login_token",
   ]);
@@ -27,18 +27,40 @@ function TrainRegister() {
 
 
   const [show1, setShow1] = useState(false);
-  const handleClose1 = () => setShow1(false);
-  const handleShow1 = () => setShow1(true);
 
+
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = (event) => {
+    event.preventDefault();
+    setErrors(validation_register(values));
+    if (
+      !errors.username &&
+      !errors.fname &&
+      !errors.lname &&
+      !errors.password &&
+      !errors.repeat_password &&
+      !errors.tel &&
+      !errors.DOB &&
+      !errors.email &&
+      !errors.sex &&
+      values.fname &&
+      values.lname &&
+      values.username &&
+      values.password &&
+      values.repeat_password &&
+      values.tel &&
+      values.DOB &&
+      values.email &&
+      values.sex
+    )
+    {
+      setShow1(true);
+    }
+  }
 
   const [show2, setShow2] = useState(false);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
-
-
-
-
-
 
 
 
@@ -53,6 +75,7 @@ function TrainRegister() {
   const [verify, setVerify] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const handleClick = () => {
+
     setIsFlipped(!isFlipped);
       setShow(false);
       setValues({
@@ -86,12 +109,14 @@ function TrainRegister() {
         status: "",
       })
 
-      console.log(errors)
+      // console.log(errors)
       setGender('');
 
     
   };
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+
+  
 
   const [values, setValues] = useState({
     fname: "",
@@ -156,9 +181,12 @@ function TrainRegister() {
         });
   };
 
+
   const handleSubmits = () => {
-    setErrors(validation_register(values));
-    submit = true;
+      setSubmit(true)
+      setShow1(false);
+    
+
   };
 
   const [gender, setGender] = React.useState();
@@ -183,7 +211,6 @@ function TrainRegister() {
     //             })
     //              .then(response => {console.log(response)})
     //              .catch(error => {console.log(error)})
-
     const characters =
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let token = "";
@@ -220,8 +247,11 @@ function TrainRegister() {
         console.log(error);
       });
 
-    submit = false;
+    setIsFlipped(!isFlipped);
+    setSubmit(false);
   }
+
+
 
   function setVerified(verify) {
     setVerify(verify);
@@ -235,6 +265,7 @@ function TrainRegister() {
   // }
   const sendEmail = (event) => {
     event.preventDefault();
+    console.log("sendEmail")
     if (
       !errors.username &&
       !errors.fname &&
@@ -246,7 +277,7 @@ function TrainRegister() {
       !errors.email &&
       !errors.sex
     ) {
-      console.log(event.target);
+      // console.log(event.target);
       emailjs
         .sendForm(
           "gmail",
@@ -297,26 +328,26 @@ function TrainRegister() {
       });
       user_list.push(res.data[key].Username);
     }
-    console.log(fetchedResult);
+    // console.log(fetchedResult);
     let reversed = user_list.reverse();
-    console.log(reversed);
+    // console.log(reversed);
     if (Object.values(user_list).includes(values.login_username)) {
       InvUn = false;
       let key = user_list.indexOf(values.login_username);
-      console.log(fetchedResult[key].status);
-      console.log(values.login_password);
+      // console.log(fetchedResult[key].status);
+      // console.log(values.login_password);
       if (fetchedResult[key].password === values.login_password) {
-        console.log("Password Match");
+        // console.log("Password Match");
         InvPwd = false;
         if (fetchedResult[key].status === "Active") {
           if (!login_errors.login_username && !login_errors.login_password) {
             
             const d = new Date();
 
-            console.log("login");
+            // console.log("login");
             setLogin_state(["login_token"], 1);
-            setUsername_cookie(["username_tkn"],values.login_username)
-            setLogin_time(["login_time_tkn"],d)
+            setUsername_cookie(["username_tkn"],values.login_username);
+            setLogin_time(["login_time_tkn"],d);
           }
 
           
@@ -389,9 +420,10 @@ function TrainRegister() {
         </div>
       </Alert>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
-      <form onSubmit={sendEmail}>
+      <div className="signup">
       <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
         <div  className="Card-Regis" align="center" >
+        <form onSubmit={sendEmail}>
           <Container>
             <Row>
             
@@ -620,7 +652,7 @@ function TrainRegister() {
                                 
                                     </Modal.Body>
                                     <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleSubmits}>
+                                        <Button variant="secondary" onClick={handleSubmits} type ="submit">
                                             CONFIRM
                                         </Button>
                                         <Button variant="secondary" onClick={handleClose1}>
@@ -649,7 +681,7 @@ function TrainRegister() {
                                 
                                     </Modal.Body>
                                     <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleSubmits}>
+                                        <Button variant="secondary" type ="submit" onClick={handleSubmits}>
                                             CONFIRM
                                         </Button>
                                         <Button variant="secondary" onClick={handleClose2}>
@@ -682,8 +714,10 @@ function TrainRegister() {
               </Col>
             </Row>
           </Container>
+          </form>
         </div>
-        </form>
+      
+      </div>
        
 
         <div style={{ textAlign: "center" }}>
