@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TrainCalculate.css";
 import { Link, useHistory } from "react-router-dom";
 import SelectforCal from "./SelectforCal";
@@ -68,8 +68,11 @@ const Navbar = () => {
 };
 
 export default function TrainCalculate() {
+  const history = useHistory();
   const { clickS, setclickS } = useContext(UserContextS);
   const { clickD, setclickD } = useContext(UserContextD);
+  const { show, setshow } = useState(false);
+
   const handleSetdefault = () => {
     setclickS("Please Select Sourrce :");
     setclickD("Please Select Sourrce :");
@@ -88,7 +91,7 @@ export default function TrainCalculate() {
                 alignContent: "center",
                 textAlign: "center",
                 margin: "20px",
-                color: "white"
+                color: "white",
               }}
             >
               คำนวณค่าโดยสาร
@@ -101,7 +104,7 @@ export default function TrainCalculate() {
                 textAlign: "center",
                 marginLeft: "20px",
                 borderStyle: "solid",
-                borderColor:"#7E7D81"
+                borderColor: "#7E7D81",
               }}
             >
               <h2>
@@ -138,26 +141,36 @@ export default function TrainCalculate() {
                 </Link>
               </h2>
             </div>
-            <Link to="/calculation-result">
-              <Button
-                //onClick={() => handleSetdefault()}
-                variant="outline-cal"
-                size="lg"
-                style={{
-                  width: "auto",
-                  borderRadius: "12px",
-                  margin: "20px",
-                }}
-              >
-                คำนวณค่าโดยสาร
-              </Button>
-            </Link>
+            <Button
+              onClick={() => {
+                if (!show)
+                history.push("/calculation-result");
+                else
+                {}  
+              }}
+              variant="outline-cal"
+              size="lg"
+              style={{
+                width: "auto",
+                borderRadius: "12px",
+                margin: "20px",
+              }}
+            >
+              คำนวณค่าโดยสาร
+            </Button>
           </Col>
           <Col>
             <img
               src="images/ตารางรถไฟฟ้า.png"
-              style={{ width: "100vh", height: "100vh", borderRadius: "60px",borderStyle: "solid",borderStyle: "solid",borderWidth: "10px",borderColor:"#7E7D81"}}
-              
+              style={{
+                width: "100vh",
+                height: "100vh",
+                borderRadius: "60px",
+                borderStyle: "solid",
+                borderStyle: "solid",
+                borderWidth: "10px",
+                borderColor: "#7E7D81",
+              }}
             />
           </Col>
         </Row>
