@@ -614,7 +614,7 @@ function TrainRegister() {
           <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
           <Container>
              <Row>
-                <Col>1
+                <Col>
                   <h1 style={{ marginTop: "40%" }}>Rail Transport System</h1>
                   <img
                     className="sealImage"
@@ -624,7 +624,7 @@ function TrainRegister() {
                   />
 
                 </Col>
-                <Col >2
+                <Col >
                 <form>
                     <h2 htmlFor="chk" aria-hidden="true">
                       <h1 style={{ marginTop: "40%" }}>[RTS] Login</h1>
