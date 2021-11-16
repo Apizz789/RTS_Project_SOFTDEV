@@ -8,3 +8,23 @@
     color:#F9F9F8 !important ;
     background-color: #C25F5D !important;
   }
+  .btn-outline-warning {
+    color: #ffc107  !important;
+    border-color: #ffc107  !important;
+    background-color: #F9F9F8 !important;
+  }
+  .btn-outline-warning:hover {
+    color:#F9F9F8 !important ;
+    background-color: #ffc107 !important;
+  }
+
+  .btn-outline-danger {
+    color: #dc3545  !important;
+    border-color: #dc3545  !important;
+    background-color: #F9F9F8 !important;
+  }
+
+  .btn-outline-danger:hover {
+    color:#F9F9F8 !important ;
+    background-color: #dc3545 !important;
+  }

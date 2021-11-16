@@ -21,55 +21,50 @@ import Dropdown from "react-bootstrap/Dropdown";
 // import { graph, dijkstra } from './distance_cal.js';
 import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
 
-
-
 function TrainPayment() {
-    const[picture, setPicture] = useState("");
+  const [picture, setPicture] = useState("");
 
-    const[promtpay_preview, setPromtpay_preview] = useState("");
+  const [promtpay_preview, setPromtpay_preview] = useState("");
 
-    const[bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
+  const [bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
 
-    function handlePromtpay(event){
-        if (event.target.files[0]){
-            setPicture(event.target.files[0])
-            setPromtpay_preview(URL.createObjectURL(event.target.files[0]));
-        }
+  function handlePromtpay(event) {
+    if (event.target.files[0]) {
+      setPicture(event.target.files[0]);
+      setPromtpay_preview(URL.createObjectURL(event.target.files[0]));
     }
+  }
 
-    function handleBank(event){
-        if (event.target.files[0]){
-            setPicture(event.target.files[0])
-            setBank_preview(URL.createObjectURL(event.target.files[0]));
-        }
+  function handleBank(event) {
+    if (event.target.files[0]) {
+      setPicture(event.target.files[0]);
+      setBank_preview(URL.createObjectURL(event.target.files[0]));
     }
+  }
 
-  function refreshPage(){
-    window.scrollTo(0,0);
+  function refreshPage() {
+    window.scrollTo(0, 0);
   }
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   const handleClose1 = () => {
-      if(picture !== ""){
-        setCount("รูปแบบการชำระเงิน");
-        setPromtpay_preview("")
-        setBank_preview("images/KBANK_LOGO.png")
-        setPicture("")
-      }
-      else{
-          alert("Please Select Your Slip")
-      }
-      
+    if (picture !== "") {
+      setCount("รูปแบบการชำระเงิน");
+      setPromtpay_preview("");
+      setBank_preview("images/KBANK_LOGO.png");
+      setPicture("");
+    } else {
+      alert("Please Select Your Slip");
+    }
   };
 
   const handleClose2 = () => {
-      setCount("รูปแบบการชำระเงิน");
-      setBank_preview("images/KBANK_LOGO.png")
-      setPromtpay_preview("")
-      setPicture("")
-};
-
+    setCount("รูปแบบการชำระเงิน");
+    setBank_preview("images/KBANK_LOGO.png");
+    setPromtpay_preview("");
+    setPicture("");
+  };
 
   const handleShow = () => {
     setShow(true);
@@ -131,54 +126,106 @@ function TrainPayment() {
 
             <Col style={{ textAlign: "center" }}>
               <Col
-                style={{
-                  borderRadius: "20px",
-                  width: "1000px",
-                  height: "850px",
-                  margin: "10px",
-                  backgroundColor: "#99ff99",
-                  textAlign: "center",
-                }}
+               style={{
+            backgroundColor: "#93A9A3",
+            borderRadius: "12px",
+            width: "70vw",
+            textAlign: "center",
+            borderStyle: "solid",
+            borderColor: "#7E7D81",
+            margin: "auto",
+          }}
               >
-                <br></br>
-                <h1>
-                  <i class="fas fa-check-double"></i> Confirm Order
+                <h1 style={{color:"#F9F9F8"}}>
+                  <i class="fas fa-check-double" ></i> Confirm Order
                 </h1>
                 <hr />
                 <br></br>
-                <h3 align="left">
-                  หมายเลขคำสั่งซื้อ :________________________________
-                </h3>
-                <h3 align="left">
-                  ชื่อผู้ใช้ :________________________________
-                </h3>
-                <h3 align="left">เส้นทางโดยสาร : </h3>
+                <Col
+                  style={{
+                    backgroundColor: "#A4C0BF",
+                    borderRadius: "12px",
+                    width: "40vw",
+                    margin: "auto",
+                    color: "#F9F9F8",
+                    borderStyle: "solid",
+                    borderColor: "#7E7D81",
+                    borderWidth: "5px",
+                    margin: "auto",
+                  }}
+                >
+                  <br></br>
+                  <h4 align="center">
+                    หมายเลขคำสั่งซื้อ :______________________
+                  </h4>
+                  <h4 align="center">ชื่อผู้ใช้ :______________________</h4>
+                  <h4 align="center">เส้นทางโดยสาร : </h4>
+                </Col>
                 <br></br>
                 <br></br>
-                <h3>
+                <h5
+                  style={{
+                    whiteSpace: "pre",
+                    backgroundColor: "#F9F9F8",
+                    borderRadius: "12px",
+                    width: "40vw",
+                    textAlign: "center",
+                    marginLeft: "20px",
+                    borderStyle: "solid",
+                    borderColor: "#7E7D81",
+                    borderWidth: "5px",
+                    margin: "auto",
+                  }}
+                >
                   {clickSTic} <br></br> <i class="fas fa-arrow-down"></i>
                   <br></br> {clickDTic}
-                </h3>
+                </h5>
                 <br></br> <br />
-                <h3 align="left">
-                  ระยะเวลาที่ใช้โดยประมาณ : {Ans?.[2]} นาที
-                </h3>
-                <h3 align="left"> ราคา : {Ans?.[1]} บาท</h3>
-                <h3 align="left"> จำนวน : {clickCountTic} ชิ้น</h3>
-                <h3 align="left">
-                  {" "}
-                  ราคารวม : {(Ans?.[1])*clickCountTic} บาท
-                </h3>
+                <Col
+                  style={{
+                    backgroundColor: "#A4C0BF",
+                    borderRadius: "12px",
+                    width: "40vw",
+                    margin: "auto",
+                    color: "#F9F9F8",
+                    borderStyle: "solid",
+                    borderColor: "#7E7D81",
+                    borderWidth: "5px",
+                    margin: "auto",
+                  }}
+                >
+                  <h4 align="center">
+                    ระยะเวลาที่ใช้โดยประมาณ : {Ans?.[2]} นาที
+                  </h4>
+                  <h4 align="center"> ราคา : {Ans?.[1]} บาท</h4>
+                  <h4 align="center"> จำนวน : {clickCountTic} ชิ้น</h4>
+                  <h4 align="center">
+                    {" "}
+                    ราคารวม : {Ans?.[1] * clickCountTic} บาท
+                  </h4>
+                </Col>
                 <br></br>
                 <br></br>
-                <h3 align="left">
-                  {" "}
-                  วันที่ซื้อ :________________________________
-                </h3>
-                <h3 align="left">
-                  {" "}
-                  วันที่หมดอายุ :________________________________
-                </h3>
+                <Col
+                  style={{
+                    backgroundColor: "#A4C0BF",
+                    borderRadius: "12px",
+                    width: "40vw",
+                    margin: "auto",
+                    color: "#F9F9F8",
+                    borderStyle: "solid",
+                    borderColor: "#7E7D81",
+                    borderWidth: "5px",
+                    margin: "auto",
+                  }}
+                >
+                  <h4 align="center">
+                    วันที่ซื้อ :__________________
+                  </h4>
+                  <h4 align="center">
+                    วันที่หมดอายุ :_______________
+                  </h4>
+                </Col>
                 <Link to="/ticket">
                   <Button
                     variant="outline-warning"
@@ -254,13 +301,26 @@ function TrainPayment() {
                         }}
                       ></img>
                     </center>
-                    <Form.Group controlId="formFileMultiple" className="mb-3" onSubmit={handleClose1}>
+                    <Form.Group
+                      controlId="formFileMultiple"
+                      className="mb-3"
+                      onSubmit={handleClose1}
+                    >
                       <Form.Label>Upload You Slip Payment</Form.Label>
-                      <Form.Control type="file" multiple name="picture" onChange={handlePromtpay}/>
+                      <Form.Control
+                        type="file"
+                        multiple
+                        name="picture"
+                        onChange={handlePromtpay}
+                      />
                     </Form.Group>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1} type = "submit">
+                    <Button
+                      variant="secondary"
+                      onClick={handleClose1}
+                      type="submit"
+                    >
                       OK
                     </Button>
                   </Modal.Footer>
@@ -316,7 +376,11 @@ function TrainPayment() {
                               className="mb-3"
                             >
                               <Form.Label>Upload You Slip Payment</Form.Label>
-                              <Form.Control type="file" multiple onChange={handleBank}/>
+                              <Form.Control
+                                type="file"
+                                multiple
+                                onChange={handleBank}
+                              />
                             </Form.Group>
                           </Col>
                         </Row>
@@ -330,7 +394,11 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1} type = "submit">
+                    <Button
+                      variant="secondary"
+                      onClick={handleClose1}
+                      type="submit"
+                    >
                       OK
                     </Button>
                   </Modal.Footer>
@@ -427,7 +495,11 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose1} type = "submit">
+                    <Button
+                      variant="secondary"
+                      onClick={handleClose1}
+                      type="submit"
+                    >
                       OK
                     </Button>
                   </Modal.Footer>
