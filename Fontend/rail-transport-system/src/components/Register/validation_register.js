@@ -50,10 +50,13 @@ const validation_register = (values) => {
     else if(values.username.length < 8 || values.username.length > 20){
         errors.username = <small><small><h6>"Username length must be between 8-20 characters"</h6></small></small>
     }
+    
     else if (Object.values(user_list).includes(values.username)){
         errors.username = <small><small><h6>"This Username is already taken."</h6></small></small>
     }
-
+    if(!values.username.match(/^([A-Z]|[a-z]|[0-9])/i)){
+        errors.username = <small><small><h6>"Last Name must contains only A-Z , a-z"</h6></small></small>
+    }
 
 
     if(!values.password){
