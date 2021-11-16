@@ -152,18 +152,8 @@ function Navbar() {
                     Calculate
                   </Link>
                 </li>)}
-                
-                {login_state['login_token'] ?(<li className='navbar-item'>
-                  <Link
-                    to='/history'
-                    className='nav-links'
-                    onClick={closeMobileMenu}
-                    onClick={refreshPage}
-                  >
-                    History
-                  </Link>
-                </li>) :
-                (<li className='navbar-item'>
+          
+                <li className='navbar-item'>
                   <Link
                     to='/contact'
                     className='nav-links'
@@ -173,7 +163,17 @@ function Navbar() {
                   >
                     Contact
                   </Link>
-                </li>)}
+                </li>
+                {login_state['login_token'] ?(<li className='navbar-item'>
+                  <Link
+                    to='/history'
+                    className='nav-links'
+                    onClick={closeMobileMenu}
+                    onClick={refreshPage}
+                  >
+                    History
+                  </Link>
+                </li>) :(<p className="uname"></p>) }
               </ul>
               
               {login_state['login_token'] ?(<Link to='/home' className='btn-mobile' onClick={refreshPage}>

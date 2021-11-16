@@ -21,16 +21,55 @@ import Dropdown from "react-bootstrap/Dropdown";
 // import { graph, dijkstra } from './distance_cal.js';
 import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
 
+
+
 function TrainPayment() {
-  function refreshPage() {
-    window.scrollTo(0, 0);
+    const[picture, setPicture] = useState("");
+
+    const[promtpay_preview, setPromtpay_preview] = useState("");
+
+    const[bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
+
+    function handlePromtpay(event){
+        if (event.target.files[0]){
+            setPicture(event.target.files[0])
+            setPromtpay_preview(URL.createObjectURL(event.target.files[0]));
+        }
+    }
+
+    function handleBank(event){
+        if (event.target.files[0]){
+            setPicture(event.target.files[0])
+            setBank_preview(URL.createObjectURL(event.target.files[0]));
+        }
+    }
+
+  function refreshPage(){
+    window.scrollTo(0,0);
   }
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   const handleClose1 = () => {
-    setCount("รูปแบบการชำระเงิน");
+      if(picture !== ""){
+        setCount("รูปแบบการชำระเงิน");
+        setPromtpay_preview("")
+        setBank_preview("images/KBANK_LOGO.png")
+        setPicture("")
+      }
+      else{
+          alert("Please Select Your Slip")
+      }
+      
   };
+
+  const handleClose2 = () => {
+      setCount("รูปแบบการชำระเงิน");
+      setBank_preview("images/KBANK_LOGO.png")
+      setPromtpay_preview("")
+      setPicture("")
+};
+
 
   const handleShow = () => {
     setShow(true);
