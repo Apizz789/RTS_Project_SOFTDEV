@@ -70,15 +70,19 @@ function TrainPayment() {
                     </Col>
                     
 
-                    <Col  style={{textAlign:"center"}}>
-                        <Col style={{borderRadius:"20px",width:"1000px",height:"600px",margin:"10px",backgroundColor:"#dbf2f8",textAlign:"center"}}>
-                            <br></br><h1><i class="fas fa-check-double"></i> Confirm Order</h1><br></br>
-                            <h3 align = "left">ชื่อผู้ใช้:________________________________</h3><br></br><br></br>
-                            <h3>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i><br></br>      {clickDTic}</h3><br></br>
-                            <h3 align = "left"> ราคา: {Ans[1]} บาท</h3>
-                            <h3 align = "left"> จำนวน: {clickCountTic} ชิ้น</h3>
-                            <h3 align = "left"> วันที่ซื้อ:________________________________</h3>
-                            <h3 align = "left" > วันที่หมดอายุ:________________________________</h3>
+                    <Col style={{textAlign:"center"}}>
+                        <Col style={{borderRadius:"20px",width:"1000px",height:"880px",margin:"10px",backgroundColor:"#99ff99",textAlign:"center"}}>
+                            <br></br><h1><i class="fas fa-check-double"></i> Confirm Order</h1><hr/><br></br>
+                            <h3 align = "left">หมายเลขคำสั่งซื้อ :________________________________</h3><br/>
+                            <h3 align = "left">ชื่อผู้ใช้ :________________________________</h3><br></br><br></br>
+                            <h3 align = "left">เส้นทางโดยสาร : </h3><br></br><br></br>
+                            <h3>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i><br></br>      {clickDTic}</h3><br></br> <br/>
+                            <h3 align = "left">ระยะเวลาที่ใช้โดยประมาณ :________________________________นาที</h3>
+                            <h3 align = "left"> ราคา : {Ans[1]} บาท</h3>
+                            <h3 align = "left"> จำนวน : {clickCountTic} ชิ้น</h3>
+                            <h3 align = "left"> ราคารวม : ________________________________</h3><br></br><br></br>
+                            <h3 align = "left"> วันที่ซื้อ :________________________________</h3>
+                            <h3 align = "left"> วันที่หมดอายุ :________________________________</h3>
                             
                             <Link to="/ticket">
                             <Button variant="outline-warning" style={{marginBottom:"5px",width:"100px",whiteSpace: 'pre', margin: '10px'}}>แก้ไข</Button>
