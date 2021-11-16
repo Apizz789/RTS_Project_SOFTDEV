@@ -14,6 +14,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { UserContextSTic } from "./UseContextSourceTic";
 import { UserContextDTic } from "./UseContextDestTic";
 import { UserContextCountTic } from "./UseContextCount";
+import { UserContextDate } from "./UseContextDate";
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./TrainTicket.css";
@@ -23,6 +24,7 @@ function TrainTicket() {
   const { clickDTic, setclickDTic } = useContext(UserContextDTic);
   const history = useHistory();
   const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
+  const { Date, setDate } = useContext(UserContextDate);
 
   //const { clickDTic , setclickDTic } = useContext(UserContextD);
   const DropdownItem = () => {
@@ -143,7 +145,7 @@ function TrainTicket() {
                 style={{borderRadius: "10px", width: "200px",margin: "auto"}}
                 required
 
-                // value={values.DOB}
+                // value={Date.placeholder}
                 // onChange={handleChange}
               />
 
@@ -157,6 +159,7 @@ function TrainTicket() {
                       handleShow();
                     else {
                       history.push("/payment");
+                      // setDate(value);
                     }
                   }}
                   variant="outline-success"
