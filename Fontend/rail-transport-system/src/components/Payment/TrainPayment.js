@@ -7,6 +7,9 @@ import { UserContextCountTic } from '../Buyticket/UseContextCount';
 import { useState , useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 
+// import { graph, dijkstra } from './distance_cal.js';
+import { graph, dijkstra } from '../CalculationResult/distance_cal.js';
+
 function TrainPayment() {
     function refreshPage(){
         window.scrollTo(0,0);
@@ -27,6 +30,9 @@ function TrainPayment() {
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
       const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
+
+      const Ans = dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+
 
       const DropdownItem =()=>{
         return(
@@ -61,8 +67,8 @@ function TrainPayment() {
                             <br></br><h1><i class="fas fa-check-double"></i> Confirm Order</h1><br></br>
                             <h3 align = "left">ชื่อผู้ใช้:________________________________</h3><br></br><br></br>
                             <h3>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i><br></br>      {clickDTic}</h3><br></br>
-                            <h3 align = "left"> ราคา:________________________________บาท</h3>
-                            <h3 align = "left"> จำนวน:{clickCountTic} ชิ้น</h3>
+                            <h3 align = "left"> ราคา: {Ans[1]} บาท</h3>
+                            <h3 align = "left"> จำนวน: {clickCountTic} ชิ้น</h3>
                             <h3 align = "left"> วันที่ซื้อ:________________________________</h3>
                             <h3 align = "left" > วันที่หมดอายุ:________________________________</h3>
                             
