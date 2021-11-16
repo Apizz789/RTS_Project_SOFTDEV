@@ -41,6 +41,12 @@ function TrainTicket() {
       </div>
     );
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div style={{ marginTop: "10px" }}>
       <h1 align="center">Ticket</h1>
@@ -107,17 +113,23 @@ function TrainTicket() {
               </Link>
             </Row>
 
-            <div style={{ textAlign: "center",display :"flex", justifyContent:"center" }}>
+            <div
+              style={{
+                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <h1 style={{ width: "200px" }}>จำนวนตั๋ว</h1>
               <div>
-              <Dropdown>
-                <Dropdown.Toggle variant="success">
-                  {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <DropdownItem />
-                </Dropdown.Menu>
-              </Dropdown>
+                <Dropdown>
+                  <Dropdown.Toggle variant="success">
+                    {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <DropdownItem />
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
             </div>
 
@@ -136,26 +148,44 @@ function TrainTicket() {
                 // value={values.DOB}
                 // onChange={handleChange}
               />
-            
-            <span>
-              <Button
-                
-                onClick={() => {
-                  if (clickSTic == "สถานีต้นทาง" || clickDTic == "สถานีปลายทาง")
-                    console.log("aimmmmmmmm");
-                  else {
-                    history.push("/payment");
-                  }
-                }}
-                variant="outline-success"
-                size="lg"
-                style={{ width: "auto", borderRadius: "12px", margin: "20px" }}
-              >
-                ซื้อตั๋ว
-              </Button>
-            </span>
 
+              <span>
+                <Button
+                  onClick={() => {
+                    if (
+                      clickSTic == "สถานีต้นทาง" ||
+                      clickDTic == "สถานีปลายทาง"
+                    )
+                      handleShow();
+                    else {
+                      history.push("/payment");
+                    }
+                  }}
+                  variant="outline-success"
+                  size="lg"
+                  style={{
+                    width: "auto",
+                    borderRadius: "12px",
+                    margin: "20px",
+                  }}
+                >
+                  ซื้อตั๋ว
+                </Button>
+              </span>
             </Row>
+            <Modal show={show} onHide={handleClose} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>warning</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              ไม่สามารถสั่งซื้อตั๋วได้ กรุณาเลือกข้อมูลให้ครบถ้วน
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                ตกลง
+              </Button>
+            </Modal.Footer>
+            </Modal>
           </Col>
           <Col></Col>
         </Row>

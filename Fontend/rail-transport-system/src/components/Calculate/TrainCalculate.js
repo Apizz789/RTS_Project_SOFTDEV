@@ -5,7 +5,7 @@ import SelectforCal from "./SelectforCal";
 import { UserContextS } from "./UseContextSource";
 import { UserContextD } from "./UseContextDest";
 import { useContext } from "react";
-import { Col, Row, Button } from "react-bootstrap";
+import { Col, Row, Button, Modal } from "react-bootstrap";
 import "../../App.css";
 const Cal = () => {
   return (
@@ -72,11 +72,15 @@ export default function TrainCalculate() {
   const { clickS, setclickS } = useContext(UserContextS);
   const { clickD, setclickD } = useContext(UserContextD);
 
-
   const handleSetdefault = () => {
     setclickS("Please Select Sourrce :");
     setclickD("Please Select Sourrce :");
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div style={{ overflowX: "hidden", width: "100vw" }}>
@@ -144,11 +148,12 @@ export default function TrainCalculate() {
             </div>
             <Button
               onClick={() => {
-                if (clickS == "Please Select Source" || clickD == "Please Select Dest")
-                console.log("aimmmmmmmm")
-    
-                else
-                {
+                if (
+                  clickS == "Please Select Source" ||
+                  clickD == "Please Select Dest"
+                ) {
+                  handleShow();
+                } else {
                   history.push("/calculation-result");
                 }
               }}
@@ -163,6 +168,19 @@ export default function TrainCalculate() {
               คำนวณค่าโดยสาร
             </Button>
           </Col>
+          <Modal show={show} onHide={handleClose} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>warning</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            ไม่สามารถสั่งคำนวณเส้นทางได้ กรุณาเลือกข้อมูลให้ครบถ้วน
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                ตกลง
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Col>
             <img
               src="images/ตารางรถไฟฟ้า.png"
