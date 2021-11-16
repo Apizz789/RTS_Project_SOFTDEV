@@ -892,31 +892,4 @@ let nameofgraph = ['ราชเทวี', 'พญาไท', 'อนุสา�
     , 'จตุจักร', 'บางซื่อ', 'สยาม', 'สยาม', 'สนามกีฬาแห่งชาติ', 'ท่าพระ', 'ท่าพระ', 'คลองบางไผ่', 'บางขุนนนท์'];
 
 
-
-
-// let x = codeofgraph.length;
-// let y = brand.length;
-// let z = nameofgraph.length;
-// document.write(x + ' ' + y + ' ' + z);
-// document.write("<br>" + codeofgraph[239] + " " + nameofgraph[239] + "<br>");
-
-
-
-// let sourcestation = '';
-// let deststation = '';
-
-
-
-// dijkstra(graph, sourcestation, deststation);
-
-
-// module.exports = { graph };
-// export { sourcestation };
-// export { deststation };
 export { graph };
-// export { station };
-// export { dijkstra };
-// module.exports = { deststation };
-// module.exports = { codeofgraph };
-// module.exports = { brand };
-// module.exports = { nameofgraph };
