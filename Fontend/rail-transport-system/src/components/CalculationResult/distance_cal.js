@@ -1,4 +1,5 @@
 import { func } from "prop-types";
+import React from 'react';
 
 let V = 240;
 
@@ -66,6 +67,7 @@ export function dijkstra(graph, src, dest) {
 
 
     let result = "";
+    let ans = "";
     let station_count = new Array(V).fill(0);
     let station = 0;
     let transfer_count = 0;
@@ -84,23 +86,29 @@ export function dijkstra(graph, src, dest) {
 
             if (i == codeofgraph.indexOf(dest)) {
                 station = station_count[i] + 1;
-                result += '\n';
+                result += '\n\n';
+                ans += '\n\n';
                 for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
-                    result += ' ';
-                    result += nameofgraph[codeofgraph.indexOf(lst[i].split("<-")[l])];
+                    ans += lst[i].split("<-")[l];
+                    ans += '-';
+                    ans += nameofgraph[codeofgraph.indexOf(lst[i].split("<-")[l])];
                     if (l != 0) {
                         if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l - 1][0])
                         transfer_count++;
                         result += '\n';
+                        ans += '\nI\n';
+                        // ans += <i class="fas fa-arrow-circle-down"></i>;
+                        // ans += '\n';
                     }
                 }
+                ans += '\n\n';
                 // document.write("<br>The Shortest path from station " + src + " to " + dest + " station is : ");
                 // document.write(result);
                 // document.write("<br>Station Count : " + station + "<br>Transfer Count : " + transfer_count);
                 // document.write("<br>Price : " + price_calculation(result, station));
                 // break;
-                return [result, price_calculation(result, station), time_calculation(result, station)];
+                return [ans, price_calculation(result, station), time_calculation(result, station)];
             }
         }
     }

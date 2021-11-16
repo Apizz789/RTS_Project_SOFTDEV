@@ -36,9 +36,9 @@ function TrainCalculationResult() {
         <h2 align="center">สถานีปลายทาง : {clickD}</h2>
         {/* <h2 align="center">ทดสอบระบบ : {clickS.split(" ")[0]}</h2> */}
         {/* <h2 align="center">ทดสอบระบบ2 : {clickD.split(" ")[0]}</h2> */}
-        <h4 align="center" style={{ whiteSpace: 'pre' }}>เส้นทางที่คำนวณได้ : {Ans[0]}</h4>
-        <h4 align="center">เวลาที่คำนวณได้ : {Ans[2]} นาที</h4>
-        <h5 align="center">ราคาที่คำนวณได้ : {Ans[1]} บาท</h5>
+        <h2 align="center" style={{ whiteSpace: 'pre' }}>เส้นทางที่คำนวณได้ : {Ans[0]}</h2>
+        <h2 align="center">เวลาที่คำนวณได้ : {Ans[2]} นาที</h2>
+        <h2 align="center">ราคาที่คำนวณได้ : {Ans[1]} บาท</h2>
 
         <Link to="/home">
           <br></br>
