@@ -258,7 +258,7 @@ function TrainInformation() {
                     <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#a6e3e9",}}>
                     <br></br><h1><i class="fas fa-map-marked-alt"></i> RTS MAP</h1><hr></hr>
                     <div style={{textAlign:"center"}}>
-                    <img src="images/mapfull2564.jpg" width = '600' height='350' /> 
+                    <img src="images/mapfull2564.jpg" width = '600' height='350' style={{borderRadius:"20px"}}/> 
                     </div>
                     </Col>
 
