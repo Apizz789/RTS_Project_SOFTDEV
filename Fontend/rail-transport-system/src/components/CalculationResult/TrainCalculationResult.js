@@ -32,11 +32,11 @@ function TrainCalculationResult() {
 
   if (clickS == 'Please Select Source')
   {
-    console.log("aimmmmmmmmmmmmmmmmmm")
+    
   }
   else if(clickD == 'Please Select Dest')
   {
-    
+
   }
   else
   {
