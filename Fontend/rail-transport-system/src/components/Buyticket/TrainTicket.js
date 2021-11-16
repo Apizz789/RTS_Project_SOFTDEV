@@ -52,7 +52,7 @@ function TrainTicket() {
                 </Col>
                 <Row>
                     <Col></Col>
-                    <Col style={{borderRadius:"20px",width:"500px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col style={{borderRadius:"20px",width:"700px",height:"500px",margin:"10px",backgroundColor:"#fed46e"}}>
                     <br></br><h1><i class="fas fa-newspaper"></i> Ticket</h1><br></br>
                         
                     <Row style={{textAlign:"center"}}>

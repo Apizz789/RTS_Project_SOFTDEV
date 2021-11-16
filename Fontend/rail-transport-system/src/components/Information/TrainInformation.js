@@ -47,7 +47,7 @@ function TrainInformation() {
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><br></br>
 
                     <marquee  behavior="scroll" direction="up" scrollamount="2" style={{textAlign:"left", border:"2"}}>
-                    <p align="center">[RTS] Rail Transport System </p>
+                    <p align="center"><b>[RTS] Rail Transport System</b> </p>
                     <i class="fas fa-comment-dots"></i> RTS ขอต้อนรับทุกท่านเข้าสู่ โลกแห่งการไร้พรหมแดน <br></br>
                     ที่จะพาทุกคนสะดวกและง่ายต่อการเดินทาง หากมีข้อสงสัย <br></br>
                     ติดต่อเราได้ที่ <b>Call center 02-999-9999  และช่องทางออนไลน์</b> 
