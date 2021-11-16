@@ -119,9 +119,9 @@ function TrainTicket() {
                 justifyContent: "center",
               }}
             >
-              <h1 style={{ width: "200px" }}>จำนวนตั๋ว</h1>
+              <h3 style={{marginInline:"10px" }}>จำนวนตั๋ว</h3>
               <div>
-                <Dropdown>
+                <Dropdown style={{position:"absolute"}}>
                   <Dropdown.Toggle variant="success">
                     {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
                   </Dropdown.Toggle>
