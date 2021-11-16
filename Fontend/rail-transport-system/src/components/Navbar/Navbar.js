@@ -44,16 +44,16 @@ function Navbar() {
     const { clickD, setclickD } = useContext(UserContextD);
 
     const handleSetdefault = () => {
-      setclickS("Please Select Source ");
-      setclickD("Please Select Dest ");
+      setclickS("Please Select Source");
+      setclickD("Please Select Dest");
     };
 
     const { clickSTic , setclickSTic } = useContext(UserContextSTic);
     const { clickDTic , setclickDTic } = useContext(UserContextDTic);
 
     const handleSetdefaultTicket = () => {
-      setclickSTic("Please Select Source ");
-      setclickDTic("Please Select Dest ");
+      setclickSTic("สถานีต้นทาง");
+      setclickDTic("สถานีปลายทาง");
     };
 
     const showButton=()=>{

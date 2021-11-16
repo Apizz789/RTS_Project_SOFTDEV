@@ -30,19 +30,18 @@ function TrainCalculationResult() {
 
   // const [mystate, setMystate] = useState(false);
 
-  if (clickS == 'Please Select Source ')
+  if (clickS == 'Please Select Source')
   {
-
+    console.log("aimmmmmmmmmmmmmmmmmm")
   }
-  else if(clickD == 'Please Select Dest ')
+  else if(clickD == 'Please Select Dest')
   {
-
+    
   }
   else
   {
-
     Ans = dijkstra(graph, clickS.split(" ")[0], clickD.split(" ")[0]);
-  }
+  } 
 
 
   return (
