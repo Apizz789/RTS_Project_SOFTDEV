@@ -20,7 +20,7 @@ function TrainSlidebar() {
                   style={{height:'50vh', width:'100vw',backgroundColor:'grey',objectFit:'cover',borderRadius:"20px"}}
                 />
                 <Carousel.Caption>
-                <img src="../images/RTS=LOGO2.png" style={{height:'30vh',objectFit:'contain'}} /><br/><br/> <hr/>
+                <img src="../images/RTS=LOGO2.png" style={{height:'25vh',objectFit:'contain'}} /><br/><br/> <hr/>
                   <h3 >Rail Transport System</h3>
                   <p >WEB Application for everyone who want to travel, just enjoy with us.</p>
                 </Carousel.Caption>
@@ -35,7 +35,7 @@ function TrainSlidebar() {
                   style={{height:'50vh', width:'100vw',backgroundColor:'grey',objectFit:'cover',borderRadius:"20px"}}
                 />
                 <Carousel.Caption>
-                <img src="../images/BTS-Logo.png" style={{height:'30vh',objectFit:'contain'}} /> <br/><br/> <hr/>
+                <img src="../images/BTS-Logo.png" style={{height:'25vh',objectFit:'contain'}} /> <br/><br/> <hr/>
                   <h3 >Bangkok Mass Transit System</h3>
                   <p >The Bangkok Mass Transit System, commonly known as the BTS or the Skytrain.</p>
                 </Carousel.Caption>
@@ -51,7 +51,7 @@ function TrainSlidebar() {
                 />
 
                 <Carousel.Caption>
-                <img src="../images/MRT-Logo.png" style={{height:'30vh',objectFit:'contain'}}/>  <br/><br/> <hr/>
+                <img src="../images/MRT-Logo.png" style={{height:'20=5vh',objectFit:'contain'}}/>  <br/><br/> <hr/>
                   <h3 >Mass Rapid Transit</h3>
                   <p >The Metropolitan Rapid Transit or MRT is a mass rapid transit system serving the Bangkok Metropolitan Region in Thailand.</p>
                 </Carousel.Caption>
@@ -67,7 +67,7 @@ function TrainSlidebar() {
                 />
 
                 <Carousel.Caption>
-                <img src="../images/ARL-Logo.png" style={{height:'30vh',objectFit:'contain'}}/> <br/><br/> <hr/>
+                <img src="../images/ARL-Logo.png" style={{height:'25vh',objectFit:'contain'}}/> <br/><br/> <hr/>
                   <h3 >S.R.T. Electrified Train Co., Ltd.</h3>
                   <p >The Airport Rail Link (ARL) is an express and commuter rail line in Bangkok, Thailand.</p>
                 </Carousel.Caption>
