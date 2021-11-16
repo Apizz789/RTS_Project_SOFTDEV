@@ -87,6 +87,8 @@ export function dijkstra(graph, src, dest) {
                 result += '\n';
                 for (let l = station_count[i]; l >= 0; l--) {
                     result += lst[i].split("<-")[l];
+                    result += ' ';
+                    result += nameofgraph[codeofgraph.indexOf(lst[i].split("<-")[l])];
                     if (l != 0) {
                         if (lst[i].split("<-")[l][0] != lst[i].split("<-")[l - 1][0])
                         transfer_count++;
