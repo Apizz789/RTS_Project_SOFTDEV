@@ -23,9 +23,25 @@ function TrainRegister() {
     "login_time_tkn",
   ]);
 
+
+
+
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
+
+
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     if(login_state["login_token"]==1){
@@ -595,30 +611,21 @@ function TrainRegister() {
                         </Button>
                         
                         <Modal show={show1} onHide={handleClose1} centered>
-                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
                                     <Modal.Body>
-                                    <center><b>สายสีทอง Golden Line</b></center>
+                                    <center><b><h1>Confirm Register</h1></b></center>
                                     <hr></hr>
-                                    <center><img src="images/BTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
-                                    
-                                    <b>ผู้ให้บริการรถไฟฟ้า :</b> BTS - Bangkok Mass Transit System<br></br>
-                                    <b>จำนวนสถานี :</b> 4 <br></br>
-                                    G01 กรุงธนบุรี Krung Thonburi<br></br> 
-                                    G02 เจริญนคร (ไอคอนสยาม) Charoen Nakhon<br></br>
-                                    G03 คลองสาน Khlong San<br></br>
-                                    G04 ประชาธิปก Prajadhipok<br></br>
-
+                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                                    <center><h3>Are you sure to registration?</h3></center>
+                                
                                     </Modal.Body>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleSubmits}>
-                                            SUBMIT
+                                            CONFIRM
                                         </Button>
                                         <Button variant="secondary" onClick={handleClose1}>
-                                            CANCEL
-                                        </Button>
-
-
-                                        
+                                            CLOSE
+                                        </Button>    
                                 </Modal.Footer>
                             </Modal>
                       </Col>
@@ -632,6 +639,25 @@ function TrainRegister() {
                         >
                           Cancel
                         </Button>
+                        <Modal show={show2} onHide={handleClose2} centered>
+                                <Modal.Header closeButton><i class="fas fa-subway"></i><p>. </p><b>REGISTER</b></Modal.Header>
+                                    <Modal.Body>
+                                    <center><b><h1>Warning</h1></b></center>
+                                    <hr></hr>
+                                    <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                                    <center><h3>Are you sure to cancel the registration?</h3></center>
+                                
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleSubmits}>
+                                            CONFIRM
+                                        </Button>
+                                        <Button variant="secondary" onClick={handleClose2}>
+                                            CLOSE
+                                        </Button>
+  
+                                </Modal.Footer>
+                            </Modal>
 
                       </Col>
                       
