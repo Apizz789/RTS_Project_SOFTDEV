@@ -1,11 +1,24 @@
 import React from 'react'
 import CardItemTicket from './CardItemTicket'
+import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Modal,Spinner} from 'react-bootstrap'
 import '../Card/Cards.css'
 function TrainShowTicket() {
     return (
         
         <div className='cards__container'>
             <h1>Show Ticket</h1>
+            <Row
+            style={{
+                borderRadius: "20px",
+                width: "auto",
+                height: "23px",
+                margin: "1px",
+                backgroundColor: "#2F2F35",
+                color: "#ffff",
+                fontsize: "20px",
+                fontWeight: "bold",
+            }}>
+            </Row>
             <div className='cards__wrapper'>
             
                 <ul className='cards__items'>
