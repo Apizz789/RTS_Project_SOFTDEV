@@ -10,7 +10,31 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // import { graph, dijkstra } from './distance_cal.js';
 import { graph, dijkstra } from '../CalculationResult/distance_cal.js';
 
+
+
 function TrainPayment() {
+
+    const[picture, setPicture] = useState("");
+
+    const[promtpay_preview, setPromtpay_preview] = useState("");
+
+    const[bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
+
+    function handlePromtpay(event){
+        if (event.target.files[0]){
+            setPicture(event.target.files[0])
+            setPromtpay_preview(URL.createObjectURL(event.target.files[0]));
+        }
+    }
+
+    function handleBank(event){
+        if (event.target.files[0]){
+            setPicture(event.target.files[0])
+            setBank_preview(URL.createObjectURL(event.target.files[0]));
+        }
+    }
+    
+
     function refreshPage(){
         window.scrollTo(0,0);
       }
@@ -18,8 +42,25 @@ function TrainPayment() {
       const handleClose = () => setShow(false);
 
       const handleClose1 = () => {
-          setCount("รูปแบบการชำระเงิน");
+          if(picture !== ""){
+            setCount("รูปแบบการชำระเงิน");
+            setPromtpay_preview("")
+            setBank_preview("images/KBANK_LOGO.png")
+            setPicture("")
+          }
+          else{
+              alert("Please Select Your Slip")
+          }
+          
       };
+
+      const handleClose2 = () => {
+          setCount("รูปแบบการชำระเงิน");
+          setBank_preview("images/KBANK_LOGO.png")
+          setPromtpay_preview("")
+          setPicture("")
+    };
+
 
       const handleShow = () => {
         setShow(true);
@@ -30,6 +71,7 @@ function TrainPayment() {
       const { clickDTic , setclickDTic } = useContext(UserContextDTic);
       const [ Count , setCount ] = useState(0)
       const {clickCountTic,setclickCountTic} = useContext(UserContextCountTic);
+
       let Ans = 0;
 
       if (clickSTic == 'สถานีต้นทาง'  || clickDTic == 'สถานีปลายทาง')
@@ -107,7 +149,7 @@ function TrainPayment() {
                                 </Dropdown>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
+                                <Button variant="secondary" onClick={handleClose} >
                                     OK
                                 </Button>
                             </Modal.Footer>
@@ -116,25 +158,27 @@ function TrainPayment() {
 
 
 {/* ------------------------------------- PromptPay ------------------------------------------------------------------ */}
-
-                            <Modal show={Count == "Promptpay" ?true:false} onHide={handleClose1} centered>
+                        
+                            <Modal show={Count == "Promptpay" ?true:false} onHide={handleClose2} centered>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : PromptPay </Modal.Header>
                             <Modal.Body>
-                                <center><img src="images/testpromptpay.jpg" width = '300' height='auto'style={{textAlign:"center", margin:"20px",borderRadius:"30px"}}></img></center>
-                                <Form.Group controlId="formFileMultiple" className="mb-3">
+                                <center><img src={promtpay_preview} width = '300' height='auto'style={{textAlign:"center", margin:"20px",borderRadius:"30px"}}></img></center>
+                                <Form.Group controlId="formFileMultiple" className="mb-3" onSubmit={handleClose1}>
                                     <Form.Label>Upload You Slip Payment</Form.Label>
-                                    <Form.Control type="file" multiple />
+                                    <Form.Control multiple type="file" name="picture" onChange={handlePromtpay}/>
+                                
                                 </Form.Group>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose1}>
+                                <Button variant="secondary" onClick={handleClose1} type = "submit">
                                     OK
                                 </Button>
                             </Modal.Footer>
                             </Modal>
+                        
 
 {/* ------------------------------------- โอนผ่านธนาคาร ------------------------------------------------------------------ */}                           
-                            <Modal show={Count == "โอนผ่านธนาคาร" ?true:false} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
+                            <Modal show={Count == "โอนผ่านธนาคาร" ?true:false} onHide={handleClose2} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : โอนผ่านธนาคาร</Modal.Header>
                             <Modal.Body>
                                <Container>
@@ -143,7 +187,7 @@ function TrainPayment() {
                                            
                                             <Col>
                                             <h4><b>โอนผ่านธนาคาร</b></h4>
-                                            <center><img src="images/KBANK_LOGO.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px",borderRadius:"30px"}}></img></center>
+                                            <center><img src= {bank_preview} width = '100' height='auto'style={{textAlign:"center", margin:"20px",borderRadius:"30px"}}></img></center>
                                             <h7 align = "left" width = 'auto' > ธนาคารกสิกรไทย </h7><br></br>
                                             <h7 align = "left" > ชื่อบัญชี : นายอภิรักษ์ อุลิศ </h7><br></br>
                                             <h7 align = "left" > เลขที่บัญชี :040-325-288-3</h7><br></br>
@@ -151,7 +195,7 @@ function TrainPayment() {
 
                                             <Form.Group controlId="formFileMultiple" className="mb-3">
                                                 <Form.Label>Upload You Slip Payment</Form.Label>
-                                                <Form.Control type="file" multiple />
+                                                <Form.Control type="file" multiple onChange={handleBank}/>
                                             </Form.Group>
                                             </Col>
                                            
@@ -170,14 +214,14 @@ function TrainPayment() {
                                </Container>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose1}>
+                                <Button variant="secondary" onClick={handleClose1} type = "submit">
                                     OK
                                 </Button>
                             </Modal.Footer>
                             </Modal> 
 
 {/* ------------------------------------- บัตรเครดิต ------------------------------------------------------------------ */}       
-                        <Modal show={Count == "บัตรเครดิต" ?true:false} onHide={handleClose1} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
+                        <Modal show={Count == "บัตรเครดิต" ?true:false} onHide={handleClose2} centered style={{width: '500' ,height:'auto',borderRadius:"30px"}}>
                             <Modal.Header closeButton>รูปแบบการชำระเงิน : บัตรเครดิต</Modal.Header>
                             <Modal.Body>
                                <Container>
