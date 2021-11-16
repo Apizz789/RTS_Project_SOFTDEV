@@ -136,11 +136,11 @@ function TrainHistory() {
                 </div>
             </Container>
             <br/>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}></Row>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}></Row>
             <br/>
             <h2 align="center">รายการสั่งซื้อล่าสุด</h2>
             
-                <div style={{ width: "100vh",textAlign: "center",backgroundColor:"#F7F3EE",borderRadius:"10px",marginLeft:"25%",borderStyle: "solid",borderWidth: "20px",borderColor:"#8FB1EB"}}>
+                <div style={{ width: "100vh",textAlign: "center",backgroundColor:"#F9F9F8",borderRadius:"10px",marginLeft:"25%",borderStyle: "solid",borderWidth: "10px",borderColor:"#7E7D81"}}>
                 <Table >
                     <thead>
                         <tr>

@@ -37,7 +37,7 @@ const SelectforCal = () => {
   return (
     <div style={{ marginTop: "55px", width: "100%" }}>
             <h1 align="center">เลือกสถานี</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#0C9EA8",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
             </Row>
       <Tabs defaultActiveKey="Btsgreen" className="mb-3">
         <Tab eventKey="Btsgreen" title="BTS สายสีเขียวอ่อน">

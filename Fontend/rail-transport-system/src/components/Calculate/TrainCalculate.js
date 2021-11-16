@@ -82,7 +82,7 @@ export default function TrainCalculate() {
           <Col style={{ marginTop: "10%" }}>
             <h1
               style={{
-                backgroundColor: "#567DA6",
+                backgroundColor: "#9C9B9C",
                 marginBottom: "5%",
                 borderRadius: "12px",
                 width: "300px",
@@ -96,22 +96,24 @@ export default function TrainCalculate() {
             </h1>
             <div
               style={{
-                backgroundColor: "#F7F3EE",
+                backgroundColor: "#F9F9F8",
                 borderRadius: "12px",
                 width: "auto",
                 textAlign: "center",
                 marginLeft: "20px",
+                borderStyle: "solid",
+                borderColor:"#7E7D81"
               }}
             >
               <h2>
                 สถานีต้นทาง :
                 <Link to="/SelectStation">
                   <Button
-                    variant="outline-secondary"
+                    variant="outline-success"
                     size="lg"
                     style={{
                       width: "auto",
-                      borderRadius: "12px",
+                      borderRadius: "10px",
                       margin: "20px",
                       textAlign: "center",
                     }}
@@ -124,7 +126,7 @@ export default function TrainCalculate() {
                 สถานีปลายทาง :
                 <Link to="/select-station-dest">
                   <Button
-                    variant="outline-secondary"
+                    variant="outline-success"
                     size="lg"
                     style={{
                       width: "auto",
@@ -155,7 +157,7 @@ export default function TrainCalculate() {
           <Col>
             <img
               src="images/ตารางรถไฟฟ้า.png"
-              style={{ width: "100vh", height: "100vh", borderRadius: "60px",borderStyle: "solid",borderStyle: "solid",borderWidth: "10px",borderColor:"#8FB1EB"}}
+              style={{ width: "100vh", height: "100vh", borderRadius: "60px",borderStyle: "solid",borderStyle: "solid",borderWidth: "10px",borderColor:"#7E7D81"}}
             />
           </Col>
         </Row>

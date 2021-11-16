@@ -350,7 +350,7 @@ function TrainRegister() {
       </Alert>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
         <div style={{ textAlign: "center" }}>
-          <h1>Rail Transport System / Login</h1>
+          <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
           <div
             className="Card-Regis"
             src="images/New_login/552721.jpg"
@@ -552,7 +552,7 @@ function TrainRegister() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <h1>Rail Transport System / Register</h1>
+          <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Login</h1>
           <div className="Card-Regis" src="images/img-5.jpg" marginTop={20}>
             <Row style={{ height: "100vh" }}>
               <Col>
