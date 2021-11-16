@@ -9,9 +9,7 @@ import "./TrainCalculationResult.css";
 import { graph, dijkstra } from "./distance_cal.js";
 // import { useState , useContext } from "react";
 
-function refreshPage() {
-  window.scrollTo(0, 0);
-}
+
 
 function TrainCalculationResult() {
   const { clickS, setclickS } = useContext(UserContextS);
