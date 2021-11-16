@@ -69,14 +69,17 @@ function TrainInformation() {
                 <Row style={{textAlign:"center"}}>
                     <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fed46e", textAlign:"left"}}>
                     <br></br><h1><i class="fas fa-newspaper"></i> RTS News</h1><hr></hr>
-                    
+                    <div style={{backgroundColor:"#fff", borderRadius:"20px"}}>
                     <Button variant="link" onClick={handleShow1}> <i class="fas fa-envelope-open"></i>   [BTS] - ประกาศ !!! ปิดสถานี สายสีเขียวอ่อน E04 อโศก Asok : Update 15/11/2021</Button>
                     <Button variant="link" onClick={handleShow2}> <i class="fas fa-envelope-open"></i>   [MRT] - ประกาศ !!! ปิดสถานี สายสีน้ำเงิน BL21 เพชรบุรี Phetchaburi : Update 15/11/2021</Button>
                     <Button variant="link" onClick={handleShow3}> <i class="fas fa-envelope-open"></i>   [ARL] - ประกาศ !!! ปิดสถานี สายเชื่อมท่าอากาศยาน A06 มักกะสัน Makkasan : Update 15/11/2021</Button>
                     <Button variant="link" onClick={handleShow4}> <i class="fas fa-envelope-open"></i>   [BTS] - ประกาศ !!! แจ้งจับ นายบีทีเอส ข้อหาแสดงละครบนรางรถไฟ  : Update 14/11/2021</Button>
                     <Button variant="link" onClick={handleShow5}> <i class="fas fa-envelope-open"></i>   [MRT] - ทั่วไป !!! ชี่นชม นายเออาร์แอล หลังคว้ารางวัลนักเดินทางดีเด่น  : Update 14/11/2021</Button>
                     <Button variant="link" onClick={handleShow6}> <i class="fas fa-envelope-open"></i>   [ARL] - ทั่วไป !!! นายเอ็มอาร์ที ไปกองฉลากไม่ทัน เหตุจากตกขบวนรถ  : Update 12/11/2021</Button>
-                    . <br></br>
+                    </div>
+                    <hr></hr>
+                    <h1><i class="fas fa-angle-up"></i></h1>
+                    <h1><big><big><big><i class="fas fa-envelope"></i></big></big></big></h1><br></br>
                     .  <br></br>
     
                     <Modal show={show1} onHide={handleClose1} centered >
@@ -179,8 +182,8 @@ function TrainInformation() {
                     </Col>
                     <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#fad4ae"}}>
                     <br></br><h1><i class="fas fa-info"></i> Infomation</h1><hr></hr>
-
-                    <marquee  behavior="scroll" direction="up" scrollamount="2" style={{textAlign:"left", border:"2"}}>
+                    
+                    <marquee  behavior="scroll" direction="up" scrollamount="2" style={{textAlign:"left", border:"0",backgroundColor:"#fff", borderRadius:"20px"}}>
                     <p align="center"><b>[RTS] Rail Transport System</b> </p>
                     <i class="fas fa-comment-dots"></i> RTS ขอต้อนรับทุกท่านเข้าสู่ โลกแห่งการไร้พรหมแดน <br></br>
                     ที่จะพาทุกคนสะดวกและง่ายต่อการเดินทาง หากมีข้อสงสัย <br></br>
@@ -200,13 +203,14 @@ function TrainInformation() {
 
 
                    </marquee>
+                   <hr></hr>
                    <br></br>
                     </Col>
                     <Col style={{borderRadius:"20px",width:"600px",height:"700px",margin:"10px",backgroundColor:"#ff7b7b",}}>
                     <br></br><h1><i class="fas fa-comments"></i> RTS Q&A</h1><hr></hr>
 
-                    <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="0">
+                    <Accordion defaultActiveKey="0" >
+                        <Accordion.Item eventKey="0" >
                             <Accordion.Header>ระบบ RTS คืออะไร</Accordion.Header>
                             <Accordion.Body>
                             55555555555555555555
@@ -255,10 +259,14 @@ function TrainInformation() {
                 </Row>
 
                 <Row>
-                    <Col style={{borderRadius:"20px",width:"600px",height:"500px",margin:"10px",backgroundColor:"#a6e3e9",}}>
+                    <Col style={{borderRadius:"20px",width:"600px",height:"600px",margin:"10px",backgroundColor:"#a6e3e9",}}>
                     <br></br><h1><i class="fas fa-map-marked-alt"></i> RTS MAP</h1><hr></hr>
                     <div style={{textAlign:"center"}}>
-                    <img src="images/mapfull2564.jpg" width = '600' height='350' style={{borderRadius:"20px"}}/> 
+                    
+                    <a href="https://rail-transport-system.netlify.app/images/mapfull2564.jpg" target='_blank'>
+                    <img src='images/mapfull2564.jpg' style={{width: 600,height: 480,borderStyle: "solid",borderRadius: "20px",borderWidth: "10px",borderColor:"#8FB1EB"}} draggable="false" dragstart="false" class="unselectable">
+                    </img>
+                    </a>
                     </div>
                     </Col>
 
@@ -271,17 +279,17 @@ function TrainInformation() {
                         
             
                         <Col>
-                            <div style={{textAlign:"left"}}>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [BTS] - Bangkok Mass Transit System <Button variant="link" onClick={handleShow7}><i class="fas fa-caret-right"></i> สายสีเขียวอ่อน Light Green line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [BTS] - Bangkok Mass Transit System <Button variant="link" onClick={handleShow8}><i class="fas fa-caret-right"></i> สายสีเขียวเข้ม Dark Green line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [BTS] - Bangkok Mass Transit System <Button variant="link" onClick={handleShow9}><i class="fas fa-caret-right"></i> สายสีทอง Golden Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [BTS] - Bangkok Mass Transit System <Button variant="link" onClick={handleShow10}><i class="fas fa-caret-right"></i> สายสีเหลือง Yellow Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [BTS] - Bangkok Mass Transit System <Button variant="link" onClick={handleShow11}><i class="fas fa-caret-right"></i> สายสีชมพู Pink Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [MRT] - Mass Rapid Transit <Button variant="link" onClick={handleShow12}><i class="fas fa-caret-right"></i> สายสีน้ำเงิน Blue Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [MRT] - Mass Rapid Transit <Button variant="link" onClick={handleShow13}><i class="fas fa-caret-right"></i> สายสีม่วง Purple Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [MRT] - Mass Rapid Transit <Button variant="link" onClick={handleShow14}><i class="fas fa-caret-right"></i> สายสีส้ม Orange Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [MRT] - Mass Rapid Transit <Button variant="link" onClick={handleShow15}><i class="fas fa-caret-right"></i> สายสีแดง Red Line</Button><br></br>
-                            <Spinner animation="grow" variant="dark" size="sm" /> [ARL] - Airport Rail Link <Button variant="link" onClick={handleShow16}><i class="fas fa-caret-right"></i> แอร์พอร์ตลิงก์ Airport Line</Button><br></br>
+                            <div style={{textAlign:"left",backgroundColor:"#fff", borderRadius:"20px"}}>
+                            <Spinner animation="grow" variant="dark" size="sm"/> <b>[BTS] - Bangkok Mass Transit System</b> <Button variant="link" onClick={handleShow7}><i class="fas fa-caret-right"></i> <b>สายสีเขียวอ่อน Light Green line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[BTS] - Bangkok Mass Transit System</b> <Button variant="link" onClick={handleShow8}><i class="fas fa-caret-right"></i> <b>สายสีเขียวเข้ม Dark Green line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[BTS] - Bangkok Mass Transit System</b> <Button variant="link" onClick={handleShow9}><i class="fas fa-caret-right"></i> <b>สายสีทอง Golden Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[BTS] - Bangkok Mass Transit System</b> <Button variant="link" onClick={handleShow10}><i class="fas fa-caret-right"></i> <b>สายสีเหลือง Yellow Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[BTS] - Bangkok Mass Transit System</b> <Button variant="link" onClick={handleShow11}><i class="fas fa-caret-right"></i> <b>สายสีชมพู Pink Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[MRT] - Mass Rapid Transit</b> <Button variant="link" onClick={handleShow12}><i class="fas fa-caret-right"></i> <b>สายสีน้ำเงิน Blue Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[MRT] - Mass Rapid Transit</b> <Button variant="link" onClick={handleShow13}><i class="fas fa-caret-right"></i> <b>สายสีม่วง Purple Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[MRT] - Mass Rapid Transit</b> <Button variant="link" onClick={handleShow14}><i class="fas fa-caret-right"></i> <b>สายสีส้ม Orange Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[MRT] - Mass Rapid Transit</b> <Button variant="link" onClick={handleShow15}><i class="fas fa-caret-right"></i> <b>สายสีแดง Red Line</b></Button><br></br>
+                            <Spinner animation="grow" variant="dark" size="sm" /> <b>[ARL] - Airport Rail Link</b> <Button variant="link" onClick={handleShow16}><i class="fas fa-caret-right"></i> <b>แอร์พอร์ตลิงก์ Airport Line</b></Button><br></br>
                             
                             <Modal show={show7} onHide={handleClose7} centered>
                                 <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>[BTS] - Bangkok Mass Transit System</b></Modal.Header>
@@ -714,13 +722,21 @@ function TrainInformation() {
 
                 </Row>
                 
-                <Row>
+                {/* <Row>
                     <Col style={{borderRadius:"20px",margin:"10px",backgroundColor:"#dcceed",width:"600px",height:"600px"}}>
                         <br></br><h1><i class="fas fa-address-card"></i> RTS MEMBERSHIPS</h1><hr></hr>
+                        <Col style={{borderRadius:"20px",width:"1000px",height:"300px",margin:"10px",backgroundColor:"#fad4ae"}}>
+                        1
+                        </Col>
+                        <Col>
+                        2
+                        </Col>
+
+
                     </Col>
 
 
-                </Row>
+                </Row> */}
             </Container>
            
            
