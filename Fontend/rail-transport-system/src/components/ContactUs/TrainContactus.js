@@ -62,36 +62,40 @@ export default function TrainContactus() {
 		<Container>
 		<Row style={{textAlign:"center"}}>
 		
-			<Col xs={5} md={1}>
-			
-			</Col>
-			<Col >
+
+			<Col>
 			<Image src="../images/Minor.jpg" roundedCircle style={{width:"300px"}} />
-			<p  align="center" >62010175	CHAWAKORN LAOKAEW <br></br> BACKEND </p> 
+			<br></br><br></br> 
+			<b><p align="center" >62010175	CHAWAKORN LAOKAEW <br></br> BACKEND </p></b> 
 			</Col>
 			<Col>
-			<Image src="../images/Tum.jpg" roundedCircle style={{width:"100px"}} />
-			<p   align="center">62010142 CHATDANAI SINGTO <br></br> DATABASE </p> 
+			<Image src="../images/Tum.jpg" roundedCircle style={{width:"300px"}} />
+			<br></br><br></br> 
+			<b><p align="center">62010142 CHATDANAI SINGTO <br></br> DATABASE </p></b> 
 			</Col>
 			<Col>
-			<Image src="../images/Dink.jpg" roundedCircle style={{width:"100px"}}/>
-			<p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FONTEND </p> 
+			<Image src="../images/Dink.jpg" roundedCircle style={{width:"300px"}}/>
+			<br></br><br></br> 
+			<b><p align="center" size="20px">62010558 PIYAPHAT BOONTHAM <br></br> FONTEND </p> </b>
 			</Col>
 		</Row>
-		
+		<br></br><br></br> 
 		<Row style={{textAlign:"center"}}>
-		
-			<Col xs={5} md={3}>
-			<Image src="../images/P.jpg" roundedCircle style={{width:"100px"}}/>
-			<p align="center">62010765 RAPEEPAT PENGTEE <br></br> BACKEND </p> 
+
+			<Col>
+			<Image src="../images/P.jpg" roundedCircle style={{width:"300px"}}/>
+			<br></br><br></br> 
+			<b><p align="center">62010765 RAPEEPAT PENGTEE <br></br> BACKEND </p></b>  
 			</Col>
-			<Col xs={5} md={3}>
-			<Image src="../images/Aim.jpg" roundedCircle style={{width:"100px"}}/>
-			<p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FONTEND </p> 
+			<Col>
+			<Image src="../images/Aim.jpg" roundedCircle style={{width:"300px"}}/>
+			<br></br><br></br> 
+			<b><p align="center">62010775 RINRAPHAT SUWATTHANAKORN <br></br> FONTEND </p> </b> 
 			</Col>
-			<Col xs={5} md={3}>
-			<Image src="../images/pluem.jpg" roundedCircle style={{width:"100px"}}/>
-			<p p align="center">62011019 APIRAK OULIS <br></br> FONTEND </p> 
+			<Col>
+			<Image src="../images/pluem.jpg" roundedCircle style={{width:"300px"}}/>
+			<br></br><br></br> 
+			<b><p align="center">62011019 APIRAK OULIS <br></br> FONTEND </p></b> 
 			</Col>
 		</Row>
 
