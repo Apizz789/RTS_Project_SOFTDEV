@@ -1,6 +1,6 @@
 import React from 'react';
 import TrainCalculate from '../Calculate/TrainCalculate';
-
+import '../../App.css'
 
 function Calculate(){
     return(

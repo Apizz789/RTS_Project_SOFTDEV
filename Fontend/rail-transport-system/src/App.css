@@ -1,9 +1,5 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0px;
   padding: 0;
-  
-}
-body {
   font-family: 'Kanit', sans-serif !important;
 }

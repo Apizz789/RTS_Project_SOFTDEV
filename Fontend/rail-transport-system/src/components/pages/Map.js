@@ -1,6 +1,6 @@
 import React from 'react';
 import Trainmap from '../Map/Trainmap';
-
+import '../../App.css'
 
 
 
