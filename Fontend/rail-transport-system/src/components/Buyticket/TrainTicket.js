@@ -18,6 +18,7 @@ import { useContext } from "react";
 import { Link } from 'react-router-dom';
 
 
+
 function TrainTicket() {
     const { clickSTic , setclickSTic } = useContext(UserContextSTic);
     const { clickDTic , setclickDTic } = useContext(UserContextDTic);
@@ -104,7 +105,7 @@ function TrainTicket() {
                         type="date"
                         data-date-inline-picker="true"
                         name="DOB"
-                        min="2021-11-16"
+                        min="2021-11-17"
                         // max="2021-11-30"
                         placeholder="dd-mm-yyyy"
                         

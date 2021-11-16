@@ -66,7 +66,7 @@ export default function TrainContactus() {
 			
 			</Col>
 			<Col >
-			<Image src="../images/Minor.jpg" roundedCircle style={{width:"100px"}} />
+			<Image src="../images/Minor.jpg" roundedCircle style={{width:"200px"}} />
 			<p  align="center" >62010175	CHAWAKORN LAOKAEW <br></br> BACKEND </p> 
 			</Col>
 			<Col>
