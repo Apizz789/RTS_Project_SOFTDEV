@@ -409,7 +409,7 @@ function TrainRegister() {
 
 
   return (
-    <div className="Body_Regis" style={{ marginTop: "50px" }}>
+    <div className="Body_Regis">
       <Alert show={show} variant="danger">
         <Alert.Heading>Warning</Alert.Heading>
         <p>Are you sure to cancel the registration?</p>
@@ -448,7 +448,6 @@ function TrainRegister() {
         
           <Container>
             <Row>
-            
               <Col>
               <h1 style={{ marginTop: "50%" }}>Rail Transport System</h1>
                 <img

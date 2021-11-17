@@ -185,7 +185,7 @@ export default function TrainContactus() {
               <Container
                 style={{ backgroundColor: "#AEE6CB", borderRadius: "10px" }}
               >
-                <Row style={{ textAlign: "center" }}>
+                {/* <Row style={{ textAlign: "center" }}>
                   <h1
                     style={{ backgroundColor: "#96DFD8", borderRadius: "10px" }}
                   >
@@ -264,7 +264,7 @@ export default function TrainContactus() {
                       Success
                     </Button>{" "}
                   </Col>
-                </Row>
+                </Row> */}
 
                 <form></form>
               </Container>

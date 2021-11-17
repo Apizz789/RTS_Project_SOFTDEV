@@ -23,11 +23,6 @@ async function makeGetRequest() {
     
     const fetchedResult = [];
     user_list = []
-    S_list = []
-    D_list = []
-    Tid_list = []
-    DB_list = []
-    Dexp_list = []
     const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket');
     for (let key in res.data) {
     fetchedResult.unshift(
@@ -61,7 +56,6 @@ async function makeGetRequest() {
     console.log(fetchedResult)
     console.log(user_list)
     console.log(key_list)
-    console.log(DB_list)
 }
 
 makeGetRequest()
@@ -72,12 +66,11 @@ function TrainShowTicket() {
     cur_user = username_cookie["username_tkn"]
 
 
-    return (
 
+    return (
 
         
         <div className='cards__container'>
-
 
 
             <h1>My Ticket</h1>
