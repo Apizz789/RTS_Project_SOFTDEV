@@ -440,12 +440,11 @@ function TrainRegister() {
           </Button>
         </div>
       </Alert>
-      
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
       <div className="signup">
       <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
         <div  className="Card-Regis" align="center" >
-        
+        <form onSubmit={sendEmail}>
           <Container>
             <Row>
             
@@ -465,9 +464,7 @@ function TrainRegister() {
               <Row style={{height:"120px"}}>
               
               <Col>First Name
-              
-                 <form onSubmit={sendEmail}>
-                     <input
+                <input
                           className="inputlogin"
                           id="fn"
                           type="text"
@@ -478,12 +475,11 @@ function TrainRegister() {
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.fname && <p className="error">{errors.fname}</p>}</form>
+                        {errors.fname && <p className="error">{errors.fname}</p>}
                 </Col>
 
               <Col >Last Name
-                 <form onSubmit={sendEmail}>
-                     <input
+                <input
                           className="inputlogin"
                           id="ln"
                           type="text"
@@ -494,7 +490,7 @@ function TrainRegister() {
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.lname && <p className="error">{errors.lname}</p>}</form>
+                        {errors.lname && <p className="error">{errors.lname}</p>}
               </Col>
               
 
@@ -506,8 +502,7 @@ function TrainRegister() {
 
               <Row style={{height:"40px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
-                     <Form.Check
+                <Form.Check
                         inline
                         label="Male"
                         type="radio"
@@ -517,12 +512,11 @@ function TrainRegister() {
                         checked={gender === 'Male'}
                         onChange={handleRadio}
                         
-                      /></form>
+                      />
                      
                 </Col>
                 <Col>
-                 <form onSubmit={sendEmail}>
-                     <Form.Check
+                <Form.Check
                         inline
                         label="Female"
                         type="radio"
@@ -533,7 +527,7 @@ function TrainRegister() {
                         onChange={handleRadio}
                         
                         
-                      /></form>
+                      />
                 </Col>
                 {errors.sex && <p className="error">{errors.sex}</p>}
               </Row>
@@ -542,8 +536,7 @@ function TrainRegister() {
 
               <Row style={{height:"80px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
-                     <input
+                <input
                         className="inputlogin"
                         type="text"
                         name="username"
@@ -555,11 +548,10 @@ function TrainRegister() {
                       />
                       {errors.username && (
                         <p className="error">{errors.username}</p>
-                      )}</form>
+                      )}
                 </Col>
                 <Col>
-                   <form onSubmit={sendEmail}>
-                       <input
+                  <input
                           className="inputlogin"
                           type="email"
                           name="email"
@@ -569,7 +561,7 @@ function TrainRegister() {
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.email && <p className="error">{errors.email}</p>}</form>
+                        {errors.email && <p className="error">{errors.email}</p>}
                 </Col>
 
 
@@ -580,8 +572,7 @@ function TrainRegister() {
               
               <Row style={{height:"80px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
-                     <input
+                <input
                             className="inputlogin"
                             type="password"
                             name="password"
@@ -593,11 +584,10 @@ function TrainRegister() {
                           />
                           {errors.password && (
                             <p className="error">{errors.password}</p>
-                          )}</form>
+                          )}
                 </Col>
                   <Col>
-                     <form onSubmit={sendEmail}>
-                         <input
+                    <input
                             className="inputlogin"
                             type="password"
                             name="repeat_password"
@@ -609,7 +599,7 @@ function TrainRegister() {
                           />
                           {errors.repeat_password && (
                             <p className="error">{errors.repeat_password}</p>
-                          )}</form>
+                          )}
                   </Col>
               </Row>
 
@@ -620,8 +610,7 @@ function TrainRegister() {
               <Row style={{height:"70px"}}>
                   
                   <Col>
-                     <form onSubmit={sendEmail}>
-                         <input
+                    <input
                           className="inputlogin"
                           type="Telephone"
                           name="tel"
@@ -632,12 +621,11 @@ function TrainRegister() {
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.tel && <p className="error">{errors.tel}</p>}</form>
+                        {errors.tel && <p className="error">{errors.tel}</p>}
                   </Col>
 
                   <Col>
-                     <form onSubmit={sendEmail}>
-                         <input
+                    <input
                           className="inputlogin"
                           type="date"
                           data-date-inline-picker="true"
@@ -651,18 +639,17 @@ function TrainRegister() {
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.DOB && <p className="error">{errors.DOB}</p>}
-                  </form></Col>
+                  </Col>
               </Row>
 
               <Row>
-                 <form onSubmit={sendEmail}>
-                     <input
+                <input
                           className="inputlogin"
                           name="confirmcode"
                           defaultValue={values.confirmationCode}
                           type="hidden"
                           style={{  borderRadius: "10px" }}
-                        /></form>
+                        />
               </Row>
               <br />               
               <Row style={{height:"65px"}}>
@@ -748,7 +735,7 @@ function TrainRegister() {
               </Col>
             </Row>
           </Container>
-         
+          </form>
         </div>
       
       </div>

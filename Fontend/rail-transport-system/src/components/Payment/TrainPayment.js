@@ -149,7 +149,7 @@ function TrainPayment() {
         <br></br>
         <Container>
           <Row>
-            <Col></Col>
+           
 
             <Col style={{ textAlign: "center" }}>
               <Col

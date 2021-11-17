@@ -445,7 +445,7 @@ function TrainRegister() {
       <div className="signup">
       <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
         <div  className="Card-Regis" align="center" >
-        
+        <form onSubmit={sendEmail}>
           <Container>
             <Row>
             
@@ -748,7 +748,7 @@ function TrainRegister() {
               </Col>
             </Row>
           </Container>
-         
+          </form>
         </div>
       
       </div>
