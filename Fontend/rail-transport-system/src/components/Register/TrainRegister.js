@@ -68,8 +68,8 @@ function TrainRegister() {
   useEffect(() => {
     if(login_state["login_token"]==1){
       setLogin_state(["login_token"], 2);
-      window.location.reload()
-      // window.location.href="https://rail-transport-system.netlify.app/"
+      // window.location.reload()
+      window.location.href="https://rail-transport-system.netlify.app/"
     }
   }, [login_state["login_token"]]);
   const [verify, setVerify] = useState(false);

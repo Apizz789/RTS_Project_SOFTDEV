@@ -147,7 +147,7 @@ function TrainPayment() {
         <br></br>
         <br></br>
         <br></br>
-        <Container>
+        <Container style={{ marginLeft:"14%" }}>
           <Row>
            
 
