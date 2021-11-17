@@ -19,9 +19,11 @@ import { UserContextDate } from "../Buyticket/UseContextDate";
 import { useState, useContext, useMemo } from "react";
 import { useCookies } from "react-cookie";
 import Dropdown from "react-bootstrap/Dropdown";
+import axios from "axios";
 
 // import { graph, dijkstra } from './distance_cal.js';
 import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
+let ticket_id  = Math.floor(Math.random() * 100000000)
 
 function TrainPayment() {
 
@@ -33,6 +35,21 @@ function TrainPayment() {
   const [promtpay_preview, setPromtpay_preview] = useState("images/testpromptpay.jpg");
 
   const [bank_preview, setBank_preview] = useState("images/KBANK_LOGO.png");
+
+  const { clickSTic, setclickSTic } = useContext(UserContextSTic);
+  const { clickDTic, setclickDTic } = useContext(UserContextDTic);
+
+  const Ans = useMemo(() => {
+    if (clickSTic == "สถานีต้นทาง" || clickDTic == "สถานีปลายทาง") {
+      return;
+    } else {
+      return dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
+    }
+  }, [clickSTic, clickDTic]);
+
+  const [Count, setCount] = useState(0);
+  const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
+  const { Date, setDate } = useContext(UserContextDate);
 
   function handlePromtpay(event) {
     if (event.target.files[0]) {
@@ -55,12 +72,29 @@ function TrainPayment() {
   const handleClose = () => setShow(false);
 
   const handleClose1 = () => {
-    if (picture !== "") {
-      setCount("รูปแบบการชำระเงิน");
-      setPromtpay_preview("");
-      setBank_preview("images/KBANK_LOGO.png");
-      setPicture("");
-    }
+    setCount("รูปแบบการชำระเงิน");
+    setPromtpay_preview("");
+    setBank_preview("images/KBANK_LOGO.png");
+    setPicture("");
+
+
+    axios
+      .post("https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket", {
+        Date_Buy: Date,
+        Date_exp: Date+15,
+        S_Source: clickSTic,
+        S_Dest: clickDTic,
+        ticket_id: ticket_id,
+        user_customer: username_cookie["username_tkn"]
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    
+
   };
 
   const handleClose2 = () => {
@@ -74,19 +108,7 @@ function TrainPayment() {
     setShow(true);
   };
 
-  const { clickSTic, setclickSTic } = useContext(UserContextSTic);
-  const { clickDTic, setclickDTic } = useContext(UserContextDTic);
-  const [Count, setCount] = useState(0);
-  const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
-  const { Date, setDate } = useContext(UserContextDate);
 
-  const Ans = useMemo(() => {
-    if (clickSTic == "สถานีต้นทาง" || clickDTic == "สถานีปลายทาง") {
-      return;
-    } else {
-      return dijkstra(graph, clickSTic.split(" ")[0], clickDTic.split(" ")[0]);
-    }
-  }, [clickSTic, clickDTic]);
 
   const DropdownItem = () => {
     return (
@@ -161,7 +183,7 @@ function TrainPayment() {
                 >
                   <br></br>
                   <h4 align="center">
-                    หมายเลขคำสั่งซื้อ : {Math.floor(Math.random() * 100000000)}
+                    หมายเลขคำสั่งซื้อ : {ticket_id}
                   </h4>
                   <h4 align="center">ชื่อผู้ใช้ : {" " +username_cookie["username_tkn"]}</h4>
                   <h4 align="center">เส้นทางโดยสาร : </h4>
