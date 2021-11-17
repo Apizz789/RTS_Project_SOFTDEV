@@ -250,7 +250,7 @@ function TrainPayment() {
                     วันที่ซื้อ : {Date}
                   </h4>
                   <h4 align="center">
-                    วันที่หมดอายุ : {Date+15}
+                    วันที่หมดอายุ : {15 วัน}
                   </h4>
                 </Col>
                 <Link to="/ticket">
