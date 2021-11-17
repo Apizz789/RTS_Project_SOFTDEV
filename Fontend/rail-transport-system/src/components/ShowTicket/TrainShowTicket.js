@@ -32,7 +32,7 @@ async function makeGetRequest() {
             SourceS: res.data[key].S_Source,
             DestS: res.data[key].S_Dest,
             TID: res.data[key].ticket_id,
-            DB: res.data[key].Date_buy,
+            Date_Buy: res.data[key].Date_buy,
             Dexp: res.data[key].Date_exp,
             id : key
         }
