@@ -50,7 +50,6 @@ function App() {
     <Router>
       <Navbar/>
       <br/>
-      <Test/>
       <Header/>
       <Switch>
         <Route path='/home' exact  component ={Home} />

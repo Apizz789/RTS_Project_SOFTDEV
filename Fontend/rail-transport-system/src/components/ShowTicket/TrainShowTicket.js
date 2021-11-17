@@ -80,7 +80,7 @@ function TrainShowTicket() {
 
             <Container>
                 <Row>
-                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"350px",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <p> จำนวนตั๋วของฉัน : 5</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" " + user_list[key_list[0]]} </p><br/>
@@ -89,7 +89,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[0]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"350px",margin:"10px",backgroundColor:"#fad4ae"}}>
+                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
                         <p> จำนวนตั๋วของฉัน : 2</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[1]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[1]]} </p><br/>
@@ -98,7 +98,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[1]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"350px",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <p> จำนวนตั๋วของฉัน : 4</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[2]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[2]]} </p><br/>
@@ -107,7 +107,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[2]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"350px",margin:"10px",backgroundColor:"#fad4ae"}}>
+                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
                         <p> จำนวนตั๋วของฉัน : 8</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[3]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[3]]} </p><br/>
@@ -137,25 +137,6 @@ function TrainShowTicket() {
                 fontWeight: "bold",
             }}>
             </Row>
-            <div className='cards__wrapper'>
-            
-                <ul className='cards__items'>
-                <CardItemTicket
-                src='images/Card/1.png'
-                text= "Ticket"
-                label='Rail Transport System'
-                path='/schedule'
-               
-                />
-                <CardItemTicket
-                src='images/mapfull2564.jpg'
-                text='HISTORY'
-                label='Map'
-                path='/map'
-                />
-            </ul>
-            
-            </div>
         </div>
     )
 }
