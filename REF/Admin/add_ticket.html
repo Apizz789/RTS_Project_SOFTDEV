@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Test Project Soft Dev</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <form id='add_trian' action="test_index.html">
+        <label for="C">รหัสตั๋ว</label><br>
+        <input type='text' id='C' name='Company' value=''><br>
+        <label for="line">user ผู้ซื้อ</label><br>
+        <input type='text' id='line' name='Line' value=''><br>
+        <label for="thaistation">สถานีต้นทาง</label><br>
+        <input type='text' id='thaistation' name='Thai Station Name' value=''> 
+        <br>
+        <label for="engname">สถานีปลายทาง</label><br>
+        <input type='text' id='engname' name='English Station Name' value=''> 
+        <br>
+        <label for="id">วันที่ซื้อ</label><br>
+        <input type='text' id='id' name='ID' value='17/11/2021'><br>
+        <label for="tran">วันที่เดินทาง</label><br>
+        <input type='text' id='tran' name='Transec' value='/11/2021'><br>
+        <input type='submit' value="เพิ่ม">
+        <input type="button" value="Back" onclick="goBack()">
+    </form>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDwZnikVYpl2Rh8xMOSSIqO0HLXKaoxoOI",
+        authDomain: "soft-dev-tutorial.firebaseapp.com",
+        projectId: "soft-dev-tutorial",
+        storageBucket: "soft-dev-tutorial.appspot.com",
+        messagingSenderId: "361405349110",
+        appId: "1:361405349110:web:64ce6526f3570436df80d7",
+        measurementId: "G-KTBP691G7W"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+</script>
+<script src="add_data.js" charset="utf-8"></script>
+<script>
+    function goBack() {
+      window.history.back()
+    }
+    </script>
+</html>
