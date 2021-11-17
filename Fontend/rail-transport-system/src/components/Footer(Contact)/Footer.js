@@ -14,7 +14,7 @@ function Footer() {
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
-            <Link to='/register' onClick={refreshPage}>Signup</Link>
+            <Link to='/register' onClick={refreshPage}>Register</Link>
             <Link to='/map' onClick={refreshPage}>Map</Link>
             <Link to='/manual' onClick={refreshPage}>ข้อปฏิบัติ</Link>
             <Link to='/calculate' onClick={refreshPage}>Calculate</Link>
