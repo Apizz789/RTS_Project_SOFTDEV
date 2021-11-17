@@ -516,12 +516,6 @@ function TrainPayment() {
                             <br></br>
                           </Col>
                         </Row>
-                        <Row>
-                          <Button variant="outline-warning">แก้ไข</Button>
-                          <Button variant="outline-info">ต่อไป</Button>
-                          <Button variant="outline-danger">ยกเลิก</Button>
-                        </Row>
-                        <Row>3 test</Row>
                       </Col>
                     </Container>
                   </Modal.Body>
