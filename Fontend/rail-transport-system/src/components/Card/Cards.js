@@ -2,12 +2,24 @@ import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 import Cardfix from './Cardfix';
+import {
+  Tab,
+  Tabs,
+  Button,
+  ToggleButton,
+  Row,
+  Col,
+  Container,
+  Form,
+  Modal,
+} from "react-bootstrap";
 import CardManaul from '../Manual/CardManual';
 
 function Cards() {
   return (
-    <div className='cards' style={{marginTop:"10px",width:"100%"}}>
+    <div className='cards'>
       <h1>Rail Transport System</h1>
+      <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}/>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
