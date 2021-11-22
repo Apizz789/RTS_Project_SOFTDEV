@@ -1,7 +1,12 @@
 import React from 'react'
 import {Row} from 'react-bootstrap'
 
+
+function refreshPage(){
+    window.scrollTo(0,0)
+  }
 function TrainHeader() {
+    
     return (
         <div style={{marginTop:"60px"}}>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"5px",backgroundColor:"#1F3A93",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>

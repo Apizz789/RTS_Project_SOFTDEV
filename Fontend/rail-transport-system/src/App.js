@@ -35,6 +35,10 @@ import SourceSProvider from './components/Buyticket/UseContextSourceTS';
 import TimeTProvider from './components/Buyticket/UseContextTime';
 import DateProvider from './components/Buyticket/UseContextDate';
 
+
+function refreshPage(){
+  window.scrollTo(0,0)
+}
 function App() {
 
   return (

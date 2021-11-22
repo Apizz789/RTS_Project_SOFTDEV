@@ -71,6 +71,13 @@ function TrainPayment() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
+  const [show5, setShow5] = useState(false);
+  const handleClose5 = () => setShow5(false);
+  const handleShow5 = () => setShow5(true);
+  // const handleClose3 = () => setShow3(false);
+
+
+
   const handleClose1 = () => {
     setCount("รูปแบบการชำระเงิน");
     setPromtpay_preview("");
@@ -185,7 +192,7 @@ function TrainPayment() {
                   <h4 align="center">
                     หมายเลขคำสั่งซื้อ : {ticket_id}
                   </h4>
-                  <h4 align="center">ชื่อผู้ใช้ : {" " +username_cookie["username_tkn"]}</h4>
+                  <h4 align="center">ชื่อผู้ใช้ : {" " +username_cookie["username_tkn"]}</h4><br/>
                  
                 </Col>
                 <br></br>
@@ -204,10 +211,10 @@ function TrainPayment() {
                     margin: "auto",
                   }}
                 >
-                   <h4 align="center">เส้นทางโดยสาร : </h4>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i>
+                   <br/><h4 align="center">เส้นทางโดยสาร : </h4><br/>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i>
                   <br></br> {clickDTic}
-                </h5>
-                <br></br> <br />
+                  <br/><br/></h5>
+                <br></br> <br/>
                 <Col
                   style={{
                     backgroundColor: "#A4C0BF",
@@ -222,14 +229,14 @@ function TrainPayment() {
                   }}
                 >
                   <h4 align="center">
-                    ระยะเวลาที่ใช้โดยประมาณ : {Ans?.[2]} นาที
+                    <br/>ระยะเวลาที่ใช้โดยประมาณ : {Ans?.[2]} นาที
                   </h4>
                   <h4 align="center"> ราคา : {Ans?.[1]} บาท</h4>
                   <h4 align="center"> จำนวน : {clickCountTic} ชิ้น</h4>
                   <h4 align="center">
                     {" "}
                     ราคารวม : {Ans?.[1] * clickCountTic} บาท
-                  </h4>
+                  </h4><br/>
                 </Col>
                 <br></br>
                 <br></br>
@@ -247,15 +254,15 @@ function TrainPayment() {
                   }}
                 >
                   <h4 align="center">
-                    วันที่ซื้อ : {Date}
+                  <br/>วันที่ซื้อ : {Date}
                   </h4>
                   <h4 align="center">
                     วันที่หมดอายุ : เหลือเวลา อีก 15 วัน
-                  </h4>
+                  </h4><br/>
                 </Col>
                 <Link to="/ticket">
-                  <Button
-                    variant="outline-warning"
+                <br/><Button
+                    variant="warning"
                     style={{
                       marginBottom: "5px",
                       width: "100px",
@@ -268,7 +275,7 @@ function TrainPayment() {
                 </Link>
                 <Button
                   onClick={() => handleShow()}
-                  variant="outline-success"
+                  variant="success"
                   style={{
                     marginBottom: "5px",
                     width: "100px",
@@ -423,7 +430,9 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                  <Link to="/show-ticket">
+
+
+                 
                     <Button
                       variant="secondary"
                       onClick={handleClose1}
@@ -431,7 +440,7 @@ function TrainPayment() {
                     >
                       OK
                     </Button>
-                    </Link>
+                    
                   </Modal.Footer>
                 </Modal>
                 {/* ------------------------------------- บัตรเครดิต ------------------------------------------------------------------ */}
@@ -531,17 +540,30 @@ function TrainPayment() {
                     </Link>
                   </Modal.Footer>
                 </Modal>
-                <Button
-                  variant="outline-danger"
-                  style={{
+                
+                <Button variant="danger" onClick={handleShow5} style={{
                     marginBottom: "5px",
                     width: "100px",
                     whiteSpace: "pre",
                     margin: "10px",
-                  }}
-                >
+                  }}> 
                   ยกเลิก
-                </Button>
+                   </Button>
+                   <Modal show={show5} onHide={handleClose5} centered>
+                    <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>ระบบ RTS</b></Modal.Header>
+                            <Modal.Body>
+                            <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                            <center><h2>RTS</h2></center>
+                            <center>ท่านต้องการยกเลิกรายการเพื่อกลับไปยังหน้าหลัก ใช่ไหม? </center>
+                            </Modal.Body>
+                            <Modal.Footer>
+                            <Link to="/home">
+                                <Button variant="secondary">
+                                    OK
+                                </Button></Link>
+                        </Modal.Footer>
+                    </Modal>
+              
               </Col>
             </Col>
 
