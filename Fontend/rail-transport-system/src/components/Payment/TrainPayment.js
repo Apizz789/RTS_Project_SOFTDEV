@@ -186,7 +186,7 @@ function TrainPayment() {
                     หมายเลขคำสั่งซื้อ : {ticket_id}
                   </h4>
                   <h4 align="center">ชื่อผู้ใช้ : {" " +username_cookie["username_tkn"]}</h4>
-                  <h4 align="center">เส้นทางโดยสาร : </h4>
+                 
                 </Col>
                 <br></br>
                 <br></br>
@@ -204,7 +204,7 @@ function TrainPayment() {
                     margin: "auto",
                   }}
                 >
-                  {clickSTic} <br></br> <i class="fas fa-arrow-down"></i>
+                   <h4 align="center">เส้นทางโดยสาร : </h4>{clickSTic} <br></br> <i class="fas fa-arrow-down"></i>
                   <br></br> {clickDTic}
                 </h5>
                 <br></br> <br />
