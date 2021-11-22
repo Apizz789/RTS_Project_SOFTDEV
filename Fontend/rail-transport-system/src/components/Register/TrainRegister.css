@@ -21,3 +21,14 @@
 .error{
 	color: #C25F5D;
 }
+
+.btn-back{
+	background-color: gray !important;
+	color: white  !important ;
+	border-color: gray !important;
+}
+
+.btn-back:hover{
+	background-color:white  !important;
+	color: black  !important ;
+}

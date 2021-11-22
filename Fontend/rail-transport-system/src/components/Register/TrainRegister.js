@@ -736,6 +736,7 @@ function TrainRegister() {
                         size="lg"
                         style={{ width: "auto", borderRadius: "12px",textAlign:"center" }}
                         type = "reset"  
+                        className="btn-back"
                       >
                         Back to Login
                       </Button>       
