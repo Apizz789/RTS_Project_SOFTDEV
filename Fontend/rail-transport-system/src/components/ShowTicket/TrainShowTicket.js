@@ -4,68 +4,91 @@ import {InputGroup,FormControl,Col,Row,Button,Container,Form,Table,Accordion,Mod
 import '../Card/Cards.css'
 import axios from 'axios'
 import { useCookies } from "react-cookie";
+import {user_list} from './Get_Req.js';
+import {id_list} from './Get_Req.js';
+import {S_list} from './Get_Req.js';
+import {D_list} from './Get_Req.js';
+import {Tid_list} from './Get_Req.js';
+import {DB_list} from './Get_Req.js';
+import {Dexp_list} from './Get_Req.js';
+
+
 
 import { UserContextDate } from "../Buyticket/UseContextDate";
 import { UserContextSTic } from "../Buyticket/UseContextSourceTic";
 import { UserContextDTic } from "../Buyticket/UseContextDestTic";
 
-let user_list = []
-let id_list = []
-let S_list = [] 
-let D_list = []
-let Tid_list = []
-let DB_list = []
-let Dexp_list = []
-let key_list = []
-let cur_user = "rapeepatpe"
+// let user_list = []
+// let id_list = []
+// let S_list = [] 
+// let D_list = []
+// let Tid_list = []
+// let DB_list = []
+// let Dexp_list = []
+// let key_list = []
+// let cur_user = "rapeepatpe"
 
-async function makeGetRequest() {
+
+
+// async function makeGetRequest() {
     
-    const fetchedResult = [];
-    user_list = []
-    const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket');
-    for (let key in res.data) {
-    fetchedResult.unshift(
-        {
-            // ...res.data[key],
-            username: res.data[key].user_customer,
-            SourceS: res.data[key].S_Source,
-            DestS: res.data[key].S_Dest,
-            TID: res.data[key].ticket_id,
-            Date_Buy: res.data[key].Date_buy,
-            Dexp: res.data[key].Date_exp,
-            id : key
-        }
-    )
-    id_list.push(res.data[key].id)
-    user_list.push(res.data[key].user_customer)
-    S_list.push(res.data[key].S_Source)
-    D_list.push(res.data[key].S_Dest)
-    Tid_list.push(res.data[key].ticket_id)
-    DB_list.push(res.data[key].Date_buy)
-    Dexp_list.push(res.data[key].Date_exp)
-    }
+//     const fetchedResult = [];
+//     user_list = []
+//     const res = await axios.get('https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket');
+//     for (let key in res.data) {
+//     fetchedResult.unshift(
+//         {
+//             // ...res.data[key],
+//             username: res.data[key].user_customer,
+//             SourceS: res.data[key].S_Source,
+//             DestS: res.data[key].S_Dest,
+//             TID: res.data[key].ticket_id,
+//             Date_buy: res.data[key].Date_buy,
+//             Dexp: res.data[key].Date_exp,
+//             id : key
+//         }
+//     )
+//     id_list.push(res.data[key].id)
+//     user_list.push(res.data[key].user_customer)
+//     S_list.push(res.data[key].S_Source)
+//     D_list.push(res.data[key].S_Dest)
+//     Tid_list.push(res.data[key].ticket_id)
+//     DB_list.push(res.data[key].Date_buy)
+//     Dexp_list.push(res.data[key].Date_exp)
+//     }
 
-    key_list = []
-    for(let i in user_list){
-        if(user_list[i] === cur_user)
-        {
-            key_list.push(i)
-        }
-    }
-    console.log(fetchedResult)
-    console.log(user_list)
-    console.log(key_list)
-}
+//     key_list = []
+//     for(let i in user_list){
+//         if(user_list[i] === cur_user)
+//         {
+//             key_list.push(i)
+//         }
+//     }
+//     console.log(fetchedResult)
+//     console.log(user_list)
+//     console.log(key_list)
+// }
 
-makeGetRequest()
+// makeGetRequest()
+
+let key_list = []
+// let key_list = []
+let temp_user = user_list.slice(); 
+
 
 function TrainShowTicket() {
     const [username_cookie, setUsername_cookie, removeUsername_cookie] =
     useCookies(["username_tkn"]);
-    cur_user = username_cookie["username_tkn"]
 
-
+    for(let i in temp_user){
+        // console.log(user_list[i])
+        if(temp_user[i] === "rapeepatpe")
+        {
+            key_list.push(i)
+        }
+    }
+    console.log(temp_user)
+    console.log(key_list)
 
     return (
 

@@ -19,12 +19,15 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./TrainTicket.css";
 
+
+// console.log(exp_d.getFullYear().toString() + "-" + (exp_d.getMonth()+1).toString() + "-" + exp_d.getDate().toString())
+
 function TrainTicket() {
   const { clickSTic, setclickSTic } = useContext(UserContextSTic);
   const { clickDTic, setclickDTic } = useContext(UserContextDTic);
   const history = useHistory();
   const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
-  const { Date, setDate } = useContext(UserContextDate);
+  const { Dates, setDates } = useContext(UserContextDate);
   const [values, setValues] = useState({DOB: ""});
 
   //const { clickDTic , setclickDTic } = useContext(UserContextD);
@@ -50,16 +53,21 @@ function TrainTicket() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   const handleChange = (event) => {
     setValues({
         ...values,
         [event.target.name]: event.target.value,
     });
-    setDate({
+    setDates({
         ...values,
         [event.target.name]: event.target.value,
     });
+  
 }
+  const d = new Date();
+
+  
 
   return (
     <div style={{ marginTop: "10px" }}>
@@ -151,12 +159,11 @@ function TrainTicket() {
                 type="date"
                 data-date-inline-picker="true"
                 name="DOB"
-                min="2021-11-17"
+                min={d.getFullYear().toString() + "-" + (d.getMonth()+1).toString() + "-" + d.getDate().toString()}
                 // max="2021-11-30"
                 placeholder="dd-mm-yyyy"
                 style={{borderRadius: "10px", width: "200px",margin: "auto"}}
                 required
-
                 value={values.DOB}
                 // Date = {values.DOB}
                 // setDate = {values.DOB}
@@ -173,7 +180,7 @@ function TrainTicket() {
                       handleShow();
                     else {
                       history.push("/payment");
-                      setDate(values.DOB)
+                      setDates(values.DOB)
                     }
                   }}
                   variant="outline-success"
