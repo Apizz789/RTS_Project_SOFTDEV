@@ -299,7 +299,7 @@ function TrainPayment() {
                   </h4>
                   <h4 align="center">
                     วันที่หมดอายุ : {temp_year.toString() + "-"}{('00'+(temp_mth.toString())).slice(-2)}{"-" + ('00'+(exp_date_plus.getDate().toString())).slice(-2)}
-                  </h4>
+                  </h4><br/>
                 </Col>
                 <Link to="/ticket">
                 <br/><Button
