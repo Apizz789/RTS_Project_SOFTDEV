@@ -8,6 +8,7 @@ let Tid_list = []
 let DB_list = []
 let Dexp_list = []
 let key_list = []
+let Amt_list = []
 const fetchedResult = [];
 
 async function makeGetRequest() {
@@ -23,6 +24,7 @@ async function makeGetRequest() {
             TID: res.data[key].ticket_id,
             Date_buy: res.data[key].Date_buy,
             Dexp: res.data[key].Date_exp,
+            Amount: res.data[key].Amount,
             id : key
         }
     )
@@ -33,6 +35,7 @@ async function makeGetRequest() {
     Tid_list.push(res.data[key].ticket_id)
     DB_list.push(res.data[key].Date_buy)
     Dexp_list.push(res.data[key].Date_exp)
+    Amt_list.push(res.data[key].Amount)
     }
 }
 
@@ -47,4 +50,5 @@ export {D_list};
 export {Tid_list};
 export {DB_list};
 export {Dexp_list};
+export {Amt_list};
 
