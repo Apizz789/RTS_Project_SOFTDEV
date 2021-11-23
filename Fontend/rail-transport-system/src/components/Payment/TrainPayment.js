@@ -343,6 +343,7 @@ function TrainPayment() {
                       <Form.Label>Upload You Slip Payment</Form.Label>
                       <Form.Control
                         type="file"
+                        accept="image/*"
                         multiple
                         name="picture"
                         onChange={handlePromtpay}
@@ -414,18 +415,13 @@ function TrainPayment() {
                               <Form.Label>Upload You Slip Payment</Form.Label>
                               <Form.Control
                                 type="file"
+                                accept="image/*"
                                 multiple
                                 onChange={handleBank}
                               />
                             </Form.Group>
                           </Col>
                         </Row>
-                        <Row>
-                          <Button variant="outline-warning">แก้ไข</Button>
-                          <Button variant="outline-info">ต่อไป</Button>
-                          <Button variant="outline-danger">ยกเลิก</Button>
-                        </Row>
-                        <Row>3 test</Row>
                       </Col>
                     </Container>
                   </Modal.Body>
