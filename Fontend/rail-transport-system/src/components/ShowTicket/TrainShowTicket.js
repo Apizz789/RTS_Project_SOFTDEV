@@ -77,7 +77,8 @@ function TrainShowTicket() {
     useCookies(["username_tkn"]);
     cur_user = username_cookie["username_tkn"]
     refreshPage();
-
+    var React = require('react');
+    var QRCode = require('qrcode.react');
 
     return (
 
@@ -93,20 +94,9 @@ function TrainShowTicket() {
             <Container>
                 <Row>
                     <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
-                        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-                       
-                            <div id="qrcode-2"></div>
-                            <script type="text/javascript">
-                            var qrcode = new QRCode(document.getElementById("qrcode-2"), style = {{
-                                text: "Minor",
-                                width: 128,
-                                height: 128,
-                                colorDark : "#5868bf",
-                                colorLight : "#ffffff",
-                                correctLevel : QRCode.CorrectLevel.H
-                            }});
-                        </script>
-                
+                        <br/>
+                        <center><QRCode bgColor = "#FFaaaa" value= {Tid_list[key_list[0]]} /></center>
+                    
                         <br/><center><h4>RTS Ticket</h4></center><hr/>
                         <p> จำนวนตั๋วของฉัน : 5</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p>
