@@ -106,7 +106,7 @@ function TrainTicket() {
               <i class="fas fa-ticket-alt"></i> My Ticket
             </h1>
             <hr />
-            
+
               </Button>
             </Link>
             </Row> 
@@ -201,7 +201,7 @@ function TrainTicket() {
                 value={values.DOB}
                 // Date = {values.DOB}
                 // setDate = {values.DOB}
-                onChange={handleChange}
+                onChange={handleChange} 
               />
 
               <span>
