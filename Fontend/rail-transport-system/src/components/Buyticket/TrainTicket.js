@@ -71,12 +71,50 @@ function TrainTicket() {
 
   return (
     <div >
-      <center><h1>Buy Ticket</h1></center>
+      <center><h1>Ticket</h1></center>
       <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}/>
       <Container>
         <Col></Col>
         <Row>
-          <Col></Col>
+          <Col
+          style={{
+            borderRadius: "20px",
+            width: "250px",
+            height: "500px",
+            margin: "10px",
+            backgroundColor: "#b2aa21",
+          }}>
+            <Row>
+              <br/><br/><br/><br/><br/><br/><br/>
+            </Row>
+            <Row style={{ textAlign: "center" }} >
+
+            <Link to="/show-ticket">
+              
+              <Button
+                variant="outline-success"
+                size="lg"
+                style={{
+                  width: "auto",
+                  borderRadius: "12px",
+                  margin: "20px",
+                }}
+              >
+                <br></br>
+            
+            <h1>
+              <i class="fas fa-ticket-alt"></i> My Ticket
+            </h1>
+            <hr />
+            
+              </Button>
+            </Link>
+            </Row> 
+            <Row>
+            <br/><br/><br/><br/><br/>
+            </Row>       
+
+          </Col>
           <Col
             style={{
               borderRadius: "20px",
@@ -88,12 +126,13 @@ function TrainTicket() {
           >
             <br></br>
             <h1>
-              <i class="fas fa-ticket-alt"></i> Ticket
+              <i class="fas fa-ticket-alt"></i> Buy Ticket
             </h1>
             <hr />
-
             <Row style={{ textAlign: "center" }}>
+              
               <Link to="/select-sorce-ticket">
+              
                 <Button
                   //onClick={() => handleSetdefault()}
                   variant="outline-success"
@@ -107,6 +146,7 @@ function TrainTicket() {
                   {clickSTic}
                 </Button>
               </Link>
+              <h4><i class="fas fa-arrow-down"></i></h4>
               <Link to="/select-dest-ticket">
                 <Button
                   //onClick={() => handleSetdefault()}
@@ -123,24 +163,29 @@ function TrainTicket() {
               </Link>
             </Row>
             
-            <div
-              style={{
-                marginLeft: "20%" ,
-                display: "flex",
-              }}
-            >
-            <h3 style={{marginInline:"10px" }}>จำนวนตั๋ว</h3>
-              <div>
-                <Dropdown style={{position: "absolute"}}>
+            
+            <Row style={{ textAlign: "center" }}>
+     
+              <Col style={{ textAlign: "right" }}>
+                <h3 >จำนวนตั๋ว</h3>
+              </Col>
+              
+            <Col style={{ textAlign: "left"}}>
+             <Dropdown style={{position: "absolute", width: "300px"}}>
                   <Dropdown.Toggle variant="success">
-                    {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
+                  {clickCountTic ? clickCountTic : "จำนวนตั๋ว"}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <DropdownItem />
                   </Dropdown.Menu>
                 </Dropdown>
-              </div>
-            </div>
+              </Col>
+
+             
+                
+                
+            </Row>
+
             <br/>
             <Row style={{ textAlign: "center" }}>
               <input
@@ -198,7 +243,7 @@ function TrainTicket() {
             </Modal.Footer>
             </Modal>
           </Col>
-          <Col></Col>
+          
         </Row>
       </Container>
     </div>
