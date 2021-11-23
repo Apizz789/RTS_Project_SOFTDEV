@@ -20,9 +20,12 @@ import { useState, useContext, useMemo } from "react";
 import { useCookies } from "react-cookie";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
+import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
+
+
 
 // import { graph, dijkstra } from './distance_cal.js';
-import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
+
 let ticket_id  = "RTS" + Math.floor(Math.random() * 1000000000)
 
 function TrainPayment() {
@@ -47,9 +50,12 @@ function TrainPayment() {
     }
   }, [clickSTic, clickDTic]);
 
+
   const [Count, setCount] = useState(0);
   const { clickCountTic, setclickCountTic } = useContext(UserContextCountTic);
-  const { Date, setDate } = useContext(UserContextDate);
+  const { Dates, setDates } = useContext(UserContextDate);
+
+ 
 
   function handlePromtpay(event) {
     if (event.target.files[0]) {
@@ -75,12 +81,30 @@ function TrainPayment() {
   const handleClose5 = () => setShow5(false);
   const handleShow5 = () => setShow5(true);
 
+  var split_date = Dates.split('-');
+  var exp_year = parseInt(split_date[0]);
+  var exp_mth = parseInt(split_date[1]);
+  var exp_day = parseInt(split_date[2]);
+  console.log(exp_year)
+  console.log(exp_mth)
+  console.log(exp_day)
+  var exp_date = new Date(exp_year, exp_mth, exp_day)
+
+    function addDays(theDate, days) {
+      return new Date(theDate.getTime() + days*24*60*60*1000);
+    }
+    var exp_date_plus = addDays(exp_date, 15);
+    var temp_mth = exp_date_plus.getMonth()
+    if (exp_date_plus.getMonth() ===0){
+      temp_mth = 12
+    }
   const [show6, setShow6] = useState(false);
   const handleClose6 = () => setShow6(false);
   const handleShow6 = () => setShow6(true);
   
   
 
+    console.log(exp_date_plus)
 
   const handleClose1 = () => {
     setCount("รูปแบบการชำระเงิน");
@@ -91,8 +115,8 @@ function TrainPayment() {
 
     axios
       .post("https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket", {
-        Date_Buy: Date,
-        Date_exp: Date+15,
+        Date_buy: Dates,
+        Date_exp: exp_date_plus.getFullYear().toString() + "-" + temp_mth.toString() + "-" + exp_date_plus.getDate().toString(),
         S_Source: clickSTic,
         S_Dest: clickDTic,
         ticket_id: ticket_id,
@@ -107,6 +131,8 @@ function TrainPayment() {
     
 
   };
+
+
 
   const handleClose2 = () => {
     setCount("รูปแบบการชำระเงิน");
@@ -158,9 +184,9 @@ function TrainPayment() {
         <br></br>
         <br></br>
         <br></br>
-        <Container style={{ marginLeft:"14%" }}>
+        <Container>
           <Row>
-           
+            <Col></Col>
 
             <Col style={{ textAlign: "center" }}>
               <Col
@@ -258,11 +284,11 @@ function TrainPayment() {
                   }}
                 >
                   <h4 align="center">
-                  <br/>วันที่ซื้อ : {Date}
+                  <br/>วันที่ซื้อ : {Dates}
                   </h4>
                   <h4 align="center">
-                    วันที่หมดอายุ : เหลือเวลา อีก 15 วัน
-                  </h4><br/>
+                    วันที่หมดอายุ : {exp_date_plus.getFullYear().toString() + "-"}{temp_mth.toString()} {"-" + exp_date_plus.getDate().toString()}
+                  </h4>
                 </Col>
                 <Link to="/ticket">
                 <br/><Button
@@ -521,6 +547,12 @@ function TrainPayment() {
                             <br></br>
                           </Col>
                         </Row>
+                        <Row>
+                          <Button variant="outline-warning">แก้ไข</Button>
+                          <Button variant="outline-info">ต่อไป</Button>
+                          <Button variant="outline-danger">ยกเลิก</Button>
+                        </Row>
+                        <Row>3 test</Row>
                       </Col>
                     </Container>
                   </Modal.Body>
