@@ -104,9 +104,9 @@ function TrainShowTicket() {
                 <Row>
                     <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <br/>
-                        <center><QRCode bgColor = "#FFaaaa" value= {" " + Tid_list[key_list[0]]} /></center>
+                        <center><QRCode bgColor = "#fed46e" value= {" " + Tid_list[key_list[0]]} /></center>
                         <br/><center><h4>RTS Ticket</h4></center><hr/>
-                        <p> จำนวนตั๋วของฉัน : :{" " + Amt_list[key_list[0]]}</p><br/>
+                        <p> จำนวนตั๋วของฉัน :{" " + Amt_list[key_list[0]]}</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p>
                         <p> ชื่อผู้ใช้ : {" " + user_list[key_list[0]]} </p><br/>
                         <p> สถานีต้นทาง :{" "+ S_list[key_list[0]]} </p>
@@ -117,6 +117,8 @@ function TrainShowTicket() {
                     </Col>
 
                     <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fefe10"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fefe10" value= {" " + Tid_list[key_list[1]]} /></center>
                         <br/><center><h4>RTS Ticket</h4></center><hr/>
                         <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[1]]}</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[1]]} </p>
@@ -129,6 +131,8 @@ function TrainShowTicket() {
                     </Col>
 
                     <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fecc20"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fecc20" value= {" " + Tid_list[key_list[2]]} /></center>
                         <br/><center><h4>RTS Ticket</h4></center><hr/>
                         <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[2]]}</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[2]]} </p>
@@ -137,6 +141,95 @@ function TrainShowTicket() {
                         <p> สถานีปลายทาง :{" "+ D_list[key_list[2]]} </p><br/>
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[2]]} </p>
                         <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[2]]} </p>
+
+                    </Col>
+    
+                </Row>
+                <Row>
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+                        <br/>
+                        <center><QRCode bgColor = "#fed46e" value= {" " + Tid_list[key_list[3]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน :{" " + Amt_list[key_list[3]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[3]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[3]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[3]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[3]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[3]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[3]]} </p>
+
+                    </Col>
+
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fefe10"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fefe10" value= {" " + Tid_list[key_list[4]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[4]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[4]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[4]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[4]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[4]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[4]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[4]]} </p>
+
+                    </Col>
+
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fecc20"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fecc20" value= {" " + Tid_list[key_list[5]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[5]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[5]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[5]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[5]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[5]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[5]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[5]]} </p>
+
+                    </Col>
+    
+                </Row>
+
+                <Row>
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+                        <br/>
+                        <center><QRCode bgColor = "#fed46e" value= {" " + Tid_list[key_list[6]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน :{" " + Amt_list[key_list[6]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[6]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[6]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[6]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[6]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[6]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[6]]} </p>
+
+                    </Col>
+
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fefe10"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fefe10" value= {" " + Tid_list[key_list[7]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[7]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[7]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[7]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[7]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[7]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[7]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[7]]} </p>
+
+                    </Col>
+
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fecc20"}}>
+                    <br/>
+                        <center><QRCode bgColor = "#fecc20" value= {" " + Tid_list[key_list[8]]} /></center>
+                        <br/><center><h4>RTS Ticket</h4></center><hr/>
+                        <p> จำนวนตั๋วของฉัน : {" " + Amt_list[key_list[8]]}</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[8]]} </p>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[8]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[8]]} </p>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[8]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[8]]} </p>
+                        <p> วันที่หมดอายุ :{" "+ Dexp_list[key_list[8]]} </p>
 
                     </Col>
     

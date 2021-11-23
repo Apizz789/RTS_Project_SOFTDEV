@@ -75,6 +75,9 @@ function TrainHistory() {
     const [isSearch, setIsSearch] = useState(false)
     const [showAll, setShowAll] = useState(true)
 
+    var React = require('react');
+    var QRCode = require('qrcode.react');
+
     useEffect(() => {
         axios.get(
             "https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket"
@@ -115,6 +118,7 @@ function TrainHistory() {
                     <td>{item.S_Source}</td>
                     <td>{item.Date_buy}</td>
                     <td>{item.Date_exp}</td>
+                    
                     </tr>
                     
                 </tbody>
@@ -133,6 +137,7 @@ function TrainHistory() {
                     <td>{item.S_Source}</td>
                     <td>{item.Date_buy}</td>
                     <td>{item.Date_exp}</td>
+                    
                     </tr>
                 </tbody>
         );
