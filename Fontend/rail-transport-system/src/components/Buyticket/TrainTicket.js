@@ -164,7 +164,7 @@ function TrainTicket() {
                   onClick={() => {
                     if (
                       clickSTic == "สถานีต้นทาง" ||
-                      clickDTic == "สถานีปลายทาง" || clickSTic == clickDTic
+                      clickDTic == "สถานีปลายทาง" || clickSTic == clickDTic || clickCountTic == 0 
                     )
                       handleShow();
                     else {
