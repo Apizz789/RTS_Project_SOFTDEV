@@ -140,40 +140,56 @@ function TrainHistory() {
     
     
     return (
-        <div style={{marginTop:"10px",width:"100%"}}>
+        <div style={{marginTop:"10px",width:"100%",textAlign: "center"}}>
             <h1>Rail Transport System</h1>
             <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}></Row>
             
             <br/>
             <Container>
-                <div  style={{display:"flex",justifyContent:"space-between",width:"45%",margin:"auto"}}>
-                            <Form.Control style={{ borderRadius:"10px",marginRight:"10px"}} value={numberOrder}   onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
-                            <Button style={{ borderRadius:"10px"}} onClick={onClickSearch}  variant="outline-primary" >Search</Button>
-                </div>
-            
-            <br/>
-            <br/>
-            <h2 align="center">รายการสั่งซื้อล่าสุด</h2>
-            
-                <div style={{ width: "100vh",textAlign: "center",backgroundColor:"#F9F9F8",borderRadius:"10px",borderStyle: "solid",borderWidth: "10px",borderColor:"#7E7D81"}}>
-               <Table >
-                    <thead>
-                        <tr>
-                            <th style={{ width: "150px"}}>หมายเลขคำสั่งซื้อ</th>
-                            <th>สถานีต้นทาง</th>
-                            <th>สถานีปลายทาง</th>
-                            <th>วันที่ซื้อ</th>
-                            <th>วันที่หมดอายุ</th>
-                            <th style={{ width: "150px"}}>บาร์โค้ด</th>
-                        </tr>
-                    </thead>
+                <Col>
+                    <Row>
+                        <Col style={{textAlign: "right"}}> <h3>ค้นหารายการสั่งซื้อ :</h3>
+                        </Col>
+                        <Col>
+                        <Form.Control style={{ borderRadius:"10px",marginRight:"10px"}} value={numberOrder}   onChange={(event)=>{setNumberOrder(event.target.value)}} type="input" placeholder="หมายเลขคำสั่งซื้อ" />
+                        </Col>
+                        <Col style={{textAlign: "left"}}>
+                        <Button style={{ borderRadius:"10px" }} onClick={onClickSearch}  variant="outline-primary" >Search</Button>
+                        </Col>
+                           
+                    </Row><br/><br/>
+                    <Row>
+                       <br/>
+                        <br/><br/>
+                        <h2 align="center">รายการสั่งซื้อล่าสุด</h2>
+                    </Row><br/>
+                    <Row>
+                    <hr/><Table >
+                        <thead>
+                        
+                            <tr>
+                                
+                                <th style={{ width: "150px"}}>หมายเลขคำสั่งซื้อ</th>
+                                <th>สถานีต้นทาง</th>
+                                <th>สถานีปลายทาง</th>
+                                <th>วันที่ซื้อ</th>
+                                <th>วันที่หมดอายุ</th>
+                                <th >บาร์โค้ด</th>
+                            </tr>
+                        </thead>
 
-                    {showAll ? ShowHistory:null}
-                    {isSearch ? ShowSearch:null}
-                    
-                    
-                </Table>
-                </div>
+                        {showAll ? ShowHistory:null}
+                        {isSearch ? ShowSearch:null}
+                        
+                    </Table> 
+                    </Row>
+                </Col>
+                
+              
+            
+            
+            
+
                 </Container>
             
            
