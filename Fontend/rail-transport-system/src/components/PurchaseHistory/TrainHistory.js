@@ -118,7 +118,7 @@ function TrainHistory() {
                     <td>{item.S_Source}</td>
                     <td>{item.Date_buy}</td>
                     <td>{item.Date_exp}</td>
-                    
+                    <td>{item.Amount}</td>
                     </tr>
                     
                 </tbody>
@@ -137,7 +137,7 @@ function TrainHistory() {
                     <td>{item.S_Source}</td>
                     <td>{item.Date_buy}</td>
                     <td>{item.Date_exp}</td>
-                    
+                    <td>{item.Amount}</td>
                     </tr>
                 </tbody>
         );
@@ -178,7 +178,8 @@ function TrainHistory() {
                                 <th>สถานีต้นทาง</th>
                                 <th>สถานีปลายทาง</th>
                                 <th>วันที่ซื้อ</th>
-                                <th>วันที่หมดอายุ</th>
+                                <th>วันที่เดินทาง</th>
+                                <th>จำนวนตั๋วที่ซื้อ</th>
                                 <th >บาร์โค้ด</th>
                             </tr>
                         </thead>
