@@ -311,11 +311,7 @@ function TrainPayment() {
                       </Dropdown.Menu>
                     </Dropdown>
                   </Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      OK
-                    </Button>
-                  </Modal.Footer>
+                 
                 </Modal>
                 {/* ------------------------------------- PromptPay ------------------------------------------------------------------ */}
                 <Modal
@@ -543,16 +539,18 @@ function TrainPayment() {
                             <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
                             <center><h2>RTS</h2></center>
                             <center><h1>สถานะการชำระเงิน </h1></center><br/>
-                            <center><h4 class="text-success" >SUCESS  ชำระเงินสำเร็จ</h4> </center>
+                            <center><h4 class="text-success" >SUCESS  ชำระเงินสำเร็จ</h4></center>
                             </Modal.Body>
                             <Modal.Footer>
                             <Link to="/show-ticket">
-                                <Button variant="secondary" onClick={handleClose6}>
+                                <Button variant="secondary">
                                     OK
                                 </Button>
                             </Link>
                         </Modal.Footer>
                     </Modal>
+                   
+                   
                   </Modal.Footer>
                 </Modal>
                 
