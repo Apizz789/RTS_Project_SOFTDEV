@@ -16,7 +16,6 @@
     "holderjs": "^2.9.9",
     "nodemailer": "^6.7.0",
     "prop-types": "^15.7.2",
-    "qrcode-generator": "^1.4.4",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0",
