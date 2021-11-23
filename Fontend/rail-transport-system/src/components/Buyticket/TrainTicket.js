@@ -70,20 +70,9 @@ function TrainTicket() {
   
 
   return (
-    <div style={{ marginTop: "10px" }}>
-      {/* <h1 align="center">Ticket</h1>
-      <Row
-        style={{
-          borderRadius: "20px",
-          width: "auto",
-          height: "23px",
-          margin: "1px",
-          backgroundColor: "#2F2F35",
-          color: "#ffff",
-          fontsize: "20px",
-          fontWeight: "bold",
-        }}
-      ></Row> */}
+    <div >
+      <center><h1>Buy Ticket</h1></center>
+      <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}/>
       <Container>
         <Col></Col>
         <Row>

@@ -75,6 +75,17 @@ let key_list = []
 // let key_list = []
 let temp_user = user_list.slice(); 
 
+function myticket(){
+    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <p> จำนวนตั๋วของฉัน : 5</p><br/>
+                        <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p><br/>
+                        <p> ชื่อผู้ใช้ : {" " + user_list[key_list[0]]} </p><br/>
+                        <p> สถานีต้นทาง :{" "+ S_list[key_list[0]]} </p><br/>
+                        <p> สถานีปลายทาง :{" "+ D_list[key_list[0]]} </p><br/>
+                        <p> วันที่ซื้อ :{" "+ DB_list[key_list[0]]} </p>
+    </Col>
+}
+// makeGetRequest()
 
 function TrainShowTicket() {
     const [username_cookie, setUsername_cookie, removeUsername_cookie] =
@@ -97,13 +108,13 @@ function TrainShowTicket() {
 
 
             <h1>My Ticket</h1>
-            <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
+            <Row style={{borderRadius:"20px",width:"500px",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}>
           </Row>
 
 
             <Container>
                 <Row>
-                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <p> จำนวนตั๋วของฉัน : 5</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" " + user_list[key_list[0]]} </p><br/>
@@ -112,7 +123,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[0]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
+                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
                         <p> จำนวนตั๋วของฉัน : 2</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[1]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[1]]} </p><br/>
@@ -121,7 +132,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[1]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"30%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+                    <Col style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <p> จำนวนตั๋วของฉัน : 4</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[2]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[2]]} </p><br/>
@@ -130,7 +141,7 @@ function TrainShowTicket() {
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[2]]} </p>
                     </Col>
 
-                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1000px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
+                    <Col style={{marginTop:"0%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fad4ae"}}>
                         <p> จำนวนตั๋วของฉัน : 8</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[3]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" "+ user_list[key_list[3]]} </p><br/>

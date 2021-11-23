@@ -25,9 +25,11 @@ import { graph, dijkstra } from "../CalculationResult/distance_cal.js";
 
 
 // import { graph, dijkstra } from './distance_cal.js';
-let ticket_id  = Math.floor(Math.random() * 100000000)
-function TrainPayment() {
 
+let ticket_id  = "RTS" + Math.floor(Math.random() * 1000000000)
+
+function TrainPayment() {
+  
   const [username_cookie, setUsername_cookie, removeUsername_cookie] =
   useCookies(["username_tkn"]);
 
@@ -78,7 +80,6 @@ function TrainPayment() {
   const [show5, setShow5] = useState(false);
   const handleClose5 = () => setShow5(false);
   const handleShow5 = () => setShow5(true);
-  // const handleClose3 = () => setShow3(false);
 
   var split_date = Dates.split('-');
   var exp_year = parseInt(split_date[0]);
@@ -97,6 +98,11 @@ function TrainPayment() {
     if (exp_date_plus.getMonth() ===0){
       temp_mth = 12
     }
+  const [show6, setShow6] = useState(false);
+  const handleClose6 = () => setShow6(false);
+  const handleShow6 = () => setShow6(true);
+  
+  
 
     console.log(exp_date_plus)
 
@@ -367,6 +373,7 @@ function TrainPayment() {
                       <Form.Label>Upload You Slip Payment</Form.Label>
                       <Form.Control
                         type="file"
+                        accept="image/*"
                         multiple
                         name="picture"
                         onChange={handlePromtpay}
@@ -438,18 +445,13 @@ function TrainPayment() {
                               <Form.Label>Upload You Slip Payment</Form.Label>
                               <Form.Control
                                 type="file"
+                                accept="image/*"
                                 multiple
                                 onChange={handleBank}
                               />
                             </Form.Group>
                           </Col>
                         </Row>
-                        <Row>
-                          <Button variant="outline-warning">แก้ไข</Button>
-                          <Button variant="outline-info">ต่อไป</Button>
-                          <Button variant="outline-danger">ยกเลิก</Button>
-                        </Row>
-                        <Row>3 test</Row>
                       </Col>
                     </Container>
                   </Modal.Body>
@@ -559,15 +561,30 @@ function TrainPayment() {
                     </Container>
                   </Modal.Body>
                   <Modal.Footer>
-                  <Link to="/show-ticket">
+                  
                     <Button
                       variant="secondary"
-                      onClick={handleClose1}
+                      onClick={handleShow6}
                       type="submit"
                     >
                       OK
                     </Button>
-                    </Link>
+                    <Modal show={show6} onHide={handleClose6} centered>
+                    <Modal.Header closeButton><i class="fas fa-newspaper"></i><p>. </p><b>ระบบ RTS</b></Modal.Header>
+                            <Modal.Body>
+                            <center><img src="images/RTS-Logo.png" width = '100' height='auto'style={{textAlign:"center", margin:"20px"}}></img></center>
+                            <center><h2>RTS</h2></center>
+                            <center><h1>สถานะการชำระเงิน </h1></center><br/>
+                            <center><h4 class="text-success" >SUCESS  ชำระเงินสำเร็จ</h4> </center>
+                            </Modal.Body>
+                            <Modal.Footer>
+                            <Link to="/show-ticket">
+                                <Button variant="secondary" onClick={handleClose6}>
+                                    OK
+                                </Button>
+                            </Link>
+                        </Modal.Footer>
+                    </Modal>
                   </Modal.Footer>
                 </Modal>
                 

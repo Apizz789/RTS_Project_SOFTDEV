@@ -55,7 +55,10 @@ export default function TrainContactus() {
 
   return (
     <div style={{ marginTop: "10px", width: "100%" }}>
+      
       <h1 align="center">Contact Us</h1>
+      <Row style={{borderRadius:"20px",width:"auto",height:"23px",margin:"1px",backgroundColor:"#2F2F35",color:"#ffff",fontsize: "20px",fontWeight:"bold"}}/>
+      <br/><br/>
       <Container>
         <Row style={{ textAlign: "center" }}>
           <Col>
