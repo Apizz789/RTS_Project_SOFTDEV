@@ -500,48 +500,63 @@ function TrainPayment() {
                             <FloatingLabel
                               controlId="floatingInput"
                               label="หมายเลขบัตร"
+                              type="number"
+                              
                               className="mb-3"
                             >
                               <Form.Control
-                                type="email"
+                                type="number"
+                                maxlength="16"
                                 placeholder="name@example.com"
+                                defaultValue="4546320488952222"
                               />
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingPassword"
+                              type="number"
+                              
+                              
                               label="CVC"
                             >
                               <Form.Control
                                 type="password"
+                                maxlength="3"
                                 placeholder="Password"
+                                defaultValue="456"
                               />
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingPassword"
                               label="EXP"
+                              
                             >
                               <Form.Control
-                                type="password"
+                                type="date"
                                 placeholder="Password"
+                                defaultValue="2022-12-12"
                               />
                             </FloatingLabel>
 
                             <FloatingLabel
                               controlId="floatingPassword"
                               label="Fname"
+                             
                             >
                               <Form.Control
-                                type="password"
+                                type="fname"
                                 placeholder="Password"
+                                defaultValue="APIRAK"
                               />
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingPassword"
                               label="Lname"
+                              
                             >
                               <Form.Control
-                                type="password"
+                                type="lname"
                                 placeholder="Password"
+                                defaultValue="OULIS"
                               />
                             </FloatingLabel>
                             <br></br>
