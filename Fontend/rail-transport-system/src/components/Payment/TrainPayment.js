@@ -318,7 +318,7 @@ function TrainPayment() {
                 <Modal show={show} onHide={handleClose} centered>
                   <Modal.Header closeButton>เลือกวิธีการชำระเงิน</Modal.Header>
                   <Modal.Body style={{ margin: "auto" }}>
-                    <h1>รูปแบบการชำระเงิน</h1>
+                    <h1>รูปแบบการชำระเงิน</h1><hr/><br/>
                     <Dropdown
                       style={{
                         width: "100px",
@@ -335,7 +335,7 @@ function TrainPayment() {
                       <Dropdown.Menu>
                         <DropdownItem />
                       </Dropdown.Menu>
-                    </Dropdown>
+                    </Dropdown><br/><br/>
                   </Modal.Body>
                  
                 </Modal>
