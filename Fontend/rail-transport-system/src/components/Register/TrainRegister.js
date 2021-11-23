@@ -11,6 +11,40 @@ import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 
 function TrainRegister() {
+  const [values, setValues] = useState({
+    fname: "",
+    lname: "",
+    username: "",
+    password: "",
+    repeat_password: "",
+    tel: "",
+    DOB: "",
+    email: "",
+    sex: "",
+    status: {
+      type: String,
+      enum: ["Pending", "Active"],
+      default: "Pending",
+    },
+    confirmationCode: {
+      type: String,
+      unique: true,
+    },
+
+    login_username: "",
+    login_password: "",
+  });
+  const [errors, setErrors] = useState({
+    fname: "",
+    lname: "",
+    username: "",
+    password: "",
+    repeat_password: "",
+    tel: "",
+    DOB: "",
+    email: "",
+    sex: "",
+  });
   const [submit,setSubmit] = useState(false);
   const [login_state, setLogin_state, removeLogin_state] = useCookies([
     "login_token",
@@ -118,40 +152,6 @@ function TrainRegister() {
 
   
 
-  const [values, setValues] = useState({
-    fname: "",
-    lname: "",
-    username: "",
-    password: "",
-    repeat_password: "",
-    tel: "",
-    DOB: "",
-    email: "",
-    sex: "",
-    status: {
-      type: String,
-      enum: ["Pending", "Active"],
-      default: "Pending",
-    },
-    confirmationCode: {
-      type: String,
-      unique: true,
-    },
-
-    login_username: "",
-    login_password: "",
-  });
-  const [errors, setErrors] = useState({
-    fname: "",
-    lname: "",
-    username: "",
-    password: "",
-    repeat_password: "",
-    tel: "",
-    DOB: "",
-    email: "",
-    sex: "",
-  });
 
   // const initialState = {
   //     change: false,
@@ -185,8 +185,6 @@ function TrainRegister() {
   const handleSubmits = () => {
       setSubmit(true)
       setShow1(false);
-    
-
   };
 
   const [gender, setGender] = React.useState();
@@ -442,6 +440,7 @@ function TrainRegister() {
       </Alert>
       
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical " >
+          
       <div className="signup">
       <h1 style={{color: "#F9F9F8"}}>Rail Transport System / Register</h1>
         <div  className="Card-Regis" align="center" >
@@ -465,35 +464,34 @@ function TrainRegister() {
               
               <Col>First Name
               
-                 <form onSubmit={sendEmail}>
                      <input
                           className="inputlogin"
                           id="fn"
                           type="text"
                           name="fname"
                           placeholder="First name"
-                          required
+          
                           value={values.fname}
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.fname && <p className="error">{errors.fname}</p>}</form>
+                        {errors.fname && <p className="error">{errors.fname}</p>}
                 </Col>
 
               <Col >Last Name
-                 <form onSubmit={sendEmail}>
+                 
                      <input
                           className="inputlogin"
                           id="ln"
                           type="text"
                           name="lname"
                           placeholder="Last name"
-                          required
+                          
                           value={values.lname}
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.lname && <p className="error">{errors.lname}</p>}</form>
+                        {errors.lname && <p className="error">{errors.lname}</p>}
               </Col>
               
 
@@ -505,7 +503,7 @@ function TrainRegister() {
 
               <Row style={{height:"40px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
+                 
                      <Form.Check
                         inline
                         label="Male"
@@ -516,11 +514,11 @@ function TrainRegister() {
                         checked={gender === 'Male'}
                         onChange={handleRadio}
                         
-                      /></form>
+                      />
                      
                 </Col>
                 <Col>
-                 <form onSubmit={sendEmail}>
+                
                      <Form.Check
                         inline
                         label="Female"
@@ -532,7 +530,7 @@ function TrainRegister() {
                         onChange={handleRadio}
                         
                         
-                      /></form>
+                      />
                 </Col>
                 {errors.sex && <p className="error">{errors.sex}</p>}
               </Row>
@@ -541,34 +539,34 @@ function TrainRegister() {
 
               <Row style={{height:"80px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
+                 
                      <input
                         className="inputlogin"
                         type="text"
                         name="username"
                         placeholder="User name"
-                        required
+                        
                         value={values.username}
                         onChange={handleChange}
                         style={{borderRadius: "10px",height:"40px",width:"200px"}}
                       />
                       {errors.username && (
                         <p className="error">{errors.username}</p>
-                      )}</form>
+                      )}
                 </Col>
                 <Col>
-                   <form onSubmit={sendEmail}>
+                   
                        <input
                           className="inputlogin"
                           type="email"
                           name="email"
                           placeholder="Email"
-                          required
+                          
                           value={values.email}
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.email && <p className="error">{errors.email}</p>}</form>
+                        {errors.email && <p className="error">{errors.email}</p>}
                 </Col>
 
 
@@ -579,36 +577,36 @@ function TrainRegister() {
               
               <Row style={{height:"80px"}}>
                 <Col>
-                 <form onSubmit={sendEmail}>
+                 
                      <input
                             className="inputlogin"
                             type="password"
                             name="password"
                             placeholder="Password"
-                            required
+                            
                             value={values.password}
                             onChange={handleChange}
                             style={{borderRadius: "10px",height:"40px",width:"200px"}}
                           />
                           {errors.password && (
                             <p className="error">{errors.password}</p>
-                          )}</form>
+                          )}
                 </Col>
                   <Col>
-                     <form onSubmit={sendEmail}>
+                     
                          <input
                             className="inputlogin"
                             type="password"
                             name="repeat_password"
                             placeholder="RE- Password"
-                            required
+                            
                             value={values.repeat_password}
                             onChange={handleChange}
                             style={{borderRadius: "10px",height:"40px",width:"200px"}}
                           />
                           {errors.repeat_password && (
                             <p className="error">{errors.repeat_password}</p>
-                          )}</form>
+                          )}
                   </Col>
               </Row>
 
@@ -619,23 +617,23 @@ function TrainRegister() {
               <Row style={{height:"70px"}}>
                   
                   <Col>
-                     <form onSubmit={sendEmail}>
+                     
                          <input
                           className="inputlogin"
                           type="Telephone"
                           name="tel"
                           placeholder="Tel"
                           maxlength="10"
-                          required
+                          
                           value={values.tel}
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
-                        {errors.tel && <p className="error">{errors.tel}</p>}</form>
+                        {errors.tel && <p className="error">{errors.tel}</p>}
                   </Col>
 
                   <Col>
-                     <form onSubmit={sendEmail}>
+                     
                          <input
                           className="inputlogin"
                           type="date"
@@ -644,32 +642,33 @@ function TrainRegister() {
                           min="1900-01-01"
                           max="2009-12-31"
                           placeholder="dd-mm-yyyy"
-                          required
+                          
                           value={values.DOB}
                           onChange={handleChange}
                           style={{borderRadius: "10px",height:"40px",width:"200px"}}
                         />
                         {errors.DOB && <p className="error">{errors.DOB}</p>}
-                  </form></Col>
+                  </Col>
               </Row>
 
               <Row>
-                 <form onSubmit={sendEmail}>
+                 
                      <input
                           className="inputlogin"
                           name="confirmcode"
                           defaultValue={values.confirmationCode}
                           type="hidden"
                           style={{  borderRadius: "10px" }}
-                        /></form>
+                        />
               </Row>
               <br />               
               <Row style={{height:"65px"}}>
+                            
                       <Col>
                         <Button
                           className="buttonlogin"
-                          type="submit"
-                          value="Submit"
+                          // type="submit"
+                          // value="Submit"
                           onClick={handleShow1}
                           style={{  width: "200px",borderRadius: "10px" }}
                         > Sign Up
@@ -685,9 +684,102 @@ function TrainRegister() {
                                 
                                     </Modal.Body>
                                     <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleSubmits} type ="submit">
-                                            CONFIRM
-                                        </Button>
+
+                                    <form onSubmit={sendEmail}>
+                    <div className="Name-User" id="left">
+                      <input
+                        className="inputlogin"
+                        id="fn"
+                        type="hidden"
+                        name="fname"
+                        placeholder="First name"
+                        defaultValue={values.fname}
+                        
+                      />
+                      <input
+                        className="inputlogin"
+                        id="ln"
+                        type="hidden"
+                        name="lname"
+                        placeholder="Last name"
+                        defaultValue={values.lname}
+                        
+                      />
+                  
+                    </div>
+                
+                    <div className="Info-User" id="right">
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        name="username"
+                        placeholder="User name"
+                        defaultValue={values.username}
+                      />
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        name="email"
+                        placeholder="Email"
+                        defaultValue={values.email}
+                      />
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        name="password"
+                        placeholder="Password"
+                        defaultValue={values.password}
+                    
+                      />
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        name="repeat_password"
+                        placeholder="RE- Password"
+                        defaultValue={values.repeat_password}
+                      
+                      />
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        name="tel"
+                        placeholder="Tel"
+                        maxlength="10"
+                        defaultValue={values.tel}
+                        
+                      />
+                      <input
+                        className="inputlogin"
+                        type="hidden"
+                        data-date-inline-picker="true"
+                        name="DOB"
+                        min="1900-01-01"
+                        max="2009-12-31"
+                        placeholder="dd-mm-yyyy"
+                        defaultValue={values.DOB}
+                        
+                      />
+                      <input
+                        className="inputlogin"
+                        name="confirmcode"
+                        defaultValue={values.confirmationCode}
+                        type="hidden"
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                      />
+                    </div>
+                    <div id="right">
+                      <Button
+                        className="buttonlogin"
+                        type="submit"
+                        value="Submit"
+                        // onClick={handleSubmits}
+                        style={{ margin: "10px", borderRadius: "10px" }}
+                        onClick={handleSubmits}
+                      >
+                        Confirm
+                      </Button>
+                    </div>
+                  </form>
                                         <Button variant="secondary" onClick={handleClose1}>
                                             CLOSE
                                         </Button>    
@@ -750,7 +842,6 @@ function TrainRegister() {
           </Container>
          
         </div>
-      
       </div>
        
 
@@ -783,7 +874,7 @@ function TrainRegister() {
                           type="email"
                           name="login_username"
                           placeholder="User Name"
-                          required
+                          
                           value={values.login_username}
                           onChange={handleChange}
                           
@@ -803,7 +894,7 @@ function TrainRegister() {
                           type="password"
                           name="login_password"
                           placeholder="Password"
-                          required
+                          
                           value={values.login_password}
                           onChange={handleChange}
                           style={{margin: "5px", borderRadius: "10px", height:"50px", width:"520px",textAlign:"center" }}
@@ -850,3 +941,8 @@ function TrainRegister() {
 }
 
 export default TrainRegister;
+
+
+
+
+
