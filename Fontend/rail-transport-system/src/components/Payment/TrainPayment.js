@@ -95,9 +95,19 @@ function TrainPayment() {
     }
     var exp_date_plus = addDays(exp_date, 15);
     var temp_mth = exp_date_plus.getMonth()
+    var temp_year = exp_date_plus.getFullYear()
     if (exp_date_plus.getMonth() ===0){
       temp_mth = 12
     }
+
+    if (16 <= exp_day && exp_day<= 31 && exp_mth === 12){
+      console.log("change year")
+    }
+    else
+    {
+      temp_year -= 1
+    }
+
   const [show6, setShow6] = useState(false);
   const handleClose6 = () => setShow6(false);
   const handleShow6 = () => setShow6(true);
@@ -116,11 +126,12 @@ function TrainPayment() {
     axios
       .post("https://us-central1-soft-dev-tutorial.cloudfunctions.net/Ticket", {
         Date_buy: Dates,
-        Date_exp: exp_date_plus.getFullYear().toString() + "-" + temp_mth.toString() + "-" + exp_date_plus.getDate().toString(),
+        Date_exp: temp_year.toString() + "-" + ('00'+(temp_mth.toString())).slice(-2) + "-" + ('00'+(exp_date_plus.getDate().toString())).slice(-2),
         S_Source: clickSTic,
         S_Dest: clickDTic,
         ticket_id: ticket_id,
-        user_customer: username_cookie["username_tkn"]
+        user_customer: username_cookie["username_tkn"],
+        Amount : clickCountTic
       })
       .then((response) => {
         console.log(response);
@@ -287,8 +298,8 @@ function TrainPayment() {
                   <br/>วันที่ซื้อ : {Dates}
                   </h4>
                   <h4 align="center">
-                    วันที่หมดอายุ : {exp_date_plus.getFullYear().toString() + "-"}{temp_mth.toString()} {"-" + exp_date_plus.getDate().toString()}
-                  </h4><br/>
+                    วันที่หมดอายุ : {temp_year.toString() + "-"}{('00'+(temp_mth.toString())).slice(-2)}{"-" + ('00'+(exp_date_plus.getDate().toString())).slice(-2)}
+                  </h4>
                 </Col>
                 <Link to="/ticket">
                 <br/><Button

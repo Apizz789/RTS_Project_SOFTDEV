@@ -101,6 +101,10 @@ function TrainShowTicket() {
     console.log(temp_user)
     console.log(key_list)
 
+    myticket()
+    myticket()
+    myticket()
+
     return (
 
         
@@ -114,7 +118,10 @@ function TrainShowTicket() {
 
             <Container>
                 <Row>
-                    <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
+
+                        
+                    
+                    {/* <Col  style={{marginTop:"30%",borderRadius:"20px",width:"1200px",height:"auto",margin:"10px",backgroundColor:"#fed46e"}}>
                         <p> จำนวนตั๋วของฉัน : 5</p><br/>
                         <p> เลขคำสั่งซื้อ :{" " + Tid_list[key_list[0]]} </p><br/>
                         <p> ชื่อผู้ใช้ : {" " + user_list[key_list[0]]} </p><br/>
@@ -148,7 +155,7 @@ function TrainShowTicket() {
                         <p> สถานีต้นทาง :{" "+ S_list[key_list[3]]} </p><br/>
                         <p> สถานีปลายทาง :{" "+ D_list[key_list[3]]} </p><br/>
                         <p> วันที่ซื้อ :{" "+ DB_list[key_list[3]]} </p>
-                    </Col>
+                    </Col> */}
              
                 </Row>
 
