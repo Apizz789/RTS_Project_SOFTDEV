@@ -288,7 +288,7 @@ function TrainPayment() {
                   </h4>
                   <h4 align="center">
                     วันที่หมดอายุ : {exp_date_plus.getFullYear().toString() + "-"}{temp_mth.toString()} {"-" + exp_date_plus.getDate().toString()}
-                  </h4>
+                  </h4><br/>
                 </Col>
                 <Link to="/ticket">
                 <br/><Button
