@@ -180,7 +180,7 @@ function TrainHistory() {
                                 <th>วันที่ซื้อ</th>
                                 <th>วันที่เดินทาง</th>
                                 <th>จำนวนตั๋วที่ซื้อ</th>
-                                <th >บาร์โค้ด</th>
+                                
                             </tr>
                         </thead>
 
